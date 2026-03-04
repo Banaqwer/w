@@ -1,0 +1,84 @@
+# configs/default.yaml
+# All experiments must reference a config. Do not hardcode these values.
+
+# ── Market and symbol ──────────────────────────────────────────────────────
+market:
+  name: "BTC/USD"
+  source: "COINBASE"                    # exchange/venue
+  symbol_tv: "COINBASE:BTCUSD"          # TradingView symbol (for MCP calls)
+  symbol_path: "COINBASE_BTCUSD"        # sanitized for file paths (colon → underscore)
+  instrument_type: "spot"
+
+# ── Timeframes ────────────────────────────────────────────────────────────
+timeframes:
+  primary: "1D"                         # Daily — main research TF
+  confirmation: "4H"                    # 4H — confirmation and execution TF
+  structural: "1W"                      # Weekly — higher-structure validation
+
+# ── Time conventions ──────────────────────────────────────────────────────
+timezone: "UTC"
+daily_close_convention: "00:00 UTC"     # bar boundary; one UTC calendar day
+weekly_boundary: "Monday 00:00 UTC"     # weekly bar start
+
+# ── Storage paths ────────────────────────────────────────────────────────
+paths:
+  raw: "data/raw/tradingview_mcp"
+  processed: "data/processed"
+  metadata: "data/metadata/extractions"
+  reports: "reports"
+  logs: "logs"
+
+# ── Dataset version ──────────────────────────────────────────────────────
+dataset:
+  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-03_v1"
+  # Update this when a new processed dataset is approved
+
+# ── Data acquisition ────────────────────────────────────────────────────
+acquisition:
+  mcp_server: "tradingview-mcp"
+  method_4h: "direct"                   # "direct" or "resample_from_1H"
+  method_weekly: "resample_from_1D"     # "direct" or "resample_from_1D"
+
+# ── Derived fields ───────────────────────────────────────────────────────
+derived_fields:
+  atr_windows: [14]                     # ATR window(s); atr_14 computed by default
+  atr_warmup_rows: 14                   # rows excluded from ATR-dependent logic
+  log_close: true
+  true_range: true
+  hl_range: true
+  bar_index: true
+  calendar_day_index: true
+  trading_day_index: true
+
+# ── Coordinate system ────────────────────────────────────────────────────
+coordinate_system:
+  bar_index_epoch: "first_bar"          # anchor to first bar in dataset
+  calendar_day_epoch: "first_bar"
+
+# ── Validation settings ──────────────────────────────────────────────────
+validation:
+  require_volume: false                 # flag if missing but do not fail
+  fail_on_ohlc_violation: true
+  fail_on_duplicate_timestamp: true
+  fail_on_missing_bar: true            # fail if continuity break is material
+  max_allowed_missing_bars: 0          # 0 = strict; raise only with documented justification
+  fail_on_future_timestamp: true
+
+# ── Module toggles ───────────────────────────────────────────────────────
+modules:
+  measured_move: true
+  adjusted_angles: true
+  jttl: true
+  sqrt_levels: true
+  time_counts: true
+  log_levels: true
+  arcs: false                           # advanced; off until MVP validated
+  boxes: false
+  pythagorean_ratios: false
+  music_ratios: false
+  direct_weekly_pull: false             # RESERVED — not used under current MVP Assumption 9
+
+# ── Research defaults ────────────────────────────────────────────────────
+research:
+  min_history_years_daily: 10
+  random_seed: 42
