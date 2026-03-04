@@ -41,7 +41,8 @@
 
 ## Confirmed project decisions
 - Python is the official research and testing environment
-- TradingView through the user's MCP bridge is the approved acquisition layer
+- TradingView through the user's MCP bridge is retained for current-bar snapshot sanity checks only
+- Official historical OHLCV acquisition: Coinbase REST API via `ccxt`
 - official experiments must run on saved, normalized, versioned datasets
 - TradingView is not the official source of truth for backtest outputs
 - BTC/USD is the MVP market

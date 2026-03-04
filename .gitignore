@@ -30,13 +30,13 @@ env/
 
 # Data files — raw extractions and processed datasets are NOT committed
 # (they are large and must be versioned separately)
-data/raw/tradingview_mcp/*/*/*.csv
-data/raw/tradingview_mcp/*/*/*.parquet
+data/raw/coinbase_rest/*/*/*.csv
+data/raw/coinbase_rest/*/*/*.parquet
 data/processed/*/
 data/metadata/extractions/*.json
 
 # Keep directory structure via .gitkeep
-!data/raw/tradingview_mcp/.gitkeep
+!data/raw/coinbase_rest/.gitkeep
 !data/processed/.gitkeep
 !data/metadata/extractions/.gitkeep
 

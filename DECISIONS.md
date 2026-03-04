@@ -27,9 +27,9 @@ This file records the project's frozen high-level decisions.
 - Official higher-structure timeframe: Weekly
 
 ### 4H policy
-- Use direct native 4H extraction from the MCP bridge if available, stable, and historically complete enough for research.
-- If direct 4H extraction is not reliable enough, use a documented Python resampling pipeline from a lower official base timeframe.
-- Do not mix direct 4H and resampled 4H in the same MVP experiment family.
+- Pull native 4H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `4h`).
+- If native 4H history is shallower than required, resample from 1H native pull.
+- Do not mix native 4H and resampled 4H within the same official MVP experiment family.
 
 ### Weekly policy
 - Weekly bars must use a fixed UTC-based weekly boundary.

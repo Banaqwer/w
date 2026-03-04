@@ -42,11 +42,9 @@ Do not expand to secondary markets until the BTC/USD MVP stack is stable and doc
 The official source of truth for data-driven outputs is the Python research environment operating on saved, validated datasets.
 
 TradingView plus the user's MCP bridge may be used for:
-- historical candle extraction
-- metadata extraction
+- current-bar snapshot sanity checks (via `coin_analysis`)
 - chart inspection
-- sanity checks
-- comparison to source charts
+- visual validation and comparison to source charts
 - optional later Pine Script translation
 
 TradingView/MCP is not the official source of truth for:
@@ -153,9 +151,9 @@ If later experiments test a different daily close:
 ## 8. Intraday bar convention
 
 ### Official 4H policy
-Use direct native 4H extraction from the TradingView MCP bridge if native 4H historical candles are available, stable, and complete enough for research use.
+Use direct native 4H extraction from the Coinbase REST API via `ccxt` if native 4H historical candles are available and complete enough for research use.
 
-If native 4H extraction is not sufficiently reliable or complete, the fallback is a documented Python resampling pipeline from a lower official base timeframe.
+If native 4H extraction is not sufficiently deep or complete, the fallback is a documented Python resampling pipeline from the 1H native pull via `ccxt`.
 
 Do not mix direct 4H and resampled 4H within the same official MVP experiment family.
 
@@ -313,17 +311,17 @@ Examples:
 
 Every experiment must reference the exact processed dataset version used.
 
-## 18. MCP extraction metadata requirements
+## 18. Extraction metadata requirements
 
 Every raw extraction must record:
 - extraction timestamp
-- TradingView symbol
+- canonical symbol (TradingView reference and acquisition-source symbol)
 - timeframe
 - timezone assumption
 - bar count
 - first bar timestamp
 - last bar timestamp
-- extraction method or MCP command used
+- extraction method (e.g. `coinbase_rest_ccxt`)
 - user/session note if relevant
 - checksum or hash if possible
 
@@ -384,9 +382,9 @@ Use these defaults unless a documented decision changes them:
 
 ## 22. Open fields to finalize before first run
 Complete these before development begins:
-- the exact MCP extraction command/workflow
-- whether 4H is pulled directly in all cases or resampled in fallback conditions
-- data storage path implementation in the repo
+- ~~the exact MCP extraction command/workflow~~ **RESOLVED** — Coinbase REST API via `ccxt` (see §3)
+- ~~whether 4H is pulled directly in all cases or resampled in fallback conditions~~ **RESOLVED** — direct native 4H via `ccxt`; resample from 1H if depth insufficient (see §8)
+- ~~data storage path implementation in the repo~~ **RESOLVED** — `data/raw/coinbase_rest/` (see §16)
 - the first dataset version to use for MVP
 - whether weekly is always resampled from daily or optionally pulled directly
 

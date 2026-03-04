@@ -166,18 +166,18 @@ The specific tool/library used here depends on the acquisition method approved i
 ```
 Step 1 — Pull raw OHLCV array
   Required fields: timestamp (UTC), open, high, low, close, volume
-  Symbol:    COINBASE:BTCUSD (or approved equivalent)
+  Symbol:    BTC/USD via ccxt (= COINBASE:BTCUSD on TradingView)
   Timeframe: 1D (primary), 4H (confirmation), 1W (structural via resample)
   Start:     earliest available (target ≥ 10 years)
   End:       current date
 
 Step 2 — Save raw file
-  Path: data/raw/tradingview_mcp/COINBASE_BTCUSD/<TF>/
-        tvmcp_COINBASE_BTCUSD_<TF>_UTC_<pull-date>.csv
+  Path: data/raw/coinbase_rest/COINBASE_BTCUSD/<TF>/
+        cbrest_COINBASE_BTCUSD_<TF>_UTC_<pull-date>.csv
 
 Step 3 — Write extraction metadata JSON
   Path: data/metadata/extractions/
-        tvmcp_COINBASE_BTCUSD_<TF>_UTC_<pull-date>.json
+        cbrest_COINBASE_BTCUSD_<TF>_UTC_<pull-date>.json
   Required fields: see data_spec.md §18
 
 Step 4 — Run validation (data/validation.py)
