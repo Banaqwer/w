@@ -749,8 +749,10 @@ dependencies = [
     "numpy>=1.26",
     "pyarrow>=14.0",     # parquet support
     "pyyaml>=6.0",       # config loading
-    "pytest>=8.0",       # test runner
 ]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]
