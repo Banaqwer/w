@@ -1,7 +1,9 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 1 — Repository and data layer (COMPLETE — 2026-03-04)
+- Phase 1C — Live Coinbase dataset execution (ATTEMPTED 2026-03-04 — BLOCKED by network)
+- Phase 1 repository and data layer code: COMPLETE
+- Live Coinbase API access: REQUIRED before Phase 2 official research outputs
 
 ## Current status
 
@@ -125,8 +127,8 @@ python -m data.extract \
 8. ~~Produce 4H dataset~~ — DONE (2026-03-04)
 9. ~~Produce weekly dataset by resampling~~ — DONE (2026-03-04)
 10. ~~Confirm manifests contain all required fields~~ — DONE (2026-03-04)
-11. When live Coinbase API is accessible: re-run pulls without `--use-synthetic` and verify ≥ 20 bars against TradingView `COINBASE:BTCUSD` chart; log discrepancies in `DECISIONS.md`
-12. Begin Phase 2: structural pivot and impulse engine
+11. **[BLOCKED — network]** When live Coinbase API is accessible: re-run pulls without `--use-synthetic` and verify ≥ 20 bars against TradingView `COINBASE:BTCUSD` chart; log discrepancies in `DECISIONS.md`
+12. Begin Phase 2: structural pivot and impulse engine (requires live data per Phase 1C)
 
 ## Success condition for Phase 1
 Phase 1 is complete when:
@@ -156,3 +158,61 @@ Phase 1B synthetic/offline pipeline execution reviewed and accepted.
 Phase 1 is complete. Phase 2 (structural pivot and impulse engine) may begin.
 When live Coinbase API access is restored, re-run the three pull commands above
 (without `--use-synthetic`) to replace synthetic datasets with real OHLCV data.
+
+---
+
+### Phase 1C — Live Dataset Execution Attempt — BLOCKED (2026-03-04)
+
+Phase 1C attempted the first official live Coinbase REST API pull (without
+`--use-synthetic`) on 2026-03-04 from the sandboxed CI/CD environment.
+
+**Result: BLOCKED — Coinbase REST API not reachable from sandbox**
+
+#### Exact commands run
+
+```bash
+python -m data.extract --timeframe 1D \
+    --version proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1 \
+    --pull-date 2026-03-04 --overwrite
+```
+
+#### Exact error captured
+
+```
+Error class:   ccxt.base.errors.NetworkError
+Error message: coinbase GET https://api.coinbase.com/v2/currencies
+Root cause:    socket.gaierror: [Errno -5] No address associated with hostname
+               DNS resolution for api.coinbase.com failed — no outbound internet
+               access in sandboxed CI/CD environment
+```
+
+#### Results by timeframe
+
+| Timeframe | Result | Rows | Artifacts |
+|-----------|--------|------|-----------|
+| 1D | FAILED — NetworkError | — | None |
+| 4H | NOT ATTEMPTED (blocked by 1D failure) | — | None |
+| 1W | NOT ATTEMPTED (requires live 1D dataset) | — | None |
+
+#### Phase 2 clearance
+
+**BLOCKED** — Phase 2 official research outputs require a live Coinbase dataset.
+Synthetic data (Phase 1B) confirmed pipeline correctness only.
+
+#### Recommended workarounds (in priority order)
+
+1. **Re-run on a machine with outbound internet access** — run the three
+   Phase 1C commands from a local workstation or CI environment where
+   `api.coinbase.com` is reachable. No code changes required.
+2. **Request sandbox network access** to `api.coinbase.com` if the CI/CD
+   environment can be configured to permit outbound HTTPS to that host.
+3. **Manually inject raw CSV** — download BTC/USD OHLCV from Coinbase or
+   another source, place in `data/raw/coinbase_rest/COINBASE_BTCUSD/1D/`
+   with correct naming, and run the ingestion pipeline directly.
+4. **Proceed with synthetic data labeled as pre-official** — use
+   `--use-synthetic` for Phase 2 module development only; re-validate with
+   live data before any research claims.
+
+#### Full review
+
+`docs/reviews/phase1c_review.md`

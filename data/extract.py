@@ -271,7 +271,7 @@ def run_extraction(
     else:
         raw_df = fetch_coinbase_ohlcv(timeframe=timeframe)
         extraction_method = cfg["acquisition"]["method"]
-        user_note = f"Official Phase 1B pull — {pull_date}"
+        user_note = f"Official live pull — {pull_date}"
 
     result = run_ingestion_pipeline(
         raw_df=raw_df,
