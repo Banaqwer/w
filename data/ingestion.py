@@ -184,6 +184,123 @@ def run_ingestion_pipeline(
     }
 
 
+def resample_daily_to_weekly(
+    daily_version: str,
+    pull_date: str,
+    weekly_version: Optional[str] = None,
+    processed_base: str = "data/processed",
+    metadata_base: str = "data/metadata/extractions",
+    symbol_path: str = "COINBASE_BTCUSD",
+    overwrite: bool = False,
+) -> Dict[str, Any]:
+    """Produce a weekly OHLCV dataset by resampling a processed daily dataset.
+
+    Per ``configs/default.yaml`` (``acquisition.method_weekly: resample_from_1D``),
+    weekly bars are derived from the daily processed Parquet, not pulled directly
+    from the exchange.  The weekly bar boundary is Monday 00:00 UTC.
+
+    Parameters
+    ----------
+    daily_version:
+        Version string for the existing daily processed dataset, e.g.
+        ``"proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1"``.
+    pull_date:
+        ISO date string (e.g. ``"2026-03-04"``); used for file naming.
+    weekly_version:
+        Version string for the weekly output dataset.  Defaults to deriving
+        from *daily_version* by replacing ``_1D_`` with ``_1W_``.
+    processed_base:
+        Root directory for processed datasets.
+    metadata_base:
+        Root directory for extraction metadata.
+    symbol_path:
+        Path-safe symbol string.
+    overwrite:
+        Whether to overwrite an existing weekly processed dataset.
+
+    Returns
+    -------
+    Dict with keys: ``processed_path``, ``manifest_path``, ``dataset_version``,
+    ``row_count``.
+    """
+    produced_at = datetime.now(timezone.utc)
+
+    # Load daily processed Parquet
+    daily_dir = Path(processed_base) / daily_version
+    daily_parquet = daily_dir / f"{daily_version}.parquet"
+    if not daily_parquet.exists():
+        raise FileNotFoundError(
+            f"Daily processed dataset not found: {daily_parquet}"
+        )
+
+    daily_df = pd.read_parquet(daily_parquet)
+
+    # Ensure timestamp is a UTC DatetimeIndex for resampling
+    if "timestamp" in daily_df.columns:
+        daily_df = daily_df.set_index("timestamp")
+    daily_df.index = pd.to_datetime(daily_df.index, utc=True)
+
+    # Weekly OHLCV resampling — boundary: Monday 00:00 UTC (label=left, closed=left)
+    ohlcv_agg: Dict[str, str] = {
+        "open": "first",
+        "high": "max",
+        "low": "min",
+        "close": "last",
+        "volume": "sum",
+    }
+    weekly_df = (
+        daily_df[list(ohlcv_agg.keys())]
+        .resample("W-MON", label="left", closed="left")
+        .agg(ohlcv_agg)
+        .dropna(subset=["close"])
+        .reset_index()
+    )
+    weekly_df = weekly_df.rename(columns={"index": "timestamp"})
+
+    # Derive weekly version string
+    if weekly_version is None:
+        weekly_version = daily_version.replace("_1D_", "_1W_")
+
+    # Write processed weekly Parquet
+    weekly_dir = Path(processed_base) / weekly_version
+    weekly_dir.mkdir(parents=True, exist_ok=True)
+    weekly_parquet = weekly_dir / f"{weekly_version}.parquet"
+    if weekly_parquet.exists() and not overwrite:
+        raise FileExistsError(
+            f"Weekly dataset already exists: {weekly_parquet}. "
+            "Pass overwrite=True to replace."
+        )
+    weekly_df.to_parquet(weekly_parquet, index=False)
+    logger.info("Weekly Parquet written: %s (%d rows)", weekly_parquet, len(weekly_df))
+
+    # Write weekly manifest
+    manifest_path = _write_manifest(
+        dataset_version=weekly_version,
+        raw_file_path=str(daily_parquet),
+        metadata_file_path="resampled_from_daily",
+        row_count_raw=len(daily_df),
+        row_count_processed=len(weekly_df),
+        derived_fields=[],
+        atr_warmup_rows=0,
+        epoch_timestamp=str(weekly_df["timestamp"].iloc[0]) if len(weekly_df) else "",
+        produced_at=produced_at,
+        processed_base=processed_base,
+    )
+
+    logger.info(
+        "Weekly resample complete: version=%s  rows=%d",
+        weekly_version,
+        len(weekly_df),
+    )
+
+    return {
+        "processed_path": weekly_parquet,
+        "manifest_path": manifest_path,
+        "dataset_version": weekly_version,
+        "row_count": len(weekly_df),
+    }
+
+
 # ── Internal helpers ───────────────────────────────────────────────────────
 
 
@@ -372,7 +489,7 @@ def _write_manifest(
         "derived_fields": derived_fields,
         "coordinate_system_version": "v1",
         "atr_warmup_rows": atr_warmup_rows,
-        "epoch_timestamp": epoch_timestamp,
+        "bar_index_epoch_timestamp": epoch_timestamp,
         "produced_at": produced_at.isoformat(),
     }
 

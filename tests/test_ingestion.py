@@ -164,7 +164,7 @@ def test_manifest_schema(synthetic_df, pipeline_args):
         "dataset_version", "source_raw_file", "source_metadata",
         "validation_passed", "row_count_raw", "row_count_processed",
         "derived_fields", "coordinate_system_version",
-        "atr_warmup_rows", "epoch_timestamp", "produced_at",
+        "atr_warmup_rows", "bar_index_epoch_timestamp", "produced_at",
     ]
     for key in required_keys:
         assert key in manifest, f"Manifest missing key: {key}"
