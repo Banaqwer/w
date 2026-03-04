@@ -111,6 +111,23 @@ BTC/USD chart segment during Phase 3 adjusted-angles validation.
 
 ---
 
+### Assumption 15 — Early COINBASE:BTCUSD daily history gaps
+**Date:** 2026-03-04
+**Assumption:** Early `COINBASE:BTCUSD` daily history (pre-approximately 2015) may contain
+multi-day gaps. The operator should expect `max_allowed_missing_bars` to require documented
+relaxation for long-history ingestion. Any such relaxation must be recorded in `DECISIONS.md`.
+A relaxed-gap dataset is not equivalent to a fully gap-free dataset and must be labeled
+accordingly (e.g. with a manifest flag or filename suffix indicating relaxed-gap status).
+**Reason:** Early exchange history is incomplete; requiring strict gap checks would
+reject otherwise usable long-history data without a clear record of the trade-off.
+**What it approximates:** A fully continuous daily dataset from inception.
+**How it will be tested:** During Phase 1 ingestion, the actual gap count and maximum
+gap length for pre-2015 bars will be logged. Any relaxation of `max_allowed_missing_bars`
+beyond the default will be recorded in DECISIONS.md before the dataset is accepted.
+**Status:** Provisional. Must be revisited once real ingestion data is available.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date
