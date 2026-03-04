@@ -373,24 +373,24 @@ Official experiments reference the processed dataset version string, not the raw
 
 ## Section 5 — Repo Structure Check, Including Explicit Additions
 
-### Current state of `/home/user/w/` (the git repo root)
+### Current state of the git repo root
 ```
-/home/user/w/
+(repo root)/
 ├── .git/
-├── jenkins_repo_docs_final/        ← project root (control files + docs)
-│   ├── CLAUDE.md                   ← master instructions (source-of-truth priority 1)
-│   ├── README.md
-│   ├── PROJECT_STATUS.md
-│   ├── DECISIONS.md
-│   ├── ASSUMPTIONS.md
-│   ├── docs/
-│   │   ├── ai/ai_team_operating_protocol.md
-│   │   ├── data/data_spec.md
-│   │   ├── handoff/                (prd · blueprint · task_breakdown)
-│   │   └── prompts/                (phase0+1 builder/reviewer/auditor)
-│   └── references/
-│       ├── notes/                  (chapter notes · origin notes · jttl notes)
-│       └── pdfs/                   (source book)
+├── CLAUDE.md                   ← master instructions (source-of-truth priority 1)
+├── README.md
+├── PROJECT_STATUS.md
+├── DECISIONS.md
+├── ASSUMPTIONS.md
+├── docs/
+│   ├── ai/ai_team_operating_protocol.md
+│   ├── data/data_spec.md
+│   ├── handoff/                (prd · blueprint · task_breakdown)
+│   ├── phase0_builder_output.md
+│   └── prompts/                (phase0+1 builder/reviewer/auditor)
+├── references/
+│   ├── notes/                  (chapter notes · origin notes · jttl notes)
+│   └── pdfs/                   (source book)
 ├── secretScienceofStockMarket 66 (1).pdf   ← duplicate PDFs (not in docs tree)
 ├── secretScienceofStockMarket 66.pdf
 └── secretScienceofStockMarket_text (1) - hh.pdf
@@ -400,12 +400,12 @@ Official experiments reference the processed dataset version string, not the raw
 Code layer is absent — correct for Phase 0. No structural changes to docs
 are needed before Phase 1.
 
-### Phase 1 additions (code directories created at project root)
-All Phase 1 code directories are created inside `jenkins_repo_docs_final/`
-alongside the existing `docs/` and `references/` folders, consistent with A9.
+### Phase 1 additions (code directories created at repo root)
+All Phase 1 code directories are created at the repo root alongside the
+existing `docs/` and `references/` folders, consistent with A9.
 
 ```
-jenkins_repo_docs_final/
+(repo root)/
 ├── [existing docs as above]
 │
 ├── configs/               ← ADDITION (see justification below)
@@ -729,7 +729,7 @@ def get_angle_scale_basis(df: pd.DataFrame) -> dict:
 ## Section 9 — Minimum Python Package / Plumbing Requirements
 
 ### `pyproject.toml`
-A `pyproject.toml` at the project root (`jenkins_repo_docs_final/`) defines the
+A `pyproject.toml` at the repo root defines the
 package, its dependencies, and the test runner configuration. This is required so
 that `pytest` can discover tests and so that imports work consistently across modules.
 
@@ -875,3 +875,38 @@ is a disputed architectural decision.
 
 ---
 *Builder Phase 0 · Revised · Branch: `claude/read-phase-0-docs-W8kVW` · 2026-03-03*
+
+---
+
+## Post-Cleanup Review — 2026-03-04
+
+### Scope
+Review of canonical files only (`docs/phase0_builder_output.md`, `ASSUMPTIONS.md`)
+after duplicate cleanup (PR #6 removed `jenkins_repo_docs_final/`).
+
+### Blocker D2 — pytest dependency classification
+**Status: RESOLVED.**
+`pytest>=8.0` is correctly in `[project.optional-dependencies] dev` (Section 9),
+not in `[project] dependencies`. Fixed by PR #5, merged 2026-03-04.
+
+### Duplicate active copies
+**Status: RESOLVED.**
+`jenkins_repo_docs_final/` was deleted by PR #6. Only one copy of each
+canonical file exists in the repo. No archival or shadow copies remain.
+
+### Stale path references (fixed in this review)
+Section 5 and Section 9 contained 4 references to `jenkins_repo_docs_final/`
+as the project root. These were updated in this review to reflect the actual
+repo root structure after the duplicate cleanup.
+
+### ASSUMPTIONS.md
+15 assumptions logged (1–15), all with date, reason, approximation,
+test plan, and provisional status. No gaps, no orphaned references.
+
+### Verdict: **PASS**
+
+### Phase 1 may begin.
+
+All Phase 0 deliverables are present, no unresolved blockers remain,
+and the canonical documents are internally consistent with the current
+repo structure.
