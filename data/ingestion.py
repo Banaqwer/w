@@ -50,11 +50,11 @@ def run_ingestion_pipeline(
     pull_date: str,
     dataset_version: str,
     atr_windows: Optional[List[int]] = None,
-    raw_base: str = "data/raw/tradingview_mcp",
+    raw_base: str = "data/raw/coinbase_rest",
     processed_base: str = "data/processed",
     metadata_base: str = "data/metadata/extractions",
     validation_config: Optional[dict] = None,
-    extraction_method: str = "tradingview-mcp",
+    extraction_method: str = "coinbase_rest_ccxt",
     mcp_tool_name: str = "",
     user_note: str = "",
     overwrite: bool = False,
@@ -205,7 +205,7 @@ def _write_raw(
 ) -> Path:
     raw_dir = Path(raw_base) / symbol_path / timeframe
     raw_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"tvmcp_{symbol_path}_{timeframe}_UTC_{pull_date}.csv"
+    filename = f"cbrest_{symbol_path}_{timeframe}_UTC_{pull_date}.csv"
     raw_path = raw_dir / filename
     df.to_csv(raw_path, index=False)
     logger.debug("Raw file written: %s (%d rows)", raw_path, len(df))
@@ -237,7 +237,7 @@ def _write_extraction_metadata(
     meta_dir = Path(metadata_base)
     meta_dir.mkdir(parents=True, exist_ok=True)
 
-    filename = f"tvmcp_{symbol_path}_{timeframe}_UTC_{pull_date}.json"
+    filename = f"cbrest_{symbol_path}_{timeframe}_UTC_{pull_date}.json"
     meta_path = meta_dir / filename
 
     first_ts = str(df["timestamp"].iloc[0]) if len(df) else ""
@@ -306,7 +306,7 @@ def _write_failure_report(
 ) -> None:
     meta_dir = Path(metadata_base)
     meta_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"tvmcp_{symbol_path}_{timeframe}_UTC_{pull_date}_FAILED.json"
+    filename = f"cbrest_{symbol_path}_{timeframe}_UTC_{pull_date}_FAILED.json"
     fail_path = meta_dir / filename
     report = {
         "status": "FAILED",

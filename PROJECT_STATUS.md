@@ -25,15 +25,19 @@
 - `data/loader.py` — load processed datasets, raw files, manifests, extraction metadata
 - `modules/__init__.py`, `signals/__init__.py`, `backtest/__init__.py`, `research/__init__.py` — package stubs
 - `tests/test_validation.py`, `tests/test_coordinate_system.py`, `tests/test_ingestion.py` — 59 tests, all passing
-- Data directory structure: `data/raw/tradingview_mcp/`, `data/processed/`, `data/metadata/extractions/`
+- Data directory structure: `data/raw/coinbase_rest/`, `data/processed/`, `data/metadata/extractions/`
 
 #### Open Phase 1 items
-- **M1 (CRITICAL):** `tradingview-mcp` has no bulk historical OHLCV tool.
-  Select an acquisition method (see mcp_extraction_runbook.md §2) and record in `DECISIONS.md`.
-- **M2:** Assumption 8 (direct 4H pull) is invalidated. Update `ASSUMPTIONS.md` once acquisition method is confirmed.
-- **M3:** Confirm `COINBASE:BTCUSD` symbol string format for the chosen acquisition source.
+- **M1 — RESOLVED (2026-03-04):** `tradingview-mcp` has no bulk historical OHLCV tool.
+  Official acquisition method selected: **Coinbase REST API via `ccxt`**.
+  Decision recorded in `DECISIONS.md` 2026-03-04 change log.
+- **M2 — RESOLVED (2026-03-04):** Assumption 8 (direct 4H pull from MCP) has been
+  invalidated and updated in `ASSUMPTIONS.md`. Assumption 16 added.
+  4H will be pulled natively from Coinbase REST API via `ccxt`.
+- **M3 — RESOLVED (2026-03-04):** Coinbase REST API symbol is `BTC/USD` (ccxt format)
+  which maps to `COINBASE:BTCUSD`. Symbol confirmed consistent with canonical reference.
 - **M5:** Set `dataset.current_version` in `configs/default.yaml` once first pull date is known.
-- First official raw dataset pull not yet executed — blocked on M1.
+- First official raw dataset pull not yet executed — acquisition method now confirmed; ready to pull.
 
 ## Confirmed project decisions
 - Python is the official research and testing environment
@@ -48,12 +52,15 @@
 - Daily / 4H / Weekly are the official MVP timeframes
 
 ## Immediate next actions
-1. Review mcp_extraction_runbook.md §2 and select the historical data acquisition method
-2. Record the decision in `DECISIONS.md`
-3. Update `ASSUMPTIONS.md` Assumption 8 to reflect the actual acquisition method
-4. Execute the first official daily data pull and run the ingestion pipeline
-5. Confirm dataset version and update `configs/default.yaml`
-6. Phase 1 complete when: first processed dataset exists, passes validation, manifest is written
+1. ~~Review mcp_extraction_runbook.md §2 and select the historical data acquisition method~~ — DONE
+2. ~~Record the decision in `DECISIONS.md`~~ — DONE
+3. ~~Update `ASSUMPTIONS.md` Assumption 8 to reflect the actual acquisition method~~ — DONE
+4. Install `ccxt` (`pip install ccxt`) and execute the first official daily data pull from Coinbase REST API
+5. Run the ingestion pipeline with `extraction_method="coinbase_rest_ccxt"` and `raw_base="data/raw/coinbase_rest"`
+6. Spot-check ≥ 20 bars against TradingView `COINBASE:BTCUSD` daily chart
+7. Log any discrepancies in `DECISIONS.md`; confirm dataset passes validation
+8. Confirm dataset version and update `configs/default.yaml` `dataset.current_version`
+9. Phase 1 complete when: first processed dataset exists, passes validation, manifest is written
 
 ## Success condition for Phase 1
 Phase 1 is complete when:

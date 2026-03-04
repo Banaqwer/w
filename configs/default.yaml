@@ -22,7 +22,7 @@ weekly_boundary: "Monday 00:00 UTC"     # weekly bar start
 
 # ── Storage paths ────────────────────────────────────────────────────────
 paths:
-  raw: "data/raw/tradingview_mcp"
+  raw: "data/raw/coinbase_rest"
   processed: "data/processed"
   metadata: "data/metadata/extractions"
   reports: "reports"
@@ -35,8 +35,11 @@ dataset:
 
 # ── Data acquisition ────────────────────────────────────────────────────
 acquisition:
-  mcp_server: "tradingview-mcp"
-  method_4h: "direct"                   # "direct" or "resample_from_1H"
+  method: "coinbase_rest_ccxt"          # official historical OHLCV source (M1 resolved 2026-03-04)
+  ccxt_exchange: "coinbase"             # ccxt exchange id
+  ccxt_symbol: "BTC/USD"               # ccxt symbol (= COINBASE:BTCUSD on TradingView)
+  mcp_server: "tradingview-mcp"         # retained for current-bar snapshot sanity checks only
+  method_4h: "direct"                   # direct native 4H pull from Coinbase REST via ccxt
   method_weekly: "resample_from_1D"     # "direct" or "resample_from_1D"
 
 # ── Derived fields ───────────────────────────────────────────────────────

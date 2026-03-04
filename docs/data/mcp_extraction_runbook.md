@@ -261,26 +261,30 @@ Restart Claude Desktop after adding this configuration.
 
 ## Section 6 — Open Issues
 
-| ID | Issue | Impact | Recommended action |
+| ID | Issue | Impact | Status |
 |---|---|---|---|
-| **M1** | `tradingview-mcp` has no bulk historical OHLCV tool | **Critical** — blocks first official dataset | Choose acquisition method from Section 2.2 options; record in DECISIONS.md |
-| **M2** | Assumption 8 (direct 4H pull) is invalidated | High — affects 4H acquisition policy | Update ASSUMPTIONS.md Assumption 8; record new decision in DECISIONS.md |
-| **M3** | `coin_analysis` symbol format: "BTCUSD" vs "BTCUSDT" | Medium — symbol mismatch risk | Confirm correct symbol for COINBASE exchange before any live call |
-| **M4** | TradingView rate limiting | Medium — affects scraping-based approaches | Use conservative delay intervals; document rate-limit behavior when observed |
-| **M5** | First official dataset version string not yet committed to config | Low — blocks dataset production | Confirm pull date and set `dataset.current_version` in `configs/default.yaml` |
+| **M1** | `tradingview-mcp` has no bulk historical OHLCV tool | ~~Critical — blocks first official dataset~~ | **RESOLVED 2026-03-04** — Official method: Coinbase REST API via `ccxt`. See `DECISIONS.md` 2026-03-04 change log. |
+| **M2** | Assumption 8 (direct 4H pull) is invalidated | ~~High — affects 4H acquisition policy~~ | **RESOLVED 2026-03-04** — `ASSUMPTIONS.md` Assumption 8 invalidated; Assumption 16 added. 4H via Coinbase REST `ccxt`. |
+| **M3** | `coin_analysis` symbol format: "BTCUSD" vs "BTCUSDT" | Medium — symbol mismatch risk | **RESOLVED 2026-03-04** — `ccxt` Coinbase symbol is `BTC/USD`; confirmed equivalent to `COINBASE:BTCUSD`. For MCP snapshot use: `symbol="BTCUSD", exchange="COINBASE"`. |
+| **M4** | TradingView rate limiting | Low (MCP now sanity-check only) | Monitor if `coin_analysis` calls are throttled during spot checks; use conservative delay intervals. |
+| **M5** | First official dataset version string not yet committed to config | Low — blocks dataset production | Set `dataset.current_version` in `configs/default.yaml` after first pull. |
 
 ---
 
 ## Section 7 — Checklist Before First Official Dataset Pull
 
-- [ ] Acquisition method selected and recorded in `DECISIONS.md` (resolves M1)
-- [ ] Assumption 8 updated in `ASSUMPTIONS.md` (resolves M2)
-- [ ] Symbol string confirmed for chosen acquisition source (resolves M3)
-- [ ] `configs/default.yaml` `dataset.current_version` set to final version string
-- [ ] `data/raw/tradingview_mcp/COINBASE_BTCUSD/1D/` directory exists
+- [x] Acquisition method selected and recorded in `DECISIONS.md` (resolves M1)
+- [x] Assumption 8 updated in `ASSUMPTIONS.md`; Assumption 16 added (resolves M2)
+- [x] Symbol string confirmed for chosen acquisition source: `BTC/USD` via `ccxt` Coinbase (resolves M3)
+- [ ] `configs/default.yaml` `dataset.current_version` set to final version string after pull
+- [ ] `data/raw/coinbase_rest/COINBASE_BTCUSD/1D/` directory created on first pull
 - [ ] `data/metadata/extractions/` directory exists
-- [ ] Ingestion pipeline tested with synthetic data (done — see `tests/test_ingestion.py`)
-- [ ] Validation checks confirmed working (done — see `tests/test_validation.py`)
+- [x] Ingestion pipeline tested with synthetic data (done — see `tests/test_ingestion.py`)
+- [x] Validation checks confirmed working (done — see `tests/test_validation.py`)
+- [ ] `ccxt` installed (`pip install ccxt`) in project environment
+- [ ] First official daily raw pull executed: `cbrest_COINBASE_BTCUSD_1D_UTC_<date>.csv`
+- [ ] ≥ 20 bars spot-checked against TradingView `COINBASE:BTCUSD` daily chart
+- [ ] Any discrepancies > 0.1% logged in `DECISIONS.md`
 
 ---
 
