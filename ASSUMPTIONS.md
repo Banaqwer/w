@@ -5,9 +5,9 @@ Use this file to log every approximation, temporary proxy, or unresolved impleme
 ## Current assumptions
 1. The source material is being translated into a testable quant framework, not accepted as proven alpha.
 2. Structural pivot/origin selection is a research problem; multiple methods will be tested.
-3. TradingView MCP extraction can provide sufficiently reliable historical candles for MVP acquisition, subject to validation.
+3. ~~TradingView MCP extraction can provide sufficiently reliable historical candles for MVP acquisition, subject to validation.~~ **INVALIDATED 2026-03-04** — `tradingview-mcp` provides only a current-bar snapshot, not bulk historical arrays. Official acquisition method is now Coinbase REST API via `ccxt` (see `DECISIONS.md` change log and Assumption 16).
 4. Official experiments will use normalized saved datasets, not live bridge queries.
-5. Direct 4H extraction is preferred if complete and stable; otherwise a documented resampling fallback will be used.
+5. ~~Direct 4H extraction is preferred if complete and stable; otherwise a documented resampling fallback will be used.~~ **SUPERSEDED 2026-03-04** — 4H is now pulled natively from Coinbase REST API via `ccxt`. Resampling fallback from 1H applies if native 4H history is insufficient (see `DECISIONS.md` 2026-03-04 and Assumption 16).
 6. Weekly bars will use a fixed UTC-based rule, with Monday 00:00 UTC as the default interpretation unless changed in `DECISIONS.md`.
 7. Advanced geometric modules remain experimental until MVP modules are validated.
 
@@ -15,18 +15,18 @@ Use this file to log every approximation, temporary proxy, or unresolved impleme
 
 ## Phase 0 provisional assumptions (added 2026-03-03)
 
-### Assumption 8 — 4H acquisition method
+### Assumption 8 — 4H acquisition method (**INVALIDATED 2026-03-04**)
 **Date:** 2026-03-03
-**Assumption:** Direct native 4H candle extraction from the `tradingview-mcp` bridge is
+**Assumption:** ~~Direct native 4H candle extraction from the `tradingview-mcp` bridge is
 available and sufficiently complete for `COINBASE:BTCUSD`. Use direct pull as the default
-for Phase 1 ingestion.
-**Reason:** DECISIONS.md specifies "prefer direct extraction if reliable." Before empirical
-testing, direct pull is the optimistic default.
-**What it approximates:** Full native 4H history from TradingView.
-**How it will be tested:** In Phase 1, pull 4H data and check bar count, coverage depth,
-and continuity. If gaps or shallow history are found, switch to documented Python resampling
-from 1H or lower and record the change in DECISIONS.md.
-**Status:** Provisional. Will be confirmed or overridden early in Phase 1.
+for Phase 1 ingestion.~~
+**Invalidation reason:** `tradingview-mcp` does not provide bulk historical OHLCV arrays
+of any timeframe. The `coin_analysis` tool returns only a single current-bar snapshot.
+Direct 4H pull from the MCP bridge is not possible.
+**Superseded by:** Assumption 16. 4H candles will be pulled natively from the Coinbase
+REST API via `ccxt`, or resampled from 1H if native 4H depth is insufficient.
+**Decision recorded in:** `DECISIONS.md` 2026-03-04 change log.
+**Status:** INVALIDATED.
 
 ### Assumption 9 — Weekly data source
 **Date:** 2026-03-03
@@ -125,6 +125,34 @@ reject otherwise usable long-history data without a clear record of the trade-of
 gap length for pre-2015 bars will be logged. Any relaxation of `max_allowed_missing_bars`
 beyond the default will be recorded in DECISIONS.md before the dataset is accepted.
 **Status:** Provisional. Must be revisited once real ingestion data is available.
+
+### Assumption 16 — Official historical OHLCV acquisition via Coinbase REST API
+**Date:** 2026-03-04
+**Assumption:** The official method for acquiring BTC/USD historical OHLCV data for MVP
+is the Coinbase REST API accessed through the `ccxt` Python library.
+- `ccxt` exchange id: `coinbase`
+- Symbol (ccxt format): `BTC/USD`
+- Canonical TradingView reference: `COINBASE:BTCUSD`
+- Primary timeframe: `1d` (daily)
+- Confirmation timeframe: `4h` (direct native pull from Coinbase REST)
+- Structural timeframe: `1w` (Python resampling from `1d` processed dataset)
+- UTC timestamps: native — Coinbase API returns UTC millisecond timestamps
+- No API key required for public historical OHLCV
+- Daily history depth: approximately 2015 to present
+- 4H history depth: approximately 2017 to present
+**Reason:** `tradingview-mcp` cannot provide bulk historical OHLCV (Assumption 3
+invalidated). Coinbase is the canonical exchange for the project symbol. The REST API
+is the direct upstream source for TradingView's `COINBASE:BTCUSD` series. `ccxt` provides
+a stable, well-maintained, paginating Python client with UTC normalisation.
+**What it approximates:** The `COINBASE:BTCUSD` TradingView data series for all
+historical periods.
+**How it will be tested:**
+1. Pull 1D dataset and spot-check ≥ 20 bars against TradingView `COINBASE:BTCUSD` daily
+   chart for close, high, low agreement.
+2. Log any material discrepancies (> 0.1%) in `DECISIONS.md` before accepting the dataset
+   for research.
+3. Confirm 4H bar alignment to UTC 4-hour boundaries.
+**Status:** Active. Replaces Assumptions 3 and 8.
 
 ---
 
