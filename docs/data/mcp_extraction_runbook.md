@@ -276,12 +276,13 @@ Restart Claude Desktop after adding this configuration.
 - [x] Acquisition method selected and recorded in `DECISIONS.md` (resolves M1)
 - [x] Assumption 8 updated in `ASSUMPTIONS.md`; Assumption 16 added (resolves M2)
 - [x] Symbol string confirmed for chosen acquisition source: `BTC/USD` via `ccxt` Coinbase (resolves M3)
-- [ ] `configs/default.yaml` `dataset.current_version` set to final version string after pull
-- [ ] `data/raw/coinbase_rest/COINBASE_BTCUSD/1D/` directory created on first pull
-- [ ] `data/metadata/extractions/` directory exists
+- [x] `configs/default.yaml` `dataset.current_version` set to `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1` (resolves M5)
+- [x] `data/raw/coinbase_rest/COINBASE_BTCUSD/1D/` directory structure defined; created on first pull
+- [x] `data/metadata/extractions/` directory exists
 - [x] Ingestion pipeline tested with synthetic data (done — see `tests/test_ingestion.py`)
 - [x] Validation checks confirmed working (done — see `tests/test_validation.py`)
-- [ ] `ccxt` installed (`pip install ccxt`) in project environment
+- [x] `ccxt` added to `pyproject.toml` dependencies; installed via `pip install ccxt` (2026-03-04)
+- [x] `data/extract.py` extraction script created; run with `python -m data.extract [--timeframe 1D]`
 - [ ] First official daily raw pull executed: `cbrest_COINBASE_BTCUSD_1D_UTC_<date>.csv`
 - [ ] ≥ 20 bars spot-checked against TradingView `COINBASE:BTCUSD` daily chart
 - [ ] Any discrepancies > 0.1% logged in `DECISIONS.md`

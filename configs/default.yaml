@@ -30,7 +30,7 @@ paths:
 
 # ── Dataset version ──────────────────────────────────────────────────────
 dataset:
-  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-03_v1"
+  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1"
   # Update this when a new processed dataset is approved
 
 # ── Data acquisition ────────────────────────────────────────────────────

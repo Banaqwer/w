@@ -26,6 +26,10 @@
 - `modules/__init__.py`, `signals/__init__.py`, `backtest/__init__.py`, `research/__init__.py` — package stubs
 - `tests/test_validation.py`, `tests/test_coordinate_system.py`, `tests/test_ingestion.py` — 59 tests, all passing
 - Data directory structure: `data/raw/coinbase_rest/`, `data/processed/`, `data/metadata/extractions/`
+- `data/extract.py` — Coinbase REST API extraction script via ccxt (Phase 1B, 2026-03-04)
+- `ccxt>=4.0` added to `pyproject.toml` runtime dependencies; installed 2026-03-04
+  - Install command: `pip install ccxt pandas numpy pyarrow pyyaml`
+  - Or: `pip install -e ".[dev]"` (installs all runtime + dev deps from pyproject.toml)
 
 #### Open Phase 1 items
 - **M1 — RESOLVED (2026-03-04):** `tradingview-mcp` has no bulk historical OHLCV tool.
@@ -36,8 +40,10 @@
   4H will be pulled natively from Coinbase REST API via `ccxt`.
 - **M3 — RESOLVED (2026-03-04):** Coinbase REST API symbol is `BTC/USD` (ccxt format)
   which maps to `COINBASE:BTCUSD`. Symbol confirmed consistent with canonical reference.
-- **M5:** Set `dataset.current_version` in `configs/default.yaml` once first pull date is known.
-- First official raw dataset pull not yet executed — acquisition method now confirmed; ready to pull.
+- **M5 — RESOLVED (2026-03-04):** `dataset.current_version` set to
+  `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1` in `configs/default.yaml`.
+- First official raw dataset pull not yet executed — extraction script ready at
+  `data/extract.py`; run with `python -m data.extract --timeframe 1D`.
 
 ## Confirmed project decisions
 - Python is the official research and testing environment
@@ -56,12 +62,13 @@
 1. ~~Review mcp_extraction_runbook.md §2 and select the historical data acquisition method~~ — DONE
 2. ~~Record the decision in `DECISIONS.md`~~ — DONE
 3. ~~Update `ASSUMPTIONS.md` Assumption 8 to reflect the actual acquisition method~~ — DONE
-4. Install `ccxt` (`pip install ccxt`) and execute the first official daily data pull from Coinbase REST API
-5. Run the ingestion pipeline with `extraction_method="coinbase_rest_ccxt"` and `raw_base="data/raw/coinbase_rest"`
-6. Spot-check ≥ 20 bars against TradingView `COINBASE:BTCUSD` daily chart
-7. Log any discrepancies in `DECISIONS.md`; confirm dataset passes validation
-8. Confirm dataset version and update `configs/default.yaml` `dataset.current_version`
-9. Phase 1 complete when: first processed dataset exists, passes validation, manifest is written
+4. ~~Add `ccxt` to `pyproject.toml` and install (`pip install ccxt pandas numpy pyarrow pyyaml`)~~ — DONE (2026-03-04)
+5. ~~Create `data/extract.py` extraction script~~ — DONE (2026-03-04)
+6. ~~Set `dataset.current_version` to `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1`~~ — DONE (2026-03-04)
+7. Execute the first official daily data pull: `python -m data.extract --timeframe 1D`
+8. Spot-check ≥ 20 bars against TradingView `COINBASE:BTCUSD` daily chart
+9. Log any discrepancies in `DECISIONS.md`; confirm dataset passes validation
+10. Phase 1 complete when: first processed dataset exists, passes validation, manifest is written
 
 ## Success condition for Phase 1
 Phase 1 is complete when:
