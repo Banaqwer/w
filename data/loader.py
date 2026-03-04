@@ -99,10 +99,10 @@ def load_raw(
     symbol_path: str,
     timeframe: str,
     pull_date: str,
-    base_path: str = "data/raw/tradingview_mcp",
+    base_path: str = "data/raw/coinbase_rest",
     extension: str = "csv",
 ) -> pd.DataFrame:
-    """Load a raw MCP extraction file.
+    """Load a raw Coinbase REST extraction file.
 
     Parameters
     ----------
@@ -128,7 +128,7 @@ def load_raw(
     ValueError
         If ``extension`` is not ``"csv"`` or ``"parquet"``.
     """
-    filename = f"tvmcp_{symbol_path}_{timeframe}_UTC_{pull_date}.{extension}"
+    filename = f"cbrest_{symbol_path}_{timeframe}_UTC_{pull_date}.{extension}"
     raw_path = Path(base_path) / symbol_path / timeframe / filename
 
     if not raw_path.exists():
@@ -167,7 +167,7 @@ def load_extraction_metadata(
     -------
     Parsed metadata as a dict.
     """
-    filename = f"tvmcp_{symbol_path}_{timeframe}_UTC_{pull_date}.json"
+    filename = f"cbrest_{symbol_path}_{timeframe}_UTC_{pull_date}.json"
     meta_path = Path(base_path) / filename
 
     if not meta_path.exists():

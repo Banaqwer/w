@@ -75,17 +75,24 @@ TradingView is not the source of truth for:
 - experiment outputs
 
 ### MCP bridge usage
-The user's TradingView <-> Claude MCP bridge is an approved acquisition layer.
+The user's TradingView <-> Claude MCP bridge is retained for current-bar snapshot sanity checks only.
 It may be used to:
-- pull official historical candles and metadata
-- inspect chart states
+- inspect chart states via `coin_analysis` current-bar snapshots
 - verify symbol and timeframe availability
-- export datasets for research normalization
+- visual validation and geometry sanity checks
+- comparison to source examples
+
+It must NOT be used to:
+- pull bulk historical OHLCV datasets (not supported by `tradingview-mcp`)
+- produce official research datasets
+
+Official historical OHLCV acquisition uses the **Coinbase REST API via `ccxt`**
+(see `DECISIONS.md` 2026-03-04 change log and `docs/data/data_spec.md` §3).
 
 However:
 - official experiments must run on saved, versioned, normalized datasets
 - official backtests may not rely on ad hoc live MCP queries
-- every MCP extraction must be logged and versioned
+- every extraction must be logged and versioned
 
 All official outputs must come from Python using validated datasets.
 

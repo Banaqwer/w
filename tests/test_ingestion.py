@@ -60,11 +60,11 @@ def pipeline_args(tmp_path: Path) -> dict:
         "pull_date": "2024-04-10",
         "dataset_version": "proc_COINBASE_BTCUSD_1D_UTC_2024-04-10_v1",
         "atr_windows": [14],
-        "raw_base": str(tmp_path / "raw/tradingview_mcp"),
+        "raw_base": str(tmp_path / "raw/coinbase_rest"),
         "processed_base": str(tmp_path / "processed"),
         "metadata_base": str(tmp_path / "metadata/extractions"),
-        "extraction_method": "tradingview-mcp",
-        "mcp_tool_name": "coin_analysis",
+        "extraction_method": "coinbase_rest_ccxt",
+        "mcp_tool_name": "",
         "user_note": "synthetic test run",
     }
 
