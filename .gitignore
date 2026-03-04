@@ -1,0 +1,58 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# pytest cache
+.pytest_cache/
+.cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files — raw extractions and processed datasets are NOT committed
+# (they are large and must be versioned separately)
+data/raw/tradingview_mcp/*/*/*.csv
+data/raw/tradingview_mcp/*/*/*.parquet
+data/processed/*/
+data/metadata/extractions/*.json
+
+# Keep directory structure via .gitkeep
+!data/raw/tradingview_mcp/.gitkeep
+!data/processed/.gitkeep
+!data/metadata/extractions/.gitkeep
+
+# Log files
+logs/*.log
+logs/*.jsonl
+
+# Reports — generated outputs should not be committed as source
+reports/*.html
+reports/*.pdf
+reports/*.png
+
+# macOS
+.DS_Store
+
+# Secrets / env
+.env
+*.env
+secrets.yaml
