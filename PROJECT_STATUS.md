@@ -135,6 +135,23 @@ Phase 1 is complete when:
 - First processed dataset for `COINBASE:BTCUSD` daily is produced, validated, and version-stamped ✅
 - Dataset manifest exists and all derived fields are confirmed non-null (post-warmup) ✅
 
+### Phase 1B Review — PASS (2026-03-04)
+
+Phase 1B synthetic/offline pipeline execution reviewed and accepted.
+
+- All 10 artifacts produced and verified:
+  - 1D and 4H: raw CSV, extraction metadata JSON, processed Parquet, manifest JSON
+  - 1W: processed Parquet and manifest JSON (resampled from 1D; no separate raw CSV or extraction metadata)
+- All manifests include: `validation_passed`, `derived_fields`, `atr_warmup_rows`, `bar_index_epoch_timestamp`
+- Actual timestamps confirmed from processed Parquet files:
+  - **1D:** 2013-01-01 → 2026-03-04 (4 811 rows)
+  - **4H:** 2013-01-01 → 2026-03-04 (28 861 rows)
+  - **1W:** 2012-12-31 → 2026-03-02 (688 rows)
+- 59/59 tests pass
+- This is a **valid synthetic/offline validation run**, not the final official live Coinbase dataset milestone
+- A live rerun without `--use-synthetic` is **still required** before Phase 2 official research outputs
+- Full review: `docs/reviews/phase1b_review.md`
+
 ## Notes
 Phase 1 is complete. Phase 2 (structural pivot and impulse engine) may begin.
 When live Coinbase API access is restored, re-run the three pull commands above
