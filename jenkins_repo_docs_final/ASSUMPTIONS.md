@@ -78,6 +78,69 @@ anchoring keeps values small and reproducible from any consistent dataset versio
 **Status:** Provisional. Epoch rule must be stored in the dataset manifest to allow
 cross-dataset comparisons via re-alignment.
 
+### Assumption 13 — Minimum daily history depth
+**Date:** 2026-03-03
+**Assumption:** The target minimum daily history for BTC/USD is 10 years
+(consistent with `data_spec.md` §13 and `configs/default.yaml` `min_history_years_daily: 10`).
+**Reason:** Jenkins-style methods depend on long structural history to identify
+major swings and impulses. Ten years of daily BTC/USD data covers multiple full
+market cycles. Shorter history risks anchoring impulse detection on locally
+significant but structurally minor moves.
+**What it approximates:** The ideal of "as much history as possible," bounded by
+a practical minimum for the MVP validation to be structurally meaningful.
+**How it will be tested:** At Phase 1 ingestion, compute `(last_bar - first_bar).days / 365.25`
+from the extracted dataset and compare to the 10-year target.
+**If actual MCP coverage is shorter than 10 years:**
+- Do not fail ingestion; proceed with available data.
+- Log a warning with the actual coverage depth.
+- Note the coverage gap in the dataset manifest.
+- Mark any research results produced from that dataset as having limited structural
+  history depth. Do not treat them as equivalent to results from a 10-year dataset.
+  Record the coverage shortfall in `DECISIONS.md` before proceeding.
+**Status:** Provisional. Applied as a warning threshold, not a hard failure.
+
+---
+
+### Assumption 14 — Definition of "material missing bars"
+**Date:** 2026-03-03
+**Assumption:** For MVP, "material missing bars" is defined as **any missing bar
+count greater than zero**, unless a specific documented exception is approved and
+recorded in `DECISIONS.md`. The config setting `max_allowed_missing_bars: 0`
+enforces this.
+**Reason:** Jenkins-style time-count logic and squaring-the-range methods are
+sensitive to bar counts and row continuity. A single missing bar can shift all
+downstream time projections by one bar. The conservative default avoids silent
+drift in time-sensitive results.
+**What it approximates:** A zero-tolerance missing-data policy for the official
+MVP dataset.
+**How it will be tested:** The validation pipeline raises an exception and writes
+a failure report when any missing bar is detected. Tests cover both the pass case
+(complete sequence) and the fail case (deliberate gap).
+**When to override:** If a source data gap is unavoidable (e.g. exchange downtime
+with confirmed zero trading), a documented exception may be approved. The exception
+must: name the specific timestamps, state the cause, record the action taken
+(quarantine, label, or skip), and be logged in `DECISIONS.md`.
+**Status:** Provisional. Strict default. Any relaxation requires DECISIONS.md entry.
+
+---
+
+### Assumption 15 — ATR warmup NaN rows
+**Date:** 2026-03-03
+**Assumption:** Rolling ATR computation produces expected NaN values for the first
+n−1 rows of each `atr_n` field (e.g. `atr_14` has NaN for rows 0–12). These NaN
+rows are **not validation errors** and do not cause ingestion to fail.
+**Reason:** Rolling windows cannot be computed before sufficient observations
+accumulate. This is standard behavior for any rolling statistic.
+**What it approximates:** A complete ATR series; the warmup period is data loss
+inherent to the rolling window method.
+**How it will be tested:** Tests explicitly confirm that `atr_14` is NaN for rows
+0–12 and non-null for rows 13 onward on a synthetic 100-row dataset.
+**If warmup rows are a problem:** If ATR values are needed at the very start of
+a dataset (e.g. for an impulse that occurs in the first 14 bars), this must be
+handled by extending the raw extract to provide sufficient pre-history. Do not
+use forward-filled or invented ATR values.
+**Status:** Documented expected behavior. Not a blocker.
+
 ---
 
 ## Logging rule

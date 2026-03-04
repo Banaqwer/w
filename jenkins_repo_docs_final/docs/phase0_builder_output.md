@@ -52,7 +52,7 @@ Backtest / ablation / walk-forward validation
 | Confirmation TF | 4H |
 | Structural TF | Weekly |
 | Weekly boundary | Monday 00:00 UTC → next Monday 00:00 UTC |
-| Missing bar policy | Detect, log, fail validation if material |
+| Missing bar policy | Detect, log, fail validation. "Material" = any count > 0 unless a documented exception is approved in DECISIONS.md (see Assumption 14). |
 | OHLC fill-forward | Prohibited in official MVP dataset |
 
 ### Core object interfaces (from CLAUDE.md + blueprint)
@@ -65,10 +65,19 @@ quality_score, detector_name
 
 **`Projection`**
 ```python
-module_name, impulse_id,
-projected_time, projected_price,
-time_band, price_band,
-direction_hint, raw_score
+module_name,        # str: name of the module that produced this projection
+impulse_id,         # str: identifier of the source Impulse
+projected_time,     # datetime: central/best-estimate projected time
+projected_price,    # float: central/best-estimate projected price
+time_band,          # tuple[datetime, datetime]: (earliest, latest) time window
+                    #   Both datetimes are UTC. The band is inclusive.
+                    #   Modules that produce point projections set both equal to projected_time.
+price_band,         # tuple[float, float]: (price_low, price_high) price window
+                    #   price_low <= price_high always. Both are in the same price units
+                    #   as the processed dataset. Modules that produce point projections
+                    #   set both equal to projected_price.
+direction_hint,     # str: one of "support" | "resistance" | "turn" | "ambiguous"
+raw_score,          # float: [0.0, 1.0] module-internal confidence score
 ```
 
 **`ForecastZone`**
@@ -92,18 +101,25 @@ present in data_spec.md §17. `COINBASE:BTCUSD` → `COINBASE_BTCUSD` in paths.
 
 ```
 data/raw/tradingview_mcp/COINBASE_BTCUSD/<timeframe>/
-  tvmcp_COINBASE_BTCUSD_1D_UTC_<pull-date>.csv (or .parquet)
-  tvmcp_COINBASE_BTCUSD_4H_UTC_<pull-date>.csv
-  tvmcp_COINBASE_BTCUSD_1W_UTC_<pull-date>.csv
+  tvmcp_COINBASE_BTCUSD_1D_UTC_<pull-date>.csv (or .parquet)   ← direct extraction
+  tvmcp_COINBASE_BTCUSD_4H_UTC_<pull-date>.csv                 ← direct extraction
+  # 1W raw path: RESERVED — not used under current MVP Assumption 9.
+  # Weekly bars are produced by Python resampling from the daily processed
+  # dataset, not by a separate MCP extraction. If Assumption 9 is overridden
+  # and direct weekly pull is adopted, a 1W raw file following the same naming
+  # convention would be added here and Assumption 9 must be updated in DECISIONS.md.
 
 data/processed/<dataset_version>/
-  proc_COINBASE_BTCUSD_1D_UTC_<source-date>_v1.parquet
-  proc_COINBASE_BTCUSD_4H_UTC_<source-date>_v1.parquet
-  proc_COINBASE_BTCUSD_1W_UTC_<source-date>_v1.parquet
+  proc_COINBASE_BTCUSD_1D_UTC_<source-date>_v1.parquet   ← from direct extraction
+  proc_COINBASE_BTCUSD_4H_UTC_<source-date>_v1.parquet   ← from direct extraction
+  proc_COINBASE_BTCUSD_1W_UTC_<source-date>_v1.parquet   ← resampled from 1D, not extracted
 
 data/metadata/extractions/
-  tvmcp_COINBASE_BTCUSD_1D_UTC_<pull-date>.json
-  (one JSON sidecar per raw extraction; see Section 4 for required fields)
+  tvmcp_COINBASE_BTCUSD_1D_UTC_<pull-date>.json   ← one JSON sidecar per direct MCP extraction
+  tvmcp_COINBASE_BTCUSD_4H_UTC_<pull-date>.json
+  # No 1W extraction metadata sidecar under current MVP Assumption 9.
+  # Weekly resampling provenance is recorded in the processed dataset manifest instead.
+  # (see Section 4 for required metadata fields)
 ```
 
 ### Module map (from blueprint, with explicit additions noted in Section 5)
@@ -196,7 +212,7 @@ processed dataset before it is approved for research use:
 | `log_close` | `log(close)` using natural log |
 | `hl_range` | `high - low` |
 | `true_range` | `max(high-low, abs(high-prev_close), abs(low-prev_close))` |
-| `atr_n` | Rolling mean of true_range over configured window(s) |
+| `atr_n` | Rolling mean of true_range over configured window(s). **First n−1 rows are NaN (expected ATR warmup)**; these are not a validation error. |
 
 All derived fields must be reproducible from raw OHLCV input.
 No derived field is invented; all are computed deterministically.
@@ -213,14 +229,20 @@ No derived field is invented; all are computed deterministically.
 | Repo root layout (formerly A9) | **Closed.** Current layout is canonical. Root-level control files and docs/ stay as-is. Phase 1 code directories added alongside existing structure. |
 | MCP server identity (formerly A1 partial) | **Closed.** Server name: `tradingview-mcp`. Launch: `uv tool run --from git+https://github.com/atilaahmettaner/tradingview-mcp.git tradingview-mcp`. |
 
-### Remaining open items — must resolve before Phase 1 begins
+### Remaining open items
 
 **B1 — Exact MCP tool/function names and parameter schema**
 The server identity is known but the specific tool call names (e.g. the function
 to invoke for candle extraction), the required parameters, and the exact return
-payload format are not yet documented. The workflow skeleton in Section 4 designs
-around this gap using an interface contract. A discovery step is required at the
-start of Phase 1 to fill in the concrete tool call details.
+payload format are not yet documented.
+
+B1 is resolved **as the first task of Phase 1**, not as a prerequisite before
+Phase 1 begins. Phase 1 begins with MCP tool discovery. No ingestion
+implementation beyond discovery and setup scaffolding may proceed until B1 is
+fully documented in `docs/data/mcp_extraction_runbook.md`.
+
+The workflow skeleton in Section 4 designs around this gap using an interface
+contract that remains valid regardless of the final tool call names.
 
 **B2 — 4H acquisition method: direct pull or resample**
 Currently a provisional assumption (see Section 6). Must be confirmed by testing
@@ -255,17 +277,22 @@ regardless of the final tool call names.
 The registered server is `tradingview-mcp`.
 Launch: `uv tool run --from git+https://github.com/atilaahmettaner/tradingview-mcp.git tradingview-mcp`
 
-### Step 1 — Discovery (Phase 1 first task)
-Before writing ingestion code, call the MCP server's tool-listing endpoint to
+### Step 1 — Discovery (Phase 1 begins here)
+Phase 1 begins with this step. Call the MCP server's tool-listing endpoint to
 enumerate available tool names, parameter schemas, and return formats.
 Document the results in `docs/data/mcp_extraction_runbook.md`.
-This runbook is a **Phase 1 deliverable**.
+This runbook is the **first Phase 1 deliverable**.
+No ingestion implementation beyond this discovery step and setup scaffolding
+may proceed until `docs/data/mcp_extraction_runbook.md` is written and reviewed.
 
 ### Step 2 — Extraction call (interface contract)
 The extraction call must accept:
 ```
 symbol:    COINBASE:BTCUSD
-timeframe: 1D | 4H | 1W
+timeframe: 1D | 4H
+           # 1W is excluded from direct MCP extraction under current MVP Assumption 9.
+           # Weekly bars are resampled from the daily processed dataset in Python.
+           # If Assumption 9 is overridden, add 1W here and update DECISIONS.md.
 start:     ISO-8601 UTC date string
 end:       ISO-8601 UTC date string (or "now")
 timezone:  UTC
@@ -352,12 +379,23 @@ If validation passes:
      "validation_passed": true,
      "row_count_raw": 3650,
      "row_count_processed": 3650,
-     "derived_fields": ["bar_index", "calendar_day_index", "trading_day_index",
-                         "log_close", "hl_range", "true_range", "atr_14"],
+     "bar_index_epoch_timestamp": "ISO-8601 UTC timestamp of first bar (row 0)",
+     "derived_fields": "<generated dynamically from active config at ingestion time>",
+     "derived_fields_note": "Do not hardcode this list. The ingestion pipeline
+       populates it from config.derived_fields.* at runtime. Example for
+       atr_windows=[14]: ['bar_index', 'calendar_day_index', 'trading_day_index',
+       'log_close', 'hl_range', 'true_range', 'atr_14']. For atr_windows=[14,20]
+       it would include both 'atr_14' and 'atr_20'.",
+     "atr_warmup_rows": {"atr_14": 13},
      "coordinate_system_version": "v1",
      "produced_at": "ISO-8601 UTC"
    }
    ```
+
+   The `derived_fields` list is constructed programmatically by the ingestion
+   pipeline from the active config. Application code must never hardcode this
+   list. Any module that depends on `atr_14` being present must read the
+   manifest and confirm the field exists before use.
 
 ### Step 7 — Research handoff
 A dataset is approved for research use only when:
@@ -365,7 +403,9 @@ A dataset is approved for research use only when:
 - metadata JSON exists
 - validation passed
 - processed dataset and manifest exist
-- all derived fields are present and non-null (except documented gaps)
+- all derived fields are present; ATR warmup NaN rows (first n−1 rows per
+  configured window) are expected and not a validation error; all other
+  non-ATR derived fields must be non-null (except explicitly documented gaps)
 
 Official experiments reference the processed dataset version string, not the raw file.
 
@@ -615,9 +655,11 @@ validation:
   require_volume: false                 # flag if missing but do not fail
   fail_on_ohlc_violation: true
   fail_on_duplicate_timestamp: true
-  fail_on_missing_bar: true            # fail if continuity break is material
-  max_allowed_missing_bars: 0          # 0 = strict; raise this only with documented justification
+  fail_on_missing_bar: true            # "material" = any count > 0 (see Assumption 14)
+  max_allowed_missing_bars: 0          # 0 = strict; raise this only with a documented exception
   fail_on_future_timestamp: true
+  # ATR warmup: first n-1 rows of atr_n will be NaN; this is expected and not a validation error.
+  # Validation must NOT flag ATR warmup NaN rows as failures.
 
 # ── Module toggles ───────────────────────────────────────────────────────
 modules:
@@ -679,8 +721,23 @@ inconsistent implementations across modules.
 - No concept of "exchange-closed day" exists for BTC/USD.
 - `trading_day_index` carries the semantic of "observation count," not
   "count of days the exchange was open."
-- If later applied to equities, `trading_day_index` semantics must be revisited
-  and a market-calendar dependency added. Document that change in DECISIONS.md.
+- For gapless BTC/USD daily data, `trading_day_index` equals `bar_index`.
+  It is stored explicitly anyway for three reasons:
+  1. **Schema consistency**: every processed dataset has identical column
+     structure regardless of asset type, so downstream modules never need
+     conditional column access.
+  2. **Future non-24/7 asset support**: when equities are added (EUR/USD,
+     SPY, Gold), `trading_day_index` will differ from `bar_index` due to
+     weekends and holidays. Having the column already present means no
+     schema migration is needed.
+  3. **Gap-sensitive experiments**: if BTC/USD data has gaps (missing bars),
+     `trading_day_index` and `bar_index` diverge. Any module that counts
+     "number of bars observed" should use `trading_day_index`, while any
+     module that needs to detect gaps should compare `bar_index` to
+     `calendar_day_index`.
+- If later applied to equities, `trading_day_index` computation must be
+  revisited with a proper market-calendar dependency. Document that change
+  in DECISIONS.md.
 
 ### Fields stored into processed datasets
 All 7+ fields above are written as columns into every processed `.parquet` file.
@@ -703,6 +760,7 @@ def add_derived_fields(df: pd.DataFrame, atr_windows: list[int]) -> pd.DataFrame
     """
     Add log_close, hl_range, true_range, atr_n for each window.
     Requires 'open', 'high', 'low', 'close' columns.
+    ATR warmup: first n-1 rows of each atr_n column will be NaN (expected).
     """
     ...
 
@@ -712,7 +770,50 @@ def build_coordinate_system(df: pd.DataFrame, atr_windows: list[int]) -> pd.Data
     Returns the fully annotated DataFrame.
     """
     ...
+
+def get_angle_scale_basis(origin_bar: pd.Series, atr_col: str = "atr_14") -> dict:
+    """
+    Returns the canonical scaling basis used for ALL slope-to-angle conversions
+    in this project. This is the single authoritative definition for adjusted
+    angles (Phase 3) and any other geometry that converts slope to degrees.
+
+    Canonical scaling rule:
+      - 1 time unit  = 1 bar (bar_index increment)
+      - 1 price unit = ATR(14) at the impulse origin bar
+
+    With this basis, a slope of (1 ATR per bar) maps to 45 degrees.
+    slope_raw is in units of (price / bar); normalized_slope = slope_raw / atr_at_origin.
+    angle_degrees = arctan(normalized_slope) * (180 / pi)
+
+    No other scaling rule may be used for angle computation without recording
+    a change in DECISIONS.md.
+
+    Args:
+        origin_bar: the row of the processed DataFrame at the impulse origin.
+        atr_col: the ATR column to use as price scale (default: "atr_14").
+
+    Returns:
+        {
+            "time_unit": "bar",
+            "price_unit": atr_col,
+            "price_scale_value": float,   # ATR value at origin bar
+            "normalized_slope_formula": "slope_raw / price_scale_value",
+            "angle_formula": "arctan(normalized_slope) * (180 / pi)"
+        }
+    """
+    ...
 ```
+
+### Angle scaling contract note
+`get_angle_scale_basis` is the **mandatory entry point** for all adjusted-angle
+computation in Phase 3. The `adjusted_angles.py` module must import and call
+this function rather than defining its own scaling. This ensures that any change
+to the scaling convention propagates automatically to all angle-dependent modules.
+
+The `Impulse` object's `slope_raw` and `slope_log` fields are in raw coordinate
+units (price/bar and log-price/bar respectively). Neither field embeds an angle
+directly. All angle derivations are computed by `get_angle_scale_basis` at use
+time, not stored inside the `Impulse` object.
 
 ---
 
@@ -737,9 +838,14 @@ requires-python = ">=3.11"
 dependencies = [
     "pandas>=2.0",
     "numpy>=1.26",
-    "pyarrow>=14.0",     # parquet support
-    "pyyaml>=6.0",       # config loading
-    "pytest>=8.0",       # test runner
+    "pyarrow>=14.0",    # parquet support
+    "pyyaml>=6.0",      # config loading
+]
+
+[project.optional-dependencies]
+# Install dev dependencies with: pip install -e ".[dev]"
+dev = [
+    "pytest>=8.0",      # test runner (not a runtime dependency)
 ]
 
 [tool.setuptools.packages.find]
@@ -780,6 +886,9 @@ Covers all checks from data_spec.md §10–12:
 - missing bar detection (continuity gaps)
 - future timestamp detection
 - volume-missing flag (no failure, just flag)
+- ATR warmup NaN check: confirms that first n−1 rows of `atr_n` are NaN and
+  that validation does NOT treat these as errors
+- ATR post-warmup check: confirms rows >= n−1 are non-null for `atr_n`
 Uses synthetic DataFrames; no real data required.
 
 ### `test_ingestion.py` scope
@@ -840,9 +949,11 @@ metric for this alignment before any origin method is declared superior.
 - [x] Section 9: Python package/plumbing requirements
 - [x] Section 10: Phase 2 origin-method candidate inventory
 
-### Remaining open items before Phase 1 starts
-1. **B1** — MCP tool/function names must be discovered and documented in
-   `docs/data/mcp_extraction_runbook.md` at the start of Phase 1.
+### Remaining open items / Phase 1 gate tasks
+1. **B1** — MCP tool/function names are discovered and documented as the
+   **first task of Phase 1**. Phase 1 kickoff begins with this discovery step.
+   No ingestion implementation beyond discovery/setup scaffolding may proceed
+   until `docs/data/mcp_extraction_runbook.md` is written.
 2. **B2** — 4H acquisition method must be empirically confirmed in Phase 1;
    provisional assumption is "direct pull" (Assumption 8 above).
 3. **B3** — First official dataset version must be agreed; provisional default
