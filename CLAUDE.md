@@ -107,7 +107,7 @@ All official outputs must come from Python using validated datasets.
 - Daily
 
 ### Confirmation / execution timeframe
-- 4H
+- 6H
 
 ### Higher-structure validation timeframe
 - Weekly
