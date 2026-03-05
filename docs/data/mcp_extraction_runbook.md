@@ -167,7 +167,7 @@ The specific tool/library used here depends on the acquisition method approved i
 Step 1 — Pull raw OHLCV array
   Required fields: timestamp (UTC), open, high, low, close, volume
   Symbol:    BTC/USD via ccxt (= COINBASE:BTCUSD on TradingView)
-  Timeframe: 1D (primary), 4H (confirmation), 1W (structural via resample)
+  Timeframe: 1D (primary), 6H (confirmation), 1W (structural via resample)
   Start:     earliest available (target ≥ 10 years)
   End:       current date
 
@@ -223,7 +223,8 @@ In file paths, the colon is replaced with underscore: `COINBASE_BTCUSD`.
 | Project convention | MCP server format | Notes |
 |---|---|---|
 | `1D` | `1D` | Matches |
-| `4H` | `4h` | Case difference — normalise to project convention at ingestion |
+| `6H` | N/A | Not supported by tradingview-mcp; use Coinbase REST ccxt `6h` |
+| `4H` | `4h` | Superseded by 6H as official confirmation TF (2026-03-05) |
 | `1W` | `1W` | Matches |
 | `1h` | `1h` | Matches |
 
@@ -264,7 +265,7 @@ Restart Claude Desktop after adding this configuration.
 | ID | Issue | Impact | Status |
 |---|---|---|---|
 | **M1** | `tradingview-mcp` has no bulk historical OHLCV tool | ~~Critical — blocks first official dataset~~ | **RESOLVED 2026-03-04** — Official method: Coinbase REST API via `ccxt`. See `DECISIONS.md` 2026-03-04 change log. |
-| **M2** | Assumption 8 (direct 4H pull) is invalidated | ~~High — affects 4H acquisition policy~~ | **RESOLVED 2026-03-04** — `ASSUMPTIONS.md` Assumption 8 invalidated; Assumption 16 added. 4H via Coinbase REST `ccxt`. |
+| **M2** | Assumption 8 (direct 4H pull) is invalidated | ~~High — affects 4H acquisition policy~~ | **RESOLVED 2026-03-04; UPDATED 2026-03-05** — `ASSUMPTIONS.md` Assumption 8 invalidated; Assumption 16 added. Official confirmation TF changed from 4H to 6H per Assumption 17 and `DECISIONS.md` 2026-03-05 change log. |
 | **M3** | `coin_analysis` symbol format: "BTCUSD" vs "BTCUSDT" | Medium — symbol mismatch risk | **RESOLVED 2026-03-04** — `ccxt` Coinbase symbol is `BTC/USD`; confirmed equivalent to `COINBASE:BTCUSD`. For MCP snapshot use: `symbol="BTCUSD", exchange="COINBASE"`. |
 | **M4** | TradingView rate limiting | Low (MCP now sanity-check only) | Monitor if `coin_analysis` calls are throttled during spot checks; use conservative delay intervals. |
 | **M5** | First official dataset version string not yet committed to config | Low — blocks dataset production | Set `dataset.current_version` in `configs/default.yaml` after first pull. |
@@ -292,7 +293,7 @@ Restart Claude Desktop after adding this configuration.
 ## Section 8 — References
 
 - `docs/data/data_spec.md` — §16–18 (storage, naming, metadata requirements)
-- `DECISIONS.md` — data storage policy and 4H/weekly acquisition policy
-- `ASSUMPTIONS.md` — Assumptions 8–9 (4H and weekly acquisition)
+- `DECISIONS.md` — data storage policy and 6H/weekly acquisition policy
+- `ASSUMPTIONS.md` — Assumptions 8–9 (4H and weekly acquisition); Assumption 17 (6H policy)
 - `docs/phase0_builder_output.md` — Section 4 (MCP extraction workflow skeleton)
 - `https://github.com/atilaahmettaner/tradingview-mcp` — MCP server source

@@ -50,6 +50,7 @@ _CONFIG_PATH = Path(__file__).parent.parent / "configs" / "default.yaml"
 # ccxt timeframe strings mapped from project convention
 _TF_MAP = {
     "1D": "1d",
+    "6H": "6h",
     "4H": "4h",
     "1W": "1w",
     "1H": "1h",
@@ -74,7 +75,7 @@ def fetch_coinbase_ohlcv(
     Parameters
     ----------
     timeframe:
-        Project timeframe string (``"1D"``, ``"4H"``, ``"1H"``, ``"1W"``).
+        Project timeframe string (``"1D"``, ``"6H"``, ``"4H"``, ``"1H"``, ``"1W"``).
     since_ms:
         Start timestamp in UTC milliseconds.  Defaults to 2013-01-01.
     limit:
@@ -159,7 +160,7 @@ def generate_synthetic_ohlcv(
     Parameters
     ----------
     timeframe:
-        Project timeframe string (``"1D"``, ``"4H"``, ``"1W"``).
+        Project timeframe string (``"1D"``, ``"6H"``, ``"4H"``, ``"1W"``).
     start, end:
         ISO date strings for the date range.
     seed:
@@ -173,7 +174,7 @@ def generate_synthetic_ohlcv(
     rng = np.random.default_rng(seed)
 
     # Build timestamp grid
-    _freq_map = {"1D": "D", "4H": "4h", "1H": "h", "1W": "W-MON"}
+    _freq_map = {"1D": "D", "6H": "6h", "4H": "4h", "1H": "h", "1W": "W-MON"}
     freq = _freq_map.get(timeframe, "D")
     timestamps = pd.date_range(start=start, end=end, freq=freq, tz="UTC")
     n = len(timestamps)
@@ -227,7 +228,7 @@ def run_extraction(
     Parameters
     ----------
     timeframe:
-        Project timeframe string (``"1D"``, ``"4H"``).
+        Project timeframe string (``"1D"``, ``"6H"``, ``"4H"``).
     dataset_version:
         Processed dataset version string override.  If omitted, derived from
         config or constructed from ``pull_date``.

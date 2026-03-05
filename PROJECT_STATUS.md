@@ -43,7 +43,7 @@ reproducible log-random-walk BTC/USD-like price series from 2013-01-01.
 When the live Coinbase API is accessible, re-run without `--use-synthetic` to replace
 with real data. The pipeline, schema, manifest, and validation all pass against real data.
 
-**Commands run:**
+**Commands run (Phase 1B synthetic pull — 2026-03-04):**
 ```
 python -m data.extract --timeframe 1D \
     --version proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1 \
@@ -58,6 +58,15 @@ python -m data.extract \
     --pull-date 2026-03-04 --overwrite
 ```
 
+**NOTE (2026-03-05):** The official intraday confirmation timeframe has changed from `4H` to `6H`
+(see `DECISIONS.md` 2026-03-05 change log). The 4H dataset below is a Phase 1B historical artifact
+only. When the live Coinbase API is accessible, produce the `6H` dataset instead:
+```
+python -m data.extract --timeframe 6H \
+    --version proc_COINBASE_BTCUSD_6H_UTC_<pull-date>_v1 \
+    --pull-date <pull-date> --overwrite --use-synthetic
+```
+
 **1D dataset**
 - Earliest date pulled: 2013-01-01
 - Rows: 4 811 daily bars (2013-01-01 → 2026-03-04)
@@ -70,7 +79,7 @@ python -m data.extract \
   - `atr_warmup_rows`: 14
   - `bar_index_epoch_timestamp`: 2013-01-01 00:00:00+00:00
 
-**4H dataset**
+**4H dataset (historical artifact — superseded by 6H policy 2026-03-05)**
 - Earliest date pulled: 2013-01-01
 - Rows: 28 861 four-hour bars (2013-01-01 → 2026-03-04)
 - Raw CSV: `data/raw/coinbase_rest/COINBASE_BTCUSD/4H/cbrest_COINBASE_BTCUSD_4H_UTC_2026-03-04.csv`
@@ -95,7 +104,7 @@ python -m data.extract \
 
 #### Open Phase 1 items
 - **M1 — RESOLVED (2026-03-04):** Official acquisition method: **Coinbase REST API via `ccxt`**.
-- **M2 — RESOLVED (2026-03-04):** 4H pulled natively from Coinbase REST API via `ccxt`.
+- **M2 — RESOLVED (2026-03-04; policy updated 2026-03-05):** Intraday confirmation TF is now `6H` (native Coinbase REST via `ccxt`). Prior `4H` synthetic dataset retained as historical artifact only.
 - **M3 — RESOLVED (2026-03-04):** Symbol `BTC/USD` (ccxt) = `COINBASE:BTCUSD` (TradingView).
 - **M5 — RESOLVED (2026-03-04):** `dataset.current_version` = `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1`.
 - **M6 — RESOLVED (2026-03-04):** First validated dataset produced; manifests written and confirmed.
@@ -111,7 +120,7 @@ python -m data.extract \
 - spot market is the MVP instrument choice
 - UTC is the official timezone
 - 00:00 UTC is the official daily close
-- Daily / 4H / Weekly are the official MVP timeframes
+- Daily / **6H** / Weekly are the official MVP timeframes (**6H supersedes 4H per 2026-03-05 decision**)
 - Weekly bars are derived by resampling from 1D (`resample_from_1D` per config), not direct pull
 
 ## Immediate next actions
@@ -122,7 +131,7 @@ python -m data.extract \
 5. ~~Create `data/extract.py` extraction script~~ — DONE (2026-03-04)
 6. ~~Set `dataset.current_version` to `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1`~~ — DONE (2026-03-04)
 7. ~~Execute the first daily data pull~~ — DONE (synthetic; re-pull with live API when accessible)
-8. ~~Produce 4H dataset~~ — DONE (2026-03-04)
+8. ~~Produce 4H dataset~~ — DONE (2026-03-04; **superseded: 6H dataset required under 2026-03-05 policy**)
 9. ~~Produce weekly dataset by resampling~~ — DONE (2026-03-04)
 10. ~~Confirm manifests contain all required fields~~ — DONE (2026-03-04)
 11. When live Coinbase API is accessible: re-run pulls without `--use-synthetic` and verify ≥ 20 bars against TradingView `COINBASE:BTCUSD` chart; log discrepancies in `DECISIONS.md`
@@ -145,14 +154,16 @@ Phase 1B synthetic/offline pipeline execution reviewed and accepted.
 - All manifests include: `validation_passed`, `derived_fields`, `atr_warmup_rows`, `bar_index_epoch_timestamp`
 - Actual timestamps confirmed from processed Parquet files:
   - **1D:** 2013-01-01 → 2026-03-04 (4 811 rows)
-  - **4H:** 2013-01-01 → 2026-03-04 (28 861 rows)
+  - **4H:** 2013-01-01 → 2026-03-04 (28 861 rows) _(historical artifact; 6H dataset required going forward)_
   - **1W:** 2012-12-31 → 2026-03-02 (688 rows)
 - 59/59 tests pass
 - This is a **valid synthetic/offline validation run**, not the final official live Coinbase dataset milestone
-- A live rerun without `--use-synthetic` is **still required** before Phase 2 official research outputs
+- A live rerun without `--use-synthetic` is **still required** before Phase 2 official research outputs;
+  the confirmation-TF pull must use `--timeframe 6H` (not `4H`) per 2026-03-05 policy
 - Full review: `docs/reviews/phase1b_review.md`
 
 ## Notes
 Phase 1 is complete. Phase 2 (structural pivot and impulse engine) may begin.
-When live Coinbase API access is restored, re-run the three pull commands above
+When live Coinbase API access is restored, re-run the daily and weekly pull commands above
 (without `--use-synthetic`) to replace synthetic datasets with real OHLCV data.
+The intraday confirmation pull must use `--timeframe 6H` per the 2026-03-05 policy change.

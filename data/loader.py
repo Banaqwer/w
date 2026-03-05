@@ -109,7 +109,7 @@ def load_raw(
     symbol_path:
         Path-sanitised symbol (e.g. ``"COINBASE_BTCUSD"``).
     timeframe:
-        Timeframe string (e.g. ``"1D"``, ``"4H"``).
+        Timeframe string (e.g. ``"1D"``, ``"6H"``).
     pull_date:
         ISO date string of the extraction (e.g. ``"2026-03-03"``).
     base_path:

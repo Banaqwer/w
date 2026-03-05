@@ -1,6 +1,11 @@
 # Phase 0 Builder Output — Revised
 ## Jenkins Quant Project · Builder Agent · 2026-03-03
 
+> **Supersession note (2026-03-05):** This document is a historical Phase 0 artifact.
+> Where it states the confirmation timeframe as `4H`, that assumption has been superseded.
+> The official intraday confirmation timeframe is now `6H` (native Coinbase REST via ccxt).
+> See `DECISIONS.md` 2026-03-05 change log. All other content is preserved as-is.
+
 ---
 
 ## Section 1 — Revised Architecture Confirmation

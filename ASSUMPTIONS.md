@@ -7,7 +7,7 @@ Use this file to log every approximation, temporary proxy, or unresolved impleme
 2. Structural pivot/origin selection is a research problem; multiple methods will be tested.
 3. ~~TradingView MCP extraction can provide sufficiently reliable historical candles for MVP acquisition, subject to validation.~~ **INVALIDATED 2026-03-04** — `tradingview-mcp` provides only a current-bar snapshot, not bulk historical arrays. Official acquisition method is now Coinbase REST API via `ccxt` (see `DECISIONS.md` change log and Assumption 16).
 4. Official experiments will use normalized saved datasets, not live bridge queries.
-5. ~~Direct 4H extraction is preferred if complete and stable; otherwise a documented resampling fallback will be used.~~ **SUPERSEDED 2026-03-04** — 4H is now pulled natively from Coinbase REST API via `ccxt`. Resampling fallback from 1H applies if native 4H history is insufficient (see `DECISIONS.md` 2026-03-04 and Assumption 16).
+5. ~~Direct 4H extraction is preferred if complete and stable; otherwise a documented resampling fallback will be used.~~ **SUPERSEDED 2026-03-04** — 4H was pulled natively from Coinbase REST API via `ccxt`. **SUPERSEDED 2026-03-05** — The official intraday confirmation timeframe is now `6H` (see `DECISIONS.md` 2026-03-05 change log and Assumption 17).
 6. Weekly bars will use a fixed UTC-based rule, with Monday 00:00 UTC as the default interpretation unless changed in `DECISIONS.md`.
 7. Advanced geometric modules remain experimental until MVP modules are validated.
 
@@ -134,12 +134,12 @@ is the Coinbase REST API accessed through the `ccxt` Python library.
 - Symbol (ccxt format): `BTC/USD`
 - Canonical TradingView reference: `COINBASE:BTCUSD`
 - Primary timeframe: `1d` (daily)
-- Confirmation timeframe: `4h` (direct native pull from Coinbase REST)
+- Confirmation timeframe: ~~`4h`~~ **SUPERSEDED 2026-03-05** → `6h` (see Assumption 17)
 - Structural timeframe: `1w` (Python resampling from `1d` processed dataset)
 - UTC timestamps: native — Coinbase API returns UTC millisecond timestamps
 - No API key required for public historical OHLCV
 - Daily history depth: approximately 2015 to present
-- 4H history depth: approximately 2017 to present
+- 6H history depth: approximately 2017 to present
 **Reason:** `tradingview-mcp` cannot provide bulk historical OHLCV (Assumption 3
 invalidated). Coinbase is the canonical exchange for the project symbol. The REST API
 is the direct upstream source for TradingView's `COINBASE:BTCUSD` series. `ccxt` provides
@@ -151,8 +151,28 @@ historical periods.
    chart for close, high, low agreement.
 2. Log any material discrepancies (> 0.1%) in `DECISIONS.md` before accepting the dataset
    for research.
-3. Confirm 4H bar alignment to UTC 4-hour boundaries.
-**Status:** Active. Replaces Assumptions 3 and 8.
+3. Confirm 6H bar alignment to UTC 6-hour boundaries.
+**Status:** Active. Replaces Assumptions 3 and 8. Confirmation timeframe updated to 6H per Assumption 17.
+
+---
+
+### Assumption 17 — Official intraday confirmation timeframe is 6H
+**Date:** 2026-03-05
+**Assumption:** The official intraday confirmation timeframe for the MVP is native `6H`
+from the Coinbase REST API via `ccxt` (ccxt timeframe string: `6h`).
+This replaces the previous `4H` confirmation timeframe (Assumption 16 / `DECISIONS.md`
+2026-03-04 policy).
+- `ccxt` timeframe string: `6h`
+- Dataset naming: `cbrest_COINBASE_BTCUSD_6H_UTC_<pull-date>.csv`
+- Processed naming: `proc_COINBASE_BTCUSD_6H_UTC_<pull-date>_v1`
+- Resample fallback: from 1H native pull if 6H depth is insufficient
+- Do not mix native 6H and resampled 6H within the same official MVP experiment family
+**Reason:** Per `DECISIONS.md` 2026-03-05 change log. Native `6H` is available from
+Coinbase REST API and provides better structural alignment for Jenkins confirmation logic.
+**What it approximates:** Intraday confirmation bars previously served by `4H`.
+**How it will be tested:** Confirm 6H bar alignment to UTC 6-hour boundaries; spot-check
+≥ 10 bars against a reference source when live API is accessible.
+**Status:** Active. Supersedes `4H` confirmation policy from Assumption 16 / `DECISIONS.md` 2026-03-04.
 
 ---
 

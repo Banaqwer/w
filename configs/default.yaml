@@ -12,7 +12,7 @@ market:
 # ── Timeframes ────────────────────────────────────────────────────────────
 timeframes:
   primary: "1D"                         # Daily — main research TF
-  confirmation: "4H"                    # 4H — confirmation and execution TF
+  confirmation: "6H"                    # 6H — confirmation and execution TF (native Coinbase; supersedes 4H per 2026-03-05 decision)
   structural: "1W"                      # Weekly — higher-structure validation
 
 # ── Time conventions ──────────────────────────────────────────────────────
@@ -39,7 +39,7 @@ acquisition:
   ccxt_exchange: "coinbase"             # ccxt exchange id
   ccxt_symbol: "BTC/USD"               # ccxt symbol (= COINBASE:BTCUSD on TradingView)
   mcp_server: "tradingview-mcp"         # retained for current-bar snapshot sanity checks only
-  method_4h: "direct"                   # direct native 4H pull from Coinbase REST via ccxt
+  method_6h: "direct"                   # direct native 6H pull from Coinbase REST via ccxt
   method_weekly: "resample_from_1D"     # "direct" or "resample_from_1D"
 
 # ── Derived fields ───────────────────────────────────────────────────────

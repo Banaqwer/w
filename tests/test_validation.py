@@ -233,3 +233,37 @@ def test_missing_ohlc_column_fails():
     df = _daily_ohlcv(5).drop(columns=["low"])
     with pytest.raises(DataValidationError):
         validate_dataset(df, symbol="TEST", timeframe="1D")
+
+
+# ── 6H timeframe (official confirmation TF per 2026-03-05 policy) ─────────
+
+
+def _6h_ohlcv(n: int = 10, start: str = "2024-01-01") -> pd.DataFrame:
+    """Return a clean synthetic 6H OHLCV DataFrame with n rows."""
+    dates = pd.date_range(start=start, periods=n, freq="6h", tz="UTC")
+    return pd.DataFrame(
+        {
+            "timestamp": dates,
+            "open":  [100.0 + i for i in range(n)],
+            "high":  [105.0 + i for i in range(n)],
+            "low":   [95.0 + i for i in range(n)],
+            "close": [102.0 + i for i in range(n)],
+            "volume": [1000.0 + i * 10 for i in range(n)],
+        }
+    )
+
+
+def test_6h_clean_data_passes():
+    df = _6h_ohlcv(20)
+    result = validate_dataset(df, symbol="COINBASE:BTCUSD", timeframe="6H")
+    assert result.passed
+    assert result.row_count == 20
+    assert result.errors == []
+
+
+def test_6h_missing_bar_detected():
+    df = _6h_ohlcv(10)
+    df = df.drop(index=5).reset_index(drop=True)
+    with pytest.raises(DataValidationError):
+        validate_dataset(df, symbol="COINBASE:BTCUSD", timeframe="6H",
+                         config={"max_allowed_missing_bars": 0})
