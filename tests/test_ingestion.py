@@ -68,8 +68,41 @@ def pipeline_args(tmp_path: Path) -> dict:
         "user_note": "synthetic test run",
     }
 
+@pytest.fixture()
+def synthetic_df_6h() -> pd.DataFrame:
+    """100-row clean 6H OHLCV DataFrame."""
+    n = 100
+    dates = pd.date_range(start="2024-01-01", periods=n, freq="6h", tz="UTC")
+    return pd.DataFrame(
+        {
+            "timestamp": dates,
+            "open":  [1000.0 + i for i in range(n)],
+            "high":  [1050.0 + i for i in range(n)],
+            "low":   [950.0 + i for i in range(n)],
+            "close": [1020.0 + i for i in range(n)],
+            "volume": [5000.0 + i * 10 for i in range(n)],
+        }
+    )
 
-# ── Happy-path tests ───────────────────────────────────────────────────────
+
+@pytest.fixture()
+def pipeline_args_6h(tmp_path: Path) -> dict:
+    """Keyword arguments for a 6H ingestion pipeline run."""
+    return {
+        "symbol_tv": "COINBASE:BTCUSD",
+        "symbol_path": "COINBASE_BTCUSD",
+        "timeframe": "6H",
+        "pull_date": "2024-04-10",
+        "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2024-04-10_v1",
+        "atr_windows": [14],
+        "raw_base": str(tmp_path / "raw/coinbase_rest"),
+        "processed_base": str(tmp_path / "processed"),
+        "metadata_base": str(tmp_path / "metadata/extractions"),
+        "extraction_method": "coinbase_rest_ccxt",
+        "mcp_tool_name": "",
+        "user_note": "synthetic 6H test run",
+    }
+
 
 
 def test_pipeline_returns_expected_keys(synthetic_df, pipeline_args):
@@ -224,3 +257,32 @@ def test_validation_fail_writes_failure_report(synthetic_df, pipeline_args, tmp_
     meta_dir = Path(pipeline_args["metadata_base"])
     fail_files = list(meta_dir.glob("*_FAILED.json"))
     assert len(fail_files) == 1
+
+
+# ── 6H timeframe tests (official confirmation TF per 2026-03-05 policy) ───
+
+
+def test_6h_pipeline_returns_expected_keys(synthetic_df_6h, pipeline_args_6h):
+    result = run_ingestion_pipeline(synthetic_df_6h, **pipeline_args_6h)
+    for key in ("raw_path", "metadata_path", "processed_path",
+                "manifest_path", "validation_result", "dataset_version"):
+        assert key in result, f"Missing key: {key}"
+
+
+def test_6h_raw_file_naming(synthetic_df_6h, pipeline_args_6h):
+    result = run_ingestion_pipeline(synthetic_df_6h, **pipeline_args_6h)
+    raw_path = str(result["raw_path"])
+    assert "6H" in raw_path, f"Expected '6H' in raw path: {raw_path}"
+    assert "cbrest_COINBASE_BTCUSD_6H_UTC_2024-04-10.csv" in raw_path
+
+
+def test_6h_dataset_version_format(synthetic_df_6h, pipeline_args_6h):
+    result = run_ingestion_pipeline(synthetic_df_6h, **pipeline_args_6h)
+    version = result["dataset_version"]
+    assert version == "proc_COINBASE_BTCUSD_6H_UTC_2024-04-10_v1"
+
+
+def test_6h_processed_parquet_readable(synthetic_df_6h, pipeline_args_6h):
+    result = run_ingestion_pipeline(synthetic_df_6h, **pipeline_args_6h)
+    df = pd.read_parquet(result["processed_path"])
+    assert len(df) == 100

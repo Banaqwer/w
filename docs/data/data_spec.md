@@ -25,7 +25,7 @@ All research results must be generated from data that follows this specification
 - Daily
 
 ### Secondary execution / confirmation timeframe
-- 4H
+- 6H (**supersedes 4H — see `DECISIONS.md` 2026-03-05 change log**)
 
 ### Higher-structure validation timeframe
 - Weekly
@@ -67,7 +67,7 @@ The `tradingview-mcp` server does not provide bulk historical OHLCV arrays (see
 - Exchange: `coinbase` (Coinbase Advanced Trade)
 - Symbol (ccxt format): `BTC/USD`
 - Canonical TradingView reference symbol: `COINBASE:BTCUSD`
-- Timeframes: `1d` (primary), `4h` (confirmation), `1h` (4H resampling base if needed)
+- Timeframes: `1d` (primary), `6h` (confirmation), `1h` (6H resampling base if needed)
 - Weekly: Python resampling from `1d` processed dataset
 - Timestamps: UTC, normalized at ingestion
 
@@ -150,15 +150,18 @@ If later experiments test a different daily close:
 
 ## 8. Intraday bar convention
 
-### Official 4H policy
-Use direct native 4H extraction from the Coinbase REST API via `ccxt` if native 4H historical candles are available and complete enough for research use.
+### Official 6H policy
+Use direct native 6H extraction from the Coinbase REST API via `ccxt` if native 6H historical candles are available and complete enough for research use.
 
-If native 4H extraction is not sufficiently deep or complete, the fallback is a documented Python resampling pipeline from the 1H native pull via `ccxt`.
+If native 6H extraction is not sufficiently deep or complete, the fallback is a documented Python resampling pipeline from the 1H native pull via `ccxt`.
 
-Do not mix direct 4H and resampled 4H within the same official MVP experiment family.
+Do not mix direct 6H and resampled 6H within the same official MVP experiment family.
 
-### Official 4H convention
-- 4H bars must align exactly to UTC boundaries
+**Note:** The previous `4H` confirmation timeframe is **superseded** by `6H` as of 2026-03-05.
+See `DECISIONS.md` 2026-03-05 change log.
+
+### Official 6H convention
+- 6H bars must align exactly to UTC boundaries
 - no mixed intraday session definitions
 - any resampling logic must be documented and reproducible
 
@@ -245,7 +248,7 @@ No ad hoc resampling is allowed in notebooks without recording the method.
 ### Weekly
 - as much history as possible for long-structure validation
 
-### 4H
+### 6H
 - enough history to support meaningful confirmation testing after forecast zones are generated on daily data
 
 If the chosen acquisition workflow cannot meet these thresholds, document the limitation.
@@ -305,9 +308,9 @@ Processed official research datasets must use this format:
 
 Examples:
 - `cbrest_COINBASE_BTCUSD_1D_UTC_2026-03-04.csv`
-- `cbrest_COINBASE_BTCUSD_4H_UTC_2026-03-04.csv`
+- `cbrest_COINBASE_BTCUSD_6H_UTC_2026-03-04.csv`
 - `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1`
-- `proc_COINBASE_BTCUSD_4H_UTC_2026-03-04_v1`
+- `proc_COINBASE_BTCUSD_6H_UTC_2026-03-04_v1`
 
 Every experiment must reference the exact processed dataset version used.
 
@@ -372,7 +375,7 @@ Use these defaults unless a documented decision changes them:
 - timezone: UTC
 - daily close: 00:00 UTC
 - main timeframe: Daily
-- execution timeframe: 4H (direct native pull from Coinbase REST)
+- execution timeframe: 6H (direct native pull from Coinbase REST; supersedes 4H per 2026-03-05 decision)
 - higher timeframe: Weekly (Python resampling from Daily)
 - source-of-truth environment: Python
 - TradingView MCP role: current-bar snapshot sanity checks only
@@ -383,7 +386,7 @@ Use these defaults unless a documented decision changes them:
 ## 22. Open fields to finalize before first run
 Complete these before development begins:
 - ~~the exact MCP extraction command/workflow~~ **RESOLVED** — Coinbase REST API via `ccxt` (see §3)
-- ~~whether 4H is pulled directly in all cases or resampled in fallback conditions~~ **RESOLVED** — direct native 4H via `ccxt`; resample from 1H if depth insufficient (see §8)
+- ~~whether 4H is pulled directly in all cases or resampled in fallback conditions~~ **RESOLVED** — direct native 6H via `ccxt`; resample from 1H if depth insufficient (see §8; supersedes 4H per 2026-03-05 decision)
 - ~~data storage path implementation in the repo~~ **RESOLVED** — `data/raw/coinbase_rest/` (see §16)
 - the first dataset version to use for MVP
 - whether weekly is always resampled from daily or optionally pulled directly

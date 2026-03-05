@@ -37,9 +37,9 @@ This repository contains the planning, handoff, and reference material for build
 - market: BTC/USD
 - symbol: `COINBASE:BTCUSD`
 - research environment: Python
-- acquisition layer: TradingView MCP bridge
+- acquisition layer: Coinbase REST API via ccxt
 - main timeframe: Daily
-- confirmation timeframe: 4H
+- confirmation timeframe: 6H (supersedes 4H — see DECISIONS.md 2026-03-05)
 - structural timeframe: Weekly
 - timezone: UTC
 - daily close: 00:00 UTC

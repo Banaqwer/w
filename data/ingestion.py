@@ -71,7 +71,7 @@ def run_ingestion_pipeline(
     symbol_path:
         Path-safe symbol (e.g. ``"COINBASE_BTCUSD"``).
     timeframe:
-        Timeframe string (e.g. ``"1D"``, ``"4H"``).
+        Timeframe string (e.g. ``"1D"``, ``"6H"``).
     pull_date:
         ISO date of extraction (e.g. ``"2026-03-03"``).
     dataset_version:

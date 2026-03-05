@@ -23,13 +23,14 @@ This file records the project's frozen high-level decisions.
 - Official timezone: UTC
 - Official daily close: 00:00 UTC
 - Official main research timeframe: Daily
-- Official confirmation timeframe: 4H
+- Official confirmation timeframe: 6H (**supersedes 4H — see 2026-03-05 change log**)
 - Official higher-structure timeframe: Weekly
 
-### 4H policy
-- Pull native 4H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `4h`).
-- If native 4H history is shallower than required, resample from 1H native pull.
-- Do not mix native 4H and resampled 4H within the same official MVP experiment family.
+### 6H policy
+- Pull native 6H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `6h`).
+- If native 6H history is shallower than required, resample from 1H native pull.
+- Do not mix native 6H and resampled 6H within the same official MVP experiment family.
+- ~~4H policy~~ — **SUPERSEDED 2026-03-05** by 6H policy. See 2026-03-05 change log.
 
 ### Weekly policy
 - Weekly bars must use a fixed UTC-based weekly boundary.
@@ -61,6 +62,49 @@ If any decision in this file changes:
 
 ## Change log
 
+### 2026-03-05 — Intraday confirmation timeframe changed from 4H to 6H
+
+**Superseded rule:**
+> "Official confirmation timeframe: 4H"
+> "Pull native 4H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `4h`).
+>  If native 4H history is shallower than required, resample from 1H native pull.
+>  Do not mix native 4H and resampled 4H within the same official MVP experiment family."
+
+**Decision: Official intraday confirmation timeframe is now 6H**
+
+Native Coinbase `6H` is the official intraday confirmation timeframe for MVP.
+The previous `4H` confirmation workflow is replaced with `6H`.
+
+| Property | Old value | New value |
+|---|---|---|
+| Confirmation timeframe | `4H` | `6H` |
+| ccxt fetch timeframe | `4h` | `6h` |
+| Dataset naming | `..._4H_...` | `..._6H_...` |
+| Config key | `method_4h` | `method_6h` |
+| Resample fallback | from 1H | from 1H |
+
+**Rationale:**
+- Native `6H` is directly available from Coinbase REST API via `ccxt`.
+- `6H` provides better structural alignment for the Jenkins framework confirmation logic.
+- Operational decision recorded per change-control rule.
+
+**Updated 6H policy:**
+- Pull native 6H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `6h`).
+- If native 6H history is shallower than required, resample from 1H native pull.
+- Do not mix native 6H and resampled 6H within the same official MVP experiment family.
+
+**Dataset naming examples under new policy:**
+- Raw: `cbrest_COINBASE_BTCUSD_6H_UTC_<pull-date>.csv`
+- Processed: `proc_COINBASE_BTCUSD_6H_UTC_<pull-date>_v1`
+
+**Prior experiments affected:**
+The Phase 1B synthetic 4H dataset (`proc_COINBASE_BTCUSD_4H_UTC_2026-03-04_v1`) was produced
+before this decision and is retained as a historical artifact only.
+It must not be used for official research under the new policy.
+Any new confirmation-timeframe dataset must use the `6H` naming and `6h` ccxt timeframe.
+
+---
+
 ### 2026-03-04 — M1 Resolution: official historical OHLCV acquisition method
 
 **Superseded rule:**
@@ -83,10 +127,11 @@ discovery details. This invalidates Assumption 3 and Assumption 8 in `ASSUMPTION
 | Symbol (ccxt format) | `BTC/USD` |
 | Equivalent TradingView reference symbol | `COINBASE:BTCUSD` |
 | API authentication required | No — public historical OHLCV endpoint |
-| Timeframes available natively | `1d`, `4h`, `1h`, `1w` and lower |
+| Timeframes available natively | `1d`, `6h`, `4h`, `1h`, `1w` and lower |
 | UTC timestamp alignment | Native — Coinbase API returns UTC millisecond timestamps |
 | Expected daily history depth | ~2015 to present |
 | Expected 4H history depth | ~2017 to present |
+| Expected 6H history depth | ~2017 to present |
 | Cost | Free public API |
 
 **Rationale:**
@@ -115,7 +160,7 @@ Not used for bulk historical dataset production.
 
 **Processed dataset naming:** unchanged — `proc_<symbol>_<timeframe>_<timezone>_<source-date>_v<revision>`.
 
-**Updated 4H policy (replaces "4H policy" section above):**
+**Updated 4H policy (replaces "4H policy" section above; subsequently superseded by 6H policy — see 2026-03-05 change log):**
 - Pull native 4H candles directly from Coinbase REST API (`ccxt` `fetch_ohlcv`, timeframe `4h`).
 - If native 4H history is shallower than required, resample from 1H native pull.
 - Do not mix native 4H and resampled 4H within the same official MVP experiment family.
