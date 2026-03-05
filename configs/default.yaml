@@ -30,8 +30,8 @@ paths:
 
 # ── Dataset version ──────────────────────────────────────────────────────
 dataset:
-  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1"
-  # Update this when a new processed dataset is approved
+  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-05_v1"
+  # Updated 2026-03-05: Phase 1C synthetic pull under 6H timeframe policy
 
 # ── Data acquisition ────────────────────────────────────────────────────
 acquisition:

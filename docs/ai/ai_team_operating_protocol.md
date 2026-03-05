@@ -77,7 +77,7 @@ The system must follow this sequence:
 - Primary MVP market: BTC/USD
 - Official symbol: `COINBASE:BTCUSD`
 - Primary timeframe: Daily
-- Confirmation timeframe: 4H
+- Confirmation timeframe: 6H
 - Structural timeframe: Weekly
 - Official timezone: UTC
 - Official daily close: 00:00 UTC
