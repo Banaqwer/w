@@ -30,8 +30,10 @@ paths:
 
 # ── Dataset version ──────────────────────────────────────────────────────
 dataset:
-  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1"
-  # Update this when a new processed dataset is approved
+  current_version: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1"
+  # Phase 1C (2026-03-06): live raw 1H from repo; resampled to 1D/6H/1W
+  version_6h: "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1"
+  version_1w: "proc_COINBASE_BTCUSD_1W_UTC_2026-03-06_v1"
 
 # ── Data acquisition ────────────────────────────────────────────────────
 acquisition:

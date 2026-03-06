@@ -1,0 +1,21 @@
+{
+  "dataset_version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+  "source_raw_file": "data/raw/coinbase_rest/COINBASE_BTCUSD/1D/cbrest_COINBASE_BTCUSD_1D_UTC_2026-03-06.csv",
+  "source_metadata": "data/metadata/extractions/cbrest_COINBASE_BTCUSD_1D_UTC_2026-03-06.json",
+  "validation_passed": true,
+  "row_count_raw": 3883,
+  "row_count_processed": 3883,
+  "derived_fields": [
+    "bar_index",
+    "calendar_day_index",
+    "trading_day_index",
+    "log_close",
+    "hl_range",
+    "true_range",
+    "atr_14"
+  ],
+  "coordinate_system_version": "v1",
+  "atr_warmup_rows": 14,
+  "bar_index_epoch_timestamp": "2015-07-20 00:00:00+00:00",
+  "produced_at": "2026-03-06T01:16:17.165287+00:00"
+}

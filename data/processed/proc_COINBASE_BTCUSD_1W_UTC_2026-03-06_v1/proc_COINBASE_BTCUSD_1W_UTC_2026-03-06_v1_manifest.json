@@ -1,0 +1,13 @@
+{
+  "dataset_version": "proc_COINBASE_BTCUSD_1W_UTC_2026-03-06_v1",
+  "source_raw_file": "data/processed/proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1/proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1.parquet",
+  "source_metadata": "resampled_from_daily",
+  "validation_passed": true,
+  "row_count_raw": 3883,
+  "row_count_processed": 555,
+  "derived_fields": [],
+  "coordinate_system_version": "v1",
+  "atr_warmup_rows": 0,
+  "bar_index_epoch_timestamp": "2015-07-20 00:00:00+00:00",
+  "produced_at": "2026-03-06T01:16:17.215644+00:00"
+}

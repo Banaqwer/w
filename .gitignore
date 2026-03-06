@@ -28,11 +28,9 @@ env/
 .ipynb_checkpoints/
 *.ipynb
 
-# Data files — raw extractions and processed datasets are NOT committed
-# (they are large and must be versioned separately)
-data/raw/coinbase_rest/*/*/*.csv
-data/raw/coinbase_rest/*/*/*.parquet
-data/processed/*/
+# Data files — raw extractions and processed datasets
+# Official committed datasets (Phase 1C and later) are NOT excluded.
+# Developer-generated local extractions can be excluded by adding patterns here.
 data/metadata/extractions/*.json
 
 # Keep directory structure via .gitkeep
