@@ -1,0 +1,43 @@
+Phase 2 Smoke Run Summary
+============================================================
+
+Dataset:        proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1
+Method:         pivot
+Rows:           3883
+Missing bars:   0
+skip_on_gap:    False
+Origins:        481
+Impulses:       481
+Origins CSV:    reports/phase2/origins_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.csv
+Impulses CSV:   reports/phase2/impulses_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.csv
+------------------------------------------------------------
+Dataset:        proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1
+Method:         zigzag
+Rows:           3883
+Missing bars:   0
+skip_on_gap:    False
+Origins:        138
+Impulses:       138
+Origins CSV:    reports/phase2/origins_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.csv
+Impulses CSV:   reports/phase2/impulses_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.csv
+------------------------------------------------------------
+Dataset:        proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1
+Method:         pivot
+Rows:           15525
+Missing bars:   1
+skip_on_gap:    True
+Origins:        1923
+Impulses:       1897
+Origins CSV:    reports/phase2/origins_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.csv
+Impulses CSV:   reports/phase2/impulses_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.csv
+------------------------------------------------------------
+Dataset:        proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1
+Method:         zigzag
+Rows:           15525
+Missing bars:   1
+skip_on_gap:    True
+Origins:        1604
+Impulses:       1588
+Origins CSV:    reports/phase2/origins_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.csv
+Impulses CSV:   reports/phase2/impulses_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.csv
+------------------------------------------------------------
