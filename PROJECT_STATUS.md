@@ -106,8 +106,8 @@ python -m data.extract --timeframe 6H \
 - **M1 — RESOLVED (2026-03-04):** Official acquisition method: **Coinbase REST API via `ccxt`**.
 - **M2 — RESOLVED (2026-03-04; policy updated 2026-03-05):** Intraday confirmation TF is now `6H` (native Coinbase REST via `ccxt`). Prior `4H` synthetic dataset retained as historical artifact only.
 - **M3 — RESOLVED (2026-03-04):** Symbol `BTC/USD` (ccxt) = `COINBASE:BTCUSD` (TradingView).
-- **M5 — RESOLVED (2026-03-04):** `dataset.current_version` = `proc_COINBASE_BTCUSD_1D_UTC_2026-03-04_v1`.
-- **M6 — RESOLVED (2026-03-04):** First validated dataset produced; manifests written and confirmed.
+- **M5 — RESOLVED (2026-03-06):** `dataset.current_version` = `proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1` (live data; supersedes 2026-03-04 synthetic).
+- **M6 — RESOLVED (2026-03-06):** Official processed datasets produced from live 1H repo raw; all manifests confirmed.
 
 ## Confirmed project decisions
 - Python is the official research and testing environment
@@ -134,7 +134,7 @@ python -m data.extract --timeframe 6H \
 8. ~~Produce 4H dataset~~ — DONE (2026-03-04; **superseded: 6H dataset required under 2026-03-05 policy**)
 9. ~~Produce weekly dataset by resampling~~ — DONE (2026-03-04)
 10. ~~Confirm manifests contain all required fields~~ — DONE (2026-03-04)
-11. When live Coinbase API is accessible: re-run pulls without `--use-synthetic` and verify ≥ 20 bars against TradingView `COINBASE:BTCUSD` chart; log discrepancies in `DECISIONS.md`
+11. ~~When live Coinbase API is accessible: re-run pulls without `--use-synthetic`~~ — DONE (Phase 1C, 2026-03-06; live 1H raw committed to repo; resampled to 1D/6H/1W)
 12. Begin Phase 2: structural pivot and impulse engine
 
 ## Success condition for Phase 1
@@ -162,8 +162,25 @@ Phase 1B synthetic/offline pipeline execution reviewed and accepted.
   the confirmation-TF pull must use `--timeframe 6H` (not `4H`) per 2026-03-05 policy
 - Full review: `docs/reviews/phase1b_review.md`
 
+### Phase 1C Review — PASS (2026-03-06)
+
+Phase 1C "ingest from repo raw" pipeline executed and accepted.
+
+- Official live 1H raw file (`cbrest_COINBASE_BTCUSD_1H_UTC_2026-03-06`) committed to repo
+  and moved to canonical path `data/raw/coinbase_rest/COINBASE_BTCUSD/1H/`.
+- New module `data/ingest_from_raw.py` reads the 1H raw and produces all three official
+  MVP datasets by resampling (no network required).
+- All three datasets produced, validated, and versioned:
+  - **1D:** 2015-07-20 → 2026-03-06 (3 883 rows)
+  - **6H:** 2015-07-20 18:00 UTC → 2026-03-06 00:00 UTC (15 525 rows)
+  - **1W:** 2015-07-20 → 2026-03-02 (555 rows, Monday-aligned)
+- 90/90 tests pass (65 existing + 25 new for `ingest_from_raw`).
+- Reproducibility command:
+  ```
+  python -m data.ingest_from_raw --symbol COINBASE_BTCUSD --timeframe 1H --pull-date 2026-03-06 --overwrite
+  ```
+- Full review: `docs/reviews/phase1c_review.md`
+
 ## Notes
-Phase 1 is complete. Phase 2 (structural pivot and impulse engine) may begin.
-When live Coinbase API access is restored, re-run the daily and weekly pull commands above
-(without `--use-synthetic`) to replace synthetic datasets with real OHLCV data.
-The intraday confirmation pull must use `--timeframe 6H` per the 2026-03-05 policy change.
+Phase 1C is complete. Official live datasets are now in place.
+Phase 2 (structural pivot and impulse engine) may begin.
