@@ -321,6 +321,7 @@ def resample_daily_to_weekly(
         end_timestamp=w_end,
         missing_bar_count=0,
         missing_bar_policy="not_applicable (resampled from daily)",
+        missing_bar_details=[],
     )
 
     logger.info(

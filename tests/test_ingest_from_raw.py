@@ -240,10 +240,7 @@ def test_ingest_from_raw_manifests_exist_and_pass(ingest_args):
 def test_ingest_from_raw_manifests_have_start_end_timestamps(ingest_args):
     results = ingest_from_raw(**ingest_args)
     for tf in ("6H", "1D", "1W"):
-        if tf == "1W":
-            mfst_path = Path(results[tf]["manifest_path"])
-        else:
-            mfst_path = Path(results[tf]["manifest_path"])
+        mfst_path = Path(results[tf]["manifest_path"])
         with open(mfst_path) as fh:
             mfst = json.load(fh)
         assert "start_timestamp" in mfst, f"{tf} manifest missing start_timestamp"
@@ -255,10 +252,7 @@ def test_ingest_from_raw_manifests_have_start_end_timestamps(ingest_args):
 def test_ingest_from_raw_manifests_have_missing_bar_fields(ingest_args):
     results = ingest_from_raw(**ingest_args)
     for tf in ("6H", "1D", "1W"):
-        if tf == "1W":
-            mfst_path = Path(results[tf]["manifest_path"])
-        else:
-            mfst_path = Path(results[tf]["manifest_path"])
+        mfst_path = Path(results[tf]["manifest_path"])
         with open(mfst_path) as fh:
             mfst = json.load(fh)
         assert "missing_bar_count" in mfst, f"{tf} manifest missing missing_bar_count"
