@@ -174,7 +174,13 @@ Phase 1C "ingest from repo raw" pipeline executed and accepted.
   - **1D:** 2015-07-20 → 2026-03-06 (3 883 rows)
   - **6H:** 2015-07-20 18:00 UTC → 2026-03-06 00:00 UTC (15 525 rows)
   - **1W:** 2015-07-20 → 2026-03-02 (555 rows, Monday-aligned)
-- 90/90 tests pass (65 existing + 25 new for `ingest_from_raw`).
+- 92/92 tests pass (65 existing + 27 new/updated for `ingest_from_raw` and manifest schema).
+- Manifests include: `validation_passed`, `derived_fields`, `atr_warmup_rows`,
+  `bar_index_epoch_timestamp`, `start_timestamp`, `end_timestamp`,
+  `missing_bar_count`, `missing_bar_policy`, `missing_bar_details`.
+- 6H missing-bar gap tolerance documented in `DECISIONS.md` and `ASSUMPTIONS.md` (Assumption 18).
+- Repo data commit policy documented in `DECISIONS.md` (2026-03-06).
+- Stale root-level data files removed; `.gitignore` updated.
 - Reproducibility command:
   ```
   python -m data.ingest_from_raw --symbol COINBASE_BTCUSD --timeframe 1H --pull-date 2026-03-06 --overwrite

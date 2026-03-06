@@ -176,6 +176,26 @@ Coinbase REST API and provides better structural alignment for Jenkins confirmat
 
 ---
 
+### Assumption 18 — 6H missing-bar tolerance for resampled-from-1H datasets
+**Date:** 2026-03-06
+**Assumption:** When producing 6H datasets by resampling from 1H Coinbase REST raw data,
+up to 5 missing 6H bars are tolerated without failing validation.  The default strict
+policy (`fail_on_missing_bar: true`, `max_allowed_missing_bars: 0`) is overridden with
+`fail_on_missing_bar: False`, `max_allowed_missing_bars: 5` in `data/ingest_from_raw.py`.
+**Reason:** The 1H source data from Coinbase REST API contains isolated exchange-maintenance
+gaps (e.g., one 12-hour gap at 2018-08-10).  When resampled to 6H, each such outage
+produces at most 1–2 missing 6H bars.  The observed count for the
+`proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1` dataset is exactly 1 missing bar.
+A cap of 5 provides a safety margin without silently accepting structurally broken data.
+**What it approximates:** A fully continuous 6H bar series from Coinbase.
+**How it will be tested:** The actual missing-bar count, policy, and gap timestamps are
+recorded in every manifest (`missing_bar_count`, `missing_bar_policy`,
+`missing_bar_details`).  Downstream modules that require gap-free data can check the
+manifest and either skip affected bars or raise.
+**Status:** Active.  See `DECISIONS.md` 2026-03-06 change log for the corresponding decision.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date
