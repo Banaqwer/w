@@ -196,6 +196,115 @@ manifest and either skip affected bars or raise.
 
 ---
 
+### Assumption 19 — Pivot detector uses strict greater-than comparison
+**Date:** 2026-03-06
+**Assumption:** For the N-bar pivot detector in `modules/origin_selection.py`, a pivot-high
+requires `high[i] > high[j]` for all j in the look-back and look-forward window (strict
+inequality).  Bars with the same high as the pivot bar are treated as non-pivot.
+**Reason:** Strict comparison ensures determinism on flat-top / flat-bottom price
+structures (multiple bars at the same extreme).  Relaxing to ≥ would produce multiple
+adjacent pivots at the same level, inflating the origin count.
+**What it approximates:** The standard N-bar fractal pivot definition.
+**How it will be tested:** Synthetic flat-top series confirms only one pivot is produced.
+**Status:** Active.
+
+### Assumption 20 — Pivot quality score formula
+**Date:** 2026-03-06
+**Assumption:** Pivot quality score is computed as `prominence / (3 × median_atr_14)`,
+clipped to [0, 1].  A prominence equal to 3× the median ATR receives quality = 1.0.
+If ATR is unavailable, quality defaults to 0.5 as a neutral placeholder.
+**Reason:** Normalising by ATR makes the quality scale comparable across different
+volatility regimes and symbol ranges.  The 3× factor was chosen so that a
+structurally significant pivot (3× daily ATR prominence) earns the maximum score.
+**What it approximates:** A subjective "structural importance" rating a discretionary
+analyst would assign to prominent swing pivots.
+**How it will be tested:** Cross-checked against visually prominent BTC/USD pivots
+during Phase 3 angle validation.
+**Status:** Active.  May be revised if Phase 3 analysis shows the 3× factor
+produces too many or too few high-quality origins.
+
+### Assumption 21 — Zigzag uses high/low for reversal detection, close for storage
+**Date:** 2026-03-06
+**Assumption:** The zigzag detector in `modules/origin_selection.py` always uses the
+`high` series to detect the running peak and the `low` series to detect the running
+trough when determining reversals.  The `zigzag_price_field` parameter (default
+``"close"``) governs only the `origin_price` stored in the output `Origin` objects.
+**Reason:** Using high/low for reversal detection makes the algorithm independent of
+body position and produces pivots that capture actual intrabar extremes, not just
+close-to-close moves.  The stored price can be configured independently if downstream
+callers prefer close-based anchors.
+**What it approximates:** Standard zigzag indicator behaviour used in technical analysis.
+**How it will be tested:** Verified that high-origin records have `origin_price` matching
+the `close` of the pivot bar, not the `high`, when `zigzag_price_field="close"`.
+**Status:** Active.
+
+### Assumption 22 — Zigzag skips ATR warm-up rows in ATR mode
+**Date:** 2026-03-06
+**Assumption:** When the zigzag detector is run in ATR-threshold mode
+(`threshold_atr` is not None), the first `atr_warmup_rows` bars are skipped as the
+initial anchor, because ATR values in this range are unreliable.  Bars with NaN ATR
+within the valid range are also skipped silently.
+**Reason:** The ATR warm-up period (default 14 bars) produces unreliable ATR values
+that would make the threshold inconsistently small or NaN, potentially triggering
+false reversals.
+**What it approximates:** Standard ATR initialisation treatment from Assumption 13.
+**How it will be tested:** Confirmed by checking that no origin at row < 14 is produced
+in ATR mode.
+**Status:** Active.
+
+### Assumption 23 — Zigzag uses reversal bar ATR for threshold
+**Date:** 2026-03-06
+**Assumption:** In ATR-based zigzag mode, the ATR value of the bar where the reversal
+is being tested (the current bar `i`) is used as the threshold reference, not the ATR
+at the most recent extreme.  If `atr_14[i]` is NaN, the bar is skipped silently.
+**Reason:** Using the current bar's ATR adapts the threshold to local volatility at
+the moment of reversal, not at the prior extreme.  This is a minor distinction but is
+documented to prevent silent inconsistency.
+**What it approximates:** A volatility-adaptive reversal threshold.
+**How it will be tested:** Verified by a unit test in `tests/test_phase2_origin_selection.py`.
+**Status:** Active.
+
+### Assumption 24 — Impulse extreme defined as highest high / lowest low in window
+**Date:** 2026-03-06
+**Assumption:** For an upward impulse (from a low origin), the extreme is the bar with
+the highest `high` value within the look-ahead window, subject to early reversal
+stopping.  For a downward impulse (from a high origin), the extreme is the bar with
+the lowest `low`.
+**Reason:** Using `high` and `low` (not `close`) captures the true intrabar extent of
+the move, consistent with structural analysis conventions in the source material.
+**What it approximates:** The canonical extreme of a price impulse as defined by Jenkins.
+**How it will be tested:** Cross-checked against visually identified impulses during
+Phase 3 validation.
+**Status:** Active.
+
+### Assumption 25 — Multiple origins at the same bar produce independent impulses
+**Date:** 2026-03-06
+**Assumption:** If the same bar_index appears in the origins list more than once
+(e.g. once as a pivot-high and once as a zigzag-high), each origin produces an
+independent Impulse object.  Deduplication is the responsibility of downstream callers.
+**Reason:** The impulse detector is a pure function of its inputs; it does not assume
+any uniqueness constraint on the origin list.  Callers can filter duplicates before
+or after calling `detect_impulses`.
+**What it approximates:** Full independence of detectors.
+**How it will be tested:** Verified by passing duplicate origins and confirming the
+output list length matches expectations.
+**Status:** Active.
+
+### Assumption 26 — Origins with bar_index outside the DataFrame are silently skipped
+**Date:** 2026-03-06
+**Assumption:** If an `Origin` has a `bar_index` that does not appear in the processed
+DataFrame's `bar_index` column, the origin is silently skipped and a WARNING is logged.
+No exception is raised.
+**Reason:** Origins may be produced from a different dataset slice or version than the
+one passed to `detect_impulses`.  Silent skipping with a warning is more resilient than
+raising an exception during a batch run.
+**What it approximates:** Graceful cross-dataset alignment.
+**How it will be tested:** Unit test `test_origin_not_in_df_is_skipped` confirms
+behaviour.
+**Status:** Active.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date
