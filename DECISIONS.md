@@ -62,6 +62,60 @@ If any decision in this file changes:
 
 ## Change log
 
+### 2026-03-06 — Phase 1C: repo data commit policy
+
+**Decision: Raw and processed datasets are committed to the repository for MVP reproducibility.**
+
+| Property | Value |
+|---|---|
+| Raw 1H source | Committed (`data/raw/coinbase_rest/`) |
+| Processed Parquet | Committed (`data/processed/`) |
+| Manifests (JSON) | Committed (`data/processed/<version>/`) |
+| Extraction metadata | Git-ignored (`data/metadata/extractions/`) |
+| Maximum acceptable repo data footprint | ~50 MB (review if exceeded) |
+| Recommended upgrade path | Git LFS if repo size exceeds 100 MB |
+
+**Rationale:**
+1. Total committed data footprint is currently ~12 MB — well within GitHub's limits.
+2. Committing data ensures anyone cloning the repo can reproduce Phase 2+
+   experiments without re-running extraction (Coinbase REST API unreachable in CI).
+3. Manifests are always committed as the metadata source of truth.
+4. If the data grows substantially (additional timeframes, markets, or longer
+   history), migrate raw/processed files to Git LFS and commit only manifests.
+
+**Prior experiments affected:** None.
+
+---
+
+### 2026-03-06 — Phase 1C: 6H missing-bar tolerance for resampled-from-1H datasets
+
+**Decision: A small number of exchange-maintenance gaps in the 6H dataset are tolerated when resampling from 1H source data.**
+
+The default validation policy (`fail_on_missing_bar: true`, `max_allowed_missing_bars: 0`)
+is overridden for 6H resampled-from-1H datasets with
+`fail_on_missing_bar: False`, `max_allowed_missing_bars: 5`.
+
+**Observed gap (Phase 1C, `proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1`):**
+- 1 missing 6H bar after `2018-08-10T00:00:00+00:00` (12-hour gap)
+- Cause: Coinbase exchange maintenance window
+
+**Recording in manifest:**
+Every manifest now includes `missing_bar_count`, `missing_bar_policy`, and
+`missing_bar_details` fields.  The 6H manifest records the exact gap
+timestamp and policy override for reproducibility.
+
+**Rationale:**
+1. The 1H source data from the Coinbase REST API contains isolated exchange-maintenance
+   gaps that are outside project control.
+2. A single missing 6H bar out of 15 525 is immaterial to structural research.
+3. The tolerance is capped at 5 bars; any dataset exceeding that fails validation.
+4. Strict policy remains the default; the override is applied only in
+   `data/ingest_from_raw.py` for 6H resampled-from-1H datasets.
+
+**Prior experiments affected:** None — this is the first official 6H dataset.
+
+---
+
 ### 2026-03-05 — Intraday confirmation timeframe changed from 4H to 6H
 
 **Superseded rule:**

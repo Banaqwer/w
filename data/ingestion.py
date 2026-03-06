@@ -154,6 +154,31 @@ def run_ingestion_pipeline(
     # ── Step 8: Write manifest ────────────────────────────────────────────
     atr_warmup_rows = max(atr_windows) if atr_windows else 14
     derived_fields = _list_derived_fields(df, atr_windows)
+
+    # Extract missing-bar info from validation result
+    missing_bar_count = 0
+    missing_bar_details: List[str] = []
+    if validation_result.missing_bars:
+        missing_bar_details = list(validation_result.missing_bars)
+        missing_bar_count = sum(
+            int(m.split("~")[1].split(" ")[0]) for m in missing_bar_details
+        )
+
+    # Determine missing-bar policy description
+    _val_defaults = {
+        "fail_on_missing_bar": True,
+        "max_allowed_missing_bars": 0,
+    }
+    if validation_config:
+        _val_defaults.update(validation_config)
+    if _val_defaults["fail_on_missing_bar"] and _val_defaults["max_allowed_missing_bars"] == 0:
+        missing_bar_policy = "strict"
+    else:
+        missing_bar_policy = (
+            f"relaxed (fail_on_missing_bar={_val_defaults['fail_on_missing_bar']}, "
+            f"max_allowed={_val_defaults['max_allowed_missing_bars']})"
+        )
+
     manifest_path = _write_manifest(
         dataset_version=dataset_version,
         raw_file_path=str(raw_path),
@@ -165,6 +190,11 @@ def run_ingestion_pipeline(
         epoch_timestamp=str(df["timestamp"].iloc[0]),
         produced_at=extraction_ts,
         processed_base=processed_base,
+        start_timestamp=str(df["timestamp"].iloc[0]),
+        end_timestamp=str(df["timestamp"].iloc[-1]),
+        missing_bar_count=missing_bar_count,
+        missing_bar_policy=missing_bar_policy,
+        missing_bar_details=missing_bar_details,
     )
 
     logger.info(
@@ -274,6 +304,8 @@ def resample_daily_to_weekly(
     logger.info("Weekly Parquet written: %s (%d rows)", weekly_parquet, len(weekly_df))
 
     # Write weekly manifest
+    w_start = str(weekly_df["timestamp"].iloc[0]) if len(weekly_df) else ""
+    w_end = str(weekly_df["timestamp"].iloc[-1]) if len(weekly_df) else ""
     manifest_path = _write_manifest(
         dataset_version=weekly_version,
         raw_file_path=str(daily_parquet),
@@ -282,9 +314,13 @@ def resample_daily_to_weekly(
         row_count_processed=len(weekly_df),
         derived_fields=[],
         atr_warmup_rows=0,
-        epoch_timestamp=str(weekly_df["timestamp"].iloc[0]) if len(weekly_df) else "",
+        epoch_timestamp=w_start,
         produced_at=produced_at,
         processed_base=processed_base,
+        start_timestamp=w_start,
+        end_timestamp=w_end,
+        missing_bar_count=0,
+        missing_bar_policy="not_applicable (resampled from daily)",
     )
 
     logger.info(
@@ -475,21 +511,31 @@ def _write_manifest(
     epoch_timestamp: str,
     produced_at: datetime,
     processed_base: str,
+    start_timestamp: str = "",
+    end_timestamp: str = "",
+    missing_bar_count: int = 0,
+    missing_bar_policy: str = "strict",
+    missing_bar_details: Optional[List[str]] = None,
 ) -> Path:
     version_dir = Path(processed_base) / dataset_version
     manifest_path = version_dir / f"{dataset_version}_manifest.json"
 
-    manifest = {
+    manifest: Dict[str, Any] = {
         "dataset_version": dataset_version,
         "source_raw_file": raw_file_path,
         "source_metadata": metadata_file_path,
         "validation_passed": True,
         "row_count_raw": row_count_raw,
         "row_count_processed": row_count_processed,
+        "start_timestamp": start_timestamp,
+        "end_timestamp": end_timestamp,
         "derived_fields": derived_fields,
         "coordinate_system_version": "v1",
         "atr_warmup_rows": atr_warmup_rows,
         "bar_index_epoch_timestamp": epoch_timestamp,
+        "missing_bar_count": missing_bar_count,
+        "missing_bar_policy": missing_bar_policy,
+        "missing_bar_details": missing_bar_details or [],
         "produced_at": produced_at.isoformat(),
     }
 

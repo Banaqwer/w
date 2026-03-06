@@ -237,6 +237,37 @@ def test_ingest_from_raw_manifests_exist_and_pass(ingest_args):
     assert mfst_1w["validation_passed"] is True
 
 
+def test_ingest_from_raw_manifests_have_start_end_timestamps(ingest_args):
+    results = ingest_from_raw(**ingest_args)
+    for tf in ("6H", "1D", "1W"):
+        if tf == "1W":
+            mfst_path = Path(results[tf]["manifest_path"])
+        else:
+            mfst_path = Path(results[tf]["manifest_path"])
+        with open(mfst_path) as fh:
+            mfst = json.load(fh)
+        assert "start_timestamp" in mfst, f"{tf} manifest missing start_timestamp"
+        assert "end_timestamp" in mfst, f"{tf} manifest missing end_timestamp"
+        assert mfst["start_timestamp"] != "", f"{tf} manifest start_timestamp is empty"
+        assert mfst["end_timestamp"] != "", f"{tf} manifest end_timestamp is empty"
+
+
+def test_ingest_from_raw_manifests_have_missing_bar_fields(ingest_args):
+    results = ingest_from_raw(**ingest_args)
+    for tf in ("6H", "1D", "1W"):
+        if tf == "1W":
+            mfst_path = Path(results[tf]["manifest_path"])
+        else:
+            mfst_path = Path(results[tf]["manifest_path"])
+        with open(mfst_path) as fh:
+            mfst = json.load(fh)
+        assert "missing_bar_count" in mfst, f"{tf} manifest missing missing_bar_count"
+        assert "missing_bar_policy" in mfst, f"{tf} manifest missing missing_bar_policy"
+        assert "missing_bar_details" in mfst, f"{tf} manifest missing missing_bar_details"
+        assert isinstance(mfst["missing_bar_count"], int), f"{tf} missing_bar_count not int"
+        assert isinstance(mfst["missing_bar_details"], list), f"{tf} missing_bar_details not list"
+
+
 def test_ingest_from_raw_version_string_format(ingest_args):
     results = ingest_from_raw(**ingest_args)
     pattern = r"^proc_[A-Z]+_[A-Z]+_[A-Z0-9]+_UTC_\d{4}-\d{2}-\d{2}_v\d+$"

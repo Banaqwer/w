@@ -33,6 +33,10 @@ env/
 # Developer-generated local extractions can be excluded by adding patterns here.
 data/metadata/extractions/*.json
 
+# Prevent accidental root-level data commits (data belongs under data/)
+/cbrest_*
+/proc_*
+
 # Keep directory structure via .gitkeep
 !data/raw/coinbase_rest/.gitkeep
 !data/processed/.gitkeep

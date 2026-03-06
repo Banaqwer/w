@@ -5,6 +5,8 @@
   "validation_passed": true,
   "row_count_raw": 3883,
   "row_count_processed": 3883,
+  "start_timestamp": "2015-07-20 00:00:00+00:00",
+  "end_timestamp": "2026-03-06 00:00:00+00:00",
   "derived_fields": [
     "bar_index",
     "calendar_day_index",
@@ -17,5 +19,8 @@
   "coordinate_system_version": "v1",
   "atr_warmup_rows": 14,
   "bar_index_epoch_timestamp": "2015-07-20 00:00:00+00:00",
-  "produced_at": "2026-03-06T01:16:17.165287+00:00"
+  "missing_bar_count": 0,
+  "missing_bar_policy": "relaxed (fail_on_missing_bar=False, max_allowed=0)",
+  "missing_bar_details": [],
+  "produced_at": "2026-03-06T01:45:25.673185+00:00"
 }
