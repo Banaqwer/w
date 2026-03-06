@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 1 — Repository and data layer (COMPLETE — 2026-03-04)
+- Phase 2 — Structural pivot and impulse engine (IN PROGRESS — 2026-03-06)
 
 ## Current status
 
@@ -189,4 +189,119 @@ Phase 1C "ingest from repo raw" pipeline executed and accepted.
 
 ## Notes
 Phase 1C is complete. Official live datasets are now in place.
-Phase 2 (structural pivot and impulse engine) may begin.
+Phase 2 (structural pivot and impulse engine) is now **IN PROGRESS** as of 2026-03-06.
+
+---
+
+## Phase 2 — IN PROGRESS (started 2026-03-06)
+
+### What was implemented
+
+#### A) Origin selection — `modules/origin_selection.py`
+
+Two detectors, both fully configurable:
+
+1. **N-bar pivot** (`method="pivot"`, `pivot_n=N`)
+   A bar is a pivot-high when its `high` strictly exceeds the `high` of every bar
+   within N bars before and after it.  Same rule for pivot-low using `low`.
+   Configurable: `pivot_n`, `min_quality`, `atr_warmup_rows`.
+
+2. **Percent-threshold zigzag** (`method="zigzag"`, `threshold_pct=X`)
+   Detects swing reversals when price moves at least X% from the last confirmed
+   extreme.  ATR-based mode is also available (`threshold_atr=Y`).
+   Configurable: `threshold_pct`, `threshold_atr`, `zigzag_price_field`, `atr_warmup_rows`.
+
+`Origin` dataclass fields: `origin_time`, `origin_price`, `bar_index`,
+`origin_type` (high/low), `detector_name`, `quality_score`.
+
+`select_origins()` is the unified entry-point dispatcher.
+
+#### B) Impulse detection — `modules/impulse.py`
+
+`detect_impulses()` accepts a processed OHLCV DataFrame and a list of Origins.
+For each origin it searches forward for the running extreme (highest high for upward
+impulses, lowest low for downward), with early-stop on `reversal_pct` pullback.
+
+`Impulse` dataclass fields (fully compatible with Phase 0 / CLAUDE.md spec):
+`impulse_id`, `origin_time`, `origin_price`, `extreme_time`, `extreme_price`,
+`origin_bar_index`, `extreme_bar_index`, `delta_t`, `delta_p`,
+`slope_raw`, `slope_log`, `direction`, `quality_score`, `detector_name`,
+`gap_in_window`.
+
+**Gap handling for 6H data:**
+- `skip_on_gap=True` (recommended when `missing_bar_count > 0`): any forward-search
+  window containing a bar_index gap (increment > 1) is skipped; no impulse is produced.
+- `skip_on_gap=False`: gaps are ignored; `gap_in_window=True` is flagged on the Impulse.
+- The smoke script reads the manifest's `missing_bar_count` and sets `skip_on_gap`
+  automatically.
+
+#### C) Phase 2 smoke script — `research/run_phase2_smoke.py`
+
+Runs origin selection + impulse detection on both 1D (required) and 6H (optional).
+Reads dataset versions from `configs/default.yaml`.
+Checks `missing_bar_count` from the 6H manifest and activates `skip_on_gap` accordingly.
+Writes outputs to `reports/phase2/`.
+
+#### D) Tests
+
+- `tests/test_phase2_origin_selection.py` — 29 tests for pivot and zigzag detectors
+- `tests/test_phase2_impulse.py` — 22 tests for impulse detection and gap handling
+- All 143 tests pass (92 Phase 1 + 51 Phase 2).
+
+#### E) Documentation
+
+- `ASSUMPTIONS.md` updated with Assumptions 19–26 (Phase 2 decisions).
+- `PROJECT_STATUS.md` updated (this section).
+
+### How to run the Phase 2 smoke script
+
+From the repository root (after `pip install -e ".[dev]"`):
+
+```bash
+# Full run: 1D (required) + 6H (optional, gap-aware)
+python -m research.run_phase2_smoke
+
+# Skip the 6H run
+python -m research.run_phase2_smoke --skip-6h
+
+# Custom config path
+python -m research.run_phase2_smoke --config configs/default.yaml
+```
+
+Outputs are written to:
+- `reports/phase2/origins_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1.json`
+- `reports/phase2/impulses_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1.json`
+- `reports/phase2/origins_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1.json`
+- `reports/phase2/impulses_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1.json`
+
+### Example output counts (2026-03-06 live dataset)
+
+| Dataset | Rows | Missing bars | skip_on_gap | Pivot origins | Zigzag origins | Pivot impulses | Zigzag impulses |
+|---|---|---|---|---|---|---|---|
+| 1D (2026-03-06) | 3 883 | 0 | False | 481 | 1 488 | 465 | 1 314 |
+| 6H (2026-03-06) | 15 525 | 1 | True | 1 923 | 3 022 | 1 887 | 2 828 |
+
+Parameters used: `pivot_n=5`, `zigzag_pct=3.0%`, `max_lookahead=200`, `reversal_pct=20%`.
+
+### Open Phase 2 items
+
+1. **Impulse quality tuning** — The `quality_score` formula (Assumption 20) uses a fixed
+   3× ATR normalisation factor.  This will be cross-checked against visually prominent
+   BTC/USD impulses during Phase 3 validation and may be revised.
+2. **Zigzag `zigzag_price_field` validation** — The stored `origin_price` for zigzag
+   origins is from `close` by default.  Phase 3 angle modules may prefer `high`/`low`.
+   This is config-driven and can be changed without re-running origin selection from scratch.
+3. **Origin deduplication** — If both pivot and zigzag detectors are run, the same
+   structural point may appear twice.  Downstream callers (Phase 3+) should deduplicate
+   if needed.  No deduplication is applied at the Phase 2 level (Assumption 25).
+4. **Reversal-pct tuning** — The default `reversal_pct=20%` was chosen to avoid
+   premature truncation on BTC/USD daily data.  Structural research in Phase 3 may
+   reveal a better value.
+
+### Immediate next actions for Phase 2 completion
+
+Phase 2 is structurally functional.  The following steps remain before declaring it
+complete:
+- Cross-check a sample of detected impulses against TradingView chart (visual sanity)
+- Decide on a deduplication/ranking policy for multi-detector origin sets
+- Confirm Phase 3 (projection stack) is ready to consume the Impulse output format
