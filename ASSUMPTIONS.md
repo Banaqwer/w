@@ -196,6 +196,40 @@ manifest and either skip affected bars or raise.
 
 ---
 
+### Assumption 19 — Phase 2 zigzag initialization direction
+**Date:** 2026-03-06
+**Assumption:** The zigzag detector (`detect_zigzag`) starts tracking in the "up"
+direction from the first bar's high.  This means the very first bar's low is only
+recorded as a swing-low origin if the initial high at bar 0 is subsequently reversed
+downward by at least `reversal_pct` percent.
+**Reason:** The classic zigzag algorithm requires an initial direction.  Starting "up"
+is a documented simplification that produces correct results for all but the very first
+potential low in a dataset.  For long BTC/USD datasets (3 000+ daily bars), the impact
+of missing one early low is negligible.
+**What it approximates:** A bidirectional initialization that simultaneously scans both
+directions from bar 0.
+**How it will later be tested:** Validate zigzag origin counts and alignment against a
+reference implementation or visual chart comparison.
+**Status:** Active.
+
+---
+
+### Assumption 20 — Phase 2 impulse extreme definition
+**Date:** 2026-03-06
+**Assumption:** For each origin, the impulse extreme is defined as the single bar with
+the maximum high (upward impulse) or minimum low (downward impulse) within a forward
+window of up to `max_bars=200` bars.  The window is not clipped to the next origin of
+the same type.
+**Reason:** A fixed `max_bars` window is simpler, more reproducible, and works regardless
+of the chosen origin detector.  Clipping to the next same-type origin would couple impulse
+detection to origin density, which varies across methods and parameters.
+**What it approximates:** The "true" impulse ending at the structural reversal that
+generated the next origin of the same type.
+**How it will later be tested:** Compare with clip-to-next-origin variants in ablation.
+**Status:** Active.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date

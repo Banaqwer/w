@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 1 — Repository and data layer (COMPLETE — 2026-03-04)
+- Phase 2 — Structural pivot and impulse engine (COMPLETE — 2026-03-06)
 
 ## Current status
 
@@ -187,6 +187,42 @@ Phase 1C "ingest from repo raw" pipeline executed and accepted.
   ```
 - Full review: `docs/reviews/phase1c_review.md`
 
+## Phase 2 — COMPLETE (2026-03-06)
+
+### Completed deliverables
+- `modules/origin_selection.py` — Origin selection with two configurable detectors:
+  - `detect_pivots(df, n_bars=5)` — N-bar fractal pivot; strict local max/min check
+  - `detect_zigzag(df, reversal_pct=20.0)` — threshold reversal; supports ATR-based fallback
+  - `select_origins(df, method, **kwargs)` — unified dispatch
+  - `origins_to_dataframe(origins)` — export helper
+  - `Origin` dataclass: `origin_time`, `origin_price`, `origin_type`, `detector_name`, `quality_score`, `bar_index`
+- `modules/impulse.py` — Impulse detection:
+  - `detect_impulses(df, origins, max_bars=200, skip_on_gap=False)` — full Phase 0 spec fields
+  - Gap handling: `_compute_gap_flags` detects missing bars via timestamp diff > 1.5× median interval
+  - `impulses_to_dataframe(impulses)` — export helper
+  - `Impulse` dataclass: all Phase 0 fields (`origin_time`, `origin_price`, `extreme_time`, `extreme_price`, `delta_t`, `delta_p`, `slope_raw`, `slope_log`, `quality_score`, `detector_name`)
+- `research/run_phase2_smoke.py` — Smoke-run script:
+  - Loads 1D and 6H datasets via `data/loader.py`
+  - Reads `missing_bar_count` from manifest; auto-sets `skip_on_gap=True` for 6H
+  - Writes 8 CSVs + summary to `reports/phase2/`
+- `tests/test_phase2_origin_selection.py` — 37 tests
+- `tests/test_phase2_impulse.py` — 29 tests
+- `DECISIONS.md` updated with Phase 2 gap-handling decision (2026-03-06)
+- `ASSUMPTIONS.md` updated with Assumptions 19–20
+
+### Smoke-run results (2026-03-06)
+| Dataset | Method | Rows | Origins | Impulses | skip_on_gap | Skipped |
+|---|---|---|---|---|---|---|
+| 1D | pivot n=5 | 3883 | 481 | 481 | False | 0 |
+| 1D | zigzag 20% | 3883 | 138 | 138 | False | 0 |
+| 6H | pivot n=5 | 15525 | 1923 | 1897 | True | 26 |
+| 6H | zigzag 5% | 15525 | 1604 | 1588 | True | 16 |
+
+**Tests:** `pytest -q` → 158 passed (92 Phase 1 + 66 Phase 2), 0 failed
+
+### Open Phase 2 items
+- None at this time.
+
 ## Notes
-Phase 1C is complete. Official live datasets are now in place.
-Phase 2 (structural pivot and impulse engine) may begin.
+Phase 2 is complete.
+Phase 3 (projection stack: measured moves, adjusted angles, JTTL, sqrt levels, time counts, log levels) may begin.

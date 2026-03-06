@@ -62,6 +62,27 @@ If any decision in this file changes:
 
 ## Change log
 
+### 2026-03-06 — Phase 2: gap-handling rule for impulse detection
+
+**Decision: When `missing_bar_count > 0` in a dataset manifest, pass `skip_on_gap=True` to `detect_impulses`.  Origins whose forward window crosses a detected gap are silently skipped; no Impulse is produced for them.**
+
+| Property | Value |
+|---|---|
+| Gap detection rule | timestamp diff > 1.5 × median inter-bar interval |
+| 6H dataset (`missing_bar_count=1`) | `skip_on_gap=True` (auto-set by smoke script) |
+| 1D dataset (`missing_bar_count=0`) | `skip_on_gap=False` |
+| Affected origins (6H pivot) | 26 skipped out of 1923 |
+| Affected origins (6H zigzag 5 %) | 16 skipped out of 1604 |
+
+**Rationale:**
+1. A missing bar creates a false price-jump in the window, which would inflate `delta_p`, `slope_raw`, and `slope_log`.
+2. Silently skipping is simpler and safer than attempting to interpolate across the gap.
+3. The rule is documented so any downstream module can replicate it.
+
+**Prior experiments affected:** None — Phase 2 is the first use of impulse detection.
+
+---
+
 ### 2026-03-06 — Phase 1C: repo data commit policy
 
 **Decision: Raw and processed datasets are committed to the repository for MVP reproducibility.**
