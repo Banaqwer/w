@@ -1,0 +1,81 @@
+Phase 3 Smoke Run Summary
+======================================================================
+
+Dataset:         proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1
+Method:          pivot
+Missing bars:    0
+Price mode:      raw
+Impulses input:  481
+Angles computed: 481
+Scale (ppb):     746.2329
+Angle family histogram:
+  4x1         :     3  (  0.6%)
+  3x1         :     4  (  0.8%)
+  2x1         :    11  (  2.3%)
+  1x1         :    13  (  2.7%)
+  1x2         :    48  ( 10.0%)
+  1x3         :    54  ( 11.2%)
+  1x4         :    53  ( 11.0%)
+  1x8         :   171  ( 35.6%)
+  unclassified:   124  ( 25.8%)
+Output:          reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.json
+----------------------------------------------------------------------
+Dataset:         proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1
+Method:          zigzag
+Missing bars:    0
+Price mode:      raw
+Impulses input:  138
+Angles computed: 138
+Scale (ppb):     746.2329
+Angle family histogram:
+  8x1         :     1  (  0.7%)
+  4x1         :     2  (  1.4%)
+  2x1         :     5  (  3.6%)
+  1x1         :     5  (  3.6%)
+  1x2         :    18  ( 13.0%)
+  1x3         :    19  ( 13.8%)
+  1x4         :     9  (  6.5%)
+  1x8         :    50  ( 36.2%)
+  unclassified:    29  ( 21.0%)
+Output:          reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.json
+----------------------------------------------------------------------
+Dataset:         proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1
+Method:          pivot
+Missing bars:    1
+Price mode:      raw
+Impulses input:  1897
+Angles computed: 1897
+Scale (ppb):     341.6386
+Angle family histogram:
+  8x1         :    12  (  0.6%)
+  4x1         :    11  (  0.6%)
+  3x1         :    27  (  1.4%)
+  2x1         :    40  (  2.1%)
+  1x1         :    72  (  3.8%)
+  1x2         :   182  (  9.6%)
+  1x3         :   169  (  8.9%)
+  1x4         :   198  ( 10.4%)
+  1x8         :   625  ( 32.9%)
+  unclassified:   561  ( 29.6%)
+Output:          reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.json
+----------------------------------------------------------------------
+Dataset:         proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1
+Method:          zigzag
+Missing bars:    1
+Price mode:      raw
+Impulses input:  1588
+Angles computed: 1588
+Scale (ppb):     341.6386
+Angle family histogram:
+  8x1         :    23  (  1.4%)
+  4x1         :    15  (  0.9%)
+  3x1         :    29  (  1.8%)
+  2x1         :    38  (  2.4%)
+  1x1         :    55  (  3.5%)
+  1x2         :   169  ( 10.6%)
+  1x3         :   164  ( 10.3%)
+  1x4         :   198  ( 12.5%)
+  1x8         :   521  ( 32.8%)
+  unclassified:   376  ( 23.7%)
+Output:          reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.json
+----------------------------------------------------------------------

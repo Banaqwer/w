@@ -1,0 +1,88 @@
+[
+  {
+    "version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+    "method": "pivot",
+    "missing_bar_count": 0,
+    "price_mode": "raw",
+    "impulses_input": 481,
+    "impulses_with_angles": 481,
+    "scale_basis_price_per_bar": 746.2328571428576,
+    "angle_family_histogram": {
+      "1x8": 171,
+      "unclassified": 124,
+      "1x3": 54,
+      "1x4": 53,
+      "1x2": 48,
+      "1x1": 13,
+      "2x1": 11,
+      "3x1": 4,
+      "4x1": 3
+    },
+    "output_json": "reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.json"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+    "method": "zigzag",
+    "missing_bar_count": 0,
+    "price_mode": "raw",
+    "impulses_input": 138,
+    "impulses_with_angles": 138,
+    "scale_basis_price_per_bar": 746.2328571428576,
+    "angle_family_histogram": {
+      "1x8": 50,
+      "unclassified": 29,
+      "1x3": 19,
+      "1x2": 18,
+      "1x4": 9,
+      "1x1": 5,
+      "2x1": 5,
+      "4x1": 2,
+      "8x1": 1
+    },
+    "output_json": "reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.json"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "method": "pivot",
+    "missing_bar_count": 1,
+    "price_mode": "raw",
+    "impulses_input": 1897,
+    "impulses_with_angles": 1897,
+    "scale_basis_price_per_bar": 341.6385714285719,
+    "angle_family_histogram": {
+      "1x8": 625,
+      "unclassified": 561,
+      "1x4": 198,
+      "1x2": 182,
+      "1x3": 169,
+      "1x1": 72,
+      "2x1": 40,
+      "3x1": 27,
+      "8x1": 12,
+      "4x1": 11
+    },
+    "output_json": "reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.json"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "method": "zigzag",
+    "missing_bar_count": 1,
+    "price_mode": "raw",
+    "impulses_input": 1588,
+    "impulses_with_angles": 1588,
+    "scale_basis_price_per_bar": 341.6385714285719,
+    "angle_family_histogram": {
+      "1x8": 521,
+      "unclassified": 376,
+      "1x4": 198,
+      "1x2": 169,
+      "1x3": 164,
+      "1x1": 55,
+      "2x1": 38,
+      "3x1": 29,
+      "8x1": 23,
+      "4x1": 15
+    },
+    "output_json": "reports/phase3/impulses_with_angles_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.json"
+  }
+]

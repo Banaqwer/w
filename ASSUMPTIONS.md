@@ -230,6 +230,56 @@ generated the next origin of the same type.
 
 ---
 
+### Assumption 21 — Phase 3 log-mode angle scale reference
+**Date:** 2026-03-07
+**Assumption:** When computing log-space adjusted angles
+(`price_mode="log"` in `compute_impulse_angles`), the per-impulse log-space
+scale reference is:
+
+    log_ppb_per_bar = log(1 + price_per_bar / origin_price)
+
+where `price_per_bar` is the global scale basis (median ATR-14 from
+`get_angle_scale_basis`) and `origin_price` is the impulse's origin price.
+
+The log angle is then:
+
+    angle_deg_log = degrees(atan(log(extreme / origin) / (delta_t * log_ppb_per_bar)))
+
+At exactly `extreme / origin = (1 + price_per_bar / origin_price) ** delta_t`
+the log angle equals 45°, preserving the 45°-at-scale-basis invariant in
+log space.
+**Reason:** Log-chart practitioners draw angles relative to the local price
+level.  Using `log(1 + ppb / origin_price)` as the one-bar log "unit" anchors
+the 45° line to the same ATR-derived scale as the raw mode, but expressed in
+log-return space.  This makes raw and log angles directly comparable when
+price levels are similar.
+**What it approximates:** A hand-calibrated log-chart angle scale that a
+discretionary analyst would use when drawing Gann-style lines on a log chart.
+**How it will later be tested:** Compare raw-mode and log-mode angle
+distributions on the BTC/USD dataset; assess whether log-mode better captures
+self-similar angle families across different price epochs.
+**Status:** Active.
+
+---
+
+### Assumption 22 — Phase 3 angles use bar_index deltas (gap-safe)
+**Date:** 2026-03-07
+**Assumption:** All adjusted-angle computations in `modules/adjusted_angles.py`
+use `delta_t` (bar-index delta) from the stored Impulse data.  No raw
+DataFrame or timestamp access is required.  For the 6H dataset
+(`missing_bar_count=1`), this is gap-safe: `delta_t` counts only observed
+bars, so missing bars do not distort the slope.
+**Reason:** Impulse objects from Phase 2 already carry `delta_t` as a
+bar-index delta.  Re-accessing the DataFrame would add a coupling dependency
+and would not change the result (since Phase 2 gap handling already excluded
+impulses that crossed a gap).
+**What it approximates:** Angle computation on a fully continuous dataset.
+**How it will later be tested:** Confirm that 6H angle distributions are
+consistent with 1D distributions after normalising for scale basis.
+**Status:** Active.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date
