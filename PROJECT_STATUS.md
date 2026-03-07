@@ -1,7 +1,8 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 2 — Structural pivot and impulse engine (COMPLETE — 2026-03-06)
+- Phase 3 — MVP projection stack (IN PROGRESS — 2026-03-07)
+  - Adjusted angles module: COMPLETE
 
 ## Current status
 
@@ -241,3 +242,63 @@ Phase 2 review completed and accepted.
 ## Notes
 Phase 2 is complete and reviewed.
 Phase 3 (projection stack: measured moves, adjusted angles, JTTL, sqrt levels, time counts, log levels) may begin.
+
+---
+
+## Phase 3 — IN PROGRESS (2026-03-07)
+
+### Phase 3A — Adjusted angles (COMPLETE — 2026-03-07)
+
+#### Completed deliverables
+- `modules/adjusted_angles.py` — Adjusted-angle module:
+  - `slope_to_angle_deg(delta_p, delta_t, scale_basis)` — raw price → angle in degrees
+  - `angle_deg_to_slope(angle_deg, scale_basis)` — angle → raw slope (inverse)
+  - `normalize_angle(angle_deg)` — map to (-90, 90]
+  - `compute_impulse_angles(impulses, scale_basis, price_mode)` — batch angle computation for Impulse lists or dicts
+  - `get_angle_families()` — canonical Jenkins angle families (8x1 through 1x8)
+  - `bucket_angle_to_family(angle_deg, tolerance_deg)` — nearest Jenkins family
+  - `are_angles_congruent(angle_a, angle_b, tolerance_deg)` — pairwise congruence check
+- `research/run_phase3_smoke.py` — Smoke-run script:
+  - Loads all Phase 2 impulse CSVs from `reports/phase2/`
+  - Reads `missing_bar_count` from manifest; logs behavior for 6H gap dataset
+  - Computes `get_angle_scale_basis` per dataset (median ATR-14)
+  - Writes per-dataset angle JSON to `reports/phase3/`
+  - Writes text + JSON summary with angle-family histograms
+- `tests/test_adjusted_angles.py` — 86 tests:
+  - Known-case: 45° at `delta_p == delta_t * price_per_bar`
+  - Round-trip: slope → angle → slope within 1e-9
+  - Deterministic: repeated calls produce identical output
+  - delta_t = 0 raises ValueError
+  - `±90°` raises ValueError in `angle_deg_to_slope`
+  - Angle family bucketing and congruence tests
+  - Batch `compute_impulse_angles`: raw/log modes, Impulse objects, dicts, skip rules
+- `ASSUMPTIONS.md` updated: Assumptions 21–22
+- `DECISIONS.md` updated: 2026-03-07 Phase 3 angle basis and gap policy
+
+#### How to run Phase 3 smoke script
+```
+python -m research.run_phase3_smoke
+python -m research.run_phase3_smoke --price-mode log
+python -m research.run_phase3_smoke --phase2-dir reports/phase2 --output-dir reports/phase3
+```
+
+#### Smoke-run results (2026-03-07, price_mode=raw)
+| Dataset | Method | Impulses | ppb (ATR) | Angles | 1x1 (45°) | 1x2 (26.6°) | 1x8 (7.1°) | Unclassified |
+|---|---|---|---|---|---|---|---|---|
+| 1D | pivot n=5 | 481 | 897.0 | 481 | 13 (2.7%) | 48 (10.0%) | 163 (33.9%) | 142 (29.5%) |
+| 1D | zigzag 20% | 138 | 897.0 | 138 | 5 (3.6%) | 18 (13.0%) | 50 (36.2%) | 29 (21.0%) |
+| 6H | pivot n=5 | 1897 | 341.6 | 1897 | 72 (3.8%) | 182 (9.6%) | 625 (32.9%) | 561 (29.6%) |
+| 6H | zigzag 5% | 1588 | 341.6 | 1588 | 55 (3.5%) | 169 (10.6%) | 521 (32.8%) | 376 (23.7%) |
+
+**Gap note (6H):** manifest `missing_bar_count=1`; angle computation uses `delta_t` (bar-index delta) which is gap-safe. No impulses skipped at this stage (gaps were handled in Phase 2).
+
+**Tests:** `pytest -q` → 248 passed (162 Phase 1+2 + 86 Phase 3), 0 failed
+
+#### Open Phase 3 items
+- Measured move module (deferred to next Phase 3 task)
+- JTTL module (deferred)
+- Square-root horizontal level module (deferred)
+- Time-count / squaring-the-range module (deferred)
+- Log-level / semi-log module (deferred)
+
+**Note: No Phase 4+ work (projections, confluence, signals, backtest) has been started.**

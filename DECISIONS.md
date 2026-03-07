@@ -62,7 +62,31 @@ If any decision in this file changes:
 
 ## Change log
 
-### 2026-03-06 — Phase 2: gap-handling rule for impulse detection
+### 2026-03-07 — Phase 3: adjusted-angle scale basis and gap policy
+
+**Decision: The canonical angle scale basis for all Phase 3 adjusted-angle
+computations is `get_angle_scale_basis(df)` from `core/coordinate_system.py`,
+which returns the median ATR-14 as `price_per_bar` (see Assumption 14).**
+
+| Property | Value |
+|---|---|
+| Scale basis function | `core.coordinate_system.get_angle_scale_basis(df)` |
+| Scale key | `price_per_bar` = median ATR-14 (excluding warm-up rows) |
+| 45° definition | `delta_p == delta_t * price_per_bar` |
+| Normalisation range | (-90, 90] via `normalize_angle()` |
+| Canonical angle families | 9 families: 8x1 through 1x8 |
+| Default family tolerance | 5° |
+| Gap policy for Phase 3 | Use `delta_t` (bar-index delta) from Impulse; no DataFrame access required; gap-safe for 6H (Assumption 22) |
+| Log-mode scale reference | `log(1 + price_per_bar / origin_price)` per bar (Assumption 21) |
+| Default price_mode | `"raw"` |
+
+**Rationale:**
+1. `get_angle_scale_basis` is already defined and tested in Phase 1; reuse avoids new design.
+2. Median ATR is robust to outlier volatility spikes and gives a stable constant.
+3. Using bar-index deltas from stored Impulse data is gap-safe and avoids
+   re-coupling to the raw DataFrame.
+
+
 
 **Decision: When `missing_bar_count > 0` in a dataset manifest, pass `skip_on_gap=True` to `detect_impulses`.  Origins whose forward window crosses a detected gap are silently skipped; no Impulse is produced for them.**
 
