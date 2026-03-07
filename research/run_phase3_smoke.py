@@ -299,10 +299,6 @@ def main(args=None) -> list:
             if fname in hist:
                 pct = 100.0 * hist[fname] / total if total > 0 else 0.0
                 summary_lines.append(f"  {fname:12s}: {hist[fname]:5d}  ({pct:5.1f}%)")
-        unclassified = hist.get("unclassified", 0)
-        if "unclassified" not in [f for f in hist if f in family_order]:
-            pct = 100.0 * unclassified / total if total > 0 else 0.0
-            summary_lines.append(f"  {'unclassified':12s}: {unclassified:5d}  ({pct:5.1f}%)")
         summary_lines.append(f"Output:          {r['output_json']}")
         summary_lines.append("-" * 70)
 
