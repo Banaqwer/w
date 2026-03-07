@@ -280,6 +280,44 @@ consistent with 1D distributions after normalising for scale basis.
 
 ---
 
+---
+
+### Assumption 23 — JTTL horizon = 365 calendar days UTC for crypto
+**Date:** 2026-03-07
+**Assumption:** The default "one year" horizon for the JTTL module is 365
+calendar days in UTC.  One 1D bar = one calendar day for BTC/USD (24/7
+continuous market; no exchange closures or trading-day adjustments required).
+The default additive sqrt-price increment is `k = 2.0` (configurable).
+**Reason:** Crypto trades every calendar day.  Using 365 calendar days
+captures "one year" accurately without the 252-trading-day adjustment needed
+for equity markets.  `k = 2.0` is a commonly cited default in the Jenkins
+source material; its optimal value is a research question.
+**What it approximates:** The Jenkins JTTL projection as described in the
+source PDFs.  Both `k` and horizon length are open parameters that future
+ablation can test.
+**How it will later be tested:** Compare JTTL target levels against observed
+price reactions at the projected horizons across multiple BTC/USD epochs.
+**Status:** Active.  See `DECISIONS.md` 2026-03-07 Phase 3B.1 section.
+
+---
+
+### Assumption 24 — Sqrt-level default increments are provisional
+**Date:** 2026-03-07
+**Assumption:** The default sqrt-level increments `[0.25, 0.5, 0.75, 1.0]`
+(additive steps in sqrt-price space) are a provisional set based on common
+Jenkins practice.  The optimal increment set is an open research question.
+Down-levels where `sqrt(origin_price) - inc * step < 0` are silently
+skipped (negative sqrt-price has no physical meaning).
+**Reason:** The source material suggests equally spaced sqrt-price levels but
+does not specify exact increment values for all markets.  Using a range of
+increments allows the confluence engine (Phase 4) to score level density.
+**What it approximates:** Optimal Jenkins sqrt-price level grid.
+**How it will later be tested:** Ablation over increment sets in Phase 6;
+compare confluence score distributions for different grids.
+**Status:** Active.  Config-driven; can be changed without breaking anything.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date

@@ -1,0 +1,4672 @@
+[
+  {
+    "label": "pivot_6",
+    "origin_time": "2015-07-22 06:00:00+00:00",
+    "origin_price": 275.01,
+    "jttl": {
+      "t0": "2015-07-22 06:00:00+00:00",
+      "p0": 275.01,
+      "t1": "2016-07-21 06:00:00+00:00",
+      "p1": 345.34370184152243,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.19269507353841764,
+      "intercept_raw": 275.01,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 73.67519263391016,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 91.84204355467138,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 112.00889447543261,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 112.00889447543261,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 128.44653266600352,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 134.17574539619383,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 146.00917085657446,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 158.34259631695505,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 158.34259631695505,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 164.69680904714536,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 171.17602177733568,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 184.5094472377163,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 184.5094472377163,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 184.5094472377163,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 198.3428726980969,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 205.4470854282872,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 212.67629815847752,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 212.67629815847752,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 212.67629815847752,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 220.03051088866783,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 227.50972361885812,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 227.50972361885812,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 227.50972361885812,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 235.11393634904843,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 242.84314907923874,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 242.84314907923874,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 242.84314907923874,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 250.69736180942905,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 250.69736180942905,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 258.67657453961937,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 258.67657453961937,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 266.78078726980965,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 283.3642127301903,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 291.84342546038056,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 291.84342546038056,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 300.4476381905709,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 300.4476381905709,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 309.1768509207612,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 309.1768509207612,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 309.1768509207612,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 318.0310636509515,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 327.0102763811418,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 327.0102763811418,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 327.0102763811418,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 336.1144891113321,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 345.34370184152243,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 345.34370184152243,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 345.34370184152243,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 354.6979145717127,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 364.17712730190306,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 383.5105527622837,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 383.5105527622837,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 383.5105527622837,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 403.34397822266425,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 413.4481909528546,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 423.6774036830449,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 423.6774036830449,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 444.5108291434255,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 465.8442546038061,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 476.6984673339964,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 510.0111055245673,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 510.0111055245673,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 556.1779564453286,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 604.3448073660898,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_26",
+    "origin_time": "2015-07-27 06:00:00+00:00",
+    "origin_price": 287.24,
+    "jttl": {
+      "t0": "2015-07-27 06:00:00+00:00",
+      "p0": 287.24,
+      "t1": "2016-07-26 06:00:00+00:00",
+      "p1": 359.0326249676173,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.19669212319895155,
+      "intercept_raw": 287.24,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 80.06950012953108,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 98.9658126133397,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 119.86212509714832,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 119.86212509714832,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 136.8468594600048,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 142.75843758095695,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 154.95659382286127,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 167.65475006476555,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 167.65475006476555,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 174.1913281857177,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 180.85290630666987,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 194.55106254857418,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 194.55106254857418,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 194.55106254857418,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 208.7492187904785,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 216.03579691143065,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 223.4473750323828,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 223.4473750323828,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 223.4473750323828,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 230.98395315333497,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 238.64553127428712,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 238.64553127428712,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 238.64553127428712,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 246.43210939523928,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 254.34368751619144,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 254.34368751619144,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 254.34368751619144,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 262.38026563714357,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 262.38026563714357,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 270.54184375809575,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 270.54184375809575,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 278.8284218790479,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 295.7765781209522,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 304.4381562419044,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 304.4381562419044,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 313.2247343628565,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 313.2247343628565,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 322.1363124838087,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 322.1363124838087,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 322.1363124838087,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 331.1728906047608,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 340.334468725713,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 340.334468725713,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 340.334468725713,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 349.62104684666514,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 359.03262496761727,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 359.03262496761727,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 359.03262496761727,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 368.56920308856945,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 378.2307812095216,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 397.9289374514259,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 397.9289374514259,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 397.9289374514259,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 418.1270936933302,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 428.4136718142824,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 438.8252499352345,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 438.8252499352345,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 460.02340617713884,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 481.72156241904315,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 492.75814053999534,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 526.6178749028518,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 526.6178749028518,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 573.5141873866604,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 622.410499870469,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_29",
+    "origin_time": "2015-07-28 00:00:00+00:00",
+    "origin_price": 298.0,
+    "jttl": {
+      "t0": "2015-07-28 00:00:00+00:00",
+      "p0": 298.0,
+      "t1": "2016-07-27 00:00:00+00:00",
+      "p1": 371.05070600652823,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.20013892056583077,
+      "intercept_raw": 298.0,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 85.7971759738869,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 105.32252897715102,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 126.84788198041517,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 126.84788198041517,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 144.30439673286327,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 150.3732349836793,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 162.88591148531137,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 175.89858798694343,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 175.89858798694343,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 182.59242623775947,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 189.4112644885755,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 203.42394099020757,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 203.42394099020757,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 203.42394099020757,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 217.93661749183963,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 225.38045574265567,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 232.9492939934717,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 232.9492939934717,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 232.9492939934717,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 240.64313224428776,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 248.46197049510377,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 248.46197049510377,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 248.46197049510377,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 256.4058087459198,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 264.4746469967358,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 264.4746469967358,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 264.4746469967358,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 272.66848524755187,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 272.66848524755187,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 280.9873234983679,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 280.9873234983679,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 289.43116174918396,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 306.69383825081604,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 315.51267650163203,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 315.51267650163203,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 324.4565147524481,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 324.4565147524481,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 333.5253530032641,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 333.5253530032641,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 333.5253530032641,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 342.71919125408016,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 352.0380295048962,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 352.0380295048962,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 352.0380295048962,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 361.48186775571224,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 371.05070600652823,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 371.05070600652823,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 371.05070600652823,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 380.7445442573443,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 390.5633825081603,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 410.5760590097924,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 410.5760590097924,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 410.5760590097924,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 431.08873551142443,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 441.5325737622405,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 452.1014120130565,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 452.1014120130565,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 473.6140885146886,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 495.6267650163207,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 506.8206032671367,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 541.1521180195848,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 541.1521180195848,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 588.677471022849,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 638.202824026113,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_47",
+    "origin_time": "2015-08-01 12:00:00+00:00",
+    "origin_price": 277.26,
+    "jttl": {
+      "t0": "2015-08-01 12:00:00+00:00",
+      "p0": 277.26,
+      "t1": "2016-07-31 12:00:00+00:00",
+      "p1": 347.8645043521833,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.19343699822515975,
+      "intercept_raw": 277.26,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 74.84198259126693,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 93.14423476735857,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 113.4464869434502,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 113.4464869434502,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 129.9856760755189,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 135.74873911954182,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 147.64986520758765,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 160.05099129563348,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 160.05099129563348,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 166.43905433965637,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 172.95211738367928,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 186.3532434717251,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 186.3532434717251,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 186.3532434717251,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 200.2543695597709,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 207.39243260379382,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 214.65549564781674,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 214.65549564781674,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 214.65549564781674,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 222.04355869183965,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 229.55662173586256,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 229.55662173586256,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 229.55662173586256,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 237.19468477988545,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 244.95774782390836,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 244.95774782390836,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 244.95774782390836,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 252.84581086793128,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 252.84581086793128,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 260.85887391195416,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 260.85887391195416,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 268.9969369559771,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 285.64806304402293,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 294.1611260880458,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 294.1611260880458,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 302.7991891320687,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 302.7991891320687,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 311.56225217609165,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 311.56225217609165,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 311.56225217609165,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 320.45031522011453,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 329.4633782641375,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 329.4633782641375,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 329.4633782641375,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 338.60144130816036,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 347.8645043521833,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 347.8645043521833,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 347.8645043521833,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 357.2525673962062,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 366.7656304402291,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 386.1667565282749,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 386.1667565282749,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 386.1667565282749,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 406.06788261632073,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 416.2059456603436,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 426.46900870436656,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 426.46900870436656,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 447.3701347924124,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 468.77126088045816,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 479.6593239244811,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 513.0735130565498,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 513.0735130565498,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 559.3757652326415,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 607.6780174087331,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_57",
+    "origin_time": "2015-08-04 00:00:00+00:00",
+    "origin_price": 280.11,
+    "jttl": {
+      "t0": "2015-08-04 00:00:00+00:00",
+      "p0": 280.11,
+      "t1": "2016-08-03 00:00:00+00:00",
+      "p1": 351.05594834640857,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.19437246122303714,
+      "intercept_raw": 280.11,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 76.32620661436587,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 94.79918078757014,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 115.27215496077442,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 115.27215496077442,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 131.9393855906776,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 137.74512913397868,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 149.73161622058083,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 162.21810330718296,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 162.21810330718296,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 168.64884685048403,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 175.20459039378508,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 188.69107748038724,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 188.69107748038724,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 188.69107748038724,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 202.67756456698936,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 209.85830811029044,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 217.16405165359149,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 217.16405165359149,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 217.16405165359149,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 224.59479519689256,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 232.15053874019364,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 232.15053874019364,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 232.15053874019364,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 239.8312822834947,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 247.63702582679576,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 247.63702582679576,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 247.63702582679576,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 255.56776937009684,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 255.56776937009684,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 263.6235129133979,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 263.6235129133979,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 271.80425645669897,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 288.5407435433011,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 297.09648708660217,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 297.09648708660217,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 305.7772306299032,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 305.7772306299032,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 314.5829741732043,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 314.5829741732043,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 314.5829741732043,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 323.51371771650537,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 332.5694612598065,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 332.5694612598065,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 332.5694612598065,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 341.7502048031075,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 351.05594834640857,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 351.05594834640857,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 351.05594834640857,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 360.4866918897097,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 370.0424354330107,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 389.5289225196129,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 389.5289225196129,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 389.5289225196129,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 409.515409606215,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 419.6961531495161,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 430.0018966928171,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 430.0018966928171,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 450.9883837794193,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 472.4748708660214,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 483.4056144093225,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 516.9478450392256,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 516.9478450392256,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 563.4208192124299,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 611.8937933856342,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_60",
+    "origin_time": "2015-08-04 18:00:00+00:00",
+    "origin_price": 286.47,
+    "jttl": {
+      "t0": "2015-08-04 18:00:00+00:00",
+      "p0": 286.47,
+      "t1": "2016-08-03 18:00:00+00:00",
+      "p1": 358.17169864929537,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.1964430099980694,
+      "intercept_raw": 286.47,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 79.6632054028186,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 98.51405472746627,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 119.36490405211396,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 119.36490405211396,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 136.3155410455997,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 142.21575337676163,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 154.39117803908547,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 167.0666027014093,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 167.0666027014093,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 173.59181503257122,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 180.24202736373314,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 193.917452026057,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 193.917452026057,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 193.917452026057,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 208.0928766883808,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 215.36808901954274,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 222.76830135070466,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 222.76830135070466,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 222.76830135070466,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 230.29351368186659,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 237.94372601302848,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 237.94372601302848,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 237.94372601302848,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 245.7189383441904,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 253.61915067535233,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 253.61915067535233,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 253.61915067535233,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 261.64436300651425,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 261.64436300651425,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 269.7945753376762,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 269.7945753376762,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 278.0697876688381,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 294.99521233116195,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 303.6454246623238,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 303.6454246623238,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 312.42063699348574,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 312.42063699348574,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 321.32084932464767,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 321.32084932464767,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 321.32084932464767,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 330.3460616558096,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 339.4962739869715,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 339.4962739869715,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 339.4962739869715,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 348.77148631813344,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 358.17169864929537,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 358.17169864929537,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 358.17169864929537,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 367.6969109804573,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 377.3471233116192,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 397.02254797394306,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 397.02254797394306,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 397.02254797394306,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 417.19797263626685,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 427.4731849674288,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 437.8733972985907,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 437.8733972985907,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 459.04882196091455,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 480.7242466232384,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 491.7494589544003,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 525.5750959478861,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 525.5750959478861,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 572.4259452725338,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 621.2767945971814,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_76",
+    "origin_time": "2015-08-08 18:00:00+00:00",
+    "origin_price": 260.07,
+    "jttl": {
+      "t0": "2015-08-08 18:00:00+00:00",
+      "p0": 260.07,
+      "t1": "2016-08-07 18:00:00+00:00",
+      "p1": 328.5767438334938,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.18768970913285982,
+      "intercept_raw": 260.07,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 66.0430246660245,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 83.29639658277142,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 102.54976849951836,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 102.54976849951836,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 118.30229743707856,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 123.8031404162653,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 135.17982637463876,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 147.05651233301222,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 147.05651233301222,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 153.18235531219898,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 159.4331982913857,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 172.30988424975916,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 172.30988424975916,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 172.30988424975916,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 185.68657020813262,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 192.56241318731938,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 199.5632561665061,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 199.5632561665061,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 199.5632561665061,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 206.68909914569284,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 213.93994212487956,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 213.93994212487956,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 213.93994212487956,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 221.3157851040663,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 228.81662808325305,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 228.81662808325305,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 228.81662808325305,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 236.44247106243978,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 236.44247106243978,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 244.1933140416265,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 244.1933140416265,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 252.06915702081324,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 268.1958429791867,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 276.44668595837345,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 276.44668595837345,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 284.82252893756015,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 284.82252893756015,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 293.3233719167469,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 293.3233719167469,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 293.3233719167469,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 301.94921489593366,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 310.70005787512036,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 310.70005787512036,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 310.70005787512036,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 319.5759008543071,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 328.5767438334938,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 328.5767438334938,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 328.5767438334938,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 337.7025868126806,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 346.95342979186734,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 365.8301157502408,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 365.8301157502408,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 365.8301157502408,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 385.20680170861425,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 395.082644687801,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 405.0834876669877,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 405.0834876669877,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 425.46017362536116,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 446.3368595837347,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 456.9627025629214,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 489.5902315004816,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 489.5902315004816,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 534.8436034172286,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 582.0969753339755,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_89",
+    "origin_time": "2015-08-12 00:00:00+00:00",
+    "origin_price": 272.4,
+    "jttl": {
+      "t0": "2015-08-12 00:00:00+00:00",
+      "p0": 272.4,
+      "t1": "2016-08-11 00:00:00+00:00",
+      "p1": 342.4181793144888,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.19183062825887343,
+      "intercept_raw": 272.4,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 72.32728274204469,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 90.33637239928909,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 110.3454620565335,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 110.3454620565335,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 126.66477929946682,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 132.3545517137779,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 144.10909654240012,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 156.3636413710223,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 156.3636413710223,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 162.67841378533342,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 169.11818619964453,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 182.37273102826674,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 182.37273102826674,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 182.37273102826674,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 196.12727585688893,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 203.19204827120004,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 210.38182068551114,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 210.38182068551114,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 210.38182068551114,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 217.69659309982225,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 225.13636551413336,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 225.13636551413336,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 225.13636551413336,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 232.70113792844444,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 240.39091034275555,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 240.39091034275555,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 240.39091034275555,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 248.20568275706665,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 248.20568275706665,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 256.14545517137776,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 256.14545517137776,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 264.21022758568887,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 280.7147724143111,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 289.1545448286222,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 289.1545448286222,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 297.71931724293324,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 297.71931724293324,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 306.40908965724435,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 306.40908965724435,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 306.40908965724435,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 315.22386207155546,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 324.16363448586657,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 324.16363448586657,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 324.16363448586657,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 333.2284069001777,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 342.4181793144888,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 342.4181793144888,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 342.4181793144888,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 351.7329517287999,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 361.172724143111,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 380.4272689717332,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 380.4272689717332,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 380.4272689717332,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 400.18181380035537,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 410.2465862146665,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 420.4363586289776,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 420.4363586289776,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 441.1909034575998,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 462.445448286222,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 473.2602207005331,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 506.4545379434664,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 506.4545379434664,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 552.4636276007109,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 600.4727172579552,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_97",
+    "origin_time": "2015-08-14 00:00:00+00:00",
+    "origin_price": 262.5,
+    "jttl": {
+      "t0": "2015-08-14 00:00:00+00:00",
+      "p0": 262.5,
+      "t1": "2016-08-13 00:00:00+00:00",
+      "p1": 331.30740698407857,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.18851344379199608,
+      "intercept_raw": 262.5,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 67.27037206368557,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 84.67407555572487,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 104.07777904776417,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 104.07777904776417,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 119.94305666679364,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 125.48148253980347,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 136.93333428582312,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 148.88518603184275,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 148.88518603184275,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 155.04861190485258,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 161.3370377778624,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 174.28888952388206,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 174.28888952388206,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 174.28888952388206,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 187.74074126990172,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 194.65416714291155,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 201.69259301592135,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 201.69259301592135,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 201.69259301592135,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 208.85601888893117,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 216.144444761941,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 216.144444761941,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 216.144444761941,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 223.55787063495083,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 231.09629650796066,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 231.09629650796066,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 231.09629650796066,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 238.7597223809705,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 238.7597223809705,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 246.54814825398032,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 246.54814825398032,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 254.46157412699014,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 270.66342587300977,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 278.9518517460196,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 278.9518517460196,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 287.3652776190294,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 287.3652776190294,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 295.90370349203926,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 295.90370349203926,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 295.90370349203926,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 304.5671293650491,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 313.3555552380589,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 313.3555552380589,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 313.3555552380589,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 322.26898111106874,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 331.30740698407857,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 331.30740698407857,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 331.30740698407857,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 340.4708328570884,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 349.7592587300982,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 368.7111104761178,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 368.7111104761178,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 368.7111104761178,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 388.1629622221375,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 398.0763880951473,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 408.11481396815714,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 408.11481396815714,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 428.5666657141768,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 449.51851746019645,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 460.1819433332063,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 492.92222095223576,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 492.92222095223576,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 538.3259244442751,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 585.7296279363144,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  },
+  {
+    "label": "pivot_116",
+    "origin_time": "2015-08-18 18:00:00+00:00",
+    "origin_price": 200.0,
+    "jttl": {
+      "t0": "2015-08-18 18:00:00+00:00",
+      "p0": 200.0,
+      "t1": "2016-08-17 18:00:00+00:00",
+      "p1": 260.5685424949238,
+      "k": 2.0,
+      "horizon_days": 365.0,
+      "horizon_bars": null,
+      "slope_raw": 0.16594121231485973,
+      "intercept_raw": 200.0,
+      "basis": "calendar_days"
+    },
+    "sqrt_levels": [
+      {
+        "level_price": 37.7258300203048,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "down",
+        "label": "-1\u00d78"
+      },
+      {
+        "level_price": 51.0101012677667,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "down",
+        "label": "-1\u00d77"
+      },
+      {
+        "level_price": 66.2943725152286,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.75\u00d78"
+      },
+      {
+        "level_price": 66.2943725152286,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "down",
+        "label": "-1\u00d76"
+      },
+      {
+        "level_price": 79.07007595082503,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.75\u00d77"
+      },
+      {
+        "level_price": 83.5786437626905,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "down",
+        "label": "-1\u00d75"
+      },
+      {
+        "level_price": 92.97077938642146,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.75\u00d76"
+      },
+      {
+        "level_price": 102.8629150101524,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.5\u00d78"
+      },
+      {
+        "level_price": 102.8629150101524,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "down",
+        "label": "-1\u00d74"
+      },
+      {
+        "level_price": 107.99648282201788,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.75\u00d75"
+      },
+      {
+        "level_price": 113.25505063388336,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.5\u00d77"
+      },
+      {
+        "level_price": 124.14718625761431,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.5\u00d76"
+      },
+      {
+        "level_price": 124.14718625761431,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.75\u00d74"
+      },
+      {
+        "level_price": 124.14718625761431,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "down",
+        "label": "-1\u00d73"
+      },
+      {
+        "level_price": 135.53932188134527,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.5\u00d75"
+      },
+      {
+        "level_price": 141.42288969321075,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.75\u00d73"
+      },
+      {
+        "level_price": 147.43145750507622,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "down",
+        "label": "-0.25\u00d78"
+      },
+      {
+        "level_price": 147.43145750507622,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.5\u00d74"
+      },
+      {
+        "level_price": 147.43145750507622,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "down",
+        "label": "-1\u00d72"
+      },
+      {
+        "level_price": 153.5650253169417,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "down",
+        "label": "-0.25\u00d77"
+      },
+      {
+        "level_price": 159.82359312880718,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "down",
+        "label": "-0.25\u00d76"
+      },
+      {
+        "level_price": 159.82359312880718,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.5\u00d73"
+      },
+      {
+        "level_price": 159.82359312880718,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.75\u00d72"
+      },
+      {
+        "level_price": 166.20716094067265,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "down",
+        "label": "-0.25\u00d75"
+      },
+      {
+        "level_price": 172.71572875253813,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "down",
+        "label": "-0.25\u00d74"
+      },
+      {
+        "level_price": 172.71572875253813,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.5\u00d72"
+      },
+      {
+        "level_price": 172.71572875253813,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "down",
+        "label": "-1\u00d71"
+      },
+      {
+        "level_price": 179.3492965644036,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "down",
+        "label": "-0.25\u00d73"
+      },
+      {
+        "level_price": 179.3492965644036,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.75\u00d71"
+      },
+      {
+        "level_price": 186.10786437626908,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "down",
+        "label": "-0.25\u00d72"
+      },
+      {
+        "level_price": 186.10786437626908,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.5\u00d71"
+      },
+      {
+        "level_price": 192.99143218813455,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "down",
+        "label": "-0.25\u00d71"
+      },
+      {
+        "level_price": 207.1335678118655,
+        "increment_used": 0.25,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.25\u00d71"
+      },
+      {
+        "level_price": 214.39213562373098,
+        "increment_used": 0.25,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.25\u00d72"
+      },
+      {
+        "level_price": 214.39213562373098,
+        "increment_used": 0.5,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.5\u00d71"
+      },
+      {
+        "level_price": 221.77570343559645,
+        "increment_used": 0.25,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.25\u00d73"
+      },
+      {
+        "level_price": 221.77570343559645,
+        "increment_used": 0.75,
+        "step": 1,
+        "direction": "up",
+        "label": "+0.75\u00d71"
+      },
+      {
+        "level_price": 229.28427124746193,
+        "increment_used": 0.25,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.25\u00d74"
+      },
+      {
+        "level_price": 229.28427124746193,
+        "increment_used": 0.5,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.5\u00d72"
+      },
+      {
+        "level_price": 229.28427124746193,
+        "increment_used": 1.0,
+        "step": 1,
+        "direction": "up",
+        "label": "+1\u00d71"
+      },
+      {
+        "level_price": 236.9178390593274,
+        "increment_used": 0.25,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.25\u00d75"
+      },
+      {
+        "level_price": 244.67640687119288,
+        "increment_used": 0.25,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.25\u00d76"
+      },
+      {
+        "level_price": 244.67640687119288,
+        "increment_used": 0.5,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.5\u00d73"
+      },
+      {
+        "level_price": 244.67640687119288,
+        "increment_used": 0.75,
+        "step": 2,
+        "direction": "up",
+        "label": "+0.75\u00d72"
+      },
+      {
+        "level_price": 252.55997468305836,
+        "increment_used": 0.25,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.25\u00d77"
+      },
+      {
+        "level_price": 260.5685424949238,
+        "increment_used": 0.25,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.25\u00d78"
+      },
+      {
+        "level_price": 260.5685424949238,
+        "increment_used": 0.5,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.5\u00d74"
+      },
+      {
+        "level_price": 260.5685424949238,
+        "increment_used": 1.0,
+        "step": 2,
+        "direction": "up",
+        "label": "+1\u00d72"
+      },
+      {
+        "level_price": 268.7021103067893,
+        "increment_used": 0.75,
+        "step": 3,
+        "direction": "up",
+        "label": "+0.75\u00d73"
+      },
+      {
+        "level_price": 276.96067811865476,
+        "increment_used": 0.5,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.5\u00d75"
+      },
+      {
+        "level_price": 293.8528137423857,
+        "increment_used": 0.5,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.5\u00d76"
+      },
+      {
+        "level_price": 293.8528137423857,
+        "increment_used": 0.75,
+        "step": 4,
+        "direction": "up",
+        "label": "+0.75\u00d74"
+      },
+      {
+        "level_price": 293.8528137423857,
+        "increment_used": 1.0,
+        "step": 3,
+        "direction": "up",
+        "label": "+1\u00d73"
+      },
+      {
+        "level_price": 311.24494936611666,
+        "increment_used": 0.5,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.5\u00d77"
+      },
+      {
+        "level_price": 320.12851717798213,
+        "increment_used": 0.75,
+        "step": 5,
+        "direction": "up",
+        "label": "+0.75\u00d75"
+      },
+      {
+        "level_price": 329.1370849898476,
+        "increment_used": 0.5,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.5\u00d78"
+      },
+      {
+        "level_price": 329.1370849898476,
+        "increment_used": 1.0,
+        "step": 4,
+        "direction": "up",
+        "label": "+1\u00d74"
+      },
+      {
+        "level_price": 347.52922061357856,
+        "increment_used": 0.75,
+        "step": 6,
+        "direction": "up",
+        "label": "+0.75\u00d76"
+      },
+      {
+        "level_price": 366.4213562373095,
+        "increment_used": 1.0,
+        "step": 5,
+        "direction": "up",
+        "label": "+1\u00d75"
+      },
+      {
+        "level_price": 376.054924049175,
+        "increment_used": 0.75,
+        "step": 7,
+        "direction": "up",
+        "label": "+0.75\u00d77"
+      },
+      {
+        "level_price": 405.7056274847714,
+        "increment_used": 0.75,
+        "step": 8,
+        "direction": "up",
+        "label": "+0.75\u00d78"
+      },
+      {
+        "level_price": 405.7056274847714,
+        "increment_used": 1.0,
+        "step": 6,
+        "direction": "up",
+        "label": "+1\u00d76"
+      },
+      {
+        "level_price": 446.9898987322333,
+        "increment_used": 1.0,
+        "step": 7,
+        "direction": "up",
+        "label": "+1\u00d77"
+      },
+      {
+        "level_price": 490.2741699796952,
+        "increment_used": 1.0,
+        "step": 8,
+        "direction": "up",
+        "label": "+1\u00d78"
+      }
+    ]
+  }
+]
