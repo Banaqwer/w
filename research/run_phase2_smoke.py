@@ -14,7 +14,8 @@ Outputs
 -------
     reports/phase2/origins_{version}_{method}.csv
     reports/phase2/impulses_{version}_{method}.csv
-    reports/phase2/phase2_smoke_summary.txt
+    reports/phase2/phase2_smoke_summary.json   (machine-readable)
+    reports/phase2/phase2_smoke_summary.txt    (human-readable)
 
 Gap policy
 ----------
@@ -27,6 +28,7 @@ silently skipped (DECISIONS.md 2026-03-06 / ASSUMPTIONS.md Assumption 18).
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 from pathlib import Path
@@ -243,7 +245,14 @@ def main(args=None) -> list:
             fh.write(f"Impulses CSV:   {r['impulse_csv']}\n")
             fh.write("-" * 60 + "\n")
 
-    logger.info("Summary → %s", summary_path)
+    logger.info("Summary (txt) → %s", summary_path)
+
+    # ── Write JSON summary (machine-readable artifact) ────────────────────
+    json_path = output_dir / "phase2_smoke_summary.json"
+    with open(json_path, "w", encoding="utf-8") as fh:
+        json.dump(results, fh, indent=2, default=str)
+
+    logger.info("Summary (json) → %s", json_path)
     logger.info(
         "Phase 2 smoke run complete. %d run(s) finished.", len(results)
     )
