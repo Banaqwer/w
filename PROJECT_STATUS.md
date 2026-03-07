@@ -3,7 +3,7 @@
 ## Current phase
 - Phase 3 — MVP projection stack (IN PROGRESS — 2026-03-07)
   - Adjusted angles module: COMPLETE (Phase 3A)
-  - JTTL + sqrt levels: IN PROGRESS (Phase 3B.1)
+  - JTTL + sqrt levels: COMPLETE (Phase 3B.1) — reviewed PASS 2026-03-07
 
 ## Current status
 
@@ -248,7 +248,7 @@ Phase 3 (projection stack: measured moves, adjusted angles, JTTL, sqrt levels, t
 
 ## Phase 3 — IN PROGRESS (2026-03-07)
 
-### Phase 3B.1 — JTTL + sqrt levels (IN PROGRESS — 2026-03-07)
+### Phase 3B.1 — JTTL + sqrt levels (COMPLETE — 2026-03-07)
 
 #### Completed deliverables
 - `modules/jttl.py` — Jenkins Theoretical Target Level module:
@@ -314,6 +314,17 @@ must be completed before Phase 4 begins.
 - Measured move module (Phase 3B.2)
 - Time-count / squaring-the-range module (deferred)
 - Log-level / semi-log module (deferred)
+
+#### Phase 3B.1 Review (2026-03-07)
+- **Verdict:** PASS
+- **Review:** `docs/reviews/phase3b1_review.md`
+- **Checks passed:**
+  1. Phase 3 scope only — no Phase 4+ (projection/confluence/signal/backtest) drift
+  2. JTTL horizon = 365 calendar days UTC for crypto — explicit in module docstring, code constant, Assumption 23, DECISIONS.md
+  3. Sqrt formulas correct — known-value verified for JTTL `(sqrt(p0)+k)^2` and sqrt levels `(sqrt(p0)±inc*n)^2`
+  4. Deterministic outputs — no RNG, re-run produces byte-identical JSON under `reports/phase3b1/`
+- **Tests:** 349 passed (248 prior + 101 Phase 3B.1), 0 failed
+- **Phase 3B.2 (measured moves) may begin next.**
 
 ### Phase 3A — Adjusted angles (COMPLETE — 2026-03-07)
 
