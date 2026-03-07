@@ -1,0 +1,41 @@
+{
+  "phase": "3B.1",
+  "scope": "jttl + sqrt_levels",
+  "k": 2.0,
+  "horizon_days": 365,
+  "increments": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "steps": 8,
+  "max_origins_per_file": 10,
+  "runs": [
+    {
+      "source": "reference",
+      "count": 3,
+      "output": "reports/phase3b1/reference_origins_jttl_sqrt.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot",
+      "count": 10,
+      "output": "reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag",
+      "count": 10,
+      "output": "reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot",
+      "count": 10,
+      "output": "reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag",
+      "count": 10,
+      "output": "reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.json"
+    }
+  ]
+}

@@ -62,6 +62,48 @@ If any decision in this file changes:
 
 ## Change log
 
+### 2026-03-07 — Phase 3B.1: JTTL horizon and sqrt-level increment decisions
+
+**Decision: JTTL default horizon = 365 calendar days UTC for crypto.**
+
+| Property | Value |
+|---|---|
+| Horizon basis | Calendar days (UTC) |
+| Default horizon | 365 calendar days (= one year for 24/7 crypto) |
+| Alternate horizon | N daily bars (one bar = one calendar day for 1D data) |
+| Basis flag | `"calendar_days"` or `"bars"` on `JTTLLine` |
+| Default k | 2.0 (configurable) |
+| slope_raw units | Price per calendar day |
+| Module | `modules/jttl.py` |
+
+**Rationale:**
+1. BTC/USD trades 24/7; every calendar day is a trading day.  No 252-day
+   adjustment is needed.  365 calendar days = one natural year.
+2. Using calendar days aligns with the UTC-based coordinate system already
+   established in Phase 1 (`calendar_day_index`).
+3. `k = 2.0` is taken as the Jenkins default; ablation will test alternatives.
+
+**Decision: Sqrt-level default increments = [0.25, 0.5, 0.75, 1.0].**
+
+| Property | Value |
+|---|---|
+| Default increments | [0.25, 0.5, 0.75, 1.0] (sqrt-space) |
+| Default steps | 8 per increment per direction |
+| Default direction | "both" (up and down) |
+| Clamping | Down-levels where sqrt_base - inc*n < 0 are silently skipped |
+| Module | `modules/sqrt_levels.py` |
+
+**Rationale:**
+1. A range of increments allows the Phase 4 confluence engine to score
+   cluster density at different granularities.
+2. The increment set is config-driven and can be changed without breaking
+   the module or tests.
+
+**Prior experiments affected:** None — this is the first use of JTTL and
+sqrt levels.
+
+---
+
 ### 2026-03-07 — Phase 3: adjusted-angle scale basis and gap policy
 
 **Decision: The canonical angle scale basis for all Phase 3 adjusted-angle

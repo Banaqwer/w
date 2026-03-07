@@ -1,0 +1,35 @@
+Phase 3B.1 Smoke Run Summary
+======================================================================
+
+JTTL k:          2.0
+JTTL horizon:    365 calendar days
+Sqrt increments: [0.25, 0.5, 0.75, 1.0]
+Sqrt steps:      8
+
+Reference origins:
+  label                    p0     p1 (JTTL)  # levels
+  -------------------------------------------------------
+  ref_47_70             47.70       79.3261        62
+  ref_100              100.00      144.0000        64
+  ref_10000          10000.00    10404.0000        64
+
+Source:  reference
+Count:   3
+Output:  reports/phase3b1/reference_origins_jttl_sqrt.json
+----------------------------------------------------------------------
+Source:  proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot
+Count:   10
+Output:  reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.json
+----------------------------------------------------------------------
+Source:  proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag
+Count:   10
+Output:  reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.json
+----------------------------------------------------------------------
+Source:  proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot
+Count:   10
+Output:  reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.json
+----------------------------------------------------------------------
+Source:  proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag
+Count:   10
+Output:  reports/phase3b1/origins_jttl_sqrt_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.json
+----------------------------------------------------------------------

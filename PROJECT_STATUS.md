@@ -2,7 +2,8 @@
 
 ## Current phase
 - Phase 3 — MVP projection stack (IN PROGRESS — 2026-03-07)
-  - Adjusted angles module: COMPLETE
+  - Adjusted angles module: COMPLETE (Phase 3A)
+  - JTTL + sqrt levels: IN PROGRESS (Phase 3B.1)
 
 ## Current status
 
@@ -246,6 +247,73 @@ Phase 3 (projection stack: measured moves, adjusted angles, JTTL, sqrt levels, t
 ---
 
 ## Phase 3 — IN PROGRESS (2026-03-07)
+
+### Phase 3B.1 — JTTL + sqrt levels (IN PROGRESS — 2026-03-07)
+
+#### Completed deliverables
+- `modules/jttl.py` — Jenkins Theoretical Target Level module:
+  - `theoretical_price(origin_price, k=2.0)` — endpoint formula: `(sqrt(p0) + k)^2`
+  - `compute_jttl(origin_time, origin_price, k, horizon_days, horizon_bars)` — full JTTLLine
+  - `JTTLLine` dataclass: `t0, p0, t1, p1, k, horizon_days, horizon_bars, slope_raw, intercept_raw, basis`
+  - `JTTLLine.price_at(t)` — price on the JTTL line at any timestamp
+  - `JTTLLine.time_at_price(p)` — timestamp where the line crosses price p
+  - `JTTLLine.to_dict()` — JSON-serialisable dict
+  - Horizon: 365 calendar days UTC (default); N daily bars (alternate, sets `basis="bars"`)
+  - `slope_raw` units: **price per calendar day**
+- `modules/sqrt_levels.py` — Square-root horizontal level module:
+  - `sqrt_levels(origin_price, increments, steps, direction)` — full level grid
+  - `SqrtLevel` dataclass: `level_price, increment_used, step, direction, label`
+  - `SqrtLevel.to_dict()` — JSON-serialisable dict
+  - Supports `direction="up"`, `"down"`, `"both"`; down-level clamping at sqrt < 0
+- `tests/test_jttl.py` — 58 tests:
+  - known-value checks (origin=47.70, k=2.0; origin=100, etc.)
+  - slope/intercept math, t1 placement, horizon basis flags
+  - `price_at` / `time_at_price` round-trip and edge cases
+  - invalid inputs: zero/negative origin, zero/negative horizon, zero horizon_bars
+  - determinism, bars-vs-calendar equivalence at N=365
+- `tests/test_sqrt_levels.py` — 43 tests:
+  - known-value checks (origin=47.70; multiple increments/steps)
+  - direction up/down/both; invalid direction raises
+  - down-level clamping when sqrt would go negative
+  - output sorted ascending; label format (+/-); to_dict keys
+  - invalid origin, steps, increments raise; determinism
+- `research/run_phase3b1_smoke.py` — Smoke-run script:
+  - Loads Phase 2 origin CSVs from `reports/phase2/`
+  - Applies 3 hardcoded reference origins (47.70, 100.0, 10000.0)
+  - Computes JTTL line + sqrt levels per origin
+  - Writes JSON per origin set to `reports/phase3b1/`
+  - Writes text + JSON summary
+- `ASSUMPTIONS.md` updated: Assumptions 23–24
+- `DECISIONS.md` updated: 2026-03-07 Phase 3B.1 horizon and sqrt-level decisions
+
+#### How to run Phase 3B.1 smoke script
+```
+python -m research.run_phase3b1_smoke
+python -m research.run_phase3b1_smoke --k 2.0 --horizon-days 365
+python -m research.run_phase3b1_smoke --origins-dir reports/phase2 --output-dir reports/phase3b1
+```
+
+#### Smoke-run results (2026-03-07, k=2.0, horizon=365 calendar days)
+| Origin | p0 | p1 (JTTL) | # sqrt levels |
+|---|---|---|---|
+| ref_47_70 | 47.70 | 79.3261 | 62 |
+| ref_100 | 100.00 | 144.0000 | 64 |
+| ref_10000 | 10000.00 | 10404.0000 | 64 |
+| 1D pivot (first 10) | 298.00 | 371.0507 | 64 |
+| 6H pivot (first 10) | 275.01 | 345.3437 | 64 |
+
+**Tests:** `pytest -q` → 349 passed (248 Phase 1–3A + 101 Phase 3B.1), 0 failed
+
+#### Note: Phase 4 NOT started
+No Phase 4+ (projections, confluence, signals, backtest) logic has been
+implemented.  Phase 3B.1 delivers only Phase 3 primitives (JTTL + sqrt
+levels).  Remaining Phase 3 modules (measured moves, time counts, log levels)
+must be completed before Phase 4 begins.
+
+#### Open Phase 3B.1 items
+- Measured move module (Phase 3B.2)
+- Time-count / squaring-the-range module (deferred)
+- Log-level / semi-log module (deferred)
 
 ### Phase 3A — Adjusted angles (COMPLETE — 2026-03-07)
 
