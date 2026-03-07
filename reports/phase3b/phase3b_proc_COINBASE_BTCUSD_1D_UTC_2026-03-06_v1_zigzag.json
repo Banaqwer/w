@@ -1,0 +1,992 @@
+{
+  "version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+  "method": "zigzag",
+  "missing_bar_count": 0,
+  "scale_basis": {
+    "price_per_bar": 746.2328571428576,
+    "atr_column_used": "atr_14",
+    "rows_excluded_warmup": 14,
+    "rows_used": 3869
+  },
+  "angles_and_moves": {
+    "n_impulses": 20,
+    "angles_raw": [
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "angle_deg": -0.274157449739881,
+        "angle_normalized": -0.27415744973987444,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_36",
+        "angle_deg": 0.3265494922871183,
+        "angle_normalized": 0.3265494922871183,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_107",
+        "angle_deg": -2.2656937733935716,
+        "angle_normalized": -2.265693773393565,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 4.859322575508233
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_114",
+        "angle_deg": 0.0985355515276056,
+        "angle_normalized": 0.0985355515276056,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_145",
+        "angle_deg": -0.2597779596590089,
+        "angle_normalized": -0.2597779596590044,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_180",
+        "angle_deg": 0.2164937194824939,
+        "angle_normalized": 0.2164937194824939,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_320",
+        "angle_deg": -3.0590774588750427,
+        "angle_normalized": -3.059077458875038,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 4.06593889002676
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_323",
+        "angle_deg": 0.17111477933412242,
+        "angle_normalized": 0.17111477933412242,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_334",
+        "angle_deg": -0.5155213191418134,
+        "angle_normalized": -0.5155213191418113,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_339",
+        "angle_deg": 0.24713222320550543,
+        "angle_normalized": 0.24713222320550543,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_349",
+        "angle_deg": -0.5687933533439445,
+        "angle_normalized": -0.5687933533439491,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_379",
+        "angle_deg": 0.3405843168621983,
+        "angle_normalized": 0.3405843168621983,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_535",
+        "angle_deg": -0.9020447234911461,
+        "angle_normalized": -0.9020447234911444,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_542",
+        "angle_deg": 1.1517232352062023,
+        "angle_normalized": 1.1517232352062023,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_599",
+        "angle_deg": -2.8979770703422694,
+        "angle_normalized": -2.8979770703422787,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 4.227039278559519
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_607",
+        "angle_deg": 1.8551247344744104,
+        "angle_normalized": 1.8551247344744104,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_610",
+        "angle_deg": -3.4354380536981695,
+        "angle_normalized": -3.4354380536981637,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 3.689578295203634
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_614",
+        "angle_deg": 1.9497220711174141,
+        "angle_normalized": 1.9497220711174141,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_631",
+        "angle_deg": -22.459698784123656,
+        "angle_normalized": -22.459698784123646,
+        "angle_family": "1x3",
+        "angle_family_delta_deg": 4.0247499612016355
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_635",
+        "angle_deg": 2.602564093165582,
+        "angle_normalized": 2.602564093165582,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 4.522452255736216
+      }
+    ],
+    "angles_log": [
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "angle_deg": -0.666957898422354,
+        "angle_normalized": -0.6669578984223676,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_36",
+        "angle_deg": 0.4784979986884217,
+        "angle_normalized": 0.4784979986884217,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_107",
+        "angle_deg": -4.76875654428449,
+        "angle_normalized": -4.768756544284486,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 2.356259804617312
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_114",
+        "angle_deg": 0.14233237199161794,
+        "angle_normalized": 0.14233237199161794,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_145",
+        "angle_deg": -0.5001701107146961,
+        "angle_normalized": -0.5001701107146914,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_180",
+        "angle_deg": 0.2628408122799278,
+        "angle_normalized": 0.2628408122799278,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_320",
+        "angle_deg": -5.26154560029574,
+        "angle_normalized": -5.261545600295733,
+        "angle_family": "1x8",
+        "angle_family_delta_deg": 1.8634707486060647
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_323",
+        "angle_deg": 0.20105919930361577,
+        "angle_normalized": 0.20105919930361577,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_334",
+        "angle_deg": -0.9259163245637206,
+        "angle_normalized": -0.9259163245637296,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_339",
+        "angle_deg": 0.260617612080335,
+        "angle_normalized": 0.260617612080335,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_349",
+        "angle_deg": -1.0015069129333127,
+        "angle_normalized": -1.0015069129333085,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_379",
+        "angle_deg": 0.3495351890930499,
+        "angle_normalized": 0.3495351890930499,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_535",
+        "angle_deg": -11.364213529530783,
+        "angle_normalized": -11.364213529530787,
+        "angle_family": "1x4",
+        "angle_family_delta_deg": 2.672029938395692
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_542",
+        "angle_deg": 0.7615303075088905,
+        "angle_normalized": 0.7615303075088905,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_599",
+        "angle_deg": -32.491495300888666,
+        "angle_normalized": -32.49149530088866,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_607",
+        "angle_deg": 0.969533045216355,
+        "angle_normalized": 0.969533045216355,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_610",
+        "angle_deg": -37.61197909037539,
+        "angle_normalized": -37.6119790903754,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_614",
+        "angle_deg": 1.0062654444828705,
+        "angle_normalized": 1.0062654444828705,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_631",
+        "angle_deg": -79.21506913838515,
+        "angle_normalized": -79.21506913838515,
+        "angle_family": "4x1",
+        "angle_family_delta_deg": 3.2513126063116147
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_635",
+        "angle_deg": 0.35353867966402663,
+        "angle_normalized": 0.35353867966402663,
+        "angle_family": null,
+        "angle_family_delta_deg": null
+      }
+    ],
+    "measured_moves_raw_count": 160,
+    "measured_moves_log_count": 160,
+    "measured_moves_raw_sample": [
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 0.5,
+        "target_price": 148.03,
+        "direction": "extension",
+        "mode": "raw",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 0.5,
+        "target_price": 248.01000000000002,
+        "direction": "retracement",
+        "mode": "raw",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.0,
+        "target_price": 98.04,
+        "direction": "extension",
+        "mode": "raw",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.0,
+        "target_price": 298.0,
+        "direction": "retracement",
+        "mode": "raw",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.5,
+        "target_price": 48.05000000000001,
+        "direction": "extension",
+        "mode": "raw",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      }
+    ],
+    "measured_moves_log_sample": [
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 0.5,
+        "target_price": 161.41929724222723,
+        "direction": "extension",
+        "mode": "log",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 0.5,
+        "target_price": 242.9196575001701,
+        "direction": "retracement",
+        "mode": "log",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.0,
+        "target_price": 131.58362550335568,
+        "direction": "extension",
+        "mode": "log",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.0,
+        "target_price": 298.00000000000006,
+        "direction": "retracement",
+        "mode": "log",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "ratio": 1.5,
+        "target_price": 107.26258134196588,
+        "direction": "extension",
+        "mode": "log",
+        "origin_price": 298.0,
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "extreme_price": 198.02,
+        "extreme_time": "2015-08-25 00:00:00+00:00",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "quality_score": 0.0253213813764425,
+        "notes": ""
+      }
+    ],
+    "time_windows_count": 80,
+    "time_windows_sample": [
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "impulse_delta_t": 28,
+        "multiplier": 0.5,
+        "bar_offset": 14,
+        "target_bar_index": 50,
+        "target_time": "2015-09-08 00:00:00+00:00",
+        "in_dataset": true,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "impulse_delta_t": 28,
+        "multiplier": 1.0,
+        "bar_offset": 28,
+        "target_bar_index": 64,
+        "target_time": "2015-09-22 00:00:00+00:00",
+        "in_dataset": true,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "impulse_delta_t": 28,
+        "multiplier": 1.5,
+        "bar_offset": 42,
+        "target_bar_index": 78,
+        "target_time": "2015-10-06 00:00:00+00:00",
+        "in_dataset": true,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_8",
+        "origin_bar_index": 8,
+        "extreme_bar_index": 36,
+        "impulse_delta_t": 28,
+        "multiplier": 2.0,
+        "bar_offset": 56,
+        "target_bar_index": 92,
+        "target_time": "2015-10-20 00:00:00+00:00",
+        "in_dataset": true,
+        "notes": ""
+      },
+      {
+        "impulse_id": "zigzag_pct20.0_36",
+        "origin_bar_index": 36,
+        "extreme_bar_index": 107,
+        "impulse_delta_t": 71,
+        "multiplier": 0.5,
+        "bar_offset": 36,
+        "target_bar_index": 143,
+        "target_time": "2015-12-10 00:00:00+00:00",
+        "in_dataset": true,
+        "notes": ""
+      }
+    ]
+  },
+  "jttl_and_sqrt": {
+    "n_origins": 10,
+    "results": [
+      {
+        "origin_time": "2015-07-28 00:00:00+00:00",
+        "origin_price": 298.0,
+        "jttl": {
+          "t0": "2015-07-28 00:00:00+00:00",
+          "p0": 298.0,
+          "t1": "2016-07-27 00:00:00+00:00",
+          "p1": 371.05070600652823,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.20013892056583077,
+          "intercept_raw": 298.0,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 85.7971759738869,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 105.32252897715102,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 126.84788198041517,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 126.84788198041517,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2015-08-25 00:00:00+00:00",
+        "origin_price": 198.02,
+        "jttl": {
+          "t0": "2015-08-25 00:00:00+00:00",
+          "p0": 198.02,
+          "t1": "2016-08-24 00:00:00+00:00",
+          "p1": 258.3078317223181,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.16517214170498107,
+          "intercept_raw": 198.02,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 36.8686731107276,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 50.01258897188665,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 65.1565048330457,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 65.1565048330457,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2015-11-04 00:00:00+00:00",
+        "origin_price": 499.99,
+        "jttl": {
+          "t0": "2015-11-04 00:00:00+00:00",
+          "p0": 499.99,
+          "t1": "2016-11-03 00:00:00+00:00",
+          "p1": 593.4318246683284,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.25600499909131075,
+          "intercept_raw": 499.99,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 206.22270132668638,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 235.9436136608506,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 267.6645259950148,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 267.6645259950148,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2015-11-11 00:00:00+00:00",
+        "origin_price": 293.32,
+        "jttl": {
+          "t0": "2015-11-11 00:00:00+00:00",
+          "p0": 293.32,
+          "t1": "2016-11-10 00:00:00+00:00",
+          "p1": 365.82635007063215,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.1986475344400881,
+          "intercept_raw": 293.32,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 83.29459971747144,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 102.54777475278752,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 123.80094978810358,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 123.80094978810358,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2015-12-12 00:00:00+00:00",
+        "origin_price": 469.34,
+        "jttl": {
+          "t0": "2015-12-12 00:00:00+00:00",
+          "p0": 469.34,
+          "t1": "2016-12-11 00:00:00+00:00",
+          "p1": 559.9970251047196,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.24837541124580712,
+          "intercept_raw": 469.34,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 186.71189958112166,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 215.04041213348142,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 245.36892468584122,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 245.36892468584122,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2016-01-16 00:00:00+00:00",
+        "origin_price": 350.92,
+        "jttl": {
+          "t0": "2016-01-16 00:00:00+00:00",
+          "p0": 350.92,
+          "t1": "2017-01-15 00:00:00+00:00",
+          "p1": 429.85143532590314,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.21625050774220034,
+          "intercept_raw": 350.92,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 115.19425869638759,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 137.65997635933914,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 162.1256940222907,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 162.1256940222907,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2016-06-04 00:00:00+00:00",
+        "origin_price": 594.64,
+        "jttl": {
+          "t0": "2016-06-04 00:00:00+00:00",
+          "p0": 594.64,
+          "t1": "2017-06-04 00:00:00+00:00",
+          "p1": 696.180965752857,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.27819442672015615,
+          "intercept_raw": 594.64,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 268.4761369885725,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 302.2466198650009,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 338.01710274142937,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 338.01710274142937,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2016-06-07 00:00:00+00:00",
+        "origin_price": 475.0,
+        "jttl": {
+          "t0": "2016-06-07 00:00:00+00:00",
+          "p0": 475.0,
+          "t1": "2017-06-07 00:00:00+00:00",
+          "p1": 566.1779788708135,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.24980268183784518,
+          "intercept_raw": 475.0,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 190.28808451674615,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 218.8770739521529,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 249.46606338755961,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 249.46606338755961,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2016-06-18 00:00:00+00:00",
+        "origin_price": 785.15,
+        "jttl": {
+          "t0": "2016-06-18 00:00:00+00:00",
+          "p0": 785.15,
+          "t1": "2017-06-18 00:00:00+00:00",
+          "p1": 901.232112756675,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.31803318563472593,
+          "intercept_raw": 785.15,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 400.82154897330014,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 441.8626053516376,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 484.9036617299751,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 484.9036617299751,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      },
+      {
+        "origin_time": "2016-06-23 00:00:00+00:00",
+        "origin_price": 544.13,
+        "jttl": {
+          "t0": "2016-06-23 00:00:00+00:00",
+          "p0": 544.13,
+          "t1": "2017-06-23 00:00:00+00:00",
+          "p1": 641.4363770596628,
+          "k": 2.0,
+          "horizon_days": 365.0,
+          "horizon_bars": null,
+          "slope_raw": 0.26659281386209,
+          "intercept_raw": 544.13,
+          "basis": "calendar_days"
+        },
+        "sqrt_levels_count": 64,
+        "sqrt_levels_sample": [
+          {
+            "level_price": 234.90449176134808,
+            "increment_used": 1.0,
+            "step": 8,
+            "direction": "down",
+            "label": "-1\u00d78"
+          },
+          {
+            "level_price": 266.55768029117957,
+            "increment_used": 1.0,
+            "step": 7,
+            "direction": "down",
+            "label": "-1\u00d77"
+          },
+          {
+            "level_price": 300.21086882101105,
+            "increment_used": 0.75,
+            "step": 8,
+            "direction": "down",
+            "label": "-0.75\u00d78"
+          },
+          {
+            "level_price": 300.21086882101105,
+            "increment_used": 1.0,
+            "step": 6,
+            "direction": "down",
+            "label": "-1\u00d76"
+          }
+        ]
+      }
+    ]
+  }
+}

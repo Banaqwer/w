@@ -1,0 +1,79 @@
+{
+  "phase": "3B",
+  "scope": "adjusted_angles + measured_moves + time_counts + jttl + sqrt_levels",
+  "ratios": [
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "multipliers": [
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "jttl_k": 2.0,
+  "jttl_horizon_days": 365,
+  "sqrt_increments": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "sqrt_steps": 8,
+  "grand_totals": {
+    "impulses_processed": 80,
+    "angles_computed": 80,
+    "mm_raw_targets": 640,
+    "mm_log_targets": 640,
+    "time_windows": 320,
+    "origins_processed": 40
+  },
+  "runs": [
+    {
+      "source": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot",
+      "missing_bar_count": 0,
+      "n_impulses": 20,
+      "n_angles": 20,
+      "n_mm_raw": 160,
+      "n_mm_log": 160,
+      "n_time_windows": 80,
+      "n_origins": 10,
+      "output": "reports/phase3b/phase3b_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag",
+      "missing_bar_count": 0,
+      "n_impulses": 20,
+      "n_angles": 20,
+      "n_mm_raw": 160,
+      "n_mm_log": 160,
+      "n_time_windows": 80,
+      "n_origins": 10,
+      "output": "reports/phase3b/phase3b_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot",
+      "missing_bar_count": 1,
+      "n_impulses": 20,
+      "n_angles": 20,
+      "n_mm_raw": 160,
+      "n_mm_log": 160,
+      "n_time_windows": 80,
+      "n_origins": 10,
+      "output": "reports/phase3b/phase3b_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.json"
+    },
+    {
+      "source": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag",
+      "missing_bar_count": 1,
+      "n_impulses": 20,
+      "n_angles": 20,
+      "n_mm_raw": 160,
+      "n_mm_log": 160,
+      "n_time_windows": 80,
+      "n_origins": 10,
+      "output": "reports/phase3b/phase3b_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.json"
+    }
+  ]
+}

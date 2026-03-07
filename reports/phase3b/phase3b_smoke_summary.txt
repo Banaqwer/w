@@ -1,0 +1,20 @@
+Phase 3B Integrated Smoke Run Summary
+======================================================================
+
+Measured-move ratios:   [0.5, 1.0, 1.5, 2.0]
+Time-count multipliers: [0.5, 1.0, 1.5, 2.0]
+JTTL k:                 2.0
+JTTL horizon:           365 calendar days
+Sqrt increments:        [0.25, 0.5, 0.75, 1.0]
+Sqrt steps:             8
+
+Source                                              miss   imp   ang    mmR    mmL   win  orig
+------------------------------------------------------------------------------------------
+  proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot      0    20    20    160    160    80    10
+  proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag     0    20    20    160    160    80    10
+  proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot      1    20    20    160    160    80    10
+  proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag     1    20    20    160    160    80    10
+------------------------------------------------------------------------------------------
+  GRAND TOTALS                                              80    80    640    640   320    40
+
+NOTE: Phase 4 (projections, confluence, signals, backtest) NOT started.
