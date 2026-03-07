@@ -318,6 +318,41 @@ compare confluence score distributions for different grids.
 
 ---
 
+### Assumption 25 — Measured-move default ratios are [0.5, 1.0, 1.5, 2.0]
+**Date:** 2026-03-07
+**Assumption:** The default measured-move ratio set is `[0.5, 1.0, 1.5, 2.0]`.
+Ratios are applied as multiples of the impulse's signed `delta_p` (or log-space
+equivalent) to generate both extension and retracement targets.
+Both "raw" (linear price) and "log" (log-price space) formulas are supported.
+Neither target set is a trade signal; confirmation is a Phase 4+ task.
+**Reason:** These four ratios are the most commonly cited Fibonacci/extension
+levels in classical measured-move analysis.  They are a starting point for the
+confluence engine; optimal ratios are an open research question.
+**What it approximates:** Classical Jenkins measured-move level projection.
+**How it will later be tested:** Compare target levels against observed reactions
+across BTC/USD epochs in Phase 6 validation.
+**Status:** Active.  Config-driven; can be changed without breaking anything.
+
+---
+
+### Assumption 26 — Time counts use bar_index deltas (gap-safe)
+**Date:** 2026-03-07
+**Assumption:** All time-count arithmetic in `modules/time_counts.py` operates
+on `bar_index` deltas stored in Impulse objects, not on calendar-day spans.
+Because `bar_index` is a consecutive integer that counts only **present** bars,
+the result is automatically correct even when the dataset has missing bars
+(e.g., the 6H dataset with `missing_bar_count=1`).
+This matches the gap policy established in DECISIONS.md 2026-03-06 (Phase 2)
+and Assumption 18 (impulse delta_t is also a bar_index delta).
+**Reason:** Calendar arithmetic would count the missing bar as elapsed time,
+overstating the duration.  Bar-index arithmetic does not.
+**What it approximates:** Exact market-session bar count.
+**How it will later be tested:** Confirmed by the gap-safety unit tests in
+`tests/test_time_counts.py`.
+**Status:** Active.
+
+---
+
 ## Logging rule
 When a new simplification is introduced, add:
 - date

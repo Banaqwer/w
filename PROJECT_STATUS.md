@@ -311,9 +311,9 @@ levels).  Remaining Phase 3 modules (measured moves, time counts, log levels)
 must be completed before Phase 4 begins.
 
 #### Open Phase 3B.1 items
-- Measured move module (Phase 3B.2)
-- Time-count / squaring-the-range module (deferred)
-- Log-level / semi-log module (deferred)
+- ~~Measured move module (Phase 3B.2)~~ → completed in Phase 3B.2
+- ~~Time-count / squaring-the-range module (deferred)~~ → completed in Phase 3B.2
+- ~~Log-level / semi-log module (deferred)~~ → completed in Phase 3B.2
 
 #### Phase 3B.1 Review (2026-03-07)
 - **Verdict:** PASS
@@ -325,6 +325,73 @@ must be completed before Phase 4 begins.
   4. Deterministic outputs — no RNG, re-run produces byte-identical JSON under `reports/phase3b1/`
 - **Tests:** 349 passed (248 prior + 101 Phase 3B.1), 0 failed
 - **Phase 3B.2 (measured moves) may begin next.**
+
+### Phase 3B.2 — Measured moves + time counts + log helpers (COMPLETE — 2026-03-07)
+
+#### Completed deliverables
+- `modules/log_levels.py` — Canonical log-price conversion helpers:
+  - `log_price(p)` — natural log of price
+  - `log_return(p0, p1)` — log return `log(p1/p0)`
+  - `log_slope(delta_p, p0, delta_t)` — log return per bar; matches `modules/impulse.py` `slope_log` convention
+  - `log_scale_basis(price_per_bar, origin_price)` — per-impulse log scale basis; matches `modules/adjusted_angles.py` log-mode formula
+- `modules/measured_moves.py` — Measured-move target projections:
+  - `MeasuredMoveTarget` dataclass (impulse_id, ratio, target_price, direction, mode, basis fields, quality_score, notes)
+  - `measured_move_targets(impulse, ratios, mode, angle_family_tag)` — single-impulse targets (extension + retracement)
+  - `compute_measured_moves(impulses, ratios, mode, angle_family_tags)` — batch version
+  - Raw formula: `extreme ± ratio * delta_p`; log formula: `exp(log(extreme) ± ratio * log(extreme/origin))`
+  - Accepts `angle_family_tag` from Phase 3A output; propagated to notes
+  - Non-positive raw targets noted with WARNING; log targets with non-positive prices skipped
+- `modules/time_counts.py` — Gap-safe bar-count utilities:
+  - `TimeWindow` dataclass (impulse metadata, multiplier, bar_offset, target_bar_index, target_time, in_dataset, notes)
+  - `bars_between_by_bar_index(bar0, bar1)` — signed bar delta (canonical gap-safe op)
+  - `bars_between(t0, t1, index_map)` — timestamp-based lookup using bar_index map
+  - `build_index_map(df)` — build `timestamp → bar_index` dict from processed DataFrame
+  - `build_bar_to_time_map(df)` — build `bar_index → timestamp` dict (inverse)
+  - `time_square_windows(impulse, multipliers, bar_to_time_map)` — produce time-window objects
+  - All operations use bar_index deltas; gap-safe per Assumption 26
+- `research/run_phase3b_smoke.py` — Integrated Phase 3B smoke:
+  - Loads 1D and 6H datasets + manifests
+  - Reads `missing_bar_count` from each manifest; logs gap policy
+  - Runs: adjusted angles (raw + log), measured moves (raw + log), JTTL, sqrt levels, time counts
+  - Writes per-dataset JSON to `reports/phase3b/`
+  - Writes text + JSON summary
+- `tests/test_log_levels.py` — 43 tests
+- `tests/test_measured_moves.py` — 33 tests
+- `tests/test_time_counts.py` — 32 tests
+- `ASSUMPTIONS.md` updated: Assumptions 25–26
+
+#### How to run Phase 3B smoke script
+```
+python -m research.run_phase3b_smoke
+python -m research.run_phase3b_smoke --phase2-dir reports/phase2 --output-dir reports/phase3b
+python -m research.run_phase3b_smoke --max-impulses 20 --max-origins 10
+```
+
+#### Smoke-run results (2026-03-07)
+
+| Source | miss | imp | ang | mmR | mmL | win | orig |
+|---|---|---|---|---|---|---|---|
+| 1D pivot | 0 | 20 | 20 | 160 | 160 | 80 | 10 |
+| 1D zigzag | 0 | 20 | 20 | 160 | 160 | 80 | 10 |
+| 6H pivot | 1 | 20 | 20 | 160 | 160 | 80 | 10 |
+| 6H zigzag | 1 | 20 | 20 | 160 | 160 | 80 | 10 |
+| **TOTALS** | | **80** | **80** | **640** | **640** | **320** | **40** |
+
+Columns: `miss`=missing_bar_count, `imp`=impulses processed, `ang`=angles,
+`mmR`/`mmL`=measured-move targets raw/log, `win`=time windows, `orig`=origins.
+
+**Gap note (6H):** manifest `missing_bar_count=1`; time counts use bar_index
+deltas (gap-safe per Assumption 26).
+
+**Tests:** `pytest -q` → 457 passed (349 Phase 1–3B.1 + 108 Phase 3B.2), 0 failed
+
+#### Note: Phase 4 NOT started
+No Phase 4+ (projections, confluence, signals, backtest) logic has been
+implemented.  Phase 3B.2 delivers only Phase 3 primitives (measured moves,
+time counts, log helpers).  Phase 4 may not begin until Phase 3 is fully
+reviewed and accepted.
+
+---
 
 ### Phase 3A — Adjusted angles (COMPLETE — 2026-03-07)
 
@@ -393,6 +460,6 @@ Phase 3A (adjusted angles) reviewed and accepted.
 - 86 Phase 3 tests + 162 Phase 1+2 tests = 248/248 pass
 - Full review: `docs/reviews/phase3a_review.md`
 
-**Phase 4 may NOT begin yet.** The remaining Phase 3 modules (measured moves, JTTL, square-root levels, time counts, log levels) must be completed and reviewed first. The next task should be the next Phase 3 sub-module.
+**Phase 4 may NOT begin yet.** Phase 3B.2 (measured moves, time counts, log helpers) is now complete and pending review. Phase 4 may begin only after all Phase 3 modules have been reviewed and accepted.
 
 **Note: No Phase 4+ work (projections, confluence, signals, backtest) has been started.**
