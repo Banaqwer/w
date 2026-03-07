@@ -301,4 +301,19 @@ python -m research.run_phase3_smoke --phase2-dir reports/phase2 --output-dir rep
 - Time-count / squaring-the-range module (deferred)
 - Log-level / semi-log module (deferred)
 
+### Phase 3A Review — PASS (2026-03-07)
+
+Phase 3A (adjusted angles) reviewed and accepted.
+
+- All 5 review checks passed:
+  1. **Phase 3 scope only** — no Phase 4+ drift, no projection/confluence/signal/backtest logic ✅
+  2. **Single scale-basis authority** — all functions accept `scale_basis` from `core.coordinate_system.get_angle_scale_basis()`; no self-computed scales ✅
+  3. **Deterministic + reproducible** — stdlib `math` only, two explicit determinism tests ✅
+  4. **6H gap handling** — uses bar-index `delta_t` (gap-safe); manifest `missing_bar_count` read and logged; Assumption 22 documents policy ✅
+  5. **Round-trip + edge-case tests** — 27 parametrized round-trip cases, 14+ edge-case tests ✅
+- 86 Phase 3 tests + 162 Phase 1+2 tests = 248/248 pass
+- Full review: `docs/reviews/phase3a_review.md`
+
+**Phase 4 may NOT begin yet.** The remaining Phase 3 modules (measured moves, JTTL, square-root levels, time counts, log levels) must be completed and reviewed first. The next task should be the next Phase 3 sub-module.
+
 **Note: No Phase 4+ work (projections, confluence, signals, backtest) has been started.**
