@@ -220,9 +220,24 @@ Phase 1C "ingest from repo raw" pipeline executed and accepted.
 
 **Tests:** `pytest -q` → 158 passed (92 Phase 1 + 66 Phase 2), 0 failed
 
+### Phase 2 Review — PASS (2026-03-07)
+
+Phase 2 review completed and accepted.
+
+- All 5 review checks passed:
+  1. **Phase 2 scope only** — no Phase 3+ drift, no trading/backtest logic ✅
+  2. **Origin and Impulse schemas match Phase 0 interfaces** — all 10 CLAUDE.md Impulse fields present ✅
+  3. **Determinism** — repeated runs produce byte-identical CSV outputs ✅
+  4. **6H gap handling** — manifest `missing_bar_count` read; `skip_on_gap=True` auto-set for 6H ✅
+  5. **JSON artifacts** — `phase2_smoke_summary.json` produced under `reports/phase2/` ✅
+- Fix applied: added JSON summary output to smoke script (was CSV + TXT only)
+- 4 new smoke-script tests added (`tests/test_phase2_smoke.py`)
+- 162/162 tests pass (92 Phase 1 + 66 Phase 2 + 4 smoke)
+- Full review: `docs/reviews/phase2_review.md`
+
 ### Open Phase 2 items
-- None at this time.
+- None.
 
 ## Notes
-Phase 2 is complete.
+Phase 2 is complete and reviewed.
 Phase 3 (projection stack: measured moves, adjusted angles, JTTL, sqrt levels, time counts, log levels) may begin.

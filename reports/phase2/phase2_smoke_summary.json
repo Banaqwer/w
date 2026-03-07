@@ -1,0 +1,46 @@
+[
+  {
+    "version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+    "method": "pivot",
+    "rows": 3883,
+    "missing_bar_count": 0,
+    "skip_on_gap": false,
+    "origins_count": 481,
+    "impulses_count": 481,
+    "origin_csv": "reports/phase2/origins_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.csv",
+    "impulse_csv": "reports/phase2/impulses_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_pivot.csv"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+    "method": "zigzag",
+    "rows": 3883,
+    "missing_bar_count": 0,
+    "skip_on_gap": false,
+    "origins_count": 138,
+    "impulses_count": 138,
+    "origin_csv": "reports/phase2/origins_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.csv",
+    "impulse_csv": "reports/phase2/impulses_proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1_zigzag.csv"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "method": "pivot",
+    "rows": 15525,
+    "missing_bar_count": 1,
+    "skip_on_gap": true,
+    "origins_count": 1923,
+    "impulses_count": 1897,
+    "origin_csv": "reports/phase2/origins_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.csv",
+    "impulse_csv": "reports/phase2/impulses_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_pivot.csv"
+  },
+  {
+    "version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "method": "zigzag",
+    "rows": 15525,
+    "missing_bar_count": 1,
+    "skip_on_gap": true,
+    "origins_count": 1604,
+    "impulses_count": 1588,
+    "origin_csv": "reports/phase2/origins_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.csv",
+    "impulse_csv": "reports/phase2/impulses_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1_zigzag.csv"
+  }
+]
