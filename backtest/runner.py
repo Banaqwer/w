@@ -1,7 +1,7 @@
 """
 backtest/runner.py
 
-Phase 6 — Backtest runner.
+Phase 6/7 — Backtest runner.
 
 Loads processed datasets, generates forecast zones and signals for a given
 time window, simulates trade execution, and aggregates results.
@@ -15,11 +15,14 @@ Pipeline per backtest window
 5. Generate SignalCandidates (Phase 5 rules).
 6. For each signal, iterate through 6H bars in the test window:
    a. Check if price closes inside ``entry_region`` (first triggering bar).
-   b. On the next bar's open, apply fees+slippage and enter.
-   c. On each subsequent bar, check invalidation conditions.
-   d. On first invalidation, exit at the following bar's open.
-   e. Safety-valve: if ``max_hold_bars`` exceeded, exit at next open.
-7. Compute equity curve and summary metrics.
+   b. (Phase 7) If ``use_confirmation_gating=True``, evaluate all required
+      confirmation checks using only bars up to (and including) bar *i*.
+      If any check fails, skip entry for this bar.
+   c. On the next bar's open (bar *i+1*), apply fees+slippage and enter.
+   d. On each subsequent bar, check invalidation conditions.
+   e. On first invalidation, exit at the following bar's open.
+   f. Safety-valve: if ``max_hold_bars`` exceeded, exit at next open.
+7. Compute equity curve and summary metrics (including bar-frequency Sharpe).
 8. Write output files to the configured output directory.
 
 Determinism guarantee
@@ -31,10 +34,21 @@ Gap policy
 ----------
 The ``missing_bar_count`` from the 6H manifest is passed to signal generation
 so that ``strict_multi_candle`` is appended to ``confirmations_required`` when
-gaps are present (Phase 5 rule).  During execution, confirmation checks are
-**not** re-evaluated per bar; the backtest assumes that the confirmation
-window is the ``train_end`` bar (i.e., the most recent train bar acts as the
-confirmation snapshot).
+gaps are present (Phase 5 rule).
+
+Confirmation gating (Phase 7)
+------------------------------
+When ``BacktestConfig.use_confirmation_gating=True`` (default), all required
+confirmation checks are evaluated at each candidate entry bar using only past
+data.  Entry is blocked if any check fails.  Timing convention: checks are
+evaluated using the last ``confirmation_lookback`` 6H bars up to bar *i*;
+entry fill (if gate passes) is at bar *i+1* open.
+
+Bar-frequency Sharpe (Phase 7)
+--------------------------------
+``compute_summary`` now includes ``sharpe_bar`` (annualised from the 6H equity
+curve at bars_per_year=1008) in addition to the legacy ``sharpe_like``
+(per-trade approximation, kept for backwards compatibility).
 
 Output files
 -----------
@@ -45,12 +59,14 @@ Output files
 References
 ----------
 backtest/execution.py — Trade, build_trade, fill helpers
+backtest/gating.py — evaluate_confirmation_gate (Phase 7)
+backtest/metrics.py — compute_bar_sharpe (Phase 7)
 configs/backtest.yaml — configurable defaults
 signals/signal_generation.py — generate_signals
 signals/confluence.py — build_confluence_zones
-ASSUMPTIONS.md — Assumptions 31–38
-CLAUDE.md — Phase 6 goal
-PROJECT_STATUS.md — Phase 6 section
+ASSUMPTIONS.md — Assumptions 31–39
+CLAUDE.md — Phase 6/7 goal
+PROJECT_STATUS.md — Phase 6/7 section
 """
 
 from __future__ import annotations
@@ -69,6 +85,8 @@ from backtest.execution import (
     build_trade,
     compute_position_size,
 )
+from backtest.gating import evaluate_confirmation_gate
+from backtest.metrics import compute_equity_metrics
 from modules.impulse import Impulse, detect_impulses
 from modules.origin_selection import detect_pivots
 from signals.confluence import build_confluence_zones
@@ -156,6 +174,10 @@ class BacktestConfig:
     pivot_n_bars: int = 5
     max_impulses: int = 50
     max_origins: int = 20
+
+    # Phase 7 — confirmation gating
+    use_confirmation_gating: bool = True   # set False to replicate Phase 6 unfiltered behaviour
+    confirmation_lookback: int = 10        # recent 6H bars used by the gate at each decision bar
 
     @classmethod
     def from_yaml(cls, path: str = "configs/backtest.yaml") -> "BacktestConfig":
@@ -444,6 +466,7 @@ def simulate_signal_on_6h(
     df_6h: pd.DataFrame,
     equity: float,
     config: BacktestConfig,
+    missing_bar_count: int = 0,
 ) -> Optional[Trade]:
     """Simulate a single signal's execution against 6H bars.
 
@@ -459,17 +482,25 @@ def simulate_signal_on_6h(
         Current account equity used to compute position size.
     config:
         Backtest configuration.
+    missing_bar_count:
+        Missing bar count from the 6H manifest (passed to gating checks).
 
     Returns
     -------
     A :class:`~backtest.execution.Trade` if an entry was triggered, or
-    ``None`` if price never entered the entry region during the window.
+    ``None`` if price never entered the entry region during the window (or
+    if confirmation gating blocked all candidate entries).
 
     Notes
     -----
     - Neutral-bias signals are skipped (no directional trade).
-    - Only price-based entry is implemented (confirmation checks are assumed
-      to have passed at signal generation time; see ASSUMPTIONS.md Assumption 36).
+    - When ``config.use_confirmation_gating`` is True (default), all required
+      confirmation checks are evaluated at the triggering bar using only data
+      available up to that bar (no lookahead).  If any check fails, the entry
+      is skipped for that bar and the scan continues.
+    - Timing convention: confirmation gate is evaluated at bar *i* (the bar
+      whose close falls inside the entry region).  Entry fill is at bar *i+1*
+      open (``next_bar_open``).  See ``backtest/gating.py`` for details.
     """
     if signal.bias == "neutral":
         return None
@@ -500,6 +531,7 @@ def simulate_signal_on_6h(
     entry_open: Optional[float] = None
 
     # ── Step 1: find first bar where close is inside entry_region ────────
+    #   (and, if gating is enabled, confirmation checks pass at that bar)
     for i in range(len(rows) - 1):
         row = rows.iloc[i]
         ts = rows.index[i]
@@ -512,6 +544,27 @@ def simulate_signal_on_6h(
 
         close = float(row["close"])
         if price_lo <= close <= price_hi:
+            # Candidate entry bar found.
+            # Phase 7 confirmation gate: evaluate using bars up to (and including) i.
+            if config.use_confirmation_gating and signal.confirmations_required:
+                gate_slice = rows.iloc[: i + 1]
+                gate_result = evaluate_confirmation_gate(
+                    signal=signal,
+                    df_6h_up_to_bar=gate_slice,
+                    missing_bar_count=missing_bar_count,
+                    lookback=config.confirmation_lookback,
+                )
+                if not gate_result.passed:
+                    # Gate failed: skip this bar, keep scanning
+                    logger.debug(
+                        "Gate FAIL signal=%s bar=%s (%d/%d checks passed)",
+                        signal.signal_id,
+                        ts,
+                        gate_result.n_passed,
+                        gate_result.n_required,
+                    )
+                    continue
+
             # Entry: use next bar's open
             entry_bar_idx = i + 1
             entry_bar_time = rows.index[entry_bar_idx]
@@ -667,16 +720,20 @@ def compute_summary(
     - ``max_drawdown``: maximum peak-to-trough equity decline (absolute)
     - ``max_drawdown_pct``: max drawdown as fraction of peak equity
     - ``sharpe_like``: (mean net_pnl) / (std net_pnl) * sqrt(252)
-      assuming each trade is ~1 day; documented approximation (ASSUMPTIONS.md 35)
+      assuming each trade is ~1 day; kept for backwards compatibility
+      (ASSUMPTIONS.md Assumption 35 — superseded by sharpe_bar in Phase 7)
+    - ``sharpe_bar``: annualised bar-frequency Sharpe from 6H equity curve
+      (bars_per_year=1008); replaces sharpe_like as the primary Sharpe metric
+    - ``volatility_ann``: annualised return volatility from equity curve
     - ``total_return_pct``: (final_equity - initial_equity) / initial_equity
     - ``n_signals_generated``: signals produced in the train window
     - ``exit_reason_counts``: breakdown by exit reason
 
     Notes
     -----
-    Sharpe-like is computed per-trade, not per-bar.  This is a documented
-    approximation (ASSUMPTIONS.md Assumption 35).  Walk-forward Sharpe is more
-    meaningful than single-window Sharpe.
+    ``sharpe_like`` (per-trade) is retained for backwards compatibility with
+    Phase 6 outputs.  ``sharpe_bar`` (bar-frequency, from backtest/metrics.py)
+    is the Phase 7 primary metric.  Both are included in every summary dict.
     """
     n = len(trades)
     if n == 0:
@@ -693,6 +750,8 @@ def compute_summary(
             "max_drawdown": 0.0,
             "max_drawdown_pct": 0.0,
             "sharpe_like": 0.0,
+            "sharpe_bar": 0.0,
+            "volatility_ann": 0.0,
             "total_return_pct": 0.0,
             "n_signals_generated": n_signals_generated,
             "window_start": str(window_start) if window_start else None,
@@ -730,16 +789,20 @@ def compute_summary(
         peak_at_trough = float(peak[drawdown.idxmin()])
         max_dd_pct = max_dd / peak_at_trough if peak_at_trough > 0 else 0.0
 
-    # Sharpe-like (per-trade returns).
-    # NOTE: This is a per-trade Sharpe approximation (ASSUMPTIONS.md Assumption 35).
-    # We treat each trade as if it corresponds to one trading day and annualise with
-    # sqrt(252).  This does NOT equal a proper daily bar-frequency Sharpe ratio.
-    # Trades may last multiple days; the true annualisation factor depends on actual
-    # trade duration.  Use walk-forward aggregate Sharpe, not single-window results.
-    import numpy as np
+    # Sharpe-like (per-trade returns) — kept for backwards compatibility.
+    # NOTE: superseded by sharpe_bar in Phase 7 (ASSUMPTIONS.md Assumption 35 retired).
     pnl_arr = pd.Series(net_pnls)
     std_pnl = float(pnl_arr.std(ddof=1)) if len(pnl_arr) > 1 else 0.0
     sharpe_like = (avg_net / std_pnl) * math.sqrt(252) if std_pnl > 0 else 0.0
+
+    # Bar-frequency Sharpe (Phase 7) — from 6H equity curve (bars_per_year=1008)
+    equity_metrics = compute_equity_metrics(
+        equity_curve=equity_curve,
+        bars_per_year=1008,
+        initial_capital=initial_capital,
+    )
+    sharpe_bar = equity_metrics["sharpe_bar"]
+    volatility_ann = equity_metrics["volatility_ann"]
 
     # Total return
     if not equity_curve.empty:
@@ -766,6 +829,8 @@ def compute_summary(
         "max_drawdown": max_dd,
         "max_drawdown_pct": max_dd_pct,
         "sharpe_like": sharpe_like,
+        "sharpe_bar": sharpe_bar,
+        "volatility_ann": volatility_ann,
         "total_return_pct": total_return_pct,
         "n_signals_generated": n_signals_generated,
         "window_start": str(window_start) if window_start else None,
@@ -875,6 +940,9 @@ def run_backtest(
     n_signals = len(signals)
     logger.info("Signals generated: %d", n_signals)
 
+    # Extract missing_bar_count from 6H manifest for confirmation gating
+    missing_bar_count = int(manifest_6h.get("missing_bar_count", 0)) if manifest_6h else 0
+
     # ── Simulate execution ────────────────────────────────────────────────
     equity = config.initial_capital
     trades: List[Trade] = []
@@ -885,6 +953,7 @@ def run_backtest(
             df_6h=df_6h_test,
             equity=equity,
             config=config,
+            missing_bar_count=missing_bar_count,
         )
         if trade is not None:
             trades.append(trade)
