@@ -1,0 +1,3458 @@
+[
+  {
+    "signal_id": "5e90143b8d8bdc00",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=330.44.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 330.4436168036505,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "5e90143b8d8bdc00",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [211.28, 449.61] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "5e90143b8d8bdc00",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "3de0c70e955a63c9",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=602.28.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 602.2785130509318,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "3de0c70e955a63c9",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [578.41, 626.15] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "3de0c70e955a63c9",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "48bd9f443cd5ceaa",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=473.82.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 473.8226017809627,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "48bd9f443cd5ceaa",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [463.52, 484.13] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "48bd9f443cd5ceaa",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "70d608170729a73a",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=190.64.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 190.6391768590734,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "70d608170729a73a",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [170.02, 211.26] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "70d608170729a73a",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "766989cb6df872ff",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=500.19.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 500.1871754383293,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "766989cb6df872ff",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [484.74, 515.64] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "766989cb6df872ff",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "71032a1f5566670f",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=155.24.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 155.23630753043625,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "71032a1f5566670f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [149.62, 160.85] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "71032a1f5566670f",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "7f701efb41569998",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=165.43.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 165.42734617824317,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "7f701efb41569998",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [162.07, 168.78] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "7f701efb41569998",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "42f38a3aeb00af9e",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=141.38.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 141.37547964768345,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "42f38a3aeb00af9e",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [133.24, 149.51] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "42f38a3aeb00af9e",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "8eee569e775dfced",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=528.75.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 528.7526376602807,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "8eee569e775dfced",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [519.99, 537.52] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "8eee569e775dfced",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "d0b1550efc892feb",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=646.25.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 646.2482799529912,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "d0b1550efc892feb",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [635.01, 657.48] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "d0b1550efc892feb",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "af27a9c1dd2989bb",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=456.32.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 456.3225149621737,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "af27a9c1dd2989bb",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [449.84, 462.80] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "af27a9c1dd2989bb",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "c2be8c73150c9e36",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=545.77.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 545.768437028981,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "c2be8c73150c9e36",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [538.45, 553.09] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "c2be8c73150c9e36",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "90254eb21acf1df9",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=115.79.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 115.79129215248895,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "90254eb21acf1df9",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [112.69, 118.89] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "90254eb21acf1df9",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "a693c160e5e398e6",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=126.85.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 126.84788198041517,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "a693c160e5e398e6",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [126.21, 127.48] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "a693c160e5e398e6",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "20faa9404a140cf3",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=86.00.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 86.00483092687816,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "20faa9404a140cf3",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [85.78, 86.23] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "20faa9404a140cf3",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "433230497ff8c32d",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=123.37.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 123.37161667167129,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "433230497ff8c32d",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [121.98, 124.77] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "433230497ff8c32d",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "76e5aa1ba076a575",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=804.14.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 804.1368483174801,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "76e5aa1ba076a575",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [800.29, 807.98] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "76e5aa1ba076a575",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "4eca46897710abc4",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=571.41.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 571.4072958967398,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "4eca46897710abc4",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [570.65, 572.17] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "4eca46897710abc4",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "96ac1e370bbbd13f",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=675.29.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 675.292039031554,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "96ac1e370bbbd13f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [665.42, 685.16] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "96ac1e370bbbd13f",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "eee6d4ef38e45c2d",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=102.71.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 102.7055588885588,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "eee6d4ef38e45c2d",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [102.35, 103.06] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "eee6d4ef38e45c2d",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "577a9b27bc5fbfc2",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=105.32.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 105.32252897715102,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "577a9b27bc5fbfc2",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [104.80, 105.85] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "577a9b27bc5fbfc2",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "59eba1ce896a9d6a",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=557.77.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 557.7688663170168,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "59eba1ce896a9d6a",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [556.58, 558.96] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "59eba1ce896a9d6a",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "941164c791d310c8",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=119.98.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 119.98359581038437,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "941164c791d310c8",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [119.51, 120.46] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "941164c791d310c8",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "c469fa7905c59495",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=111.89.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 111.88698798071425,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "c469fa7905c59495",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [111.45, 112.33] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "c469fa7905c59495",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "d0d25da48eb0bf51",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=66.17.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 66.16807022100355,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "d0d25da48eb0bf51",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [65.96, 66.37] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "d0d25da48eb0bf51",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "5564b4756d65d31f",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=939.81.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 939.8114810899735,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "5564b4756d65d31f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [917.15, 962.47] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "5564b4756d65d31f",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "06f05b103c1a083f",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=98.75.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 98.74569177513649,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "06f05b103c1a083f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [98.47, 99.02] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "06f05b103c1a083f",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "f82c96f5c70f4a0f",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=746.08.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 746.0803444312335,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "f82c96f5c70f4a0f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [744.85, 747.31] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "f82c96f5c70f4a0f",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "30dec4094c39c05c",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=721.48.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 721.4841055037389,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "30dec4094c39c05c",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [717.88, 725.09] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "30dec4094c39c05c",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "ec54ffb9e3a8d864",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=50.01.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 50.01258897188664,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "ec54ffb9e3a8d864",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [49.76, 50.26] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "ec54ffb9e3a8d864",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "5229d7fba63b3a9a",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=862.04.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 862.0363863391494,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "5229d7fba63b3a9a",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [857.73, 866.35] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "5229d7fba63b3a9a",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "75f2d8a5d5d22ba9",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=101.44.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 101.4443365553638,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "75f2d8a5d5d22ba9",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [100.94, 101.95] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "75f2d8a5d5d22ba9",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "282c1598e0c2ba82",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=694.87.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 694.8736493366569,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "282c1598e0c2ba82",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [691.40, 698.35] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "282c1598e0c2ba82",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "36d5f3f1a81aceab",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=131.32.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 131.31558874205223,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "36d5f3f1a81aceab",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [130.66, 131.97] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "36d5f3f1a81aceab",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "4e1cbae9287c146f",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=83.44.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 83.43681455478117,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "4e1cbae9287c146f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [83.16, 83.71] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "4e1cbae9287c146f",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "50c5f59b3d163cbd",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=93.06.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 93.05707343843767,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "50c5f59b3d163cbd",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [92.68, 93.44] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "50c5f59b3d163cbd",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "443cc0076e88e24f",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=91.73.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 91.73166192740311,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "443cc0076e88e24f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [91.38, 92.08] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "443cc0076e88e24f",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "5e2a971a1a6e6f3c",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=65.16.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 65.15650483304569,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "5e2a971a1a6e6f3c",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [64.83, 65.48] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "5e2a971a1a6e6f3c",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "8d354643b2ddd33a",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=89.48.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 89.47838311307834,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "8d354643b2ddd33a",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [89.03, 89.93] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "8d354643b2ddd33a",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "e245a389cfa3d7aa",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=36.85.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 36.85041487258697,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "e245a389cfa3d7aa",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [36.68, 37.02] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "e245a389cfa3d7aa",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "672cd007c89a3c39",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=82.30.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 82.30042069420475,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "672cd007c89a3c39",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [81.89, 82.71] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "672cd007c89a3c39",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "7e957ae161f3eddb",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=106.54.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 106.54281552065356,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "7e957ae161f3eddb",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [106.01, 107.08] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "7e957ae161f3eddb",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "eea54ff46c5af7bf",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=108.00.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 107.99648282201787,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "eea54ff46c5af7bf",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [107.46, 108.54] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "eea54ff46c5af7bf",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "d71082d4b093ecac",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=109.40.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 109.39698592756528,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "d71082d4b093ecac",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [108.85, 109.94] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "d71082d4b093ecac",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "09542622c284fb18",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=129.99.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 129.9856760755189,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "09542622c284fb18",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [129.34, 130.64] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "09542622c284fb18",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "afc956dd9a8020e9",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=77.83.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 77.82694172891499,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "afc956dd9a8020e9",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [77.44, 78.22] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "afc956dd9a8020e9",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "a80143aff52f6781",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=762.34.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 762.337289754362,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "a80143aff52f6781",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [758.53, 766.15] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "a80143aff52f6781",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "4780ecbc8e5e8978",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=128.45.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 128.44653266600352,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "4780ecbc8e5e8978",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [127.80, 129.09] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "4780ecbc8e5e8978",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "6c96ff9ad4213cb4",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=51.01.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 51.0101012677667,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "6c96ff9ad4213cb4",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [50.76, 51.27] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "6c96ff9ad4213cb4",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "0b70b2541a7c5d66",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=79.07.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 79.07007595082503,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "0b70b2541a7c5d66",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [78.67, 79.47] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "0b70b2541a7c5d66",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "152d60bb162eb8da",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=71.56.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 71.55978029859139,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "152d60bb162eb8da",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [71.20, 71.92] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "152d60bb162eb8da",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "cf1503fa8417c483",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=104.23.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 104.22983522394355,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "cf1503fa8417c483",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [103.71, 104.75] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "cf1503fa8417c483",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "52769f13b0df34b4",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=74.84.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 74.84198259126693,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "52769f13b0df34b4",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [74.47, 75.22] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "52769f13b0df34b4",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "7e49e9dd58bde73c",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=73.68.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 73.67519263391014,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "7e49e9dd58bde73c",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [73.31, 74.04] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "7e49e9dd58bde73c",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "77cbd5f4a200e206",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=80.07.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 80.06950012953106,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "77cbd5f4a200e206",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [79.67, 80.47] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "77cbd5f4a200e206",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "fc9387a3799f5d64",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=37.73.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 37.7258300203048,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "fc9387a3799f5d64",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [37.54, 37.91] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "fc9387a3799f5d64",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "9632a99d43a89380",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=55.64.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 55.64117748410445,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "9632a99d43a89380",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [55.36, 55.92] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "9632a99d43a89380",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "c128a26e846f8e78",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=1101.93.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 1101.9302000000002,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "c128a26e846f8e78",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [1092.89, 1110.97] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "c128a26e846f8e78",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "f6e82214920b5254",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=48.05.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 48.05000000000001,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "f6e82214920b5254",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [47.57, 48.53] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "f6e82214920b5254",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "395da2e03f53ebe2",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=706.66.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 706.66,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "395da2e03f53ebe2",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [699.59, 713.73] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "395da2e03f53ebe2",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "2931d54b99f824a4",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close < entry_mid=537580.98.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 537580.977142858,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "2931d54b99f824a4",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [532205.17, 542956.79] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "2931d54b99f824a4",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "0a78fbda01a508ed",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close < entry_mid=268937.15.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 268937.14857142884,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "0a78fbda01a508ed",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [266247.78, 271626.52] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "0a78fbda01a508ed",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "ac7b68e01e03184b",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close < entry_mid=201776.19.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 201776.19142857156,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "ac7b68e01e03184b",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [199758.43, 203793.95] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "ac7b68e01e03184b",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "65883cf2fc59b4e6",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close < entry_mid=134615.23.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 134615.23428571437,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "65883cf2fc59b4e6",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [133269.08, 135961.39] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "65883cf2fc59b4e6",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "6dc03731e1c63fe7",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=67454.28.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 67454.27714285719,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "6dc03731e1c63fe7",
+    "check_name": "zone_rejection",
+    "passed": true,
+    "reason": "Found 10 bar(s) touching zone [66779.73, 68128.82] with short rejection.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 10,
+      "first_rejection_bar": {
+        "high": 67910.6,
+        "close": 67490.51,
+        "zone_lo": 66779.73437142861,
+        "zone_hi": 68128.81991428576
+      }
+    }
+  },
+  {
+    "signal_id": "6dc03731e1c63fe7",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "d720f8eec823d272",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=33873.80.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 33873.79857142859,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "d720f8eec823d272",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [33535.06, 34212.54] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "d720f8eec823d272",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "927c41f5d56b5c57",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=22680.31.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 22680.30571428573,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "927c41f5d56b5c57",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [22453.50, 22907.11] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "927c41f5d56b5c57",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "d748dabbc16fcc22",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=17083.56.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 17083.559285714295,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "d748dabbc16fcc22",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [16912.72, 17254.39] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "d748dabbc16fcc22",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "632324fb4efb4d1e",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=8688.44.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 8688.439642857147,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "632324fb4efb4d1e",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [8601.56, 8775.32] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "632324fb4efb4d1e",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "bcd631be5d7e80e0",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=47.03.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 47.03499999999997,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "bcd631be5d7e80e0",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [46.56, 47.51] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "bcd631be5d7e80e0",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "9aec673e14aa52ae",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=979.83.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 979.8299999999999,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "9aec673e14aa52ae",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [970.03, 989.63] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "9aec673e14aa52ae",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "257ce930c64c149d",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=20.15.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 20.150000000000034,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "257ce930c64c149d",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [19.95, 20.35] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "257ce930c64c149d",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "3d72db85112f9a1f",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=834.09.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 834.085,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "3d72db85112f9a1f",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [825.74, 842.43] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "3d72db85112f9a1f",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "3e2b7260f61d03fb",
+    "check_name": "candle_direction",
+    "passed": true,
+    "reason": "Last bar close=70922.52 > open=70887.61 (bullish=True), close > entry_mid=54.53.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 54.53000000000003,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "3e2b7260f61d03fb",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [53.98, 55.08] with a long rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "3e2b7260f61d03fb",
+    "check_name": "strict_multi_candle",
+    "passed": true,
+    "reason": "2/2 bars confirm long direction (PASS).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": true
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": true
+        }
+      ]
+    }
+  },
+  {
+    "signal_id": "f8a8ea3370b7b52c",
+    "check_name": "candle_direction",
+    "passed": false,
+    "reason": "Last bar close=70922.52 >= open=70887.61 (bearish=False), close >= entry_mid=1063.33.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "bar_open": 70887.61,
+      "bar_close": 70922.52,
+      "entry_mid": 1063.33,
+      "gap_note": "Dataset has 1 missing bar(s); result is noted but strict_multi_candle is required separately."
+    }
+  },
+  {
+    "signal_id": "f8a8ea3370b7b52c",
+    "check_name": "zone_rejection",
+    "passed": false,
+    "reason": "No bar in the slice touched zone [1052.70, 1073.96] with a short rejection close.",
+    "metadata": {
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); zone_rejection result may be less reliable.",
+      "rejection_bars_found": 0
+    }
+  },
+  {
+    "signal_id": "f8a8ea3370b7b52c",
+    "check_name": "strict_multi_candle",
+    "passed": false,
+    "reason": "0/2 bars confirm short direction (FAIL).",
+    "metadata": {
+      "missing_bar_count": 1,
+      "n_required": 2,
+      "bar_results": [
+        {
+          "open": 70702.38,
+          "close": 70887.6,
+          "ok": false
+        },
+        {
+          "open": 70887.61,
+          "close": 70922.52,
+          "ok": false
+        }
+      ]
+    }
+  }
+]

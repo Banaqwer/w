@@ -360,3 +360,75 @@ When a new simplification is introduced, add:
 - reason
 - what it approximates
 - how it will later be tested or replaced
+
+---
+
+### Assumption 27 — Phase 5 bias rule: direction_hint majority vote
+**Date:** 2026-03-08
+**Assumption:** Signal bias is determined by a strict majority vote over the
+`direction_hint` values of all Projections contributing to a ConfluenceZone:
+majority `"support"` → `"long"`, majority `"resistance"` → `"short"`, otherwise
+`"neutral"`.  `"turn"` and `"ambiguous"` hints count against both sides
+(i.e. they contribute neither to support nor resistance tallies, pushing the
+result toward neutral).
+**Reason:** The MVP must be deterministic and auditable.  A simple majority
+count is reproducible and easy to verify in unit tests.  More sophisticated
+weighting (e.g. by raw_score or module diversity) may be explored in Phase 6+.
+**What it approximates:** A more nuanced directional bias that could weight
+higher-quality projections more heavily.
+**How it will later be tested:** Phase 6 ablation comparing weighted vs.
+unweighted bias assignment.
+**Status:** Active (MVP).
+
+---
+
+### Assumption 28 — Phase 5 quality_score inherits confluence_score directly
+**Date:** 2026-03-08
+**Assumption:** `SignalCandidate.quality_score` is set equal to the parent
+`ConfluenceZone.confluence_score` without modification.  No additional
+weighting for bias certainty, confirmation state, or time recency is applied
+in Phase 5.
+**Reason:** Phase 5 scope is signal schema and confirmation logic only; no
+performance-based refinement is appropriate before Phase 6 validation.
+**What it approximates:** A refined quality score that also factors in
+confirmation strength, market regime, and time-in-zone.
+**How it will later be tested:** Phase 6 ablation comparing raw vs. adjusted
+quality scores vs. realized outcomes.
+**Status:** Active (MVP).
+
+---
+
+### Assumption 29 — Confirmation window: last N bars of processed dataset
+**Date:** 2026-03-08
+**Assumption:** The confirmation window used in `run_phase5_smoke.py` and
+returned by `_select_confirmation_window()` is always the last `N` bars of the
+processed dataset sorted by timestamp (tail of the chronologically sorted
+DataFrame).  Default N = 30 bars.  No live data, no random sampling.
+**Reason:** Determinism and reproducibility require a fixed, documented window
+selection rule.  The "last N bars" is the simplest reproducible choice for a
+smoke-test; the Phase 6 backtest framework will implement proper walk-forward
+splits and time-anchored windows.
+**What it approximates:** A proper time-anchored confirmation evaluation at the
+signal's projected time window.
+**How it will later be tested:** Phase 6 backtest evaluation with proper
+time-series separation.
+**Status:** Active (smoke-test default only).
+
+---
+
+### Assumption 30 — Missing bar policy in confirmations: strict_multi_candle
+**Date:** 2026-03-08
+**Assumption:** When `manifest["missing_bar_count"] > 0`, the Phase 5 signal
+generator automatically appends `"strict_multi_candle"` to each signal's
+`confirmations_required` list in addition to the base checks.  The
+`check_strict_multi_candle()` function requires N ≥ 2 consecutive bars all
+closing in the bias direction.  This compensates for lower confidence in the
+6H dataset (which has 1 missing bar after 2018-08-10).
+**Reason:** A single candle crossing a zone may be unreliable if data has gaps
+near that bar.  Requiring multiple consecutive confirming bars reduces the
+probability of acting on a spurious cross.
+**What it approximates:** A more elaborate gap-aware signal filter that would
+inspect whether the specific signal's time zone overlaps with the gap timestamp.
+**How it will later be tested:** Phase 6 ablation comparing gap-policy variants
+(none / strict_multi / adaptive).
+**Status:** Active (MVP).
