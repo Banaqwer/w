@@ -320,9 +320,12 @@ def _determine_bias(
     """Return the bias for a zone based on contributing projections' direction_hints.
 
     Rules:
-    - Majority ``"support"`` (strictly > other categories combined) → ``"long"``
-    - Majority ``"resistance"`` (strictly > other categories combined) → ``"short"``
-    - All else (tie, equal, ``"turn"``/``"ambiguous"`` majority) → ``"neutral"``
+    - More ``"support"`` than ``"resistance"`` → ``"long"``
+    - More ``"resistance"`` than ``"support"`` → ``"short"``
+    - Equal support/resistance, or no projections found → ``"neutral"``
+
+    ``"turn"`` and ``"ambiguous"`` hints are counted but contribute to neither
+    support nor resistance tallies — they dilute the vote toward ``"neutral"``.
     """
     counts: Dict[str, int] = {"support": 0, "resistance": 0, "turn": 0, "ambiguous": 0}
 

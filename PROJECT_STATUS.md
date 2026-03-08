@@ -599,7 +599,7 @@ Phase 4 angle-family generator addition reviewed and accepted.
 
 ---
 
-## Phase 5 — IN PROGRESS (started 2026-03-08)
+## Phase 5 — COMPLETE (started 2026-03-08, reviewed 2026-03-08)
 
 ### Phase 5 — Signal / Confirmation layer
 
@@ -699,3 +699,30 @@ fully reviewed and accepted.
 - Quality score refinement: currently inherits `confluence_score` directly; Phase 6+ may apply additional weighting.
 - Confirmation window selection: currently uses last N bars; future work may allow time-anchored windows.
 - `zone_rejection` pass rate is low (1/75) when confirmation window is recent — expected for historical zones outside recent price range. This is not a bug.
+- `signal_id` hash computed redundantly in `_zone_to_signal` and `SignalCandidate._make_id()` — minor DRY concern, non-blocking.
+
+---
+
+### Phase 5 Review (2026-03-08)
+
+**Verdict: PASS**
+
+All five review checks passed:
+
+1. **Phase 5 scope only** — no backtest, PnL, or performance logic present.
+2. **Deterministic signal generation** — same inputs always produce same signals. Confirmed empirically.
+3. **Signals well-specified** — every signal has entry region, invalidation rules, confirmations_required,
+   quality_score, and auditable provenance.
+4. **Gap-aware behavior** — `missing_bar_count > 0` triggers `strict_multi_candle` confirmation;
+   gap notes in metadata. Verified with real dataset (1 missing bar).
+5. **Smoke script produces JSON artifacts** — `reports/phase5/signals_*.json` and
+   `reports/phase5/confirmations_*.json` present, valid, and reproducible.
+
+**Issue found and fixed:** `_determine_bias` docstring said "strictly > other categories combined"
+but code does `support_n > resist_n` (simple comparison). Docstring corrected.
+
+**Tests:** `pytest -q` → 725 passed (606 Phase 1–4 + 119 Phase 5), 0 failed.
+
+**Full review:** `docs/reviews/phase5_review.md`
+
+**Phase 6 (backtest engine) may begin next.**
