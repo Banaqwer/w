@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 6 — Backtest engine + Walk-forward evaluation (STARTED 2026-03-08)
+- Phase 7 — Rigor Upgrades + Baselines + Gating Improvements (COMPLETE 2026-03-08)
 
 ## Phase 3 — COMPLETE (all modules reviewed PASS 2026-03-07)
   - Adjusted angles module: COMPLETE (Phase 3A) — reviewed PASS 2026-03-07
@@ -729,12 +729,12 @@ but code does `support_n > resist_n` (simple comparison). Docstring corrected.
 
 ---
 
-### Phase 6 — Backtest engine + Walk-forward evaluation (STARTED 2026-03-08)
+### Phase 6 — Backtest engine + Walk-forward evaluation (COMPLETE 2026-03-08)
 
-**Status:** IN PROGRESS
+**Status:** COMPLETE (reviewed PASS 2026-03-08)
 
 Phase 5 (signal/confirmation layer) reviewed PASS on 2026-03-08.  Phase 6 backtest
-engine implementation started immediately after.
+engine implementation started and completed on 2026-03-08.  Reviewed PASS same day.
 
 #### Completed deliverables
 
@@ -885,7 +885,7 @@ No performance claims.  These are baseline results for future comparison.
 
 ---
 
-## Phase 7 — Rigor Upgrades + Baselines + Gating Improvements (2026-03-08)
+## Phase 7 — Rigor Upgrades + Baselines + Gating Improvements (COMPLETE 2026-03-08)
 
 ### What was improved
 
