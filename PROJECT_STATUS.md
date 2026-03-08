@@ -873,3 +873,120 @@ No lookahead, deterministic, fees/slippage correct (7.5 bps per side).
 No performance claims.  These are baseline results for future comparison.
 
 **Phase 7 (advanced expansion) may begin.**
+
+---
+
+## Phase 7 — Rigor Upgrades + Baselines + Gating Improvements (2026-03-08)
+
+### What was improved
+
+#### A) In-bar confirmation gating (Assumption 36 retired)
+- Created `backtest/gating.py` with `evaluate_confirmation_gate()` and `GatingResult`.
+- Integrated into `simulate_signal_on_6h()` in `backtest/runner.py`.
+- **Timing convention:** At bar *i* (triggering bar, close inside entry region), all
+  required confirmations are evaluated using bars `[i - lookback + 1 ... i]` only.
+  Entry fill is at bar *i+1* open (next_bar_open).  No lookahead.
+- New `BacktestConfig` fields: `use_confirmation_gating=True` (default), `confirmation_lookback=10`.
+- Set `use_confirmation_gating=False` to reproduce Phase 6 unfiltered behaviour.
+- Assumption 36 retired; see `ASSUMPTIONS.md`.
+
+#### B) Bar-frequency Sharpe metric (Assumption 35 retired)
+- Created `backtest/metrics.py` with `compute_bar_sharpe()`, `compute_volatility()`,
+  `compute_max_drawdown()`, `compute_equity_metrics()`.
+- `compute_summary()` in `backtest/runner.py` now includes:
+  - `sharpe_bar`: annualised bar-frequency Sharpe from 6H equity curve (bars_per_year=1008)
+  - `volatility_ann`: annualised return volatility
+  - `sharpe_like`: retained for backwards compatibility (per-trade approximation)
+- Assumption 35 retired; see `ASSUMPTIONS.md`.
+
+#### C) Baseline strategies
+- Created `backtest/baselines.py` with three deterministic baselines:
+  1. `RandomEntryBaseline(seed=42, entry_prob=0.05)` — seeded random long/short
+  2. `MACrossoverBaseline(fast_period=10, slow_period=40)` — fast/slow MA cross
+  3. `BreakoutBaseline(lookback=20)` — N-bar high/low breakout
+- All use the same cost model (fees+slippage, position sizing) as the main strategy.
+- All produce `BaselineResult` with summary dicts in comparable format.
+- All can be run under walk-forward (pass test-window 6H data to `.run()`).
+
+#### D) Experiment tracking / parameter sweep
+- Created `research/run_phase7_experiments.py` with:
+  - `PARAM_GRID` for small grid sweeps over `BacktestConfig` fields
+  - `run_experiment_sweep()` runs all combinations sequentially
+  - Each run writes a structured `run_record.json` with config hash, git commit,
+    dataset version, metrics summary, baseline summaries, and output paths
+  - `experiment_index.json` collects all run records
+  - `_get_git_commit()` captures HEAD SHA for reproducibility
+
+#### E) Tests added
+- `tests/test_gating.py` — 11 tests: gate timing, no-lookahead, integration with runner
+- `tests/test_metrics.py` — 21 tests: Sharpe, volatility, drawdown, equity_metrics
+- `tests/test_baselines.py` — 22 tests: determinism, correctness, comparable format
+
+#### F) ASSUMPTIONS.md updated
+- Assumption 35: **RETIRED** (per-trade Sharpe replaced by sharpe_bar)
+- Assumption 36: **RETIRED** (confirmation gating now implemented)
+- Assumptions 39–42: **NEW** (bar Sharpe, gating lookback, baselines, param grid)
+
+### How to run Phase 7 experiments
+
+```bash
+# Full parameter sweep (requires processed datasets):
+python -m research.run_phase7_experiments
+
+# With custom output directory:
+python -m research.run_phase7_experiments --output-dir reports/phase7
+
+# Skip walk-forward (single window, faster):
+python -m research.run_phase7_experiments --skip-walkforward
+
+# Skip baseline strategies:
+python -m research.run_phase7_experiments --skip-baselines
+
+# Use only recent N days of data (for quick testing):
+python -m research.run_phase7_experiments --skip-walkforward --slice-days 365
+
+# Extend the sweep by editing PARAM_GRID in research/run_phase7_experiments.py
+```
+
+### How to compare to baselines
+
+Baselines are run automatically by `run_phase7_experiments.py`.  For manual comparison:
+
+```python
+from backtest.baselines import RandomEntryBaseline, MACrossoverBaseline, BreakoutBaseline
+from backtest.runner import BacktestConfig
+
+config = BacktestConfig()
+# df_6h = your test-window 6H DataFrame
+
+for baseline in [RandomEntryBaseline(), MACrossoverBaseline(), BreakoutBaseline()]:
+    result = baseline.run(df_6h, config, dataset_version="v1")
+    print(f"{baseline.name}: {result.summary['total_net_pnl']:.2f} | "
+          f"sharpe_bar={result.summary['sharpe_bar']:.3f}")
+```
+
+### Expected output files under reports/phase7/
+
+```
+reports/phase7/
+├── experiment_index.json           ← all run records
+└── run_{hash}_{timestamp}/
+    ├── run_record.json             ← config hash, git commit, params, metrics
+    ├── walkforward_summary.json    ← walk-forward aggregate (if not skipped)
+    ├── strategy_summary.json       ← single-window summary (if --skip-walkforward)
+    ├── baseline_random_entry_summary.json
+    ├── baseline_ma_crossover_summary.json
+    └── baseline_breakout_summary.json
+```
+
+### Tests: 876 passed (822 Phase 1–6 + 54 Phase 7), 0 failed
+
+### Open Phase 7 items
+
+- Parameter sweep results need manual review against Phase 6 baseline results.
+- Permutation tests and block-bootstrap resampling deferred to Phase 8.
+- `sharpe_bar` for walk-forward aggregate (`avg_sharpe_like` in walkforward) still
+  uses the per-trade Sharpe; Phase 8 should update `aggregate_walkforward_metrics()`
+  to aggregate `sharpe_bar` instead.
+- Baseline walk-forward integration: baselines currently run on the full 6H dataset;
+  proper walk-forward slicing per window is a Phase 8 improvement.

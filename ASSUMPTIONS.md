@@ -494,38 +494,39 @@ volume, bid-ask spread model).
 
 ---
 
-### Assumption 35 — Phase 6 Sharpe-like is per-trade, not per-bar
+### Assumption 35 — ~~Phase 6 Sharpe-like is per-trade, not per-bar~~ **RETIRED Phase 7**
 **Date:** 2026-03-08
-**Assumption:** The "Sharpe-like" metric reported in `compute_summary` is computed
+**Retired:** 2026-03-08 (Phase 7)
+**Original assumption:** The "Sharpe-like" metric reported in `compute_summary` is computed
 as `mean(net_pnl) / std(net_pnl) * sqrt(252)`, treating each trade as if it
 corresponds to approximately one trading day.  This is NOT a proper annualised
 daily Sharpe ratio.
-**Reason:** The backtest has a variable number of trades per window, and trades do
-not occur at a fixed frequency.  A per-trade metric is the simplest meaningful
-dispersion measure for a sparse signal generator.
-**What it approximates:** A proper bar-frequency Sharpe ratio computed from a daily
-equity curve.
-**How it will later be tested:** Phase 7 will add a bar-frequency Sharpe computed
-from the equity curve time series.
-**Status:** Active (Phase 6 MVP).  Label clearly as "per-trade Sharpe approximation"
-in any report.
+**Retirement reason:** Phase 7 implemented a bar-frequency Sharpe ratio (`sharpe_bar`)
+computed from the 6H equity curve time series using `backtest/metrics.py`.
+The annualisation factor is `bars_per_year=1008` (6H bars per year).  The
+legacy `sharpe_like` field is retained in all output dicts for backwards compatibility
+but is no longer the primary Sharpe metric.
+**Replacement:** `sharpe_bar` in `compute_summary` (from `backtest/metrics.compute_equity_metrics`).
+See Assumption 39 for the Phase 7 bar-frequency Sharpe specification.
+**Status:** **RETIRED** (Phase 7).  `sharpe_like` kept in outputs for backwards compat.
 
 ---
 
-### Assumption 36 — Phase 6 confirmation checks not re-evaluated during execution
+### Assumption 36 — ~~Phase 6 confirmation checks not re-evaluated during execution~~ **RETIRED Phase 7**
 **Date:** 2026-03-08
-**Assumption:** The Phase 6 backtest assumes all signals have implicitly passed their
+**Retired:** 2026-03-08 (Phase 7)
+**Original assumption:** The Phase 6 backtest assumes all signals have implicitly passed their
 confirmation checks before the test window begins.  No confirmation checks (candle_
 direction, zone_rejection, strict_multi_candle) are evaluated bar-by-bar during the
 execution simulation.
-**Reason:** Confirmation check logic (from Phase 5) requires a slice of recent bars
-around the signal time.  Implementing proper in-bar confirmation during walk-forward
-would require significant additional logic and is deferred to Phase 7.
-**What it approximates:** Running `run_all_confirmations()` at each bar where price
-enters the entry region.
-**How it will later be tested:** Phase 7 will add in-bar confirmation gating and
-compare vs. unfiltered baseline.
-**Status:** Active (Phase 6 MVP).  Clearly documented as a known limitation.
+**Retirement reason:** Phase 7 implemented in-bar confirmation gating in `backtest/gating.py`.
+At each candidate entry bar *i* (where price close enters the entry region), all
+required confirmation checks are evaluated using only bars ``[i - lookback + 1 ... i]``
+(no lookahead).  Entry is blocked if any check fails.  Entry fill (if gate passes)
+is at bar *i+1* open.  Gating is enabled by default (`BacktestConfig.use_confirmation_gating=True`).
+Set `use_confirmation_gating=False` to replicate the Phase 6 unfiltered behaviour.
+**Timing convention:** Gate evaluated at bar *i* (triggering bar); fill at bar *i+1* open.
+**Status:** **RETIRED** (Phase 7).  `use_confirmation_gating` config flag controls behaviour.
 
 ---
 
@@ -557,3 +558,73 @@ window long enough to generate meaningful impulses.
 **What it approximates:** An optimal train/test split tuned by grid search.
 **How it will later be tested:** Phase 7 sensitivity analysis on window lengths.
 **Status:** Active (Phase 6 MVP).
+
+---
+
+## Phase 7 assumptions (added 2026-03-08)
+
+### Assumption 39 — Phase 7 bar-frequency Sharpe from 6H equity curve
+**Date:** 2026-03-08
+**Assumption:** The primary Sharpe ratio metric in Phase 7 is `sharpe_bar`, computed
+from the 6H equity curve using percentage returns between consecutive equity points,
+annualised with `bars_per_year=1008` (252 trading days × 4 bars/day).  This replaces
+the per-trade `sharpe_like` approximation from Phase 6 (Assumption 35, retired).
+**Reason:** Bar-frequency Sharpe is the standard risk-adjusted return metric for
+systematic strategies.  Using the 6H equity curve with bars_per_year=1008 is
+appropriate for the execution timeframe.
+**What it approximates:** A fully rigorous Sharpe ratio would use the full account
+equity curve including unrealised PnL between bar closes.  This implementation uses
+trade-closed equity only.
+**How it will later be tested:** Compare Phase 7 sharpe_bar to baselines' sharpe_bar
+across walk-forward windows.
+**Status:** Active (Phase 7).
+
+---
+
+### Assumption 40 — Phase 7 confirmation gating uses last N bars at decision time
+**Date:** 2026-03-08
+**Assumption:** The confirmation gate (`backtest/gating.py`) evaluates all required
+confirmation checks using the last `confirmation_lookback` 6H bars up to and including
+the triggering bar (bar *i*).  Default lookback is 10 bars (≈ 2.5 calendar days of 6H data).
+**Reason:** A fixed lookback provides a stable and reproducible window for confirmation
+evaluation.  10 bars is sufficient for candle_direction (uses last bar only) and
+zone_rejection (scans all bars in the window).  strict_multi_candle uses the last
+`n_required` bars within the window.
+**What it approximates:** A full confirmation window from the signal's zone_start to
+the triggering bar.  A longer lookback would capture more rejection bars but increases
+the risk of stale signals.
+**How it will later be tested:** Phase 7 parameter sweep over `confirmation_lookback`
+values [5, 10, 20] is included in `PARAM_GRID` in `research/run_phase7_experiments.py`.
+**Status:** Active (Phase 7).  Default lookback=10.
+
+---
+
+### Assumption 41 — Phase 7 baseline strategies share the execution and cost model
+**Date:** 2026-03-08
+**Assumption:** All three baseline strategies (RandomEntry, MACrossover, Breakout)
+in `backtest/baselines.py` use identical execution and cost models as the main
+Jenkins strategy: next-bar-open fills, symmetric fees+slippage at entry and exit,
+fixed-fraction or fixed-notional sizing from `BacktestConfig`.
+**Reason:** Comparable apples-to-apples performance comparison requires identical
+cost models.  The baselines are NOT expected to be profitable; they serve as
+reference benchmarks.
+**What it approximates:** A proper statistical baseline comparison would include
+permutation tests and block-bootstrap resampling.  These are deferred to Phase 8.
+**How it will later be tested:** Walk-forward aggregate metrics from all three
+baselines will be compared to the Jenkins strategy in `experiment_index.json`.
+**Status:** Active (Phase 7).
+
+---
+
+### Assumption 42 — Phase 7 experiment sweep grid is small by default
+**Date:** 2026-03-08
+**Assumption:** The default `PARAM_GRID` in `research/run_phase7_experiments.py`
+sweeps only `confirmation_lookback=[5, 10]` and `use_confirmation_gating=[True]`
+(2 combinations).  This is intentionally small to keep run time manageable in the
+MVP phase.
+**Reason:** Full walk-forward on the complete 10-year BTC dataset takes several
+minutes per run.  The minimal grid demonstrates the infrastructure without
+exhausting CI resources.  Users can extend `PARAM_GRID` for deeper sweeps.
+**How it will later be tested:** Larger grids (band widths, horizon lengths, fee
+sensitivity) will be run manually and results stored under `reports/phase7/`.
+**Status:** Active (Phase 7).
