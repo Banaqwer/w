@@ -864,13 +864,19 @@ broad `except Exception` handlers.  Only `time_counts` produced output but with 
 projections → 0 signals → 0 trades.  Fixed to match reference calling conventions in
 `research/run_phase4_smoke.py`.
 
-**Walk-forward full run completed** (34 windows, 730/180/90 day config):
-- trade_count: 98
-- total_net_pnl: −2999.79 USD (on 100K initial)
-- n_windows_with_trades: 31 of 34
-- avg_win_rate: 2.96%
-- consistency_pct: 5.88% (2 positive windows)
-- Output: `reports/phase6/full/walkforward_summary.json`
+**Walk-forward full run completed** via `py -3.12 -m research.run_phase6_full` (2026-03-08):
+
+```
+n_windows                : 34
+n_windows_with_trades    : 31
+total_trades             : 95
+total_net_pnl            : -2808.49 USD (on 100K initial)
+max_drawdown_pct (avg)   : -0.0011
+avg_win_rate             : 2.96%
+consistency_pct          : 5.88% (2 positive windows)
+```
+
+Output: `reports/phase6/full/walkforward_summary.json`
 
 No lookahead, deterministic, fees/slippage correct (7.5 bps per side).
 No performance claims.  These are baseline results for future comparison.
