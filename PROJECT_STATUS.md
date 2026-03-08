@@ -848,6 +848,28 @@ complete 10-year 1D dataset will produce more signals per train window.
 - Confirmation checks not re-evaluated during execution (Assumption 36); Phase 7 will add
   in-bar confirmation gating.
 - Sharpe-like metric is per-trade (Assumption 35); Phase 7 adds a bar-frequency Sharpe.
-- Walk-forward full run on complete 10-year dataset not yet executed; will be a Phase 6
-  deliverable after review.
 - Baseline comparison (random entry, breakout, MA crossover) deferred to Phase 7.
+
+#### Phase 6 Review (2026-03-08) — PASS
+
+Review document: `docs/reviews/phase6_review.md`
+
+**Critical bug found and fixed:** `_generate_projections` in `backtest/runner.py` had API
+call mismatches for 5 of 5 Phase 3/4 generators (measured_moves, jttl, sqrt_levels,
+angle_families, and their projection wrapper calls).  All generators silently failed via
+broad `except Exception` handlers.  Only `time_counts` produced output but with time-only
+projections → 0 signals → 0 trades.  Fixed to match reference calling conventions in
+`research/run_phase4_smoke.py`.
+
+**Walk-forward full run completed** (34 windows, 730/180/90 day config):
+- trade_count: 98
+- total_net_pnl: −2999.79 USD (on 100K initial)
+- n_windows_with_trades: 31 of 34
+- avg_win_rate: 2.96%
+- consistency_pct: 5.88% (2 positive windows)
+- Output: `reports/phase6/full/walkforward_summary.json`
+
+No lookahead, deterministic, fees/slippage correct (7.5 bps per side).
+No performance claims.  These are baseline results for future comparison.
+
+**Phase 7 (advanced expansion) may begin.**

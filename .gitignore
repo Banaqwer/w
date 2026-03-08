@@ -50,6 +50,7 @@ logs/*.jsonl
 reports/*.html
 reports/*.pdf
 reports/*.png
+reports/phase6/full/
 
 # macOS
 .DS_Store
