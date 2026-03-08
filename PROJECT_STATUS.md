@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 4 — Projection generation + Confluence engine (COMPLETE — reviewed PASS 2026-03-08)
+- Phase 5 — Signal / Confirmation layer (IN PROGRESS — started 2026-03-08)
 
 ## Phase 3 — COMPLETE (all modules reviewed PASS 2026-03-07)
   - Adjusted angles module: COMPLETE (Phase 3A) — reviewed PASS 2026-03-07
@@ -596,3 +596,106 @@ Phase 4 angle-family generator addition reviewed and accepted.
 - `min_cluster_size` tuning (currently 1: all projections form a zone) — deferred.
 - Confluence O(n²) clustering is acceptable at MVP scale; upgrade to interval tree if
   > 10,000 projections at once.
+
+---
+
+## Phase 5 — IN PROGRESS (started 2026-03-08)
+
+### Phase 5 — Signal / Confirmation layer
+
+#### Completed deliverables
+
+**Signal schema:**
+- `signals/signal_types.py` — canonical Phase 5 output objects:
+  - `EntryRegion`: price_low, price_high, optional time_earliest / time_latest; `mid_price()` helper
+  - `InvalidationRule`: condition (`close_below_zone`, `close_above_zone`, `time_expired`), price_level, time_cutoff, buffer ≥ 0
+  - `SignalCandidate`: signal_id (deterministic), dataset_version, timeframe_context, zone_id, bias (`long`/`short`/`neutral`), entry_region, invalidation list, confirmations_required list, quality_score [0,1], provenance, notes, metadata
+  - `ConfirmationResult`: signal_id, check_name, passed, reason, metadata
+
+**Signal generation:**
+- `signals/signal_generation.py` — converts `ConfluenceZone` list + `Projection` list → `SignalCandidate` list:
+  - `generate_signals()` — primary function (deterministic, config-driven)
+  - `build_projection_index()` — {projection_id → Projection} helper
+  - Bias rule: majority support → long; majority resistance → short; else neutral
+  - Neutral zones skipped if confluence_score < `min_score_for_neutral` (default 0.5)
+  - Zones without `price_window` always skipped
+  - Invalidation: long → `close_below_zone` at zone low; short → `close_above_zone` at zone high; neutral → both
+  - Time invalidation added when `zone.time_window` is set
+  - Gap policy: `missing_bar_count > 0` → appends `strict_multi_candle` to `confirmations_required`
+  - Provenance: sorted projection IDs + `"module:<name>"` entries
+
+**Confirmation checks:**
+- `signals/confirmations.py` — pure check functions (no trading logic):
+  - `check_candle_direction()` — last bar closes in bias direction (bullish body OR close > midpoint for long)
+  - `check_zone_rejection()` — any bar in slice touches entry zone and closes with rejection
+  - `check_strict_multi_candle()` — N consecutive bars all in bias direction; triggered by `missing_bar_count > 0`
+  - `run_all_confirmations()` — dispatches all checks in `signal.confirmations_required`; unknown check names → passed=False
+  - All checks: empty/missing-column slice → passed=False with reason; neutral bias → not applicable
+
+**Smoke script:**
+- `research/run_phase5_smoke.py` — Phase 5 end-to-end smoke:
+  - Loads Phase 4 zones + projections JSON from `reports/phase4/`
+  - Reads manifest `missing_bar_count`; activates strict confirmations when > 0
+  - Generates `SignalCandidate` objects via `generate_signals()`
+  - Selects deterministic confirmation window: last N bars of processed dataset (no live data, no random)
+  - Runs all confirmation checks per signal
+  - Writes:
+    - `reports/phase5/signals_<dataset_version>.json`
+    - `reports/phase5/confirmations_<dataset_version>.json`
+
+**Tests (119 new, all passing):**
+- `tests/test_signal_types.py` — 37 tests: EntryRegion, InvalidationRule, SignalCandidate, ConfirmationResult
+- `tests/test_signal_generation.py` — 43 tests: edge cases, bias assignment, neutral threshold, entry region, invalidation, gap policy, determinism, quality score, provenance
+- `tests/test_confirmations.py` — 39 tests: candle_direction, zone_rejection, strict_multi_candle, run_all_confirmations, gap-policy integration
+
+#### How to run Phase 5 smoke script
+
+```bash
+python -m research.run_phase5_smoke
+python -m research.run_phase5_smoke --phase4-dir reports/phase4 --output-dir reports/phase5
+python -m research.run_phase5_smoke --dataset-version proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1
+python -m research.run_phase5_smoke --confirm-window 30
+python -m research.run_phase5_smoke --min-score-neutral 0.4
+python -m research.run_phase5_smoke --invalidation-buffer 50.0
+```
+
+#### Phase 5 smoke-run results (2026-03-08)
+
+Dataset version: `proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1`
+
+| Stat | Value |
+|---|---|
+| Zones loaded | 110 |
+| Signals produced | 75 |
+| Missing bars | 1 |
+| Bias: long | 43 |
+| Bias: short | 32 |
+| Bias: neutral | 0 |
+| Score bucket 0.25–0.50 | 7 |
+| Score bucket 0.00–0.25 | 68 |
+
+Confirmation checks:
+| Check | Passed / Total |
+|---|---|
+| candle_direction | 47 / 75 |
+| strict_multi_candle | 43 / 75 |
+| zone_rejection | 1 / 75 |
+
+Output files:
+- `reports/phase5/signals_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1.json`
+- `reports/phase5/confirmations_proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1.json`
+
+**Gap policy:** Dataset `missing_bar_count=1`; `strict_multi_candle` confirmation automatically added to all signals.
+
+**Tests:** `pytest -q` → 725 passed (606 Phase 1–4 + 119 Phase 5), 0 failed
+
+#### Note: Phase 6 backtest engine NOT started
+
+No Phase 6+ (backtest engine, PnL reporting, performance claims, walk-forward testing) logic has been
+implemented. Phase 5 delivers only the signal/confirmation layer. Phase 6 may not begin until Phase 5 is
+fully reviewed and accepted.
+
+#### Open Phase 5 items
+- Quality score refinement: currently inherits `confluence_score` directly; Phase 6+ may apply additional weighting.
+- Confirmation window selection: currently uses last N bars; future work may allow time-anchored windows.
+- `zone_rejection` pass rate is low (1/75) when confirmation window is recent — expected for historical zones outside recent price range. This is not a bug.

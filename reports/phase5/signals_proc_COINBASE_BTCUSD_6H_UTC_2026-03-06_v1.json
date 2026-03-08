@@ -1,0 +1,3925 @@
+[
+  {
+    "signal_id": "5e90143b8d8bdc00",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "5654429fc406fffe",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 211.28024814092663,
+      "price_high": 449.6069854663744,
+      "time_earliest": "2016-07-14 06:00:00+00:00",
+      "time_latest": "2016-08-31 00:00:00+00:00"
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 449.6069854663744,
+        "time_cutoff": null,
+        "buffer": 0.0
+      },
+      {
+        "condition": "time_expired",
+        "price_level": null,
+        "time_cutoff": "2016-08-31 00:00:00+00:00",
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.4343081249803161,
+    "provenance": [
+      "00f9e4fc8c5aee74",
+      "0448c5d371a7810d",
+      "052975a7fdbf60d5",
+      "052975a7fdbf60d5",
+      "052975a7fdbf60d5",
+      "052975a7fdbf60d5",
+      "052975a7fdbf60d5",
+      "052975a7fdbf60d5",
+      "056d03f436ee0422",
+      "06b32a9c0c0e433a",
+      "081860376c06db73",
+      "0ac20ff5c0961031",
+      "0ac63b0321f9ca4a",
+      "0af342375f4c3947",
+      "0b2a09d7110c0b52",
+      "0b2a09d7110c0b52",
+      "0b5508b803865a7a",
+      "0bae8fddbd105de3",
+      "109cbefc9aa51114",
+      "115b68a2aef5d457",
+      "13c2cb0593b45778",
+      "13c2cb0593b45778",
+      "151e87b593d12fbc",
+      "151e87b593d12fbc",
+      "151e87b593d12fbc",
+      "151e87b593d12fbc",
+      "151e87b593d12fbc",
+      "151e87b593d12fbc",
+      "159040cde541f11a",
+      "15ee010987aba396",
+      "16a4a349e17d5245",
+      "16a4a349e17d5245",
+      "16a4a349e17d5245",
+      "16a4a349e17d5245",
+      "182c2253206966b3",
+      "182c2253206966b3",
+      "182c2253206966b3",
+      "19ce7e6eebe26cd3",
+      "1a352a66995840bf",
+      "1a352a66995840bf",
+      "1a352a66995840bf",
+      "1a352a66995840bf",
+      "1a352a66995840bf",
+      "1a352a66995840bf",
+      "1a5b773646937187",
+      "1a5b773646937187",
+      "1a5b773646937187",
+      "1abf4662cb3c715a",
+      "1c1f0cc51c768412",
+      "1c2d724994dbf920",
+      "1c2d724994dbf920",
+      "1c2d724994dbf920",
+      "1c6d5aa0c1cfeb20",
+      "1c6d5aa0c1cfeb20",
+      "1d93605de957d738",
+      "1fc425fa0a32a755",
+      "1fc425fa0a32a755",
+      "1fc425fa0a32a755",
+      "1fc425fa0a32a755",
+      "214094bb6ab08182",
+      "214094bb6ab08182",
+      "21663a25634a8ff5",
+      "21dc10c11250973a",
+      "22eac833f6410c41",
+      "22eac833f6410c41",
+      "2373fce6ed130fe3",
+      "247024cad50b5599",
+      "251c977fabc42fca",
+      "251c977fabc42fca",
+      "2649c380b12fbd2f",
+      "26b85e8b2e460472",
+      "26b85e8b2e460472",
+      "26b85e8b2e460472",
+      "2916b2e7f5b9bbd9",
+      "2916b2e7f5b9bbd9",
+      "2916b2e7f5b9bbd9",
+      "29a9f4a22409d65d",
+      "29a9f4a22409d65d",
+      "2bcebd4df70f9663",
+      "2c80208e9dbcafbb",
+      "2c80208e9dbcafbb",
+      "2d43441119f9e4cb",
+      "2e6092a34340e417",
+      "2e6092a34340e417",
+      "2f0398ec148b0714",
+      "2fd39dccd875f88d",
+      "2fd39dccd875f88d",
+      "2fd39dccd875f88d",
+      "325b03eda044bff8",
+      "325b03eda044bff8",
+      "32efa2bde8f1c880",
+      "32ff42c3f22f2558",
+      "32ff42c3f22f2558",
+      "330462e34491db36",
+      "330462e34491db36",
+      "3329b2ddb3ff9537",
+      "3329b2ddb3ff9537",
+      "36b0deb197cf39db",
+      "36b0deb197cf39db",
+      "36b0deb197cf39db",
+      "3700b221cb052635",
+      "3700b221cb052635",
+      "3700b221cb052635",
+      "37091f3c8fc50820",
+      "37091f3c8fc50820",
+      "3919b7e2afbfdf85",
+      "3b2a837b59aef1be",
+      "3b2a837b59aef1be",
+      "3b2a837b59aef1be",
+      "3b8916f85b89358a",
+      "3b8916f85b89358a",
+      "3b8916f85b89358a",
+      "3b8916f85b89358a",
+      "3b8916f85b89358a",
+      "3b8916f85b89358a",
+      "3badefd1d74b32f3",
+      "3bcf61a81a8683e1",
+      "3d06f89a2e440bae",
+      "3d06f89a2e440bae",
+      "3d3f97f7b3d81d96",
+      "3d3f97f7b3d81d96",
+      "3d71381c1855d0f8",
+      "3d71381c1855d0f8",
+      "3d71381c1855d0f8",
+      "3e4db1703525ad0b",
+      "3eaf570f0a953daf",
+      "3fa7ecf0c33e7d40",
+      "3fc3df4462d71f45",
+      "3ff8139caa033def",
+      "4011fe67f225cd94",
+      "409c623a6c96c8cf",
+      "40d5c2012e12635d",
+      "41acdb4fdf6d6309",
+      "41acdb4fdf6d6309",
+      "4280a40fc60be1af",
+      "42bb593c6b844f45",
+      "42d346c3041204f9",
+      "42d901ed94155366",
+      "44f27dc64a746b74",
+      "44fb8487a560e2b3",
+      "44fb8487a560e2b3",
+      "44fb8487a560e2b3",
+      "44fb8487a560e2b3",
+      "44fb8487a560e2b3",
+      "44fb8487a560e2b3",
+      "4500fc2553c5262d",
+      "452ca765bdb6c135",
+      "452ca765bdb6c135",
+      "452ca765bdb6c135",
+      "453ace3c582cf6c2",
+      "46b260d997c8caa1",
+      "46b260d997c8caa1",
+      "46b260d997c8caa1",
+      "47db29fc8cacf532",
+      "4924d0a53e7dad85",
+      "4939bbc2c183da39",
+      "4939bbc2c183da39",
+      "49603473e88a8ee1",
+      "49cbe02eb89fe9b9",
+      "4a86139063188e4c",
+      "4a86139063188e4c",
+      "4ac457c247c0ecb2",
+      "4b0798721e1e06ef",
+      "4b0ddd610e4a2a5e",
+      "4b0ddd610e4a2a5e",
+      "4b0ddd610e4a2a5e",
+      "4b4f5115e862137c",
+      "4b4f5115e862137c",
+      "4b4f5115e862137c",
+      "4b4f5115e862137c",
+      "4b4f5115e862137c",
+      "4b4f5115e862137c",
+      "4bd179af8f74e433",
+      "4c5244087fc83bbf",
+      "4c74a866ee028068",
+      "4caa87164dfd56d7",
+      "4cf1fddb00881c88",
+      "4dc1bb2407b5fc10",
+      "4dc1bb2407b5fc10",
+      "4dc1bb2407b5fc10",
+      "4f77402fdffb7cbb",
+      "4f77402fdffb7cbb",
+      "4f77402fdffb7cbb",
+      "4fd4346adb70421b",
+      "5092321314d1a243",
+      "512074b783f19d00",
+      "512074b783f19d00",
+      "512074b783f19d00",
+      "512074b783f19d00",
+      "5172c061fa1c12a0",
+      "51b960c63fbd777e",
+      "52bf5534b81b0e71",
+      "52bf5534b81b0e71",
+      "52bf5534b81b0e71",
+      "52bf5534b81b0e71",
+      "52bf5534b81b0e71",
+      "52bf5534b81b0e71",
+      "538fa28601fee57c",
+      "538fa28601fee57c",
+      "55bc4a261d3b21b3",
+      "55bc4a261d3b21b3",
+      "57167c125f81ef88",
+      "57167c125f81ef88",
+      "574828bf121fec61",
+      "583e19746c80e34a",
+      "583e19746c80e34a",
+      "583e19746c80e34a",
+      "58ac1c32a1739a5b",
+      "5a0f50225b9f2daf",
+      "5a0f50225b9f2daf",
+      "5b066a8ed5f1cf16",
+      "5c3a1fe0ab8e34cd",
+      "5c3a1fe0ab8e34cd",
+      "5c3a1fe0ab8e34cd",
+      "5d847a93dcb995f7",
+      "5daed1dad87d672b",
+      "5daed1dad87d672b",
+      "5de46079a2d8748d",
+      "5e0e2f51d4c6c2ce",
+      "5e0e2f51d4c6c2ce",
+      "5e0e2f51d4c6c2ce",
+      "5e8e42708c212c73",
+      "5ed0751eb4fbf2bc",
+      "5ed0751eb4fbf2bc",
+      "6107f6c908377f10",
+      "6107f6c908377f10",
+      "6107f6c908377f10",
+      "612076b252063e7f",
+      "612076b252063e7f",
+      "619b10368e72b253",
+      "619b10368e72b253",
+      "626ac035d5c7ef20",
+      "6441ec0eb0bade24",
+      "66915795407c685b",
+      "66f3c35e0509e678",
+      "673ac492658aef8a",
+      "673ac492658aef8a",
+      "673ac492658aef8a",
+      "673ac492658aef8a",
+      "67a32ff44de042c6",
+      "67e6041680e9cca7",
+      "67e6041680e9cca7",
+      "6a92581e354a53bf",
+      "6b90b233bb51d4fd",
+      "6b90b233bb51d4fd",
+      "6b90b233bb51d4fd",
+      "6b90b233bb51d4fd",
+      "6b90b233bb51d4fd",
+      "6b90b233bb51d4fd",
+      "6c181bc81f800db0",
+      "6c8163ca3e79bbd9",
+      "6c8163ca3e79bbd9",
+      "6dc0a1ed034519f7",
+      "6dce9bd049eb464e",
+      "6e53bfce2b9ecc91",
+      "6ec1c9946fb863ed",
+      "6ec1c9946fb863ed",
+      "6facf0ec46bc0d4e",
+      "6facf0ec46bc0d4e",
+      "7062014d86aac006",
+      "70dcd274f12997b8",
+      "71e72426c60e57aa",
+      "71e72426c60e57aa",
+      "7295e65b88a08274",
+      "734d2c92291bbcfb",
+      "734d2c92291bbcfb",
+      "73a9af621bba0560",
+      "74698eef9e00b6b1",
+      "75bbc687e398a100",
+      "75bbc687e398a100",
+      "785c9ff8511d98d1",
+      "785c9ff8511d98d1",
+      "785c9ff8511d98d1",
+      "785c9ff8511d98d1",
+      "78ecb6d8d7c506d3",
+      "7b86af307a5e95bd",
+      "7bf4a3c5a2019354",
+      "7bf4a3c5a2019354",
+      "7e9405042d660334",
+      "7e9da7fe59c3fc9b",
+      "7e9da7fe59c3fc9b",
+      "7f0c3896170c80f9",
+      "7f0c3896170c80f9",
+      "80a51d5353c3db21",
+      "81096166543a3252",
+      "81a98f6d12a1a4c9",
+      "81a98f6d12a1a4c9",
+      "81a98f6d12a1a4c9",
+      "82ba6ebb315adc77",
+      "83176c09ddbea6f9",
+      "8411748b2a544a9e",
+      "84acf88fa1d92f2f",
+      "8572b48ae0307ebb",
+      "8572b48ae0307ebb",
+      "86087393a956c4d2",
+      "86087393a956c4d2",
+      "86087393a956c4d2",
+      "89b2e5ba0e71463a",
+      "89e013d37935dea7",
+      "8b9b925f19492a88",
+      "8c323dd754cc2b05",
+      "8c323dd754cc2b05",
+      "8c323dd754cc2b05",
+      "8cf97e8c8c45c02b",
+      "8cff128d96e5ceee",
+      "8e091172d2a95981",
+      "8e8b95e5daae933a",
+      "8eb5c2bceafd429d",
+      "8ed8736510907d4c",
+      "90f94b640334a21e",
+      "91513bcb28c93fd7",
+      "9171f42d57e9b3b0",
+      "9171f42d57e9b3b0",
+      "9171f42d57e9b3b0",
+      "9171f42d57e9b3b0",
+      "9171f42d57e9b3b0",
+      "9171f42d57e9b3b0",
+      "91b4d6e3d659c858",
+      "91b4d6e3d659c858",
+      "91feadff8882672c",
+      "92ad3b729a16eae8",
+      "9357b44062da429b",
+      "93dcc2fb6133521f",
+      "940ee354127a6e55",
+      "940ee354127a6e55",
+      "95005e978df9c9db",
+      "95005e978df9c9db",
+      "95005e978df9c9db",
+      "95d288373cacf51e",
+      "95ef82fb384a2280",
+      "97b23725df449ba1",
+      "97e87d394cb0bfc0",
+      "9877899ffad048bd",
+      "998215612670eb4a",
+      "9b9fd2b34bb051f5",
+      "9c7c96cc84e361f9",
+      "9f02f8f04af6889e",
+      "9f02f8f04af6889e",
+      "9f02f8f04af6889e",
+      "9f02f8f04af6889e",
+      "9f2bd4552c449e0c",
+      "9f9cb4018a8ea337",
+      "a00a77f68a88b21e",
+      "a00a77f68a88b21e",
+      "a00a77f68a88b21e",
+      "a00a77f68a88b21e",
+      "a39064de7654168e",
+      "a430470d9d137f0b",
+      "a5ab1a72fc4cb2c1",
+      "a6a5190d97ae13fe",
+      "a6a5190d97ae13fe",
+      "a825243f6105e808",
+      "a825243f6105e808",
+      "a825243f6105e808",
+      "a88038652a794b1e",
+      "a997afde892ef2a7",
+      "a997afde892ef2a7",
+      "a997afde892ef2a7",
+      "aacb70efa7ebc2df",
+      "abe9dbdeafa96c1a",
+      "ad184de037694011",
+      "ad709a8563b00774",
+      "ae49f028ae6056cc",
+      "ae49f028ae6056cc",
+      "ae49f028ae6056cc",
+      "b09f82e353b924a5",
+      "b21f1b001e994d42",
+      "b5361cc210f3ba04",
+      "b5361cc210f3ba04",
+      "b53d291683c95020",
+      "b53d291683c95020",
+      "b53d291683c95020",
+      "b53d291683c95020",
+      "b53d291683c95020",
+      "b53d291683c95020",
+      "b56c43dd552b214b",
+      "b688dd3e62e545e6",
+      "b688dd3e62e545e6",
+      "b688dd3e62e545e6",
+      "b688dd3e62e545e6",
+      "b688dd3e62e545e6",
+      "b688dd3e62e545e6",
+      "b6bf5e972ec8e0a2",
+      "b750494ebcdf19eb",
+      "b7753e6d39237f51",
+      "b89bd2e86dea191c",
+      "b89bd2e86dea191c",
+      "b89bd2e86dea191c",
+      "b8ceccc1b3b67247",
+      "b8ceccc1b3b67247",
+      "b8ceccc1b3b67247",
+      "b9664dd635d804f2",
+      "ba0ca56b71d6ede4",
+      "ba3c69ce93cac1e6",
+      "ba3ee5593f196e40",
+      "ba3ee5593f196e40",
+      "ba3ee5593f196e40",
+      "bce4a07dce43f080",
+      "bd4ec56eeaa3d0ce",
+      "bd7ba32df73802ae",
+      "bd7ba32df73802ae",
+      "be7fe782b7349fa2",
+      "be7fe782b7349fa2",
+      "be7fe782b7349fa2",
+      "bf712fdabf460baa",
+      "bf712fdabf460baa",
+      "c0eed83828080ad3",
+      "c1871408e67eda66",
+      "c3f7522c0751ccc7",
+      "c3f7522c0751ccc7",
+      "c4923f65d0d0d905",
+      "c661f2a08c1ba89a",
+      "c661f2a08c1ba89a",
+      "c661f2a08c1ba89a",
+      "c760ff1c89af3fe7",
+      "c760ff1c89af3fe7",
+      "c816119b0c83165a",
+      "c81d95859f130917",
+      "c81d95859f130917",
+      "c81d95859f130917",
+      "c99a745eb918a1fb",
+      "c99a745eb918a1fb",
+      "c9d008e2bb490f1d",
+      "c9d008e2bb490f1d",
+      "ca6a3024bcfffb20",
+      "ca6a3024bcfffb20",
+      "cc6ce9501c7a3252",
+      "ccc24174522ecb6a",
+      "ccc24174522ecb6a",
+      "ce24341cc341e816",
+      "ce61e0158500545c",
+      "ce8a6e464e9f75bb",
+      "ce8a6e464e9f75bb",
+      "cf59efab05374988",
+      "cf59efab05374988",
+      "cf59efab05374988",
+      "cf59efab05374988",
+      "cf59efab05374988",
+      "cf59efab05374988",
+      "d00ed40c908798d9",
+      "d00ed40c908798d9",
+      "d00ed40c908798d9",
+      "d033b684b740c1f8",
+      "d16b595f4933757a",
+      "d16b595f4933757a",
+      "d1dba9676695fef4",
+      "d306f0bdb998ad84",
+      "d306f0bdb998ad84",
+      "d3999da93c41c61a",
+      "d460535422ea4dc3",
+      "d460535422ea4dc3",
+      "d460535422ea4dc3",
+      "d466bdcce1fcee04",
+      "d466bdcce1fcee04",
+      "d466bdcce1fcee04",
+      "d5aa33d0d49f5b89",
+      "d5fabea52905590a",
+      "d65dd0f16392d1f1",
+      "d65dd0f16392d1f1",
+      "d7c47526e40546d2",
+      "d7c47526e40546d2",
+      "d7c47526e40546d2",
+      "d7f31a5cc8f99a72",
+      "d88fd8fa4cdf99e9",
+      "d88fd8fa4cdf99e9",
+      "d88fd8fa4cdf99e9",
+      "d88fd8fa4cdf99e9",
+      "d88fd8fa4cdf99e9",
+      "d88fd8fa4cdf99e9",
+      "d8ade5d4f37859a3",
+      "d8ade5d4f37859a3",
+      "d8c124ed03f5a202",
+      "d915e65310bafc59",
+      "da5b80bb2d258631",
+      "dbba4bb8a8e8881e",
+      "dc173f64f8cd2038",
+      "dc25ee8571852485",
+      "dd8b6fbf04ae189f",
+      "ddd49a31a6a22884",
+      "e12beb9583a4c340",
+      "e2406c1f4a4f1db3",
+      "e2406c1f4a4f1db3",
+      "e2c4063cffd55d5e",
+      "e3c8362591160332",
+      "e42da2526f8de718",
+      "e42da2526f8de718",
+      "e585173d0921c702",
+      "e5c7e0a349b0405c",
+      "e5c7e0a349b0405c",
+      "e5c7e0a349b0405c",
+      "e61d52ee7f8b34ee",
+      "e61d52ee7f8b34ee",
+      "e66886ce16f93d00",
+      "e72c1cf62efb2221",
+      "e72c1cf62efb2221",
+      "e9b258b43c34c44e",
+      "e9b258b43c34c44e",
+      "e9b258b43c34c44e",
+      "e9fee6ffc406ab2b",
+      "ec33c504805dacf2",
+      "ec33c504805dacf2",
+      "ec33c504805dacf2",
+      "ec33c504805dacf2",
+      "ec33c504805dacf2",
+      "ec33c504805dacf2",
+      "ec781fd0e94a8366",
+      "ec781fd0e94a8366",
+      "ec781fd0e94a8366",
+      "ec9e2443e88fd604",
+      "edf9ed67a8d619b8",
+      "edf9ed67a8d619b8",
+      "eef242cb60434e6c",
+      "f2f0e98ca23686b4",
+      "f3595d7741137d73",
+      "f3755676a48b3a88",
+      "f4b79950db1f860b",
+      "f5e5fe2746b1001e",
+      "f5e5fe2746b1001e",
+      "f677b6bb26e1cc73",
+      "f677b6bb26e1cc73",
+      "f677b6bb26e1cc73",
+      "f7d124727e2082f8",
+      "f981b4080fca8de9",
+      "f9e82737d97db8c7",
+      "f9e82737d97db8c7",
+      "f9e82737d97db8c7",
+      "fa5d3b7ae2a75af6",
+      "fa5d3b7ae2a75af6",
+      "fa5d3b7ae2a75af6",
+      "fa5d3b7ae2a75af6",
+      "fc992d2dfd362432",
+      "fccc001103d28619",
+      "fccc001103d28619",
+      "fccc001103d28619",
+      "fccc9720248d1134",
+      "fe962509d8d18c2f",
+      "module:jttl",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price+time; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.4343081249803161,
+      "module_counts": {
+        "measured_moves": 80,
+        "jttl": 11,
+        "sqrt_levels": 445
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "3de0c70e955a63c9",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "25a20bab8b276012",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 578.4075261018635,
+      "price_high": 626.1495000000001,
+      "time_earliest": "2016-10-27 00:00:00+00:00",
+      "time_latest": "2016-11-10 00:00:00+00:00"
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 626.1495000000001,
+        "time_cutoff": null,
+        "buffer": 0.0
+      },
+      {
+        "condition": "time_expired",
+        "price_level": null,
+        "time_cutoff": "2016-11-10 00:00:00+00:00",
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.3752694003041445,
+    "provenance": [
+      "1d9db799e1903b63",
+      "1d9db799e1903b63",
+      "32706ae016191dc5",
+      "3424a717f6acf3f0",
+      "4ffa2d395ff229ef",
+      "66fd3e70129f5243",
+      "6d7113300cd2cb86",
+      "6d7113300cd2cb86",
+      "6d7113300cd2cb86",
+      "8e8dc3de4f47d3ad",
+      "9aa5d0812ab8a1f9",
+      "babd3ecab6305157",
+      "bdee02c50d05a75d",
+      "c3ca9f827ecd987b",
+      "cd00be693b38b49f",
+      "d5447158951eb60c",
+      "df9f90044c7bd322",
+      "df9f90044c7bd322",
+      "e0c9cb7258a7acef",
+      "module:jttl",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price+time; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.3752694003041445,
+      "module_counts": {
+        "measured_moves": 4,
+        "sqrt_levels": 14,
+        "jttl": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "48bd9f443cd5ceaa",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "da67764e5166ade1",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 463.5150333307871,
+      "price_high": 484.1301702311383,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 484.1301702311383,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.3048185106468438,
+    "provenance": [
+      "1f3ec12e99d55ed7",
+      "1f3ec12e99d55ed7",
+      "21a9b69a1b407515",
+      "34ffa838a588f438",
+      "43fa44aa819bcf86",
+      "8e256b046b77589b",
+      "8e5df2b63bc6b396",
+      "8e5df2b63bc6b396",
+      "a32ce38674514327",
+      "a32ce38674514327",
+      "ee94f4637aa4f51a",
+      "fc05cf5b2b78d7c6",
+      "fc05cf5b2b78d7c6",
+      "ffa829c9c3a9f3cb",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.3048185106468438,
+      "module_counts": {
+        "sqrt_levels": 13,
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "70d608170729a73a",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "774642e9bfc9d5b4",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 170.02170371814674,
+      "price_high": 211.25665000000004,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 170.02170371814674,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.29651323921562484,
+    "provenance": [
+      "055314faf42af750",
+      "055314faf42af750",
+      "0dfadd32b6a75192",
+      "0dfadd32b6a75192",
+      "0dfadd32b6a75192",
+      "10a2ccb2c21f997d",
+      "10a2ccb2c21f997d",
+      "10a2ccb2c21f997d",
+      "1cbfc84d8e53af20",
+      "1cbfc84d8e53af20",
+      "206aa1e6582e610a",
+      "2464ada3c25faa79",
+      "2464ada3c25faa79",
+      "25d6128748261207",
+      "26bbf4a63914a3b5",
+      "2f087bd998e623c8",
+      "38b8815fa746d7b4",
+      "3eee029f9b412dfb",
+      "42c1599bb9c4cbbb",
+      "42c1599bb9c4cbbb",
+      "42c1599bb9c4cbbb",
+      "43f501811aaf4076",
+      "43f501811aaf4076",
+      "43f501811aaf4076",
+      "43f501811aaf4076",
+      "43f501811aaf4076",
+      "43f501811aaf4076",
+      "44402a21a95821c3",
+      "4c2bb26aa8001a48",
+      "4c301db9c5e041a9",
+      "4c301db9c5e041a9",
+      "4c301db9c5e041a9",
+      "53492e5166f2adff",
+      "57cac557dd07da8a",
+      "5a63ddd831b770bd",
+      "5a63ddd831b770bd",
+      "5a63ddd831b770bd",
+      "5ab1f6398110eb02",
+      "5ab1f6398110eb02",
+      "5ab1f6398110eb02",
+      "5c62ad2d3a90e19e",
+      "6244180e93d42e2f",
+      "62edf781c5026b33",
+      "654df47c56ae90f9",
+      "67a9cd407e61c0ee",
+      "67a9cd407e61c0ee",
+      "67a9cd407e61c0ee",
+      "6e76ead42b851c58",
+      "6e76ead42b851c58",
+      "6e76ead42b851c58",
+      "6e76ead42b851c58",
+      "6e76ead42b851c58",
+      "6e76ead42b851c58",
+      "705aa633c06e8911",
+      "727119c6c88108e4",
+      "727119c6c88108e4",
+      "727119c6c88108e4",
+      "77c17ccc38157286",
+      "7b4d3354d65ac000",
+      "7d740910bf1ca11f",
+      "7dbad261106c7b95",
+      "811b8c42a1d0839d",
+      "887fa6e7dbda5a9b",
+      "887fa6e7dbda5a9b",
+      "89fdca0631ae73db",
+      "8b4cc9dd44e80fd9",
+      "95cc1a4dddece982",
+      "95cc1a4dddece982",
+      "95cc1a4dddece982",
+      "95cc1a4dddece982",
+      "966fa550a64cf813",
+      "966fa550a64cf813",
+      "966fa550a64cf813",
+      "a4591f094124cff4",
+      "a4dc48ff8b26ffdc",
+      "a90cb86fe6977b57",
+      "acba90edbb1a69d6",
+      "acba90edbb1a69d6",
+      "b0302a4e411ce274",
+      "b3df95408682bf28",
+      "c07abc283d791f6f",
+      "cbd2f410c32a7197",
+      "cbd2f410c32a7197",
+      "cbd2f410c32a7197",
+      "cbd2f410c32a7197",
+      "ceedd371040f73b2",
+      "d600ade6d8532132",
+      "dbddb8fc81afcef8",
+      "dbddb8fc81afcef8",
+      "e76cb162db9733f9",
+      "e76cb162db9733f9",
+      "ea488c0a06df9471",
+      "ea488c0a06df9471",
+      "ea6b7c64d5742840",
+      "fcacffeb1b615043",
+      "fcacffeb1b615043",
+      "fcacffeb1b615043",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.29651323921562484,
+      "module_counts": {
+        "measured_moves": 11,
+        "sqrt_levels": 86
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "766989cb6df872ff",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "3fd15cf0d87e1f93",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 484.73547025482605,
+      "price_high": 515.6388806218325,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 515.6388806218325,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.2958668869138199,
+    "provenance": [
+      "05fbba9b7e4c53dd",
+      "05fbba9b7e4c53dd",
+      "217a74efb89ec8aa",
+      "217a74efb89ec8aa",
+      "2bad278b9b3ed805",
+      "2bad278b9b3ed805",
+      "722b264525df63f3",
+      "7e8988b9393b160b",
+      "8d1cc10f84afc553",
+      "93f82d2c0a0289ef",
+      "93f82d2c0a0289ef",
+      "afa77607d11f9954",
+      "bcf75fd61321f173",
+      "bcf75fd61321f173",
+      "deacb4996f940b57",
+      "e6d6a2da63297977",
+      "e6d6a2da63297977",
+      "efb42f44ed79fce2",
+      "efb42f44ed79fce2",
+      "f0005981b2f3c03a",
+      "fc5e87b1f5bab46a",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.2958668869138199,
+      "module_counts": {
+        "sqrt_levels": 20,
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "71032a1f5566670f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "8334b1c52b5b5c17",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 149.6213688087609,
+      "price_high": 160.85124625211162,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 149.6213688087609,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.2834580834339426,
+    "provenance": [
+      "02c3082349b92e70",
+      "02c3082349b92e70",
+      "0ca862c07b4d9bd0",
+      "2b1bc777d8508aac",
+      "349efebc5ac734ee",
+      "349efebc5ac734ee",
+      "349efebc5ac734ee",
+      "3800dfafa11792fa",
+      "3800dfafa11792fa",
+      "3b7a9097b719afd9",
+      "46d0f216fe07dbaa",
+      "46d0f216fe07dbaa",
+      "46d0f216fe07dbaa",
+      "4d8136fd76ae447b",
+      "870134c1a0d22121",
+      "870134c1a0d22121",
+      "870134c1a0d22121",
+      "88294e46bc1ef0fb",
+      "946d1be3c4eb2ccf",
+      "946d1be3c4eb2ccf",
+      "a1edca9dabd5cd9e",
+      "a29b032fc52e998f",
+      "b4b00547c8fcef0b",
+      "bf7fea9024bb3993",
+      "bf7fea9024bb3993",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.2834580834339426,
+      "module_counts": {
+        "sqrt_levels": 22,
+        "measured_moves": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "7f701efb41569998",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "545a08ab4248f66b",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 162.0714819278848,
+      "price_high": 168.78321042860156,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 162.0714819278848,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.26706121532724086,
+    "provenance": [
+      "23f9bba1de87e7ef",
+      "23f9bba1de87e7ef",
+      "2614ef17b108b943",
+      "375ae3f595375a60",
+      "4494aafdf0ff4467",
+      "4494aafdf0ff4467",
+      "627aca1bf4801acb",
+      "62c78830a6d42d5a",
+      "62c78830a6d42d5a",
+      "640a5467bc6cf4e9",
+      "906031271dc1c340",
+      "beee149657bbc8c9",
+      "c94b04ea90426082",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.26706121532724086,
+      "module_counts": {
+        "measured_moves": 2,
+        "sqrt_levels": 11
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "42f38a3aeb00af9e",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "8686ab91bc14344f",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 133.24065929536687,
+      "price_high": 149.5103,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 133.24065929536687,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.24930017999977205,
+    "provenance": [
+      "0b3bd38b25eca9fd",
+      "502eae4c89dd896c",
+      "55debe17ead53c2f",
+      "56c3769a7ecadd9d",
+      "5814472c767573d9",
+      "7c8280b4133e668c",
+      "7c834af711e2308c",
+      "823fadd3f3d5bb29",
+      "8cd2569c2ffae563",
+      "8cd2569c2ffae563",
+      "a852d31296a23176",
+      "abb768a21af67cf6",
+      "ae522724ff8f9ea3",
+      "af2cb1ad636667d4",
+      "b7f4feec74acdb1c",
+      "b7f4feec74acdb1c",
+      "c402079c9d1c25c8",
+      "ce0459dd15dcb51c",
+      "ce0459dd15dcb51c",
+      "ce0459dd15dcb51c",
+      "cffbd81fc9b462b1",
+      "d16ca408925edd43",
+      "de872c1fc64bf16c",
+      "e18560da3d6e6f99",
+      "e18560da3d6e6f99",
+      "e9d8689722875175",
+      "ee74a809d555ab9b",
+      "f6145524f15e247d",
+      "fa06efa1f4e94b16",
+      "fa06efa1f4e94b16",
+      "fa06efa1f4e94b16",
+      "fdaf0e5065b6fd3e",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.24930017999977205,
+      "module_counts": {
+        "measured_moves": 7,
+        "sqrt_levels": 25
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "8eee569e775dfced",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "e8a4ee52b986d307",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 519.9874538862467,
+      "price_high": 537.5178214343147,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 537.5178214343147,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.23738002153968799,
+    "provenance": [
+      "337e54a6b2b62193",
+      "337e54a6b2b62193",
+      "9d048db6bfb79bfe",
+      "a8050e5a8fa23ffb",
+      "bf47957e5382eab6",
+      "bf47957e5382eab6",
+      "d5a940043bd1bbf3",
+      "d5a940043bd1bbf3",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.23738002153968799,
+      "module_counts": {
+        "sqrt_levels": 7,
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "d0b1550efc892feb",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "f007e02c2b27a31c",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 635.0118099059824,
+      "price_high": 657.4847500000001,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 657.4847500000001,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.21883391272231967,
+    "provenance": [
+      "1bb5c6da51b35011",
+      "27b7bb8f08df3a7d",
+      "27b7bb8f08df3a7d",
+      "2dde6e05fa4e40fe",
+      "40262915f7cb3abd",
+      "a45730e161f62cf0",
+      "a45730e161f62cf0",
+      "a45730e161f62cf0",
+      "fd73659c54d24a31",
+      "fd73659c54d24a31",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.21883391272231967,
+      "module_counts": {
+        "measured_moves": 3,
+        "sqrt_levels": 7
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "af27a9c1dd2989bb",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "003c41f4befcd45e",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 449.84090495299125,
+      "price_high": 462.80412497135626,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 462.80412497135626,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.15838359171692507,
+    "provenance": [
+      "1309f0b0d6475756",
+      "39320fcbfeb4ccc6",
+      "39320fcbfeb4ccc6",
+      "39320fcbfeb4ccc6",
+      "39320fcbfeb4ccc6",
+      "5dcae19dda45d3b8",
+      "5dcae19dda45d3b8",
+      "927cfb4ad4e8445d",
+      "927cfb4ad4e8445d",
+      "927cfb4ad4e8445d",
+      "a252f977f006c04d",
+      "d5f7c5d544f3a010",
+      "d5f7c5d544f3a010",
+      "d5f7c5d544f3a010",
+      "d5f7c5d544f3a010",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.15838359171692507,
+      "module_counts": {
+        "sqrt_levels": 15
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "c2be8c73150c9e36",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "22b0dc3ce98e3d57",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 538.4463574294869,
+      "price_high": 553.090516628475,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 553.090516628475,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.15571928071928073,
+    "provenance": [
+      "67370f9831f700c7",
+      "85b391de54d17b31",
+      "85b391de54d17b31",
+      "85b391de54d17b31",
+      "9d569232725fcf54",
+      "9d569232725fcf54",
+      "9d569232725fcf54",
+      "9d569232725fcf54",
+      "c051184349a53f9b",
+      "c051184349a53f9b",
+      "c051184349a53f9b",
+      "c051184349a53f9b",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.15571928071928073,
+      "module_counts": {
+        "sqrt_levels": 12
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "90254eb21acf1df9",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "815916178aca168a",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 112.68877538071393,
+      "price_high": 118.89380892426395,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 112.68877538071393,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.12173182328143024,
+    "provenance": [
+      "33263df5996510c5",
+      "5489de9d0168e7ef",
+      "62e5e3e87779fcfa",
+      "cfc01c0770d2f826",
+      "f0a743afdf3d2503",
+      "f0a743afdf3d2503",
+      "f9fc68cb4b5a314f",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.12173182328143024,
+      "module_counts": {
+        "sqrt_levels": 4,
+        "measured_moves": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "a693c160e5e398e6",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "7a8a7757c1844d8a",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 126.21364257051309,
+      "price_high": 127.48212139031723,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 126.21364257051309,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.1186813186813187,
+    "provenance": [
+      "a374c118ff7714bb",
+      "a374c118ff7714bb",
+      "a374c118ff7714bb",
+      "a374c118ff7714bb",
+      "a6292e3fbf2c13e1",
+      "a6292e3fbf2c13e1",
+      "a6292e3fbf2c13e1",
+      "a6292e3fbf2c13e1",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.1186813186813187,
+      "module_counts": {
+        "sqrt_levels": 8
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "20faa9404a140cf3",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "e4ccb93116b2a1ae",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 85.7835,
+      "price_high": 86.22616185375632,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 85.7835,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.11847308767164698,
+    "provenance": [
+      "1b6a896feec70d92",
+      "c718e07df19f62e1",
+      "c718e07df19f62e1",
+      "d98f6a94fb859d06",
+      "d98f6a94fb859d06",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.11847308767164698,
+      "module_counts": {
+        "sqrt_levels": 4,
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "433230497ff8c32d",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "560a95d1161d392d",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 121.97531115444023,
+      "price_high": 124.76792218890236,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 121.97531115444023,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.11488517279821628,
+    "provenance": [
+      "554d0bf65eb89517",
+      "945a4dd8dae64d28",
+      "945a4dd8dae64d28",
+      "945a4dd8dae64d28",
+      "ed73e70654061be8",
+      "ed73e70654061be8",
+      "ed73e70654061be8",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.11488517279821628,
+      "module_counts": {
+        "sqrt_levels": 7
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "76e5aa1ba076a575",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "33d83e3efa8a59d0",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 800.2938966349603,
+      "price_high": 807.9798000000001,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 807.9798000000001,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.06597659657957669,
+    "provenance": [
+      "006f4ad059d08aec",
+      "39338b4336960149",
+      "39338b4336960149",
+      "8673ba9dcd8f4957",
+      "ad77c6e8caf14ff3",
+      "c5b14d160cbd3393",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.06597659657957669,
+      "module_counts": {
+        "measured_moves": 4,
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "4eca46897710abc4",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "2d904d5de952340e",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 570.6466164497272,
+      "price_high": 572.1679753437525,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 572.1679753437525,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.06577255272907448,
+    "provenance": [
+      "71b71aa10b96e6f9",
+      "85e255d9300f2e29",
+      "85e255d9300f2e29",
+      "85e255d9300f2e29",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.06577255272907448,
+      "module_counts": {
+        "sqrt_levels": 4
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "96ac1e370bbbd13f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "767083f61613ef34",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 665.4193772037269,
+      "price_high": 685.1647008593812,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 685.1647008593812,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.06260254123015788,
+    "provenance": [
+      "ab0e9516fed93486",
+      "bce0de43b5030a02",
+      "ec1709e01f071350",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.06260254123015788,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "eee6d4ef38e45c2d",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "d79c30e5fc64e20b",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 102.34860043510164,
+      "price_high": 103.06251734201595,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 102.34860043510164,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.06062271062271063,
+    "provenance": [
+      "7c667c2fc4102705",
+      "7c667c2fc4102705",
+      "ffea4baeef24a030",
+      "ffea4baeef24a030",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.06062271062271063,
+      "module_counts": {
+        "sqrt_levels": 4
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "577a9b27bc5fbfc2",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "a33d01fc7b52d8aa",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 104.79591633226526,
+      "price_high": 105.84914162203677,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 104.79591633226526,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.05925925925925927,
+    "provenance": [
+      "0b39cd847c4c053f",
+      "0b39cd847c4c053f",
+      "4b78cd6b61e0b85e",
+      "4b78cd6b61e0b85e",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.05925925925925927,
+      "module_counts": {
+        "sqrt_levels": 4
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "59eba1ce896a9d6a",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "d2ecaef2ad8926db",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 556.5788864064782,
+      "price_high": 558.9588462275552,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 558.9588462275552,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.04562962962962963,
+    "provenance": [
+      "2b428184f2341060",
+      "5bef10546af03afc",
+      "62edb1a3d27dfb6b",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.04562962962962963,
+      "module_counts": {
+        "sqrt_levels": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "941164c791d310c8",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "c96aeece54eaf993",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 119.50575589813471,
+      "price_high": 120.46143572263405,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 119.50575589813471,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.045054945054945054,
+    "provenance": [
+      "58163a267fb093d7",
+      "8782cf6162658071",
+      "8782cf6162658071",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.045054945054945054,
+      "module_counts": {
+        "sqrt_levels": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "c469fa7905c59495",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "88348f2419827c32",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 111.44885000305545,
+      "price_high": 112.32512595837304,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 111.44885000305545,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.04448514448514448,
+    "provenance": [
+      "5dabca66a426c496",
+      "e513ced61e49bc25",
+      "e513ced61e49bc25",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.04448514448514448,
+      "module_counts": {
+        "sqrt_levels": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "d0d25da48eb0bf51",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "717c7fe8173c4c5d",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 65.96290065265246,
+      "price_high": 66.37323978935461,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 65.96290065265246,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.04395604395604396,
+    "provenance": [
+      "b1c36a8237bf12bf",
+      "bf47fe20e60a5558",
+      "bf47fe20e60a5558",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.04395604395604396,
+      "module_counts": {
+        "sqrt_levels": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "5564b4756d65d31f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "393a4439a6e33aa0",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 917.1485121799471,
+      "price_high": 962.47445,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 962.47445,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.036432349153545866,
+    "provenance": [
+      "0597234cbc65f5be",
+      "20029d332daff853",
+      "324e95c3a1880810",
+      "373aa916c1773f60",
+      "9e24685a12457f17",
+      "a72dd35aee3b0de2",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.036432349153545866,
+      "module_counts": {
+        "measured_moves": 5,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "06f05b103c1a083f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "211dfc5b39accc53",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 98.47098355027299,
+      "price_high": 99.02040000000001,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 98.47098355027299,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03386806341011993,
+    "provenance": [
+      "46d1cfff28329fea",
+      "5532ec7c112059d1",
+      "5d6e7eaffa1bb027",
+      "ba6978583878b243",
+      "bd0d70c0a273a239",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03386806341011993,
+      "module_counts": {
+        "measured_moves": 4,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "f82c96f5c70f4a0f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "6647bfca7bfc83d3",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 744.8515888624669,
+      "price_high": 747.3091,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 747.3091,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03337100293857,
+    "provenance": [
+      "84f41ae7cf2d8d3c",
+      "e94fc31f3559fc5e",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03337100293857,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "30dec4094c39c05c",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "48fb602afad9081e",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 717.8766849762202,
+      "price_high": 725.0915260312574,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 725.0915260312574,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.031994214112430724,
+    "provenance": [
+      "0dc5a29a98b5e903",
+      "46170a08570856bf",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.031994214112430724,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "ec54ffb9e3a8d864",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "151cd10e7def22e0",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 49.762526027027214,
+      "price_high": 50.26265191674608,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 49.762526027027214,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.031450473655696504,
+    "provenance": [
+      "0e8f7c4ba33cde24",
+      "22995757aa9b03e8",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.031450473655696504,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "5229d7fba63b3a9a",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "a6d7dd8760ef0d87",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 857.7262044074537,
+      "price_high": 866.3465682708451,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 866.3465682708451,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.031000632568199626,
+    "provenance": [
+      "e8fb04602839b6ba",
+      "f42d284fc79a3a4c",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.031000632568199626,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "75f2d8a5d5d22ba9",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "eccc74c5c842b255",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 100.93711487258699,
+      "price_high": 101.9515582381406,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 100.93711487258699,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03095238095238096,
+    "provenance": [
+      "24d3b9f907602a38",
+      "24d3b9f907602a38",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03095238095238096,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "282c1598e0c2ba82",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "4132ff804ab50a13",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 691.3992810899736,
+      "price_high": 698.34801758334,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 698.34801758334,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03095238095238096,
+    "provenance": [
+      "bc2c7a2b20c005a6",
+      "bc2c7a2b20c005a6",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03095238095238096,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "36d5f3f1a81aceab",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "27630c69dd0ff830",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 130.65901079834197,
+      "price_high": 131.9721666857625,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 130.65901079834197,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03095238095238096,
+    "provenance": [
+      "3f9a7d3a19b07959",
+      "3f9a7d3a19b07959",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03095238095238096,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "4e1cbae9287c146f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "5f86c1e35f0a2d9f",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 83.16075054387706,
+      "price_high": 83.71287856568527,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 83.16075054387706,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.03081481481481482,
+    "provenance": [
+      "2877be9dba9fec85",
+      "b46016d09a4cb029",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.03081481481481482,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "50c5f59b3d163cbd",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "5e88dec9cae30d41",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 92.67851359352177,
+      "price_high": 93.43563328335355,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 92.67851359352177,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.030199430199430204,
+    "provenance": [
+      "a8503951bdecc625",
+      "ab76134cf7d881ce",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.030199430199430204,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "443cc0076e88e24f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "708a864a537f9dd6",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 91.38283333689802,
+      "price_high": 92.08049051790819,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 91.38283333689802,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.030199430199430204,
+    "provenance": [
+      "14ad49c34638aad4",
+      "510da4910362ca8b",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.030199430199430204,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "5e2a971a1a6e6f3c",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "e4b4cdc8102c1813",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 64.83072230888047,
+      "price_high": 65.48228735721092,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 64.83072230888047,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.029670329670329676,
+    "provenance": [
+      "106f1575b0ab49a9",
+      "106f1575b0ab49a9",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.029670329670329676,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "8d354643b2ddd33a",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "7a1e1a8157304eba",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 89.03099119751295,
+      "price_high": 89.92577502864371,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 89.03099119751295,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.029670329670329676,
+    "provenance": [
+      "84cf9916d4ebf879",
+      "84cf9916d4ebf879",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.029670329670329676,
+      "module_counts": {
+        "sqrt_levels": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "e245a389cfa3d7aa",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "233735f5fae25a2f",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 36.68432974517396,
+      "price_high": 37.01649999999998,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 36.68432974517396,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.02954434017195683,
+    "provenance": [
+      "708d8961c7639f25",
+      "a090b8043b467be0",
+      "module:measured_moves",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.02954434017195683,
+      "module_counts": {
+        "measured_moves": 1,
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "672cd007c89a3c39",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "aa9422e433beaef5",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 81.88891859073372,
+      "price_high": 82.71192279767575,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 81.88891859073372,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.016000000000000004,
+    "provenance": [
+      "5a7b660ebc85fd94",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.016000000000000004,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "7e957ae161f3eddb",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "6f5d2d7ea8750c05",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 106.01010144305029,
+      "price_high": 107.07552959825682,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 106.01010144305029,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.016000000000000004,
+    "provenance": [
+      "cb86070f8208ec69",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.016000000000000004,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "eea54ff46c5af7bf",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "5a8d25d3a30d1534",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 107.4565004079078,
+      "price_high": 108.53646523612795,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 107.4565004079078,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.016000000000000004,
+    "provenance": [
+      "a497644643deb396",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.016000000000000004,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "d71082d4b093ecac",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "2c37a6fee44f52e7",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 108.85000099792745,
+      "price_high": 109.9439708572031,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 108.85000099792745,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.016000000000000004,
+    "provenance": [
+      "c455be40ae6e4c2b",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.016000000000000004,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "09542622c284fb18",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "a8942a5217e2bfeb",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 129.33574769514132,
+      "price_high": 130.6356044558965,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 129.33574769514132,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "53804eef544b107e",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "afc956dd9a8020e9",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "86e8096df1090e58",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 77.43780702027041,
+      "price_high": 78.21607643755955,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 77.43780702027041,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "6006a2a9bb010992",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "a80143aff52f6781",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "435f5175ef0f0b55",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 758.5256033055903,
+      "price_high": 766.1489762031339,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 766.1489762031339,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "63f9276e4a803f32",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "4780ecbc8e5e8978",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "9ec14a41dc920561",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 127.8043000026735,
+      "price_high": 129.0887653293335,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 127.8043000026735,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "a162a20b1a45a2bd",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "6c96ff9ad4213cb4",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "12ff88850523260a",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 50.75505076142787,
+      "price_high": 51.265151774105526,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 50.75505076142787,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "dcaa3d88ae60c5c2",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "0b70b2541a7c5d66",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "315cad349e93b9e8",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 78.67472557107091,
+      "price_high": 79.46542633057915,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 78.67472557107091,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "36e3c88efe359710",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "152d60bb162eb8da",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "3bbc2a2ea389d47e",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 71.20198139709844,
+      "price_high": 71.91757920008435,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 71.20198139709844,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "11d36b09000384f7",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "cf1503fa8417c483",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "b9cfc776f59b7839",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 103.70868604782383,
+      "price_high": 104.75098440006326,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 103.70868604782383,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014814814814814817,
+    "provenance": [
+      "28516ba85b246de9",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014814814814814817,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "52769f13b0df34b4",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "3c84ab462b4b87f6",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 74.4677726783106,
+      "price_high": 75.21619250422326,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 74.4677726783106,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014285714285714289,
+    "provenance": [
+      "a50b44f63caf478f",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014285714285714289,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "7e49e9dd58bde73c",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "e7ac3b5fdd43acf9",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 73.3068166707406,
+      "price_high": 74.0435685970797,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 73.3068166707406,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014285714285714289,
+    "provenance": [
+      "8937304d31752fdc",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014285714285714289,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "77cbd5f4a200e206",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "14736dae6a7055f2",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 79.66915262888342,
+      "price_high": 80.46984763017872,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 79.66915262888342,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014285714285714289,
+    "provenance": [
+      "481208a71cb0deff",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014285714285714289,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "fc9387a3799f5d64",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "51cd45898d189151",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 37.53720087020327,
+      "price_high": 37.91445917040632,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 37.53720087020327,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014285714285714289,
+    "provenance": [
+      "1db651e5125760bc",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014285714285714289,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "9632a99d43a89380",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "2b041ee3d78ef2c5",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 55.362971596683934,
+      "price_high": 55.91938337152497,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 55.362971596683934,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.014285714285714289,
+    "provenance": [
+      "7badf5cee6833fa5",
+      "module:sqrt_levels"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.014285714285714289,
+      "module_counts": {
+        "sqrt_levels": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "c128a26e846f8e78",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "a2af281bd8d210a1",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 1092.8907000000002,
+      "price_high": 1110.9697,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 1110.9697,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.002831512819194548,
+    "provenance": [
+      "2fb50b713f66fda9",
+      "7a0415bce3b3c080",
+      "dc41f1b2c950577b",
+      "module:measured_moves"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.002831512819194548,
+      "module_counts": {
+        "measured_moves": 3
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "f6e82214920b5254",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "dc2c313c5191d304",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 47.56950000000001,
+      "price_high": 48.53050000000001,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 47.56950000000001,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0021192168902451486,
+    "provenance": [
+      "27b0bbfcba6b2c52",
+      "7c9fff2aa6eb2a1a",
+      "994eb6ebfc294951",
+      "d285a4da27e1a67e",
+      "module:measured_moves"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0021192168902451486,
+      "module_counts": {
+        "measured_moves": 4
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "395da2e03f53ebe2",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "8c97c3384ad3e21b",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 699.5934,
+      "price_high": 713.7266,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 713.7266,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020936866929663444,
+    "provenance": [
+      "d546f5fea62d1bc4",
+      "module:measured_moves"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020936866929663444,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "2931d54b99f824a4",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "f2881ae7603faa98",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 532205.1673714294,
+      "price_high": 542956.7869142866,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 542956.7869142866,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "ea5e2180333add4a",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "0a78fbda01a508ed",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "c7cf5fc98e1307a9",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 266247.77708571457,
+      "price_high": 271626.5200571431,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 271626.5200571431,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "1d69579a54b60695",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "ac7b68e01e03184b",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "e200f82442f171fe",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 199758.42951428585,
+      "price_high": 203793.95334285728,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 203793.95334285728,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "b596b64d8bc3ed57",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "65883cf2fc59b4e6",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "ca9193ff298c8e3c",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 133269.0819428572,
+      "price_high": 135961.38662857152,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 135961.38662857152,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "78c93f7e4eade16a",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "6dc03731e1c63fe7",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "edfee19862a34be3",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 66779.73437142861,
+      "price_high": 68128.81991428576,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 68128.81991428576,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "0673f5558635b488",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "d720f8eec823d272",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "8fe588cb12222872",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 33535.0605857143,
+      "price_high": 34212.53655714288,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 34212.53655714288,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "301562442e752ebe",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "927c41f5d56b5c57",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "91301c444bc49b4c",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 22453.50265714287,
+      "price_high": 22907.108771428586,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 22907.108771428586,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "975a41410ababf2e",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "d748dabbc16fcc22",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "208a853c1cf0a3c8",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 16912.72369285715,
+      "price_high": 17254.39487857144,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 17254.39487857144,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "1cf69b427cdd410e",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "632324fb4efb4d1e",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "af7ac16530dfd13c",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 8601.555246428576,
+      "price_high": 8775.324039285719,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 8775.324039285719,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0020000000000000005,
+    "provenance": [
+      "9f82ffd839ecfd0f",
+      "module:angle_families"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0020000000000000005,
+      "module_counts": {
+        "angle_families": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "bcd631be5d7e80e0",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "a7ef88eeaeda3db6",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 46.564649999999965,
+      "price_high": 47.50534999999997,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 46.564649999999965,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0019210908061611123,
+    "provenance": [
+      "613017228785f1af",
+      "66992ee21b2970e2",
+      "module:measured_moves"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0019210908061611123,
+      "module_counts": {
+        "measured_moves": 2
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "9aec673e14aa52ae",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "7aa5adb260ea1821",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 970.0316999999999,
+      "price_high": 989.6283,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 989.6283,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0006855014692849982,
+    "provenance": [
+      "a4f6de5013e24737",
+      "module:measured_moves"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0006855014692849982,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "257ce930c64c149d",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "75c78c41b15988c6",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 19.948500000000035,
+      "price_high": 20.351500000000033,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 19.948500000000035,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.0006855014692849982,
+    "provenance": [
+      "71df7927bae9824c",
+      "module:measured_moves"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.0006855014692849982,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "3d72db85112f9a1f",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "97589c34825ee98e",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 825.74415,
+      "price_high": 842.4258500000001,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 842.4258500000001,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.000612491671599974,
+    "provenance": [
+      "7621f759b4f874a8",
+      "module:measured_moves"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.000612491671599974,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "3e2b7260f61d03fb",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "1b885dea821c50f9",
+    "bias": "long",
+    "entry_region": {
+      "price_low": 53.98470000000003,
+      "price_high": 55.07530000000003,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_below_zone",
+        "price_level": 53.98470000000003,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.000612491671599974,
+    "provenance": [
+      "36cf2560ed8cdb26",
+      "module:measured_moves"
+    ],
+    "notes": "bias=long; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.000612491671599974,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  },
+  {
+    "signal_id": "f8a8ea3370b7b52c",
+    "dataset_version": "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1",
+    "timeframe_context": "1D primary / 6H confirm",
+    "zone_id": "ce304d2ac1fd3d24",
+    "bias": "short",
+    "entry_region": {
+      "price_low": 1052.6967,
+      "price_high": 1073.9633,
+      "time_earliest": null,
+      "time_latest": null
+    },
+    "invalidation": [
+      {
+        "condition": "close_above_zone",
+        "price_level": 1073.9633,
+        "time_cutoff": null,
+        "buffer": 0.0
+      }
+    ],
+    "confirmations_required": [
+      "candle_direction",
+      "zone_rejection",
+      "strict_multi_candle"
+    ],
+    "quality_score": 0.00048645580026412613,
+    "provenance": [
+      "10f2b56a5aca7978",
+      "module:measured_moves"
+    ],
+    "notes": "bias=short; zone_type=type=price_only; gap_policy=strict (missing_bars=1)",
+    "metadata": {
+      "confluence_score": 0.00048645580026412613,
+      "module_counts": {
+        "measured_moves": 1
+      },
+      "missing_bar_count": 1,
+      "gap_note": "Dataset has 1 missing bar(s); strict_multi_candle confirmation required."
+    }
+  }
+]
