@@ -1,0 +1,76 @@
+# configs/backtest.yaml
+# Phase 6 backtest engine configuration.
+# All backtest runs must reference a config. Do not hardcode these values.
+# See ASSUMPTIONS.md Assumptions 31–38 and DECISIONS.md Phase 6 section.
+
+# ── Dataset versions ─────────────────────────────────────────────────────────
+dataset:
+  version_1d: "proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1"   # primary signal-generation TF
+  version_6h: "proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1"   # confirmation + execution TF
+
+# ── Capital and position sizing ───────────────────────────────────────────────
+capital:
+  initial: 100000.0                  # starting notional (USD); arbitrary unit for research
+  position_sizing: "fixed_fraction"  # "fixed_fraction" or "fixed_notional"
+  fraction: 0.01                     # 1% of equity per trade (fixed_fraction mode)
+  fixed_notional: 1000.0             # dollar amount per trade (fixed_notional mode; ignored when fixed_fraction)
+
+# ── Transaction cost model ────────────────────────────────────────────────────
+# All costs in basis points (bps). 1 bps = 0.01%.
+costs:
+  fees_bps: 10          # round-trip exchange fee (5 bps each side; conservative default)
+  slippage_bps: 5       # round-trip price impact / spread (2.5 bps each side; conservative default)
+  # spread model: fee + slippage applied symmetrically at entry and exit.
+  # Partial fills: NOT SUPPORTED. All fills are treated as full fills.
+  # See ASSUMPTIONS.md Assumption 33.
+
+# ── Execution timing model ────────────────────────────────────────────────────
+execution:
+  # Entry: at the OPEN of the next 6H bar after price closes inside entry_region
+  # and all required confirmation checks pass.
+  entry_timing: "next_bar_open"         # only supported value in Phase 6
+
+  # Invalidation: exit at the OPEN of the next 6H bar after the invalidation
+  # condition is met (close_below_zone or close_above_zone).
+  exit_on_invalidation: true
+
+  # Time-expiry exit: exit at the OPEN of the next bar after time_cutoff is
+  # exceeded (when signal has a time_expired invalidation rule).
+  exit_on_time_expiry: true
+
+  # Maximum bars to hold a position before forcing an exit (safety valve).
+  max_hold_bars: 200                    # applies to 6H bars; 200 × 6H ≈ 50 calendar days
+
+# ── Signal generation settings ────────────────────────────────────────────────
+# Parameters forwarded to the Phase 5 signal-generation pipeline.
+signal_generation:
+  min_score_for_neutral: 0.5            # minimum confluence_score to include neutral signals
+  invalidation_buffer: 0.0             # extra price buffer on invalidation levels (USD)
+  min_impulse_quality: 0.0             # minimum impulse quality_score to include
+  pivot_n_bars: 5                      # pivot detector half-window (bars)
+  zigzag_reversal_pct: 20.0            # zigzag detector reversal threshold (percent)
+  max_impulses: 50                     # maximum impulses to use per generation window
+  max_origins: 20                      # maximum origins forwarded to angle/JTTL generators
+
+# ── Walk-forward settings ─────────────────────────────────────────────────────
+# Splits are defined in calendar days (1D bars).  All windows are anchored to
+# 1D bar timestamps.  The 6H execution data is filtered to match each window.
+walkforward:
+  train_window_days: 730               # training window length (≈ 2 years of 1D bars)
+  test_window_days: 180                # test window length (≈ 6 months of 1D bars)
+  step_days: 90                        # step between successive windows (≈ 3 months)
+  min_train_bars: 300                  # minimum 1D bars required in a train window
+  min_test_bars: 30                    # minimum 1D bars required in a test window
+
+# ── Reporting ────────────────────────────────────────────────────────────────
+reporting:
+  output_dir: "reports/phase6"
+  trades_format: "csv"                 # "csv" or "parquet"
+  # Performance metrics note: metrics are only valid after walk-forward completes.
+  # See PROJECT_STATUS.md Phase 6 section.
+
+# ── Smoke test overrides ──────────────────────────────────────────────────────
+# These values are used by research/run_phase6_smoke.py only.
+smoke:
+  slice_days: 180                      # recent calendar days to use in smoke run
+  output_dir: "reports/phase6/smoke"

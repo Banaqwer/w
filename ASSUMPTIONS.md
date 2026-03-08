@@ -432,3 +432,128 @@ inspect whether the specific signal's time zone overlaps with the gap timestamp.
 **How it will later be tested:** Phase 6 ablation comparing gap-policy variants
 (none / strict_multi / adaptive).
 **Status:** Active (MVP).
+
+---
+
+### Assumption 31 — Phase 6 signal generation uses full Phase 2–5 pipeline per window
+**Date:** 2026-03-08
+**Assumption:** Each walk-forward train window re-runs the full Phase 2–5 pipeline
+(pivot detection → impulse extraction → projection generation → confluence → signal
+generation) on the train-window 1D DataFrame slice.  No pre-computed Phase 5 artifacts
+are reused; every window generates its own signal set from scratch.
+**Reason:** Reproducibility and proper walk-forward isolation require that each train
+window generates signals from only the data available at that point in time.  Reusing
+pre-computed signals would mix future data into earlier train windows.
+**What it approximates:** A production-grade signal generation system with incremental
+(online) updates.
+**How it will later be tested:** Compare incremental vs. full-recompute signal sets.
+**Status:** Active (Phase 6 MVP).
+
+---
+
+### Assumption 32 — Phase 6 entry trigger: close inside entry_region on any bar
+**Date:** 2026-03-08
+**Assumption:** A signal is "triggered" (entry attempted) on the first 6H bar whose
+`close` price falls inside `[entry_region.price_low, entry_region.price_high]`.  The
+actual fill occurs at the OPEN of the following bar.  No confirmation checks are
+re-evaluated during execution; the backtest assumes confirmation was satisfied at
+signal generation time.
+**Reason:** Simplest deterministic entry rule.  More sophisticated entry filters
+(e.g. requiring a specific candle pattern at entry) can be added in Phase 7.
+**What it approximates:** A live confirmation check at the moment price enters the zone.
+**How it will later be tested:** Phase 7 ablation comparing entry filters.
+**Status:** Active (Phase 6 MVP).
+
+---
+
+### Assumption 33 — Phase 6 partial fills not supported; all fills are complete
+**Date:** 2026-03-08
+**Assumption:** The execution simulator treats every fill as a complete fill at the
+computed adjusted price.  Partial fills are explicitly not modeled.
+**Reason:** The research dataset is a crypto spot market (BTC/USD on Coinbase) with
+very high liquidity at the position sizes used (default 1% of $100K = $1,000 notional).
+Partial fills are not a material concern at MVP position sizes.
+**What it approximates:** A market with finite order book depth.
+**How it will later be tested:** Not a priority; may be added if position sizes grow.
+**Status:** Active (Phase 6 MVP).
+
+---
+
+### Assumption 34 — Phase 6 fees+slippage applied symmetrically as one-way bps
+**Date:** 2026-03-08
+**Assumption:** The configured `fees_bps` and `slippage_bps` in `backtest.yaml` are
+round-trip totals.  The execution simulator splits them in half and applies each half
+at entry and exit.  Default: 10 bps fees + 5 bps slippage round-trip → 5 bps fees +
+2.5 bps slippage per side.
+**Reason:** Conservative default for BTC/USD on Coinbase.  Spot fees are typically
+5–20 bps per trade; slippage at $1K notional is negligible but modeled explicitly.
+**What it approximates:** A more detailed fee schedule (maker vs. taker, tiered by
+volume, bid-ask spread model).
+**How it will later be tested:** Phase 7 sensitivity analysis on fee assumptions.
+**Status:** Active (Phase 6 MVP).
+
+---
+
+### Assumption 35 — Phase 6 Sharpe-like is per-trade, not per-bar
+**Date:** 2026-03-08
+**Assumption:** The "Sharpe-like" metric reported in `compute_summary` is computed
+as `mean(net_pnl) / std(net_pnl) * sqrt(252)`, treating each trade as if it
+corresponds to approximately one trading day.  This is NOT a proper annualised
+daily Sharpe ratio.
+**Reason:** The backtest has a variable number of trades per window, and trades do
+not occur at a fixed frequency.  A per-trade metric is the simplest meaningful
+dispersion measure for a sparse signal generator.
+**What it approximates:** A proper bar-frequency Sharpe ratio computed from a daily
+equity curve.
+**How it will later be tested:** Phase 7 will add a bar-frequency Sharpe computed
+from the equity curve time series.
+**Status:** Active (Phase 6 MVP).  Label clearly as "per-trade Sharpe approximation"
+in any report.
+
+---
+
+### Assumption 36 — Phase 6 confirmation checks not re-evaluated during execution
+**Date:** 2026-03-08
+**Assumption:** The Phase 6 backtest assumes all signals have implicitly passed their
+confirmation checks before the test window begins.  No confirmation checks (candle_
+direction, zone_rejection, strict_multi_candle) are evaluated bar-by-bar during the
+execution simulation.
+**Reason:** Confirmation check logic (from Phase 5) requires a slice of recent bars
+around the signal time.  Implementing proper in-bar confirmation during walk-forward
+would require significant additional logic and is deferred to Phase 7.
+**What it approximates:** Running `run_all_confirmations()` at each bar where price
+enters the entry region.
+**How it will later be tested:** Phase 7 will add in-bar confirmation gating and
+compare vs. unfiltered baseline.
+**Status:** Active (Phase 6 MVP).  Clearly documented as a known limitation.
+
+---
+
+### Assumption 37 — Walk-forward metrics are the only valid performance evidence
+**Date:** 2026-03-08
+**Assumption:** Single-window backtest results from the smoke script or any
+ad-hoc single window are not valid evidence of strategy edge.  Only the
+walk-forward aggregate metrics (after the full walk-forward completes on the
+complete dataset) should be used to evaluate the strategy.
+**Reason:** In-sample backtest results are subject to overfitting.  Walk-forward
+out-of-sample evaluation on multiple non-overlapping test windows is the minimum
+bar for a research-grade performance claim.
+**What it approximates:** A fully rigorous statistical analysis (bootstrapping,
+permutation tests, etc.) is deferred to Phase 7.
+**How it will later be tested:** Phase 7 adds permutation tests and baseline
+comparison (random entry, breakout, MA crossover).
+**Status:** Active.  All Phase 6 performance discussions must reference this assumption.
+
+---
+
+### Assumption 38 — Walk-forward train/test split: 730/180 days default
+**Date:** 2026-03-08
+**Assumption:** Default walk-forward uses 730 calendar days (≈ 2 years) as the train
+window and 180 days (≈ 6 months) as the test window, with a 90-day step.  This
+gives approximately N windows = (total_days - 910) / 90.
+**Reason:** For BTC/USD with ≈ 10 years of daily data, this produces ≈ 36 walk-forward
+windows, which is sufficient for statistical aggregation while keeping each train
+window long enough to generate meaningful impulses.
+**What it approximates:** An optimal train/test split tuned by grid search.
+**How it will later be tested:** Phase 7 sensitivity analysis on window lengths.
+**Status:** Active (Phase 6 MVP).
