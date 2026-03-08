@@ -242,6 +242,8 @@ def _generate_projections(
     """Run all five Phase 3/4 generators on the given impulses and 1D data.
 
     Returns an empty list if pipeline modules are unavailable.
+
+    The calling conventions here mirror ``research/run_phase4_smoke.py``.
     """
     if not _PIPELINE_AVAILABLE:
         return []
@@ -250,12 +252,15 @@ def _generate_projections(
     if not impulses:
         return projections
 
+    # Convert Impulse dataclass instances to plain dicts (the module APIs
+    # expect list-of-dict, not dataclass objects).
+    impulse_dicts = [imp.to_dict() for imp in impulses]
+
     # ── Measured moves ──────────────────────────────────────────────────
     try:
         ratios = [0.5, 1.0, 1.5, 2.0]
-        for imp in impulses:
-            mms = compute_measured_moves(imp, ratios=ratios)
-            projections.extend(projections_from_measured_moves(mms))
+        mms = compute_measured_moves(impulse_dicts, ratios=ratios, mode="raw")
+        projections.extend(projections_from_measured_moves(mms))
     except Exception as exc:
         logger.debug("measured_moves generator error: %s", exc)
 
@@ -263,10 +268,26 @@ def _generate_projections(
     try:
         origins = detect_pivots(df_1d, n_bars=config.pivot_n_bars)
         origins = origins[: config.max_origins]
+        jttl_lines = []
+        jttl_quality = []
+        jttl_source_ids = []
         for orig in origins:
-            lines = compute_jttl(orig)
-            horizons = [30, 60, 90, 180]
-            projs = projections_from_jttl_lines(lines, df_1d, horizons=horizons)
+            origin_time = orig.origin_time
+            origin_price = float(orig.origin_price)
+            if origin_price <= 0:
+                continue
+            if hasattr(origin_time, 'tzinfo') and origin_time.tzinfo is None:
+                origin_time = pd.Timestamp(origin_time).tz_localize("UTC")
+            jl = compute_jttl(origin_time, origin_price, k=2.0, horizon_days=365)
+            jttl_lines.append(jl)
+            jttl_quality.append(float(orig.quality_score) if orig.quality_score else 0.5)
+            jttl_source_ids.append(f"jttl_origin_{orig.bar_index}")
+        if jttl_lines:
+            projs = projections_from_jttl_lines(
+                jttl_lines,
+                quality_scores=jttl_quality,
+                source_ids=jttl_source_ids,
+            )
             projections.extend(projs)
     except Exception as exc:
         logger.debug("jttl generator error: %s", exc)
@@ -274,8 +295,17 @@ def _generate_projections(
     # ── Sqrt levels ─────────────────────────────────────────────────────
     try:
         for imp in impulses:
-            levels = sqrt_levels(imp)
-            projections.extend(projections_from_sqrt_levels(levels))
+            origin_price = float(imp.extreme_price)
+            if origin_price <= 0:
+                continue
+            source_id = f"sqrt_{imp.impulse_id}"
+            levels = sqrt_levels(origin_price, direction="both")
+            projs = projections_from_sqrt_levels(
+                levels,
+                origin_price=origin_price,
+                source_id=source_id,
+            )
+            projections.extend(projs)
     except Exception as exc:
         logger.debug("sqrt_levels generator error: %s", exc)
 
@@ -294,10 +324,9 @@ def _generate_projections(
     # ── Angle families ──────────────────────────────────────────────────
     try:
         basis = get_angle_scale_basis(df_1d)
-        for imp in impulses:
-            angles = compute_impulse_angles(imp, basis)
-            projs = projections_from_angle_families(angles, df_1d, horizons=[30, 60, 90])
-            projections.extend(projs)
+        angle_records = compute_impulse_angles(impulse_dicts, basis, price_mode="raw")
+        projs = projections_from_angle_families(angle_records, basis)
+        projections.extend(projs)
     except Exception as exc:
         logger.debug("angle_families generator error: %s", exc)
 
