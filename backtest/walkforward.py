@@ -352,7 +352,7 @@ def aggregate_walkforward_metrics(
         "avg_max_drawdown_pct": _safe_mean(drawdowns),
         "min_win_rate": min(win_rates) if win_rates else 0.0,
         "max_win_rate": max(win_rates) if win_rates else 0.0,
-        "consistency_pct": positive_windows / n,
+        "consistency_pct": positive_windows / n if n > 0 else 0.0,  # n > 0 guaranteed by early return above
         "note": (
             "IMPORTANT: Performance metrics are only valid after walk-forward completes. "
             "See PROJECT_STATUS.md Phase 6 section and ASSUMPTIONS.md Assumption 37."

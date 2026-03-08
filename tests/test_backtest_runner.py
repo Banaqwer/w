@@ -127,7 +127,9 @@ def _make_completed_trade(net_pnl: float, exit_time: pd.Timestamp) -> Trade:
         entry_time=_TS_BASE,
         entry_open=40000.0,
         exit_time=exit_time,
-        exit_open=40000.0 + net_pnl * 40,  # approximate
+        # exit_open chosen so that: net_pnl = (exit_open - entry_open) * (pos_size / entry_open)
+        # => exit_open = entry_open + net_pnl * entry_open / pos_size = 40000 + net_pnl * 40
+        exit_open=40000.0 + net_pnl * 40,
         exit_reason="invalidation",
         position_size=1000.0,
         fees_bps=0.0,

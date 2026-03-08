@@ -402,6 +402,14 @@ def _get_time_cutoff(signal: SignalCandidate) -> Optional[pd.Timestamp]:
     return None
 
 
+def _get_invalidation_buffer(signal: SignalCandidate, condition: str) -> float:
+    """Return the buffer for a specific invalidation condition."""
+    for rule in signal.invalidation:
+        if rule.condition == condition:
+            return rule.buffer
+    return 0.0
+
+
 def simulate_signal_on_6h(
     signal: SignalCandidate,
     df_6h: pd.DataFrame,
@@ -564,14 +572,6 @@ def simulate_signal_on_6h(
     )
 
 
-def _get_invalidation_buffer(signal: SignalCandidate, condition: str) -> float:
-    """Return the buffer for a specific invalidation condition."""
-    for rule in signal.invalidation:
-        if rule.condition == condition:
-            return rule.buffer
-    return 0.0
-
-
 # ── Equity curve ──────────────────────────────────────────────────────────────
 
 
@@ -701,11 +701,15 @@ def compute_summary(
         peak_at_trough = float(peak[drawdown.idxmin()])
         max_dd_pct = max_dd / peak_at_trough if peak_at_trough > 0 else 0.0
 
-    # Sharpe-like (per-trade returns)
+    # Sharpe-like (per-trade returns).
+    # NOTE: This is a per-trade Sharpe approximation (ASSUMPTIONS.md Assumption 35).
+    # We treat each trade as if it corresponds to one trading day and annualise with
+    # sqrt(252).  This does NOT equal a proper daily bar-frequency Sharpe ratio.
+    # Trades may last multiple days; the true annualisation factor depends on actual
+    # trade duration.  Use walk-forward aggregate Sharpe, not single-window results.
     import numpy as np
     pnl_arr = pd.Series(net_pnls)
     std_pnl = float(pnl_arr.std(ddof=1)) if len(pnl_arr) > 1 else 0.0
-    # Scale to annualise: assume ~252 trades per year as approximation
     sharpe_like = (avg_net / std_pnl) * math.sqrt(252) if std_pnl > 0 else 0.0
 
     # Total return

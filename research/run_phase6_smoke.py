@@ -221,12 +221,18 @@ def main(
 
     # ── Walk-forward (short) ──────────────────────────────────────────────
     if not skip_walkforward:
+        # Smoke walk-forward: use 2/3 of slice_days as train, 1/3 as test,
+        # and 1/4 of slice_days as step.  Minimum floors ensure viable windows
+        # even on very short slices.
+        _wf_train = max(60, slice_days * 2 // 3)
+        _wf_test = max(20, slice_days // 3)
+        _wf_step = max(20, slice_days // 4)
         wf_config = WalkForwardConfig(
-            train_window_days=max(60, slice_days * 2 // 3),
-            test_window_days=max(20, slice_days // 3),
-            step_days=max(20, slice_days // 4),
-            min_train_bars=30,
-            min_test_bars=5,
+            train_window_days=_wf_train,
+            test_window_days=_wf_test,
+            step_days=_wf_step,
+            min_train_bars=30,  # lower threshold for smoke; full run uses 300
+            min_test_bars=5,    # lower threshold for smoke; full run uses 30
         )
 
         logger.info(
