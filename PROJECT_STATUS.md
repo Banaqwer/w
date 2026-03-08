@@ -510,6 +510,11 @@ Phase 3B.2 (measured moves + time counts + log helpers) reviewed and accepted.
 - `signals/generators_time_counts.py` — converts `TimeWindow` → time-only `Projection`
   - direction_hint = "turn"; price_band = (None, None)
   - raw_score includes recency weight by multiplier
+- `signals/generators_angle_families.py` — converts impulse angle records → price-only `Projection`
+  - Projects along canonical Jenkins fan lines (1×1, 2×1, 1×2, etc.) from extreme price
+  - price_band = ±1%; score decays with angle-family match deviation
+  - Only impulses bucketed to a recognised angle family are processed (conservative)
+  - direction_hint: above extreme → resistance, below → support
 
 **Confluence engine:**
 - `signals/confluence.py` — clusters overlapping Projections into ConfluenceZones
@@ -519,19 +524,22 @@ Phase 3B.2 (measured moves + time counts + log helpers) reviewed and accepted.
   - Price-only and time-only projections never merged (no shared dimension)
   - Mixed (both bands) projection bridges price and time clusters
   - Score = n_score × diversity_score × avg_raw_score (fully deterministic)
+  - max_module_types = 5 (measured_moves, jttl, sqrt_levels, time_counts, angle_families)
 
 **Smoke script:**
-- `research/run_phase4_smoke.py` — runs all generators + confluence engine
+- `research/run_phase4_smoke.py` — runs all 5 generators + confluence engine
   - Loads Phase 2 impulse/origin CSVs; reads manifest missing_bar_count
+  - Computes scale_basis for angle families generator
   - Writes `reports/phase4/projections_<version>.json` and `reports/phase4/zones_<version>.json`
   - Prints summary: projection counts by generator, zone count, top 10 zones
 
-**Tests (122 new, all passing):**
+**Tests (149 new, all passing):**
 - `tests/test_projections_schema.py` — 35 tests: Projection, ConfluenceZone, make_zone_id
 - `tests/test_confluence_engine.py` — 38 tests: clustering, scoring, overlap, determinism
 - `tests/test_generator_measured_moves.py` — 19 tests
 - `tests/test_generator_sqrt_levels.py` — 21 tests
 - `tests/test_generator_time_counts.py` — 22 tests (includes time-based generator)
+- `tests/test_generator_angle_families.py` — 27 tests: angle-family projections
 
 #### How to run Phase 4 smoke script
 
@@ -544,19 +552,21 @@ python -m research.run_phase4_smoke --dataset-version proc_COINBASE_BTCUSD_1D_UT
 
 #### Phase 4 smoke-run results (2026-03-08)
 
-| Source | Miss | MM | TC | JTTL | Sqrt | Total |
-|---|---|---|---|---|---|---|
-| 1D pivot | 0 | 150 | 80 | 10 | 640 | 880 |
-| 1D zigzag | 0 | 128 | 80 | 10 | 640 | 858 |
-| 6H pivot | 1 | 159 | 80 | 10 | 640 | 889 |
-| 6H zigzag | 1 | 155 | 80 | 10 | 640 | 885 |
-| **TOTALS** | | **592** | **320** | **40** | **2560** | **3512** |
+| Source | Miss | MM | TC | AF | JTTL | Sqrt | Total |
+|---|---|---|---|---|---|---|---|
+| 1D pivot | 0 | 37 | 20 | 0 | 3 | 192 | 252 |
+| 1D zigzag | 0 | 36 | 20 | 9 | 3 | 192 | 260 |
+| 6H pivot | 1 | 39 | 20 | 0 | 3 | 192 | 254 |
+| 6H zigzag | 1 | 39 | 20 | 0 | 3 | 192 | 254 |
+| **TOTALS** | | **151** | **80** | **9** | **12** | **768** | **1020** |
 
-- Total confluence zones: 144
+(Smoke run with --max-impulses 5 --max-origins 3 for quick verification)
+
+- Total confluence zones: 110
 - Zone output: `reports/phase4/zones_<version>.json`
 - Projection output: `reports/phase4/projections_<version>.json`
 
-**Tests:** `pytest -q` → 579 passed (457 Phase 1–3 + 122 Phase 4), 0 failed
+**Tests:** `pytest -q` → 606 passed (457 Phase 1–3 + 149 Phase 4), 0 failed
 
 #### Note: Phase 5 NOT started
 No Phase 5+ (confirmation, signals, execution, backtest) logic has been implemented.
@@ -564,8 +574,6 @@ Phase 4 delivers only projection generation and confluence scoring.
 Phase 5 may NOT begin until Phase 4 is reviewed.
 
 #### Open Phase 4 items
-- `signals/generators_angle_families.py` (optional): angle-family based projections — deferred
-  post-review per problem statement (keep conservative for MVP).
 - Recency weight in scoring (currently neutral at 1.0 for MVP) — deferred.
 - `min_cluster_size` tuning (currently 1: all projections form a zone) — deferred.
 - Confluence O(n²) clustering is acceptable at MVP scale; upgrade to interval tree if
