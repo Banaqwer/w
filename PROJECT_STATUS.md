@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 5 — Signal / Confirmation layer (IN PROGRESS — started 2026-03-08)
+- Phase 6 — Backtest engine + Walk-forward evaluation (STARTED 2026-03-08)
 
 ## Phase 3 — COMPLETE (all modules reviewed PASS 2026-03-07)
   - Adjusted angles module: COMPLETE (Phase 3A) — reviewed PASS 2026-03-07
@@ -726,3 +726,128 @@ but code does `support_n > resist_n` (simple comparison). Docstring corrected.
 **Full review:** `docs/reviews/phase5_review.md`
 
 **Phase 6 (backtest engine) may begin next.**
+
+---
+
+### Phase 6 — Backtest engine + Walk-forward evaluation (STARTED 2026-03-08)
+
+**Status:** IN PROGRESS
+
+Phase 5 (signal/confirmation layer) reviewed PASS on 2026-03-08.  Phase 6 backtest
+engine implementation started immediately after.
+
+#### Completed deliverables
+
+**A) Backtest config schema**
+- `configs/backtest.yaml` — full config with dataset versions, capital, position sizing,
+  fees (10 bps round-trip), slippage (5 bps round-trip), execution timing model,
+  walk-forward settings, and smoke test overrides.
+
+**B) Execution simulator**
+- `backtest/execution.py` — deterministic fill model, Trade dataclass, `compute_entry_fill`,
+  `compute_exit_fill`, `compute_fees_and_slippage`, `compute_gross_pnl`, `compute_position_size`,
+  `build_trade`.  Partial fills NOT supported (documented Assumption 33).
+
+**C) Backtest runner**
+- `backtest/runner.py` — `BacktestConfig`, `BacktestResult`, `generate_signals_from_df`
+  (full Phase 2–5 pipeline per window), `simulate_signal_on_6h`, `build_equity_curve`,
+  `compute_summary`, `run_backtest`, `write_trades`, `write_equity_curve`, `write_summary`.
+
+**D) Walk-forward evaluator**
+- `backtest/walkforward.py` — `WalkForwardConfig`, `WalkForwardWindow`,
+  `WalkForwardWindowResult`, `build_walkforward_windows`, `aggregate_walkforward_metrics`,
+  `run_walk_forward`.  Outputs `reports/phase6/walkforward_summary.json`.
+
+**E) Phase 6 smoke script**
+- `research/run_phase6_smoke.py` — fast smoke run on recent data slice.
+  Writes outputs to `reports/phase6/smoke/`.
+
+**F) Tests**
+- `tests/test_backtest_execution.py` — 46 tests: fill model, fees/slippage, Trade lifecycle
+- `tests/test_backtest_runner.py` — 26 tests: config, execution simulation, equity curve,
+  summary metrics, determinism, empty-slice handling
+- `tests/test_walkforward.py` — 25 tests: window construction, boundary correctness,
+  aggregation, determinism, JSON output
+
+**G) Assumptions updated**
+- `ASSUMPTIONS.md` Assumptions 31–38 (Phase 6 approximations and design choices)
+
+#### How to run Phase 6 smoke
+
+```bash
+# Basic smoke (single backtest, skip walk-forward):
+python -m research.run_phase6_smoke --skip-walkforward
+
+# Full smoke with walk-forward (default: 180-day recent slice):
+python -m research.run_phase6_smoke
+
+# Custom slice and output:
+python -m research.run_phase6_smoke --slice-days 365 --output-dir reports/phase6/smoke
+
+# With custom config:
+python -m research.run_phase6_smoke --config configs/backtest.yaml
+```
+
+Smoke output files: `reports/phase6/smoke/{trades.csv, equity_curve.csv, summary.json, walkforward_summary.json}`
+
+#### How to run full walk-forward
+
+```python
+from data.loader import load_processed, load_manifest
+from backtest.runner import BacktestConfig
+from backtest.walkforward import WalkForwardConfig, run_walk_forward
+from pathlib import Path
+
+df_1d = load_processed("proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1")
+df_6h = load_processed("proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1")
+manifest_1d = load_manifest("proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1")
+manifest_6h = load_manifest("proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1")
+
+bt_config = BacktestConfig.from_yaml("configs/backtest.yaml")
+wf_config = WalkForwardConfig.from_yaml("configs/backtest.yaml")
+
+window_results, aggregate = run_walk_forward(
+    df_1d=df_1d, df_6h=df_6h,
+    manifest_1d=manifest_1d, manifest_6h=manifest_6h,
+    bt_config=bt_config, wf_config=wf_config,
+    dataset_version="proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
+    output_dir=Path("reports/phase6"),
+)
+print(f"Windows: {aggregate['n_windows']} | Trades: {aggregate['total_trades']}")
+```
+
+Full walk-forward output: `reports/phase6/walkforward_summary.json`
+
+#### ⚠ Performance metrics disclaimer
+
+**Performance metrics are only valid after the full walk-forward completes.**
+Single-window backtest results (e.g. from the smoke script) must NOT be interpreted
+as evidence of strategy edge.  They are for plumbing verification only.
+
+See ASSUMPTIONS.md Assumption 37 for the full disclaimer.
+
+#### Phase 6 smoke-run results (2026-03-08)
+
+```
+Smoke slice: 181 × 1D bars | 721 × 6H bars (last 180 days)
+Train window: up to 2026-01-04 (120 bars)
+Test window: 2026-01-05 → 2026-03-06 (241 bars)
+
+Signals generated: 0 (short train window → few high-quality zones; expected)
+Trades executed: 0
+Walk-forward windows: 1 (short slice; only 1 fits the 120/60-day windows)
+```
+
+Zero signals in the 180-day smoke slice is expected; the full walk-forward on the
+complete 10-year 1D dataset will produce more signals per train window.
+
+#### Tests: 822 passed (725 Phase 1–5 + 97 Phase 6), 0 failed
+
+#### Open Phase 6 items
+
+- Confirmation checks not re-evaluated during execution (Assumption 36); Phase 7 will add
+  in-bar confirmation gating.
+- Sharpe-like metric is per-trade (Assumption 35); Phase 7 adds a bar-frequency Sharpe.
+- Walk-forward full run on complete 10-year dataset not yet executed; will be a Phase 6
+  deliverable after review.
+- Baseline comparison (random entry, breakout, MA crossover) deferred to Phase 7.
