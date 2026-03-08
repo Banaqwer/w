@@ -241,8 +241,9 @@ def run_single_experiment(
         # Single window: use last 1/3 of data as test
         if not df_1d_sorted.empty:
             n = len(df_1d_sorted)
-            train_end = df_1d_sorted.index[int(n * 2 / 3)]
-            test_start = df_1d_sorted.index[int(n * 2 / 3)]
+            split_idx = int(n * 2 / 3)
+            train_end = df_1d_sorted.index[split_idx]
+            test_start = df_1d_sorted.index[split_idx]
             test_end = df_1d_sorted.index[-1]
             try:
                 result = run_backtest(

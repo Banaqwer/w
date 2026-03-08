@@ -496,7 +496,7 @@ def simulate_signal_on_6h(
     - Neutral-bias signals are skipped (no directional trade).
     - When ``config.use_confirmation_gating`` is True (default), all required
       confirmation checks are evaluated at the triggering bar using only data
-      available up to that bar (no lookahead).  If any check fails the entry
+      available up to that bar (no lookahead).  If any check fails, the entry
       is skipped for that bar and the scan continues.
     - Timing convention: confirmation gate is evaluated at bar *i* (the bar
       whose close falls inside the entry region).  Entry fill is at bar *i+1*

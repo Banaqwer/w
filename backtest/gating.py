@@ -134,7 +134,7 @@ def evaluate_confirmation_gate(
     -------
     :class:`GatingResult` — structured result showing pass/fail per check.
     """
-    bar_time = df_6h_up_to_bar.index[-1] if not df_6h_up_to_bar.empty else pd.Timestamp("NaT")
+    bar_time = df_6h_up_to_bar.index[-1] if not df_6h_up_to_bar.empty else pd.NaT
 
     if df_6h_up_to_bar.empty:
         return GatingResult(

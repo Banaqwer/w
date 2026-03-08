@@ -70,6 +70,11 @@ logger = logging.getLogger(__name__)
 # Bars per year for 6H data (annualisation factor used by metrics)
 _BARS_PER_YEAR_6H = 252 * 4  # 1008
 
+# Default stop distances for random-entry and MA-crossover baselines
+# (expressed as fraction of entry price, e.g. 0.05 = 5%)
+_RANDOM_ENTRY_STOP_FRACTION = 0.05  # 5% stop for random-entry long/short
+_MA_CROSSOVER_STOP_FRACTION = 0.10  # 10% loose stop for MA crossover
+
 
 # ── Result type ───────────────────────────────────────────────────────────────
 
@@ -306,11 +311,11 @@ class RandomEntryBaseline:
             if rng.random() < self.entry_prob:
                 side = "long" if rng.random() < 0.5 else "short"
                 close = float(df_6h.iloc[i]["close"])
-                # Invalidation: ±5% from entry close
+                # Invalidation: ±_RANDOM_ENTRY_STOP_FRACTION from entry close
                 if side == "long":
-                    inv = close * 0.95
+                    inv = close * (1.0 - _RANDOM_ENTRY_STOP_FRACTION)
                 else:
-                    inv = close * 1.05
+                    inv = close * (1.0 + _RANDOM_ENTRY_STOP_FRACTION)
                 signals.append({
                     "signal_id": f"rnd_{i}",
                     "side": side,
@@ -419,7 +424,7 @@ class MACrossoverBaseline:
                     "signal_id": f"mac_long_{i}",
                     "side": "long",
                     "entry_bar_idx": i,
-                    "invalidation_price": close * 0.9,  # loose stop
+                    "invalidation_price": close * (1.0 - _MA_CROSSOVER_STOP_FRACTION),
                     "quality_score": 0.5,
                 })
             elif cross_down and current_side != "short":
@@ -432,7 +437,7 @@ class MACrossoverBaseline:
                     "signal_id": f"mac_short_{i}",
                     "side": "short",
                     "entry_bar_idx": i,
-                    "invalidation_price": close * 1.1,  # loose stop
+                    "invalidation_price": close * (1.0 + _MA_CROSSOVER_STOP_FRACTION),
                     "quality_score": 0.5,
                 })
 

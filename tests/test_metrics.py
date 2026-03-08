@@ -85,14 +85,13 @@ def test_sharpe_decreasing_equity_negative():
 def test_sharpe_known_value():
     """Verify with a known synthetic example.
 
-    Returns: [0.01, 0.01, 0.01] (constant 1% per bar).
-    mean = 0.01, std = 0 (ddof=1 on 3 identical values = 0).
-    → sharpe should be 0.0 (zero std).
+    Returns are approximately 1% per bar (nearly constant, with tiny variation).
+    Standard deviation is nonzero but very small, so Sharpe should be large and positive.
     """
     eq = _equity([100.0, 101.0, 102.03, 103.0603])
-    # Returns: 1%, 1%, ~1% → near-zero std
+    # Returns: ~1%, ~1.0099%, ~1% — nearly constant positive returns, nonzero std
     sharpe = compute_bar_sharpe(eq, bars_per_year=252)
-    # With very small but nonzero std, sharpe is large; just check it's finite and positive
+    # With very small but nonzero std, sharpe is large; check it's finite and positive
     assert math.isfinite(sharpe)
     assert sharpe > 0
 

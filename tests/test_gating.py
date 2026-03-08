@@ -195,7 +195,7 @@ def test_gate_no_lookahead_future_bars_not_used():
     We'll use a setup where:
     - bars 0-4: bullish body (close > open), so gate passes on first 5 bars
     - bars 5-9: explicitly bearish body AND close < mid (so gate fails on last 5 bars)
-    - show gate is evaluated on the passed slice, not lookahead
+    - show gate is evaluated on the provided input slice, not on future bars
     """
     # Zone [1000, 1100], mid=1050. Bearish bars at open~1055, close~1040 → close<mid, bearish body
     signal = _make_signal(bias="long", price_lo=1000.0, price_hi=1100.0, confirmations=["candle_direction"])
