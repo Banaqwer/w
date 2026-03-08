@@ -200,8 +200,8 @@ class TestScoring:
         p = _price_proj(50000.0, 49500.0, 50500.0, score=0.8)
         zones = build_confluence_zones([p])
         z = zones[0]
-        # n_score = 1/10 = 0.1, diversity = 1/4 = 0.25, avg_raw = 0.8
-        expected = 0.1 * 0.25 * 0.8
+        # n_score = 1/10 = 0.1, diversity = 1/5 = 0.2, avg_raw = 0.8
+        expected = 0.1 * 0.2 * 0.8
         assert z.confluence_score == pytest.approx(expected, rel=1e-6)
 
     def test_higher_diversity_higher_score(self):

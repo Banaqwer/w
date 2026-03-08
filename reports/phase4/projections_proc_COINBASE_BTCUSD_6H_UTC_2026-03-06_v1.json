@@ -7658,6 +7658,249 @@
     }
   },
   {
+    "projection_id": "ea5e2180333add4a",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 537580.977142858,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      532205.1673714294,
+      542956.7869142866
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "8x1",
+      "fan_direction": "down",
+      "family_angle_deg": 82.8749836510982,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "1d69579a54b60695",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 268937.14857142884,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      266247.77708571457,
+      271626.5200571431
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "4x1",
+      "fan_direction": "down",
+      "family_angle_deg": 75.96375653207353,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "b596b64d8bc3ed57",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 201776.19142857156,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      199758.42951428585,
+      203793.95334285728
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "3x1",
+      "fan_direction": "down",
+      "family_angle_deg": 71.56505117707799,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "78c93f7e4eade16a",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 134615.23428571437,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      133269.0819428572,
+      135961.38662857152
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "2x1",
+      "fan_direction": "down",
+      "family_angle_deg": 63.43494882292201,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "0673f5558635b488",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 67454.27714285719,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      66779.73437142861,
+      68128.81991428576
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "1x1",
+      "fan_direction": "down",
+      "family_angle_deg": 45.0,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "301562442e752ebe",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 33873.79857142859,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      33535.0605857143,
+      34212.53655714288
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "1x2",
+      "fan_direction": "down",
+      "family_angle_deg": 26.56505117707799,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "975a41410ababf2e",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 22680.30571428573,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      22453.50265714287,
+      22907.108771428586
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "1x3",
+      "fan_direction": "down",
+      "family_angle_deg": 18.43494882292201,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "1cf69b427cdd410e",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 17083.559285714295,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      16912.72369285715,
+      17254.39487857144
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "1x4",
+      "fan_direction": "down",
+      "family_angle_deg": 14.036243467926479,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
+    "projection_id": "9f82ffd839ecfd0f",
+    "module_name": "angle_families",
+    "source_id": "zigzag_pct20.0_107",
+    "projected_time": null,
+    "projected_price": 8688.439642857147,
+    "time_band": [
+      null,
+      null
+    ],
+    "price_band": [
+      8601.555246428576,
+      8775.324039285719
+    ],
+    "direction_hint": "resistance",
+    "raw_score": 0.1,
+    "metadata": {
+      "angle_family": "1x8",
+      "fan_direction": "down",
+      "family_angle_deg": 7.125016348901798,
+      "horizon_bars": 90,
+      "extreme_price": 293.32,
+      "impulse_family": "1x8",
+      "impulse_family_delta_deg": 4.859322575508233,
+      "impulse_direction": "down"
+    }
+  },
+  {
     "projection_id": "4a86139063188e4c",
     "module_name": "jttl",
     "source_id": "jttl_origin_8",

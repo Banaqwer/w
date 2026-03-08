@@ -75,11 +75,13 @@ if str(_REPO_ROOT) not in sys.path:
 
 from core.coordinate_system import get_angle_scale_basis
 from data.loader import load_manifest, load_processed
+from modules.adjusted_angles import compute_impulse_angles
 from modules.jttl import compute_jttl
 from modules.measured_moves import compute_measured_moves
 from modules.sqrt_levels import sqrt_levels
 from modules.time_counts import build_bar_to_time_map, time_square_windows
 from signals.confluence import build_confluence_zones
+from signals.generators_angle_families import projections_from_angle_families
 from signals.generators_jttl import projections_from_jttl_lines
 from signals.generators_measured_moves import projections_from_measured_moves
 from signals.generators_sqrt_levels import projections_from_sqrt_levels
@@ -267,6 +269,20 @@ def _run_sqrt_projections(
     return projections
 
 
+def _run_angle_families_projections(
+    impulses_df: pd.DataFrame,
+    max_impulses: int,
+    scale_basis: Dict[str, Any],
+) -> List[Projection]:
+    sample = impulses_df.head(max_impulses)
+    impulse_dicts = sample.to_dict(orient="records")
+    if not impulse_dicts:
+        return []
+    # Compute angles, then generate projections
+    angle_records = compute_impulse_angles(impulse_dicts, scale_basis, price_mode="raw")
+    return projections_from_angle_families(angle_records, scale_basis)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 
@@ -335,8 +351,13 @@ def main(
         # Load dataset for bar-time resolution
         df = _load_dataset_if_available(version)
         bar_to_time_map: Optional[dict] = None
+        scale_basis: Optional[Dict[str, Any]] = None
         if df is not None:
             bar_to_time_map = build_bar_to_time_map(df)
+            try:
+                scale_basis = get_angle_scale_basis(df)
+            except Exception as exc:
+                logger.debug("Scale basis computation failed: %s", exc)
 
         # Build quality score dict for time_counts
         quality_scores: Dict[str, float] = {}
@@ -352,6 +373,13 @@ def main(
             impulses_df, max_impulses, multipliers, bar_to_time_map, quality_scores
         )
 
+        # Angle families generator (optional; requires scale_basis)
+        af_projs: List[Projection] = []
+        if scale_basis is not None:
+            af_projs = _run_angle_families_projections(
+                impulses_df, max_impulses, scale_basis
+            )
+
         # Origins generators
         origins_key = f"{version}_{method}"
         origins_df = origins_lookup.get(origins_key, pd.DataFrame())
@@ -359,7 +387,7 @@ def main(
         jttl_projs = _run_jttl_projections(origins_df, max_origins, jttl_k, jttl_horizon)
         sqrt_projs = _run_sqrt_projections(origins_df, max_origins, sqrt_increments, sqrt_steps)
 
-        file_projs = mm_projs + tc_projs + jttl_projs + sqrt_projs
+        file_projs = mm_projs + tc_projs + af_projs + jttl_projs + sqrt_projs
         all_projections.extend(file_projs)
 
         summary_rows.append({
@@ -367,15 +395,17 @@ def main(
             "missing_bars": missing_bar_count,
             "mm_projections": len(mm_projs),
             "tc_projections": len(tc_projs),
+            "af_projections": len(af_projs),
             "jttl_projections": len(jttl_projs),
             "sqrt_projections": len(sqrt_projs),
             "total_projections": len(file_projs),
         })
 
         logger.info(
-            "%s_%s: mm=%d tc=%d jttl=%d sqrt=%d total=%d",
+            "%s_%s: mm=%d tc=%d af=%d jttl=%d sqrt=%d total=%d",
             version, method,
-            len(mm_projs), len(tc_projs), len(jttl_projs), len(sqrt_projs),
+            len(mm_projs), len(tc_projs), len(af_projs),
+            len(jttl_projs), len(sqrt_projs),
             len(file_projs),
         )
 
@@ -417,26 +447,29 @@ def _print_summary(
 
     # Per-file breakdown
     print(
-        f"{'Source':<55} {'miss':>5} {'mm':>6} {'tc':>6} {'jttl':>6} {'sqrt':>6} {'tot':>6}"
+        f"{'Source':<55} {'miss':>5} {'mm':>6} {'tc':>6} {'af':>6} {'jttl':>6} {'sqrt':>6} {'tot':>6}"
     )
-    print("-" * 90)
-    tot_mm = tot_tc = tot_jttl = tot_sqrt = 0
+    print("-" * 100)
+    tot_mm = tot_tc = tot_af = tot_jttl = tot_sqrt = 0
     for r in summary_rows:
+        af_count = r.get("af_projections", 0)
         print(
             f"  {r['source']:<53} {r['missing_bars']:>5} "
             f"{r['mm_projections']:>6} {r['tc_projections']:>6} "
+            f"{af_count:>6} "
             f"{r['jttl_projections']:>6} {r['sqrt_projections']:>6} "
             f"{r['total_projections']:>6}"
         )
         tot_mm += r["mm_projections"]
         tot_tc += r["tc_projections"]
+        tot_af += af_count
         tot_jttl += r["jttl_projections"]
         tot_sqrt += r["sqrt_projections"]
-    print("-" * 90)
+    print("-" * 100)
     total_proj = len(projections)
     print(
         f"  {'GRAND TOTALS':<53} {'':>5} "
-        f"{tot_mm:>6} {tot_tc:>6} {tot_jttl:>6} {tot_sqrt:>6} {total_proj:>6}"
+        f"{tot_mm:>6} {tot_tc:>6} {tot_af:>6} {tot_jttl:>6} {tot_sqrt:>6} {total_proj:>6}"
     )
     print()
 

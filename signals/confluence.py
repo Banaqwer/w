@@ -44,7 +44,8 @@ For a zone with ``N`` contributing projections:
 1. ``n_score``:  ``min(1.0, N / 10)``.  Rewards having more projections.
 2. ``diversity_score``:  ``M / max_module_types`` where ``M`` is the number of
    distinct ``module_name`` values in the zone and ``max_module_types`` defaults
-   to 4 (the four MVP generators).
+   to 5 (the five MVP generators: measured_moves, jttl, sqrt_levels,
+   time_counts, angle_families).
 3. ``avg_raw_score``:  arithmetic mean of ``raw_score`` values.
 4. ``recency_score`` (optional): not included in MVP; set to 1.0 (neutral).
 
@@ -75,7 +76,7 @@ from signals.projections import ConfluenceZone, Projection, make_zone_id
 
 logger = logging.getLogger(__name__)
 
-_MAX_MODULE_TYPES = 4   # MVP: measured_moves, jttl, sqrt_levels, time_counts
+_MAX_MODULE_TYPES = 5   # MVP: measured_moves, jttl, sqrt_levels, time_counts, angle_families
 _DEFAULT_MIN_CLUSTER_SIZE = 1
 
 

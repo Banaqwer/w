@@ -547,7 +547,7 @@
       "fccc9720248d1134",
       "fe962509d8d18c2f"
     ],
-    "confluence_score": 0.5428851562253951,
+    "confluence_score": 0.4343081249803161,
     "module_counts": {
       "measured_moves": 80,
       "jttl": 11,
@@ -586,7 +586,7 @@
       "df9f90044c7bd322",
       "e0c9cb7258a7acef"
     ],
-    "confluence_score": 0.46908675038018066,
+    "confluence_score": 0.3752694003041445,
     "module_counts": {
       "measured_moves": 4,
       "sqrt_levels": 14,
@@ -617,7 +617,7 @@
       "fc05cf5b2b78d7c6",
       "ffa829c9c3a9f3cb"
     ],
-    "confluence_score": 0.3810231383085547,
+    "confluence_score": 0.3048185106468438,
     "module_counts": {
       "sqrt_levels": 13,
       "measured_moves": 1
@@ -730,7 +730,7 @@
       "fcacffeb1b615043",
       "fcacffeb1b615043"
     ],
-    "confluence_score": 0.370641549019531,
+    "confluence_score": 0.29651323921562484,
     "module_counts": {
       "measured_moves": 11,
       "sqrt_levels": 86
@@ -767,7 +767,7 @@
       "f0005981b2f3c03a",
       "fc5e87b1f5bab46a"
     ],
-    "confluence_score": 0.3698336086422749,
+    "confluence_score": 0.2958668869138199,
     "module_counts": {
       "sqrt_levels": 20,
       "measured_moves": 1
@@ -808,7 +808,7 @@
       "bf7fea9024bb3993",
       "bf7fea9024bb3993"
     ],
-    "confluence_score": 0.35432260429242823,
+    "confluence_score": 0.2834580834339426,
     "module_counts": {
       "sqrt_levels": 22,
       "measured_moves": 3
@@ -837,7 +837,7 @@
       "beee149657bbc8c9",
       "c94b04ea90426082"
     ],
-    "confluence_score": 0.3338265191590511,
+    "confluence_score": 0.26706121532724086,
     "module_counts": {
       "measured_moves": 2,
       "sqrt_levels": 11
@@ -885,7 +885,7 @@
       "fa06efa1f4e94b16",
       "fdaf0e5065b6fd3e"
     ],
-    "confluence_score": 0.31162522499971507,
+    "confluence_score": 0.24930017999977205,
     "module_counts": {
       "measured_moves": 7,
       "sqrt_levels": 25
@@ -909,7 +909,7 @@
       "d5a940043bd1bbf3",
       "d5a940043bd1bbf3"
     ],
-    "confluence_score": 0.29672502692460995,
+    "confluence_score": 0.23738002153968799,
     "module_counts": {
       "sqrt_levels": 7,
       "measured_moves": 1
@@ -935,7 +935,7 @@
       "fd73659c54d24a31",
       "fd73659c54d24a31"
     ],
-    "confluence_score": 0.27354239090289956,
+    "confluence_score": 0.21883391272231967,
     "module_counts": {
       "measured_moves": 3,
       "sqrt_levels": 7
@@ -966,7 +966,7 @@
       "d5f7c5d544f3a010",
       "d5f7c5d544f3a010"
     ],
-    "confluence_score": 0.1979794896461563,
+    "confluence_score": 0.15838359171692507,
     "module_counts": {
       "sqrt_levels": 15
     },
@@ -993,7 +993,7 @@
       "c051184349a53f9b",
       "c051184349a53f9b"
     ],
-    "confluence_score": 0.1946491008991009,
+    "confluence_score": 0.15571928071928073,
     "module_counts": {
       "sqrt_levels": 12
     },
@@ -1015,7 +1015,7 @@
       "f0a743afdf3d2503",
       "f9fc68cb4b5a314f"
     ],
-    "confluence_score": 0.1521647791017878,
+    "confluence_score": 0.12173182328143024,
     "module_counts": {
       "sqrt_levels": 4,
       "measured_moves": 3
@@ -1039,7 +1039,7 @@
       "a6292e3fbf2c13e1",
       "a6292e3fbf2c13e1"
     ],
-    "confluence_score": 0.14835164835164835,
+    "confluence_score": 0.1186813186813187,
     "module_counts": {
       "sqrt_levels": 8
     },
@@ -1059,7 +1059,7 @@
       "d98f6a94fb859d06",
       "d98f6a94fb859d06"
     ],
-    "confluence_score": 0.1480913595895587,
+    "confluence_score": 0.11847308767164698,
     "module_counts": {
       "sqrt_levels": 4,
       "measured_moves": 1
@@ -1082,7 +1082,7 @@
       "ed73e70654061be8",
       "ed73e70654061be8"
     ],
-    "confluence_score": 0.14360646599777036,
+    "confluence_score": 0.11488517279821628,
     "module_counts": {
       "sqrt_levels": 7
     },
@@ -1103,7 +1103,7 @@
       "ad77c6e8caf14ff3",
       "c5b14d160cbd3393"
     ],
-    "confluence_score": 0.08247074572447087,
+    "confluence_score": 0.06597659657957669,
     "module_counts": {
       "measured_moves": 4,
       "sqrt_levels": 2
@@ -1123,7 +1123,7 @@
       "85e255d9300f2e29",
       "85e255d9300f2e29"
     ],
-    "confluence_score": 0.08221569091134309,
+    "confluence_score": 0.06577255272907448,
     "module_counts": {
       "sqrt_levels": 4
     },
@@ -1141,7 +1141,7 @@
       "bce0de43b5030a02",
       "ec1709e01f071350"
     ],
-    "confluence_score": 0.07825317653769735,
+    "confluence_score": 0.06260254123015788,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 2
@@ -1161,7 +1161,7 @@
       "ffea4baeef24a030",
       "ffea4baeef24a030"
     ],
-    "confluence_score": 0.07577838827838829,
+    "confluence_score": 0.06062271062271063,
     "module_counts": {
       "sqrt_levels": 4
     },
@@ -1180,7 +1180,7 @@
       "4b78cd6b61e0b85e",
       "4b78cd6b61e0b85e"
     ],
-    "confluence_score": 0.07407407407407407,
+    "confluence_score": 0.05925925925925927,
     "module_counts": {
       "sqrt_levels": 4
     },
@@ -1198,7 +1198,7 @@
       "5bef10546af03afc",
       "62edb1a3d27dfb6b"
     ],
-    "confluence_score": 0.05703703703703704,
+    "confluence_score": 0.04562962962962963,
     "module_counts": {
       "sqrt_levels": 3
     },
@@ -1216,7 +1216,7 @@
       "8782cf6162658071",
       "8782cf6162658071"
     ],
-    "confluence_score": 0.05631868131868131,
+    "confluence_score": 0.045054945054945054,
     "module_counts": {
       "sqrt_levels": 3
     },
@@ -1234,7 +1234,7 @@
       "e513ced61e49bc25",
       "e513ced61e49bc25"
     ],
-    "confluence_score": 0.0556064306064306,
+    "confluence_score": 0.04448514448514448,
     "module_counts": {
       "sqrt_levels": 3
     },
@@ -1252,7 +1252,7 @@
       "bf47fe20e60a5558",
       "bf47fe20e60a5558"
     ],
-    "confluence_score": 0.05494505494505495,
+    "confluence_score": 0.04395604395604396,
     "module_counts": {
       "sqrt_levels": 3
     },
@@ -1273,7 +1273,7 @@
       "9e24685a12457f17",
       "a72dd35aee3b0de2"
     ],
-    "confluence_score": 0.045540436441932335,
+    "confluence_score": 0.036432349153545866,
     "module_counts": {
       "measured_moves": 5,
       "sqrt_levels": 1
@@ -1294,7 +1294,7 @@
       "ba6978583878b243",
       "bd0d70c0a273a239"
     ],
-    "confluence_score": 0.042335079262649906,
+    "confluence_score": 0.03386806341011993,
     "module_counts": {
       "measured_moves": 4,
       "sqrt_levels": 1
@@ -1312,7 +1312,7 @@
       "84f41ae7cf2d8d3c",
       "e94fc31f3559fc5e"
     ],
-    "confluence_score": 0.0417137536732125,
+    "confluence_score": 0.03337100293857,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 1
@@ -1330,7 +1330,7 @@
       "0dc5a29a98b5e903",
       "46170a08570856bf"
     ],
-    "confluence_score": 0.0399927676405384,
+    "confluence_score": 0.031994214112430724,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 1
@@ -1348,7 +1348,7 @@
       "0e8f7c4ba33cde24",
       "22995757aa9b03e8"
     ],
-    "confluence_score": 0.03931309206962063,
+    "confluence_score": 0.031450473655696504,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 1
@@ -1366,7 +1366,7 @@
       "e8fb04602839b6ba",
       "f42d284fc79a3a4c"
     ],
-    "confluence_score": 0.03875079071024953,
+    "confluence_score": 0.031000632568199626,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 1
@@ -1384,7 +1384,7 @@
       "24d3b9f907602a38",
       "24d3b9f907602a38"
     ],
-    "confluence_score": 0.03869047619047619,
+    "confluence_score": 0.03095238095238096,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1401,7 +1401,7 @@
       "bc2c7a2b20c005a6",
       "bc2c7a2b20c005a6"
     ],
-    "confluence_score": 0.03869047619047619,
+    "confluence_score": 0.03095238095238096,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1418,7 +1418,7 @@
       "3f9a7d3a19b07959",
       "3f9a7d3a19b07959"
     ],
-    "confluence_score": 0.03869047619047619,
+    "confluence_score": 0.03095238095238096,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1435,7 +1435,7 @@
       "2877be9dba9fec85",
       "b46016d09a4cb029"
     ],
-    "confluence_score": 0.03851851851851852,
+    "confluence_score": 0.03081481481481482,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1452,7 +1452,7 @@
       "a8503951bdecc625",
       "ab76134cf7d881ce"
     ],
-    "confluence_score": 0.03774928774928775,
+    "confluence_score": 0.030199430199430204,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1469,7 +1469,7 @@
       "14ad49c34638aad4",
       "510da4910362ca8b"
     ],
-    "confluence_score": 0.03774928774928775,
+    "confluence_score": 0.030199430199430204,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1486,7 +1486,7 @@
       "106f1575b0ab49a9",
       "106f1575b0ab49a9"
     ],
-    "confluence_score": 0.03708791208791209,
+    "confluence_score": 0.029670329670329676,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1503,7 +1503,7 @@
       "84cf9916d4ebf879",
       "84cf9916d4ebf879"
     ],
-    "confluence_score": 0.03708791208791209,
+    "confluence_score": 0.029670329670329676,
     "module_counts": {
       "sqrt_levels": 2
     },
@@ -1520,7 +1520,7 @@
       "708d8961c7639f25",
       "a090b8043b467be0"
     ],
-    "confluence_score": 0.03693042521494603,
+    "confluence_score": 0.02954434017195683,
     "module_counts": {
       "measured_moves": 1,
       "sqrt_levels": 1
@@ -1537,7 +1537,7 @@
     "contributing_projection_ids": [
       "5a7b660ebc85fd94"
     ],
-    "confluence_score": 0.020000000000000004,
+    "confluence_score": 0.016000000000000004,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1553,7 +1553,7 @@
     "contributing_projection_ids": [
       "cb86070f8208ec69"
     ],
-    "confluence_score": 0.020000000000000004,
+    "confluence_score": 0.016000000000000004,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1569,7 +1569,7 @@
     "contributing_projection_ids": [
       "a497644643deb396"
     ],
-    "confluence_score": 0.020000000000000004,
+    "confluence_score": 0.016000000000000004,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1585,7 +1585,7 @@
     "contributing_projection_ids": [
       "c455be40ae6e4c2b"
     ],
-    "confluence_score": 0.020000000000000004,
+    "confluence_score": 0.016000000000000004,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1601,7 +1601,7 @@
     "contributing_projection_ids": [
       "53804eef544b107e"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1617,7 +1617,7 @@
     "contributing_projection_ids": [
       "6006a2a9bb010992"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1633,7 +1633,7 @@
     "contributing_projection_ids": [
       "63f9276e4a803f32"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1649,7 +1649,7 @@
     "contributing_projection_ids": [
       "a162a20b1a45a2bd"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1665,7 +1665,7 @@
     "contributing_projection_ids": [
       "dcaa3d88ae60c5c2"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1681,7 +1681,7 @@
     "contributing_projection_ids": [
       "36e3c88efe359710"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1697,7 +1697,7 @@
     "contributing_projection_ids": [
       "11d36b09000384f7"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1713,7 +1713,7 @@
     "contributing_projection_ids": [
       "28516ba85b246de9"
     ],
-    "confluence_score": 0.018518518518518517,
+    "confluence_score": 0.014814814814814817,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1729,7 +1729,7 @@
     "contributing_projection_ids": [
       "a50b44f63caf478f"
     ],
-    "confluence_score": 0.01785714285714286,
+    "confluence_score": 0.014285714285714289,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1745,7 +1745,7 @@
     "contributing_projection_ids": [
       "8937304d31752fdc"
     ],
-    "confluence_score": 0.01785714285714286,
+    "confluence_score": 0.014285714285714289,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1761,7 +1761,7 @@
     "contributing_projection_ids": [
       "481208a71cb0deff"
     ],
-    "confluence_score": 0.01785714285714286,
+    "confluence_score": 0.014285714285714289,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1777,7 +1777,7 @@
     "contributing_projection_ids": [
       "1db651e5125760bc"
     ],
-    "confluence_score": 0.01785714285714286,
+    "confluence_score": 0.014285714285714289,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1793,7 +1793,7 @@
     "contributing_projection_ids": [
       "7badf5cee6833fa5"
     ],
-    "confluence_score": 0.01785714285714286,
+    "confluence_score": 0.014285714285714289,
     "module_counts": {
       "sqrt_levels": 1
     },
@@ -1814,7 +1814,7 @@
       "c27cd67446674710",
       "ccde7a25e097ff41"
     ],
-    "confluence_score": 0.01129332632935317,
+    "confluence_score": 0.009034661063482536,
     "module_counts": {
       "time_counts": 6
     },
@@ -1832,7 +1832,7 @@
       "f831fac6dd68a9b7",
       "fb021b29a9384188"
     ],
-    "confluence_score": 0.0070787820479863706,
+    "confluence_score": 0.005663025638389096,
     "module_counts": {
       "time_counts": 3
     },
@@ -1852,7 +1852,7 @@
       "b1087431044dfde3",
       "ee1fc3854f9f110b"
     ],
-    "confluence_score": 0.005604099954494773,
+    "confluence_score": 0.004483279963595818,
     "module_counts": {
       "time_counts": 5
     },
@@ -1870,7 +1870,7 @@
       "7a0415bce3b3c080",
       "dc41f1b2c950577b"
     ],
-    "confluence_score": 0.0035393910239931853,
+    "confluence_score": 0.002831512819194548,
     "module_counts": {
       "measured_moves": 3
     },
@@ -1889,7 +1889,7 @@
       "7e15e70724aca742",
       "84b15ed935d02454"
     ],
-    "confluence_score": 0.0035041216100925167,
+    "confluence_score": 0.0028032972880740136,
     "module_counts": {
       "time_counts": 4
     },
@@ -1907,7 +1907,7 @@
       "304368daa339db0f",
       "7282442f6c547f91"
     ],
-    "confluence_score": 0.00296375557564902,
+    "confluence_score": 0.002371004460519216,
     "module_counts": {
       "time_counts": 3
     },
@@ -1926,7 +1926,7 @@
       "994eb6ebfc294951",
       "d285a4da27e1a67e"
     ],
-    "confluence_score": 0.0026490211128064353,
+    "confluence_score": 0.0021192168902451486,
     "module_counts": {
       "measured_moves": 4
     },
@@ -1945,7 +1945,7 @@
       "6795d47b857389ee",
       "f851fdf6469920dd"
     ],
-    "confluence_score": 0.0026490211128064353,
+    "confluence_score": 0.0021192168902451486,
     "module_counts": {
       "time_counts": 4
     },
@@ -1961,7 +1961,7 @@
     "contributing_projection_ids": [
       "d546f5fea62d1bc4"
     ],
-    "confluence_score": 0.0026171083662079302,
+    "confluence_score": 0.0020936866929663444,
     "module_counts": {
       "measured_moves": 1
     },
@@ -1978,7 +1978,7 @@
       "4ea7587ae6c730c9",
       "c8b5197877106b66"
     ],
-    "confluence_score": 0.0025736167023467853,
+    "confluence_score": 0.002058893361877428,
     "module_counts": {
       "time_counts": 2
     },
@@ -1996,11 +1996,155 @@
       "a03a6f3a13e37069",
       "af726f9b08809313"
     ],
-    "confluence_score": 0.002527159538976615,
+    "confluence_score": 0.0020217276311812918,
     "module_counts": {
       "time_counts": 3
     },
     "notes": "type=time_only"
+  },
+  {
+    "zone_id": "f2881ae7603faa98",
+    "time_window": null,
+    "price_window": [
+      532205.1673714294,
+      542956.7869142866
+    ],
+    "contributing_projection_ids": [
+      "ea5e2180333add4a"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "c7cf5fc98e1307a9",
+    "time_window": null,
+    "price_window": [
+      266247.77708571457,
+      271626.5200571431
+    ],
+    "contributing_projection_ids": [
+      "1d69579a54b60695"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "e200f82442f171fe",
+    "time_window": null,
+    "price_window": [
+      199758.42951428585,
+      203793.95334285728
+    ],
+    "contributing_projection_ids": [
+      "b596b64d8bc3ed57"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "ca9193ff298c8e3c",
+    "time_window": null,
+    "price_window": [
+      133269.0819428572,
+      135961.38662857152
+    ],
+    "contributing_projection_ids": [
+      "78c93f7e4eade16a"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "edfee19862a34be3",
+    "time_window": null,
+    "price_window": [
+      66779.73437142861,
+      68128.81991428576
+    ],
+    "contributing_projection_ids": [
+      "0673f5558635b488"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "8fe588cb12222872",
+    "time_window": null,
+    "price_window": [
+      33535.0605857143,
+      34212.53655714288
+    ],
+    "contributing_projection_ids": [
+      "301562442e752ebe"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "91301c444bc49b4c",
+    "time_window": null,
+    "price_window": [
+      22453.50265714287,
+      22907.108771428586
+    ],
+    "contributing_projection_ids": [
+      "975a41410ababf2e"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "208a853c1cf0a3c8",
+    "time_window": null,
+    "price_window": [
+      16912.72369285715,
+      17254.39487857144
+    ],
+    "contributing_projection_ids": [
+      "1cf69b427cdd410e"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
+  },
+  {
+    "zone_id": "af7ac16530dfd13c",
+    "time_window": null,
+    "price_window": [
+      8601.555246428576,
+      8775.324039285719
+    ],
+    "contributing_projection_ids": [
+      "9f82ffd839ecfd0f"
+    ],
+    "confluence_score": 0.0020000000000000005,
+    "module_counts": {
+      "angle_families": 1
+    },
+    "notes": "type=price_only"
   },
   {
     "zone_id": "a7ef88eeaeda3db6",
@@ -2013,7 +2157,7 @@
       "613017228785f1af",
       "66992ee21b2970e2"
     ],
-    "confluence_score": 0.00240136350770139,
+    "confluence_score": 0.0019210908061611123,
     "module_counts": {
       "measured_moves": 2
     },
@@ -2031,7 +2175,7 @@
       "947bb2a757b6d5b6",
       "f7884a5bf68c1378"
     ],
-    "confluence_score": 0.0022715410799056626,
+    "confluence_score": 0.00181723286392453,
     "module_counts": {
       "time_counts": 3
     },
@@ -2050,7 +2194,7 @@
       "519dd286a499fe0f",
       "7f726e5dabeafd2b"
     ],
-    "confluence_score": 0.002046407517569708,
+    "confluence_score": 0.0016371260140557668,
     "module_counts": {
       "time_counts": 4
     },
@@ -2069,7 +2213,7 @@
       "a6c3f92f2167963e",
       "b67cfa18570290de"
     ],
-    "confluence_score": 0.0018945819964770523,
+    "confluence_score": 0.001515665597181642,
     "module_counts": {
       "time_counts": 4
     },
@@ -2088,7 +2232,7 @@
       "bbffc9e553c616f8",
       "e738a524dc41f15b"
     ],
-    "confluence_score": 0.0017660140752042898,
+    "confluence_score": 0.0014128112601634322,
     "module_counts": {
       "time_counts": 4
     },
@@ -2109,7 +2253,7 @@
       "b611e947150047ed",
       "f6235dd14965ab06"
     ],
-    "confluence_score": 0.0017276907322437815,
+    "confluence_score": 0.0013821525857950253,
     "module_counts": {
       "time_counts": 6
     },
@@ -2128,7 +2272,7 @@
       "bc54f9d0b63d8a1e",
       "eed0a1dd3128adeb"
     ],
-    "confluence_score": 0.0013245105564032177,
+    "confluence_score": 0.0010596084451225743,
     "module_counts": {
       "time_counts": 4
     },
@@ -2144,7 +2288,7 @@
     "contributing_projection_ids": [
       "d511d3077ce6247e"
     ],
-    "confluence_score": 0.001216139500660315,
+    "confluence_score": 0.0009729116005282523,
     "module_counts": {
       "time_counts": 1
     },
@@ -2160,7 +2304,7 @@
     "contributing_projection_ids": [
       "258a3bb63f437ead"
     ],
-    "confluence_score": 0.0011380275162917951,
+    "confluence_score": 0.0009104220130334362,
     "module_counts": {
       "time_counts": 1
     },
@@ -2177,7 +2321,7 @@
       "64b1cd40c4ee06a2",
       "79cc328a7910dbfe"
     ],
-    "confluence_score": 0.0010619107200368634,
+    "confluence_score": 0.0008495285760294909,
     "module_counts": {
       "time_counts": 2
     },
@@ -2193,7 +2337,7 @@
     "contributing_projection_ids": [
       "a4f6de5013e24737"
     ],
-    "confluence_score": 0.0008568768366062475,
+    "confluence_score": 0.0006855014692849982,
     "module_counts": {
       "measured_moves": 1
     },
@@ -2209,7 +2353,7 @@
     "contributing_projection_ids": [
       "71df7927bae9824c"
     ],
-    "confluence_score": 0.0008568768366062475,
+    "confluence_score": 0.0006855014692849982,
     "module_counts": {
       "measured_moves": 1
     },
@@ -2226,7 +2370,7 @@
       "2b98b982491c38b9",
       "6c699b72b334e6b7"
     ],
-    "confluence_score": 0.00077741627364026,
+    "confluence_score": 0.0006219330189122081,
     "module_counts": {
       "time_counts": 2
     },
@@ -2242,7 +2386,7 @@
     "contributing_projection_ids": [
       "7621f759b4f874a8"
     ],
-    "confluence_score": 0.0007656145894999675,
+    "confluence_score": 0.000612491671599974,
     "module_counts": {
       "measured_moves": 1
     },
@@ -2258,7 +2402,7 @@
     "contributing_projection_ids": [
       "36cf2560ed8cdb26"
     ],
-    "confluence_score": 0.0007656145894999675,
+    "confluence_score": 0.000612491671599974,
     "module_counts": {
       "measured_moves": 1
     },
@@ -2274,7 +2418,7 @@
     "contributing_projection_ids": [
       "4f583d6306e07fb0"
     ],
-    "confluence_score": 0.0007586850108611968,
+    "confluence_score": 0.0006069480086889575,
     "module_counts": {
       "time_counts": 1
     },
@@ -2291,7 +2435,7 @@
       "0886358984405e70",
       "4db0d46894e20747"
     ],
-    "confluence_score": 0.0007454234185473304,
+    "confluence_score": 0.0005963387348378645,
     "module_counts": {
       "time_counts": 2
     },
@@ -2307,7 +2451,7 @@
     "contributing_projection_ids": [
       "7130e065df59913d"
     ],
-    "confluence_score": 0.000701742941089725,
+    "confluence_score": 0.0005613943528717801,
     "module_counts": {
       "time_counts": 1
     },
@@ -2323,7 +2467,7 @@
     "contributing_projection_ids": [
       "6a165994aa72af29"
     ],
-    "confluence_score": 0.0006746928934095876,
+    "confluence_score": 0.0005397543147276702,
     "module_counts": {
       "time_counts": 1
     },
@@ -2339,7 +2483,7 @@
     "contributing_projection_ids": [
       "10f2b56a5aca7978"
     ],
-    "confluence_score": 0.0006080697503301575,
+    "confluence_score": 0.00048645580026412613,
     "module_counts": {
       "measured_moves": 1
     },
@@ -2355,7 +2499,7 @@
     "contributing_projection_ids": [
       "aa3a0056e6fd5c2a"
     ],
-    "confluence_score": 0.0006080697503301575,
+    "confluence_score": 0.00048645580026412613,
     "module_counts": {
       "time_counts": 1
     },
@@ -2371,7 +2515,7 @@
     "contributing_projection_ids": [
       "95ab8bc272a01163"
     ],
-    "confluence_score": 0.0005712512244041649,
+    "confluence_score": 0.000457000979523332,
     "module_counts": {
       "time_counts": 1
     },
@@ -2387,7 +2531,7 @@
     "contributing_projection_ids": [
       "2a3eea3d610528a7"
     ],
-    "confluence_score": 0.0005690137581458976,
+    "confluence_score": 0.0004552110065167181,
     "module_counts": {
       "time_counts": 1
     },
@@ -2403,7 +2547,7 @@
     "contributing_projection_ids": [
       "214aa2f0e650f14a"
     ],
-    "confluence_score": 0.0004470880498476017,
+    "confluence_score": 0.00035767043987808137,
     "module_counts": {
       "time_counts": 1
     },
@@ -2419,7 +2563,7 @@
     "contributing_projection_ids": [
       "f1455aded8a2a171"
     ],
-    "confluence_score": 0.00042843841830312375,
+    "confluence_score": 0.0003427507346424991,
     "module_counts": {
       "time_counts": 1
     },
@@ -2435,7 +2579,7 @@
     "contributing_projection_ids": [
       "7def2671394ebbc9"
     ],
-    "confluence_score": 0.00040537983355343833,
+    "confluence_score": 0.0003243038668427507,
     "module_counts": {
       "time_counts": 1
     },
@@ -2451,7 +2595,7 @@
     "contributing_projection_ids": [
       "0d7d084528e76420"
     ],
-    "confluence_score": 0.00038280729474998373,
+    "confluence_score": 0.000306245835799987,
     "module_counts": {
       "time_counts": 1
     },
@@ -2468,7 +2612,7 @@
       "456f89302d949c77",
       "ab2c17252d8fc850"
     ],
-    "confluence_score": 0.00036240101250170127,
+    "confluence_score": 0.00028992081000136106,
     "module_counts": {
       "time_counts": 2
     },
@@ -2484,7 +2628,7 @@
     "contributing_projection_ids": [
       "00528e541fef55c0"
     ],
-    "confluence_score": 0.0003508714705448625,
+    "confluence_score": 0.00028069717643589004,
     "module_counts": {
       "time_counts": 1
     },
@@ -2500,7 +2644,7 @@
     "contributing_projection_ids": [
       "c8d8775635e144cf"
     ],
-    "confluence_score": 0.00030403487516507876,
+    "confluence_score": 0.00024322790013206306,
     "module_counts": {
       "time_counts": 1
     },
@@ -2516,7 +2660,7 @@
     "contributing_projection_ids": [
       "d275a7be671a1e93"
     ],
-    "confluence_score": 0.00012464351815284666,
+    "confluence_score": 9.971481452227733e-05,
     "module_counts": {
       "time_counts": 1
     },
@@ -2532,7 +2676,7 @@
     "contributing_projection_ids": [
       "c5ec08b25ceb7a8e"
     ],
-    "confluence_score": 9.348263861463501e-05,
+    "confluence_score": 7.4786110891708e-05,
     "module_counts": {
       "time_counts": 1
     },
@@ -2548,7 +2692,7 @@
     "contributing_projection_ids": [
       "03d20ae0082e3f00"
     ],
-    "confluence_score": 6.855803713484e-05,
+    "confluence_score": 5.484642970787201e-05,
     "module_counts": {
       "time_counts": 1
     },
