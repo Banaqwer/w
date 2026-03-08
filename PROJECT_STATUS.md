@@ -460,6 +460,22 @@ Phase 3A (adjusted angles) reviewed and accepted.
 - 86 Phase 3 tests + 162 Phase 1+2 tests = 248/248 pass
 - Full review: `docs/reviews/phase3a_review.md`
 
-**Phase 4 may NOT begin yet.** Phase 3B.2 (measured moves, time counts, log helpers) is now complete and pending review. Phase 4 may begin only after all Phase 3 modules have been reviewed and accepted.
+### Phase 3B.2 Review — PASS (2026-03-07)
+
+Phase 3B.2 (measured moves + time counts + log helpers) reviewed and accepted.
+
+- All 5 review checks passed:
+  1. **Phase 3 scope only** — no Phase 4+ drift; all occurrences of confluence/confirmation/backtest are disclaimer comments ✅
+  2. **Deterministic outputs + JSON artifacts** — stdlib-only computation; `reports/phase3b/` JSON artifacts verified; dedicated determinism tests in all 3 test files ✅
+  3. **Gap-safe for 6H** — all time arithmetic uses `bar_index` deltas; gap-safety integration tests pass; 6H smoke run correct with `missing_bar_count=1` ✅
+  4. **Log-mode consistency** — `log_levels.py` matches `adjusted_angles.py` and `impulse.py` conventions exactly; cross-module consistency test at tolerance 1e-15 ✅
+  5. **Measured move ratios correct** — raw and log formulas verified against manual computation; log symmetry property confirmed; BTC-scale values tested ✅
+- 108 Phase 3B.2 tests + 349 Phase 1–3B.1 tests = 457/457 pass
+- Full review: `docs/reviews/phase3b2_review.md`
+
+**Phase 4 (confluence engine) may begin next.** All MVP Phase 3 modules are now complete and reviewed:
+- Phase 3A: adjusted angles ✓ (reviewed, PASS)
+- Phase 3B.1: JTTL + sqrt levels ✓ (reviewed, PASS)
+- Phase 3B.2: measured moves + time counts + log helpers ✓ (reviewed, PASS)
 
 **Note: No Phase 4+ work (projections, confluence, signals, backtest) has been started.**
