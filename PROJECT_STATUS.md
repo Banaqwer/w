@@ -1,7 +1,7 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 4 — Projection generation + Confluence engine (IN PROGRESS — 2026-03-08)
+- Phase 4 — Projection generation + Confluence engine (COMPLETE — reviewed PASS 2026-03-08)
 
 ## Phase 3 — COMPLETE (all modules reviewed PASS 2026-03-07)
   - Adjusted angles module: COMPLETE (Phase 3A) — reviewed PASS 2026-03-07
@@ -568,10 +568,28 @@ python -m research.run_phase4_smoke --dataset-version proc_COINBASE_BTCUSD_1D_UT
 
 **Tests:** `pytest -q` → 606 passed (457 Phase 1–3 + 149 Phase 4), 0 failed
 
-#### Note: Phase 5 NOT started
-No Phase 5+ (confirmation, signals, execution, backtest) logic has been implemented.
-Phase 4 delivers only projection generation and confluence scoring.
-Phase 5 may NOT begin until Phase 4 is reviewed.
+### Phase 4 Review — PASS (2026-03-08)
+
+Phase 4 angle-family generator addition reviewed and accepted.
+
+- **Files reviewed:**
+  - `signals/generators_angle_families.py` — angle-family price projection generator
+  - `signals/confluence.py` — confluence engine (clustering + scoring)
+  - `research/run_phase4_smoke.py` — Phase 4 smoke-run script
+  - `tests/test_generator_angle_families.py` — 27 angle-family tests
+  - `tests/test_confluence_engine.py` — 23 confluence engine tests
+  - `PROJECT_STATUS.md` — Phase 4 status record
+- **Checks passed:**
+  1. Phase 4 scope only — no entries/exits/backtest logic ✅
+  2. Determinism + reproducibility — no randomness, stable ordering ✅
+  3. Angle-family logic consistent with Phase 3A — same 9 families, normalization, scale_basis ✅
+  4. Projection semantics correct — price-only, time_band null, ±1% bands ✅
+  5. Confluence impact correct — `_MAX_MODULE_TYPES=5`, diversity scoring, no regressions ✅
+- **Issue fixed:** Missing `Any` in `typing` import on `research/run_phase4_smoke.py` line 68 (minor; no runtime impact due to `from __future__ import annotations`).
+- **Tests:** 606 passed (457 Phase 1–3 + 149 Phase 4), 0 failed.
+- **Full review:** `docs/reviews/phase4_review.md`
+
+**Phase 5 (confirmation, signals, execution, backtest) may begin next.**
 
 #### Open Phase 4 items
 - Recency weight in scoring (currently neutral at 1.0 for MVP) — deferred.
