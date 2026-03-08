@@ -1,9 +1,12 @@
 # Project Status - Jenkins Quant Project
 
 ## Current phase
-- Phase 3 — MVP projection stack (IN PROGRESS — 2026-03-07)
-  - Adjusted angles module: COMPLETE (Phase 3A)
+- Phase 4 — Projection generation + Confluence engine (IN PROGRESS — 2026-03-08)
+
+## Phase 3 — COMPLETE (all modules reviewed PASS 2026-03-07)
+  - Adjusted angles module: COMPLETE (Phase 3A) — reviewed PASS 2026-03-07
   - JTTL + sqrt levels: COMPLETE (Phase 3B.1) — reviewed PASS 2026-03-07
+  - Measured moves + time counts + log helpers: COMPLETE (Phase 3B.2) — reviewed PASS 2026-03-07
 
 ## Current status
 
@@ -479,3 +482,91 @@ Phase 3B.2 (measured moves + time counts + log helpers) reviewed and accepted.
 - Phase 3B.2: measured moves + time counts + log helpers ✓ (reviewed, PASS)
 
 **Note: No Phase 4+ work (projections, confluence, signals, backtest) has been started.**
+
+---
+
+## Phase 4 — IN PROGRESS (2026-03-08)
+
+### Phase 4 — Projection generation + Confluence engine
+
+#### New files created
+
+**Projection dataclasses and schema:**
+- `signals/projections.py` — `Projection` and `ConfluenceZone` dataclasses + `make_zone_id`:
+  - `Projection`: module_name, source_id, projected_time, projected_price, time_band, price_band, direction_hint, raw_score, metadata, projection_id (auto-derived, deterministic)
+  - `ConfluenceZone`: zone_id, time_window, price_window, contributing_projection_ids, confluence_score, module_counts, notes
+  - All fields explicitly typed; to_dict() JSON-serialisable
+
+**Projection generators (Phase 3 → Projection):**
+- `signals/generators_measured_moves.py` — converts `MeasuredMoveTarget` → price-only `Projection`
+  - direction_hint: extension/retracement × up/down impulse → support/resistance/ambiguous
+  - price_band = ±1% around target_price
+- `signals/generators_jttl.py` — converts `JTTLLine` → time+price `Projection` at horizon endpoint
+  - time_band = ±7 calendar days; price_band = ±1%
+  - direction_hint from p0→p1 slope direction
+- `signals/generators_sqrt_levels.py` — converts `SqrtLevel` → price-only `Projection`
+  - price_band = ±0.5%; score decays with step distance
+  - direction_hint from level direction field
+- `signals/generators_time_counts.py` — converts `TimeWindow` → time-only `Projection`
+  - direction_hint = "turn"; price_band = (None, None)
+  - raw_score includes recency weight by multiplier
+
+**Confluence engine:**
+- `signals/confluence.py` — clusters overlapping Projections into ConfluenceZones
+  - Single-linkage connected-component clustering
+  - Price overlap: both price bands non-None and intersecting
+  - Time overlap: both time bands fully-bounded and intersecting
+  - Price-only and time-only projections never merged (no shared dimension)
+  - Mixed (both bands) projection bridges price and time clusters
+  - Score = n_score × diversity_score × avg_raw_score (fully deterministic)
+
+**Smoke script:**
+- `research/run_phase4_smoke.py` — runs all generators + confluence engine
+  - Loads Phase 2 impulse/origin CSVs; reads manifest missing_bar_count
+  - Writes `reports/phase4/projections_<version>.json` and `reports/phase4/zones_<version>.json`
+  - Prints summary: projection counts by generator, zone count, top 10 zones
+
+**Tests (122 new, all passing):**
+- `tests/test_projections_schema.py` — 35 tests: Projection, ConfluenceZone, make_zone_id
+- `tests/test_confluence_engine.py` — 38 tests: clustering, scoring, overlap, determinism
+- `tests/test_generator_measured_moves.py` — 19 tests
+- `tests/test_generator_sqrt_levels.py` — 21 tests
+- `tests/test_generator_time_counts.py` — 22 tests (includes time-based generator)
+
+#### How to run Phase 4 smoke script
+
+```bash
+python -m research.run_phase4_smoke
+python -m research.run_phase4_smoke --phase2-dir reports/phase2 --output-dir reports/phase4
+python -m research.run_phase4_smoke --max-impulses 30 --max-origins 10
+python -m research.run_phase4_smoke --dataset-version proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1
+```
+
+#### Phase 4 smoke-run results (2026-03-08)
+
+| Source | Miss | MM | TC | JTTL | Sqrt | Total |
+|---|---|---|---|---|---|---|
+| 1D pivot | 0 | 150 | 80 | 10 | 640 | 880 |
+| 1D zigzag | 0 | 128 | 80 | 10 | 640 | 858 |
+| 6H pivot | 1 | 159 | 80 | 10 | 640 | 889 |
+| 6H zigzag | 1 | 155 | 80 | 10 | 640 | 885 |
+| **TOTALS** | | **592** | **320** | **40** | **2560** | **3512** |
+
+- Total confluence zones: 144
+- Zone output: `reports/phase4/zones_<version>.json`
+- Projection output: `reports/phase4/projections_<version>.json`
+
+**Tests:** `pytest -q` → 579 passed (457 Phase 1–3 + 122 Phase 4), 0 failed
+
+#### Note: Phase 5 NOT started
+No Phase 5+ (confirmation, signals, execution, backtest) logic has been implemented.
+Phase 4 delivers only projection generation and confluence scoring.
+Phase 5 may NOT begin until Phase 4 is reviewed.
+
+#### Open Phase 4 items
+- `signals/generators_angle_families.py` (optional): angle-family based projections — deferred
+  post-review per problem statement (keep conservative for MVP).
+- Recency weight in scoring (currently neutral at 1.0 for MVP) — deferred.
+- `min_cluster_size` tuning (currently 1: all projections form a zone) — deferred.
+- Confluence O(n²) clustering is acceptable at MVP scale; upgrade to interval tree if
+  > 10,000 projections at once.
