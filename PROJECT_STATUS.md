@@ -790,33 +790,36 @@ python -m research.run_phase6_smoke --config configs/backtest.yaml
 
 Smoke output files: `reports/phase6/smoke/{trades.csv, equity_curve.csv, summary.json, walkforward_summary.json}`
 
-#### How to run full walk-forward
+#### How to run full walk-forward locally
 
-```python
-from data.loader import load_processed, load_manifest
-from backtest.runner import BacktestConfig
-from backtest.walkforward import WalkForwardConfig, run_walk_forward
-from pathlib import Path
+Use the dedicated runner script from the repo root (Python 3.12, PowerShell or bash):
 
-df_1d = load_processed("proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1")
-df_6h = load_processed("proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1")
-manifest_1d = load_manifest("proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1")
-manifest_6h = load_manifest("proc_COINBASE_BTCUSD_6H_UTC_2026-03-06_v1")
-
-bt_config = BacktestConfig.from_yaml("configs/backtest.yaml")
-wf_config = WalkForwardConfig.from_yaml("configs/backtest.yaml")
-
-window_results, aggregate = run_walk_forward(
-    df_1d=df_1d, df_6h=df_6h,
-    manifest_1d=manifest_1d, manifest_6h=manifest_6h,
-    bt_config=bt_config, wf_config=wf_config,
-    dataset_version="proc_COINBASE_BTCUSD_1D_UTC_2026-03-06_v1",
-    output_dir=Path("reports/phase6"),
-)
-print(f"Windows: {aggregate['n_windows']} | Trades: {aggregate['total_trades']}")
+```powershell
+py -3.12 -m research.run_phase6_full
 ```
 
-Full walk-forward output: `reports/phase6/walkforward_summary.json`
+```bash
+python -m research.run_phase6_full
+```
+
+Optional arguments:
+
+```powershell
+# Custom config:
+py -3.12 -m research.run_phase6_full --config configs/backtest.yaml
+
+# Custom output directory:
+py -3.12 -m research.run_phase6_full --output-dir reports/phase6/full
+```
+
+The script:
+1. Loads `BacktestConfig` and `WalkForwardConfig` from `configs/backtest.yaml`.
+2. Loads the full processed 1D and 6H datasets named in the config.
+3. Runs `run_walk_forward(...)` over the complete date range.
+4. Writes `reports/phase6/full/walkforward_summary.json`.
+5. Prints: `n_windows`, `n_windows_with_trades`, `total_trades`, `total_net_pnl`, `max_drawdown_pct`.
+
+Full walk-forward output: `reports/phase6/full/walkforward_summary.json`
 
 #### ⚠ Performance metrics disclaimer
 
